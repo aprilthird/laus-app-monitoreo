@@ -6,6 +6,7 @@ target 'TempoMonitoring' do
   use_frameworks!
 
   # Pods for TempoMonitoring
+  pod 'Alamofire'
   pod 'SwiftyJSON'
 
   target 'TempoMonitoringTests' do
