@@ -19,6 +19,9 @@
 		8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */; };
 		8E319E8E24831C28001111C6 /* Contstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E8D24831C28001111C6 /* Contstants.swift */; };
 		8E319E9224831E0F001111C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E9424831E0F001111C6 /* Localizable.strings */; };
+		8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */; };
+		8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E9824831FBB001111C6 /* UIColorExtension.swift */; };
+		8E319E9B24832205001111C6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E9A24832205001111C6 /* StringExtension.swift */; };
 		8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB092483045300E6DAD7 /* AppDelegate.swift */; };
 		8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */; };
 		8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB152483045600E6DAD7 /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8E319E8D24831C28001111C6 /* Contstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contstants.swift; sourceTree = "<group>"; };
 		8E319E9524831F27001111C6 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		8E319E9824831FBB001111C6 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8E319E9A24832205001111C6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
@@ -179,6 +185,9 @@
 		8E319E8924831BBA001111C6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8E319E9A24832205001111C6 /* StringExtension.swift */,
+				8E319E9824831FBB001111C6 /* UIColorExtension.swift */,
+				8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */,
 				8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
@@ -523,8 +532,11 @@
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
+				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
+				8E319E9B24832205001111C6 /* StringExtension.swift in Sources */,
+				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 			);
