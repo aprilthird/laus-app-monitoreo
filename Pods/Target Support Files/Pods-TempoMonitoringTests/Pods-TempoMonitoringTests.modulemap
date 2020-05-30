@@ -1,6 +1,0 @@
-framework module Pods_TempoMonitoringTests {
-  umbrella header "Pods-TempoMonitoringTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
