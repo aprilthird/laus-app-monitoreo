@@ -22,7 +22,9 @@ class TriageViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Localizable.TRIAGE_TITLE
+        
         lastCompletedTriageLabel.isHidden = true
+        
         navigationItem.setRightBarButtonItems(triagePresenter.getRightNavigationItems(), animated: true)
     }
     

@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import WebKit
 
 class AttentionWebViewViewController: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    var attentionPresenter: AttentionPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.title = Constants.Localizable.ATTENTION_TITLE
+        
+        navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
+        attentionPresenter.showWebView()
     }
-
+    
 
     /*
     // MARK: - Navigation
@@ -27,4 +34,16 @@ class AttentionWebViewViewController: UIViewController {
     }
     */
 
+}
+extension AttentionWebViewViewController: AttentionViewControllerProtocol {
+    func openUrl(_ url: String) {
+        guard let url = URL(string: url) else {
+            return
+        }
+        self.webView.load(URLRequest(url: url))
+    }
+    
+    func showMoreSection() {
+        
+    }
 }

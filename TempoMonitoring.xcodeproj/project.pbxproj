@@ -93,6 +93,9 @@
 		8EEE80072484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE80062484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift */; };
 		8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE80082484576100DC28F1 /* QRCodeStatusPresenter.swift */; };
 		8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800A2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift */; };
+		8EEE800D2484610600DC28F1 /* AttentionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800C2484610600DC28F1 /* AttentionPresenterProtocol.swift */; };
+		8EEE800F2484615400DC28F1 /* AttentionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800E2484615400DC28F1 /* AttentionPresenter.swift */; };
+		8EEE8011248461D300DC28F1 /* AttentionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE8010248461D300DC28F1 /* AttentionViewControllerProtocol.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -211,6 +214,9 @@
 		8EEE80062484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStatusPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE80082484576100DC28F1 /* QRCodeStatusPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStatusPresenter.swift; sourceTree = "<group>"; };
 		8EEE800A2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStatusViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE800C2484610600DC28F1 /* AttentionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE800E2484615400DC28F1 /* AttentionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPresenter.swift; sourceTree = "<group>"; };
+		8EEE8010248461D300DC28F1 /* AttentionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -425,6 +431,9 @@
 			children = (
 				8E319EBC24833E3C001111C6 /* AttentionWebViewViewController.swift */,
 				8E319EBD24833E3C001111C6 /* AttentionWebViewViewController.xib */,
+				8EEE800C2484610600DC28F1 /* AttentionPresenterProtocol.swift */,
+				8EEE800E2484615400DC28F1 /* AttentionPresenter.swift */,
+				8EEE8010248461D300DC28F1 /* AttentionViewControllerProtocol.swift */,
 			);
 			path = Attention;
 			sourceTree = "<group>";
@@ -897,6 +906,7 @@
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8EEE7FF92484410600DC28F1 /* TriageViewControllerProtocol.swift in Sources */,
+				8EEE8011248461D300DC28F1 /* AttentionViewControllerProtocol.swift in Sources */,
 				8EEE80012484504000DC28F1 /* ReadQRCodePresenterProtocol.swift in Sources */,
 				8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
@@ -912,12 +922,14 @@
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
+				8EEE800F2484615400DC28F1 /* AttentionPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
 				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
+				8EEE800D2484610600DC28F1 /* AttentionPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
