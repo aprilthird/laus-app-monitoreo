@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol RouterProtocol {
+    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController
     func getContactUsPopup() -> UIViewController
     func getFirstScene() -> UIViewController
     func getMainTabBar() -> UIViewController

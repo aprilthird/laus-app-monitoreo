@@ -19,6 +19,7 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         return Self(nibName: NIBName, bundle: bundle)
     }
     
+    // MARK: AlertHandlerProtocol
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping (() -> Void)) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: Constants.Localizable.OK, style: .default) { (_) in
@@ -30,12 +31,31 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         }
     }
     
+    // MARK: HUDHandlerProtocol
+    var isHUDVisible: Bool {
+        get {
+            return SVProgressHUD.isVisible()
+        }
+    }
+    
+    func endProgress() {
+        if isHUDVisible {
+            SVProgressHUD.dismiss()
+        }
+    }
+    
     func startProgress(message: String?, with maskType: SVProgressHUDMaskType) {
         SVProgressHUD.setDefaultMaskType(maskType)
         SVProgressHUD.show(withStatus: message)
     }
     
-    func endProgress() {
-        SVProgressHUD.dismiss()
+    // MARK: Transition between viewControllers
+    func crossDisolveTransition(to viewController: UIViewController, duration: TimeInterval = 0.6) {
+        guard let window = UIApplication.shared.keyWindow else {
+            fatalError()
+        }
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: duration, options: [.transitionCrossDissolve], animations: nil, completion: nil)
     }
 }

@@ -34,10 +34,12 @@ class SplashViewController: UIViewController {
 extension SplashViewController: SplashViewControllerProtocol {
     func goToFirstScene() {
         let firstScene = Router.shared.getFirstScene()
-        show(firstScene, sender: nil)
+        let navigationController = Router.shared.getTempoNavigationController(firstScene)
+        crossDisolveTransition(to: navigationController)
     }
     
     func goToMain() {
         let mainTabBar = Router.shared.getMainTabBar()
+        crossDisolveTransition(to: mainTabBar)
     }
 }

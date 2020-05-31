@@ -10,8 +10,9 @@ import Foundation
 import SVProgressHUD
 
 protocol HUDHandlerProtocol {
-    func startProgress(message: String?, with maskType: SVProgressHUDMaskType)
+    var isHUDVisible: Bool { get }
     func endProgress()
+    func startProgress(message: String?, with maskType: SVProgressHUDMaskType)
 }
 extension HUDHandlerProtocol {
     func startProgress(message: String? = nil) {

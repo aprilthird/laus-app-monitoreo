@@ -23,6 +23,15 @@ final class Router: RouterProtocol {
         userRepository = UserRepository()
     }
     
+    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.barTintColor = UIColor("#6B9DF2")
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.isTranslucent = true
+        return navigationController
+    }
+    
     func getContactUsPopup() -> UIViewController {
         let viewController = ContactUsPopupViewController.get()
         viewController.contactUsPresenter = ContactUsPopupPresenter(userRepository: userRepository, view: viewController)
@@ -42,7 +51,7 @@ final class Router: RouterProtocol {
     
     func getMainWebView(url: String) -> UIViewController {
         let viewController = MainWebViewViewController.get()
-//        viewController.url = url
+        viewController.url = url
         return viewController
     }
     

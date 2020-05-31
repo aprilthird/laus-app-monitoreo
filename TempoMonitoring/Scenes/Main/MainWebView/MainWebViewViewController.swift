@@ -7,15 +7,46 @@
 //
 
 import UIKit
+import WebKit
 
 class MainWebViewViewController: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    var url: String!
+    var navigationTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        navigationItem.title = navigationTitle
+        
+        startProgress()
+        
+        webView.navigationDelegate = self
+        if let url = URL(string: url) {
+            webView.load(URLRequest(url: url))
+        }
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = nil
+    }
+    
+    private func closeWebView() {
+        if navigationController != nil {
+            navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +58,17 @@ class MainWebViewViewController: UIViewController {
     }
     */
 
+}
+extension MainWebViewViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        endProgress()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        endProgress()
+        
+        show(.alert, message: error.localizedDescription) {
+            self.closeWebView()
+        }
+    }
 }
