@@ -80,11 +80,11 @@ class ContactUsPopupViewController: UIViewController {
             }
             isValid = true
         }
-        guard isValid, let documentType = documentTypeTextField.documentTypeId else {
+        guard isValid, let documentTypeId = documentTypeTextField.documentTypeId else {
             return
         }
         
-        contactUsPresenter.sendInformation(names: namesTextField.text!, lastNames: lastNamesTextField.text!, company: companyTextField.text!, documentType: documentType, document: documentTextField.text!, phone: phoneTextField.text!) {
+        contactUsPresenter.sendInformation(names: namesTextField.text!, lastNames: lastNamesTextField.text!, company: companyTextField.text!, documentTypeId: documentTypeId, document: documentTextField.text!, phone: phoneTextField.text!) {
             self.dismiss(animated: true, completion: nil)
         }
     }

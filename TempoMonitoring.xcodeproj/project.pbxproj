@@ -73,6 +73,11 @@
 		8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FD924837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift */; };
 		8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */; };
 		8EEE7FE02483808100DC28F1 /* AlertHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */; };
+		8EEE7FE22484197D00DC28F1 /* SignInPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FE12484197D00DC28F1 /* SignInPresenterProtocol.swift */; };
+		8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FE3248419EB00DC28F1 /* SignInPresenter.swift */; };
+		8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */; };
+		8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */; };
+		8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEC248420CC00DC28F1 /* Company.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -171,6 +176,11 @@
 		8EEE7FD924837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPopupViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDHandlerProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FE12484197D00DC28F1 /* SignInPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FE3248419EB00DC28F1 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FEC248420CC00DC28F1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +291,9 @@
 			children = (
 				8E319E8524831BAD001111C6 /* SignInViewController.swift */,
 				8E319E8624831BAD001111C6 /* SignInViewController.xib */,
+				8EEE7FE12484197D00DC28F1 /* SignInPresenterProtocol.swift */,
+				8EEE7FE3248419EB00DC28F1 /* SignInPresenter.swift */,
+				8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -454,6 +467,7 @@
 			children = (
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
+				8EEE7FE72484206900DC28F1 /* Models */,
 				8EEE7FB82483571100DC28F1 /* Repositories */,
 				8E319E74248319D1001111C6 /* Routers */,
 				8E319E72248319B8001111C6 /* Scenes */,
@@ -514,6 +528,15 @@
 				8EEE7FCD24836FDD00DC28F1 /* TextFieldPickerView.swift */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		8EEE7FE72484206900DC28F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */,
+				8EEE7FEC248420CC00DC28F1 /* Company.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ADD00EB92F25E77EBF275925 /* Pods */ = {
@@ -805,6 +828,7 @@
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
+				8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
 				8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */,
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
@@ -814,6 +838,7 @@
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
 				8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
+				8EEE7FE22484197D00DC28F1 /* SignInPresenterProtocol.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
@@ -834,11 +859,14 @@
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
+				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
+				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
+				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

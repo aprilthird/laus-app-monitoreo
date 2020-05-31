@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol FirstSceneVieControllerProtocol {
+protocol FirstSceneViewControllerProtocol {
     func updateView(url: String, visibility: Bool)
 }

@@ -20,12 +20,13 @@ final class Router: RouterProtocol {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
-        userRepository = UserRepository()
+        userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler)
     }
     
     func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.barTintColor = UIColor("#6B9DF2")
+        let company = userRepository.currentCompany
+        navigationController.navigationBar.barTintColor = UIColor(company?.primaryColor ?? "#6B9DF2")
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.isTranslucent = true
@@ -49,14 +50,18 @@ final class Router: RouterProtocol {
         return viewController
     }
     
-    func getMainWebView(url: String) -> UIViewController {
+    func getMainWebView(title: String?, url: String) -> UIViewController {
         let viewController = MainWebViewViewController.get()
+        viewController.navigationTitle = title
         viewController.url = url
         return viewController
     }
     
-    func getSignIn() -> UIViewController {
+    func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController {
         let viewController = SignInViewController.get()
+        viewController.signInPresenter = SignInPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
+        viewController.shouldSignUpUser = shouldSignUpUser
+        viewController.signUpUrl = signUpUrl
         return viewController
     }
     

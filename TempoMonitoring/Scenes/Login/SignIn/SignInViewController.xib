@@ -18,6 +18,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
             <connections>
+                <outlet property="contactUsButton" destination="rSC-ER-Ds7" id="T8V-Ua-G62"/>
+                <outlet property="contactUsLabel" destination="k5b-vq-uzs" id="M9U-kE-oxr"/>
+                <outlet property="contactUsView" destination="UOo-2C-kq6" id="3dB-mp-9mD"/>
+                <outlet property="documentTextField" destination="suF-6i-Vpc" id="MT2-Cd-4oK"/>
+                <outlet property="documentTypeTextField" destination="cxl-wA-NDb" id="nUY-EE-caC"/>
+                <outlet property="instructionsLabel" destination="zuL-Gl-nBF" id="rMc-Wo-jMc"/>
+                <outlet property="logoImageView" destination="IbU-Ib-4Zm" id="vm1-De-Qer"/>
+                <outlet property="logoLabel" destination="MnX-1X-6kh" id="nM0-UB-6Hj"/>
+                <outlet property="logoView" destination="imn-m5-HMo" id="H9q-pN-tlZ"/>
+                <outlet property="mainButton" destination="nE2-qu-sTr" id="iKx-kM-Cj5"/>
+                <outlet property="scrollView" destination="yqH-8l-O6a" id="pFD-PD-tKp"/>
+                <outlet property="signUpButton" destination="lVP-KN-dYj" id="A3h-la-xDk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -110,6 +122,9 @@
                                                     <state key="normal" title="REGÍSTRATE">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didShowSignUp:" destination="-1" eventType="touchUpInside" id="WEn-aI-CXF"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSC-ER-Ds7">
                                                     <rect key="frame" x="0.0" y="38" width="127" height="33"/>
@@ -119,6 +134,9 @@
                                                     <state key="normal" title="CONTÁCTANOS">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didShowContactUs:" destination="-1" eventType="touchUpInside" id="nyv-aH-P3S"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -171,6 +189,9 @@
                     <state key="normal" title="INGRESAR">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="didSignIn:" destination="-1" eventType="touchUpInside" id="evr-4a-36c"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

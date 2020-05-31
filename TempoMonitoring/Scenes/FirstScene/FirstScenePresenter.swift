@@ -10,9 +10,9 @@ import Foundation
 
 final class FirstScenePresenter: FirstScenePresenterProtocol {
     private let configRepository: ConfigRepositoryProtocol
-    private let view: FirstSceneVieControllerProtocol
+    private let view: FirstSceneViewControllerProtocol
     
-    init(configRepository: ConfigRepositoryProtocol, view: FirstSceneVieControllerProtocol) {
+    init(configRepository: ConfigRepositoryProtocol, view: FirstSceneViewControllerProtocol) {
         self.configRepository = configRepository
         self.view = view
     }

@@ -18,12 +18,12 @@ final class ContactUsPopupPresenter: ContactUsPopupPresenterProtocol {
         self.view = view
     }
     
-    func sendInformation(names: String, lastNames: String, company: String, documentType: Int, document: String, phone: String, closure: @escaping(() -> Void)) {
+    func sendInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, closure: @escaping(() -> Void)) {
         view.startProgress()
         userRepository.saveUserInformation(names: names,
                                            lastNames: lastNames,
                                            company: company,
-                                           documentType: documentType,
+                                           documentTypeId: documentTypeId,
                                            document: document,
                                            phone: phone,
         success: { (isSuccessful) in

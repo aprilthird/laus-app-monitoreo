@@ -9,5 +9,8 @@
 import Foundation
 
 protocol UserRepositoryProtocol {
-    func saveUserInformation(names: String, lastNames: String, company: String, documentType: Int, document: String, phone: String, success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
+    var currentCompany: Company? { get set }
+    
+    func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
+    func signIn(documentTypeId: Int, document: String, success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
 }

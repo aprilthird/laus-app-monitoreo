@@ -8,3 +8,6 @@
 "Ok" = "Ok";
 "Loading..." = "Cargando...";
 "The data has been sent correctly" = "Los datos han sido enviados correctamente";
+"Invalid document" = "Documento inválido";
+"Invalid document type" = "Tipo de documento inválido";
+"Sign Up" = "Registrarse";

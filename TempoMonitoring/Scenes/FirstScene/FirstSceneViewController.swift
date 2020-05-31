@@ -60,7 +60,7 @@ class FirstSceneViewController: UIViewController {
         guard let signUpUrl = signUpUrl else {
             return
         }
-        let mainWebView = Router.shared.getMainWebView(url: signUpUrl)
+        let mainWebView = Router.shared.getMainWebView(title: Constants.Localizable.SIGN_UP_TITLE, url: signUpUrl)
         show(mainWebView, sender: nil)
     }
     
@@ -72,7 +72,7 @@ class FirstSceneViewController: UIViewController {
     }
     
     @IBAction func didShowSignIn(_ sender: UIButton) {
-        let signIn = Router.shared.getSignIn()
+        let signIn = Router.shared.getSignIn(shouldSignUpUser: shouldSignUpUser, signUpUrl: signUpUrl)
         show(signIn, sender: nil)
     }
     
@@ -87,7 +87,7 @@ class FirstSceneViewController: UIViewController {
     */
 
 }
-extension FirstSceneViewController: FirstSceneVieControllerProtocol {
+extension FirstSceneViewController: FirstSceneViewControllerProtocol {
     func updateView(url: String, visibility: Bool) {
         signUpUrl = url
         shouldSignUpUser = visibility

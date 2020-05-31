@@ -10,14 +10,19 @@ import Foundation
 
 final class Constants {
     struct Keys {
+        static let COMPANY: String = "company"
+        static let COMPANY_TOKEN: String = "companyToken"
+        static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
         static let TOKEN: String = "token"
-        static let COMPANY_TOKEN: String = "CompanyToken"
     }
     struct Localizable {
         static let APP_NAME: String = "Tempo Monitoring"
+        static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
+        static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
+        static let SIGN_UP_TITLE: String = NSLocalizedString("Sign Up", comment: "")
     }
     struct Service {
         #if DEBUG
@@ -33,5 +38,6 @@ final class Constants {
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
         
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
+        static let SIGN_IN = "\(BASE_URL)/user.php?action=login"
     }
 }
