@@ -15,6 +15,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TriageViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionTextView" destination="cu3-bW-7H9" id="AYg-bR-oWN"/>
+                <outlet property="lastCompletedTriageLabel" destination="ght-3l-0vC" id="Wfg-nt-rx8"/>
+                <outlet property="scrollView" destination="Gir-hx-T0A" id="Soj-eg-OKE"/>
+                <outlet property="seeQRCodeButton" destination="iL0-Ha-z91" id="Mb2-el-zeM"/>
+                <outlet property="startTriageButton" destination="Ydt-8n-i0a" id="WHJ-Ua-wWv"/>
+                <outlet property="triageImageView" destination="BXO-uS-gED" id="DgP-I4-lz4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,7 +35,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sm-eT-tb9">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BXO-uS-gED">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triageImage" translatesAutoresizingMaskIntoConstraints="NO" id="BXO-uS-gED">
                                     <rect key="frame" x="20" y="30" width="374" height="130"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="130" id="EXS-Ha-2n9"/>
@@ -63,6 +69,9 @@
                                                     <state key="normal" title="INICIAR TRIAJE">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didStartTriage:" destination="-1" eventType="touchUpInside" id="ygH-cs-uTd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-Ha-z91">
                                                     <rect key="frame" x="0.0" y="74" width="354" height="64"/>
@@ -72,6 +81,9 @@
                                                     <state key="normal" title="VER CÓDIGO QR">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didReadQRCode:" destination="-1" eventType="touchUpInside" id="5q9-a5-slb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -127,4 +139,7 @@
             <point key="canvasLocation" x="139" y="145"/>
         </view>
     </objects>
+    <resources>
+        <image name="triageImage" width="327" height="116"/>
+    </resources>
 </document>

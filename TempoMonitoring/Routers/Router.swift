@@ -15,12 +15,14 @@ final class Router: RouterProtocol {
     private let userDefaultsHandler: UserDefaultsHandler
     private let configRepository: ConfigRepositoryProtocol
     private let userRepository: UserRepositoryProtocol
+    private let generalRepository: GeneralRepositoryProtocol
     
     init() {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
         userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler)
+        generalRepository = GeneralRepository(userDefaultsHandler: userDefaultsHandler)
     }
     
     func getAttention() -> UIViewController {
@@ -57,6 +59,11 @@ final class Router: RouterProtocol {
         return viewController
     }
     
+    func getQRCodeReader() -> UIViewController {
+        let viewController = ReadQRCodeViewController.get()
+        return viewController
+    }
+    
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController {
         let viewController = SignInViewController.get()
         viewController.signInPresenter = SignInPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
@@ -67,7 +74,7 @@ final class Router: RouterProtocol {
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
-        viewController.splashPresenter = SplashPresenter(view: viewController)
+        viewController.splashPresenter = SplashPresenter(userDefaultsHandler: userDefaultsHandler, generalRepository: generalRepository, view: viewController)
         return viewController
     }
     
@@ -88,6 +95,7 @@ final class Router: RouterProtocol {
     
     func getTriage() -> UIViewController {
         let viewController = TriageViewController.get()
+        viewController.triagePresenter = TriagePresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, view: viewController)
         return viewController
     }
 }

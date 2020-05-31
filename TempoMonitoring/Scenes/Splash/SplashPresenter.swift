@@ -7,15 +7,36 @@
 //
 
 import Foundation
+import Keychain
 
 final class SplashPresenter: SplashPresenterProtocol {
+    let userDefaultsHandler: UserDefaultsHandlerProtocol
+    let generalRepository: GeneralRepositoryProtocol
     let view: SplashViewControllerProtocol
     
-    init(view: SplashViewControllerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
+        self.userDefaultsHandler = userDefaultsHandler
+        self.generalRepository = generalRepository
         self.view = view
     }
     
     func startAnimation() {
-        view.goToFirstScene()
+        generalRepository.saveLastVersionInAppStore {
+            self.validateLogin()
+        }
+    }
+    
+    private func validateLogin() {
+        guard userDefaultsHandler.bool(from: Constants.Keys.IS_FIRST_OPEN),
+            let _ = Keychain.load(Constants.Keys.TOKEN),
+            let _ = Keychain.load(Constants.Keys.COMPANY_TOKEN) else {
+                userDefaultsHandler.save(value: true, to: Constants.Keys.IS_FIRST_OPEN)
+                _ = Keychain.delete(Constants.Keys.TOKEN)
+                _ = Keychain.delete(Constants.Keys.COMPANY_TOKEN)
+                view.goToFirstScene()
+                return
+        }
+        
+        view.goToMain()
     }
 }

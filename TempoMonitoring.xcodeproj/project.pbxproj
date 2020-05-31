@@ -81,6 +81,12 @@
 		8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */; };
 		8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */; };
 		8EEE7FF32484308D00DC28F1 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */; };
+		8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF424843FEB00DC28F1 /* TriagePresenterProtocol.swift */; };
+		8EEE7FF72484400A00DC28F1 /* TriagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF62484400A00DC28F1 /* TriagePresenter.swift */; };
+		8EEE7FF92484410600DC28F1 /* TriageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF82484410600DC28F1 /* TriageViewControllerProtocol.swift */; };
+		8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */; };
+		8EEE7FFD24844AD300DC28F1 /* GeneralRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */; };
+		8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -187,6 +193,12 @@
 		8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FF424843FEB00DC28F1 /* TriagePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriagePresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FF62484400A00DC28F1 /* TriagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriagePresenter.swift; sourceTree = "<group>"; };
+		8EEE7FF82484410600DC28F1 /* TriageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriageViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +321,7 @@
 			children = (
 				8E319E9A24832205001111C6 /* StringExtension.swift */,
 				8E319E9824831FBB001111C6 /* UIColorExtension.swift */,
+				8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */,
 				8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */,
 				8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */,
 			);
@@ -388,6 +401,9 @@
 			children = (
 				8E319EB724833DA0001111C6 /* TriageViewController.swift */,
 				8E319EB824833DA0001111C6 /* TriageViewController.xib */,
+				8EEE7FF424843FEB00DC28F1 /* TriagePresenterProtocol.swift */,
+				8EEE7FF62484400A00DC28F1 /* TriagePresenter.swift */,
+				8EEE7FF82484410600DC28F1 /* TriageViewControllerProtocol.swift */,
 			);
 			path = Triage;
 			sourceTree = "<group>";
@@ -511,6 +527,8 @@
 				8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */,
 				8EEE7FD724837B1900DC28F1 /* UserRepository.swift */,
 				8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */,
+				8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */,
+				8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -834,6 +852,7 @@
 				8EEE7FE02483808100DC28F1 /* AlertHandlerProtocol.swift in Sources */,
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
 				8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */,
+				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
@@ -845,6 +864,7 @@
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
 				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
+				8EEE7FFD24844AD300DC28F1 /* GeneralRepositoryProtocol.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
 				8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
@@ -857,9 +877,11 @@
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
+				8EEE7FF92484410600DC28F1 /* TriageViewControllerProtocol.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
 				8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */,
+				8EEE7FF72484400A00DC28F1 /* TriagePresenter.swift in Sources */,
 				8EEE7FC32483592500DC28F1 /* KeychainHandlerProtocol.swift in Sources */,
 				8E319E9B24832205001111C6 /* StringExtension.swift in Sources */,
 				8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */,
@@ -872,7 +894,9 @@
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
+				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
+				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,

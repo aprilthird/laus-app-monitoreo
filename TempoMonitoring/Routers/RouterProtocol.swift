@@ -15,6 +15,7 @@ protocol RouterProtocol {
     func getFirstScene() -> UIViewController
     func getMainTabBar() -> UIViewController
     func getMainWebView(title: String?, url: String) -> UIViewController
+    func getQRCodeReader() -> UIViewController
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController
     func getSplash() -> UIViewController
     func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController

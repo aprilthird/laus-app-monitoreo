@@ -12,6 +12,7 @@ final class Constants {
     struct Keys {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
+        static let IS_FIRST_OPEN: String = "isFirstOpen"
         static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
         static let LAST_APP_VERSION: String = "lastAppVersion"
         static let LAST_HOME_BANNER_ID: String = "lastHomeBannerId"
