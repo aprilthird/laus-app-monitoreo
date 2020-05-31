@@ -50,5 +50,7 @@
 	<false/>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Al aceptar podrás tomar y subir fotos directamente a Tempo en tu perfil de usuario y al compartir fotos de tus ejercicios realizados</string>
 </dict>
 </plist>

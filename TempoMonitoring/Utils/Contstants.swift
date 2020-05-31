@@ -25,6 +25,7 @@ final class Constants {
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
+        static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
         static let SIGN_UP_TITLE: String = NSLocalizedString("Sign Up", comment: "")
         static let TIPS_TITLE: String = NSLocalizedString("Learn", comment: "")
