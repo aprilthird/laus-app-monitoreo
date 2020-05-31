@@ -55,6 +55,16 @@
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
 		8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */; };
+		8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB3248355C600DC28F1 /* FirstScenePresenterProtocol.swift */; };
+		8EEE7FB62483560600DC28F1 /* FirstScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB52483560600DC28F1 /* FirstScenePresenter.swift */; };
+		8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FBA2483574800DC28F1 /* ConfigRepository.swift */; };
+		8EEE7FBD2483575C00DC28F1 /* ConfigRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */; };
+		8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */; };
+		8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */; };
+		8EEE7FC32483592500DC28F1 /* KeychainHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC22483592500DC28F1 /* KeychainHandlerProtocol.swift */; };
+		8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */; };
+		8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */; };
+		8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC9248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -135,6 +145,16 @@
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FB3248355C600DC28F1 /* FirstScenePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScenePresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FB52483560600DC28F1 /* FirstScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScenePresenter.swift; sourceTree = "<group>"; };
+		8EEE7FBA2483574800DC28F1 /* ConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRepository.swift; sourceTree = "<group>"; };
+		8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandlerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		8EEE7FC22483592500DC28F1 /* KeychainHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandlerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
+		8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHelper.swift; sourceTree = "<group>"; };
+		8EEE7FC9248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,8 +251,11 @@
 		8E319E7724831A64001111C6 /* FirstScene */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE7FB52483560600DC28F1 /* FirstScenePresenter.swift */,
+				8EEE7FB3248355C600DC28F1 /* FirstScenePresenterProtocol.swift */,
 				8E319E7824831A77001111C6 /* FirstSceneViewController.swift */,
 				8E319E7924831A77001111C6 /* FirstSceneViewController.xib */,
+				8EEE7FC9248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift */,
 			);
 			path = FirstScene;
 			sourceTree = "<group>";
@@ -261,6 +284,10 @@
 			isa = PBXGroup;
 			children = (
 				8E319E8D24831C28001111C6 /* Contstants.swift */,
+				8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */,
+				8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */,
+				8EEE7FC22483592500DC28F1 /* KeychainHandlerProtocol.swift */,
+				8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -405,6 +432,7 @@
 			children = (
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
+				8EEE7FB82483571100DC28F1 /* Repositories */,
 				8E319E74248319D1001111C6 /* Routers */,
 				8E319E72248319B8001111C6 /* Scenes */,
 				8E319E8C24831C19001111C6 /* Utils */,
@@ -428,6 +456,24 @@
 				8E41AB302483045600E6DAD7 /* Info.plist */,
 			);
 			path = TempoMonitoringUITests;
+			sourceTree = "<group>";
+		};
+		8EEE7FB82483571100DC28F1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FC6248359B700DC28F1 /* Helper */,
+				8EEE7FBA2483574800DC28F1 /* ConfigRepository.swift */,
+				8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8EEE7FC6248359B700DC28F1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		ADD00EB92F25E77EBF275925 /* Pods */ = {
@@ -711,23 +757,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E319EB924833DA0001111C6 /* TriageViewController.swift in Sources */,
+				8EEE7FB62483560600DC28F1 /* FirstScenePresenter.swift in Sources */,
+				8EEE7FBD2483575C00DC28F1 /* ConfigRepositoryProtocol.swift in Sources */,
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
+				8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
 				8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */,
+				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
+				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
+				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
+				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
+				8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */,
+				8EEE7FC32483592500DC28F1 /* KeychainHandlerProtocol.swift in Sources */,
 				8E319E9B24832205001111C6 /* StringExtension.swift in Sources */,
 				8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */,
 				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
+				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,

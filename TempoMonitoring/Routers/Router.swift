@@ -11,17 +11,35 @@ import UIKit
 
 final class Router: RouterProtocol {
     static let shared: Router = Router()
+    private let keychainHandler: KeychainHandlerProtocol
+    private let userDefaultsHandler: UserDefaultsHandler
+    private let configRepository: ConfigRepositoryProtocol
     
     init() {
+        keychainHandler = KeychainHandler()
+        userDefaultsHandler = UserDefaultsHandler()
+        configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
+    }
+    
+    func getContactUsPopup() -> UIViewController {
+        let viewController = ContactUsPopupViewController.get()
+        return viewController
     }
     
     func getFirstScene() -> UIViewController {
         let viewController = FirstSceneViewController.get()
+        viewController.firstScenePresenter = FirstScenePresenter(configRepository: configRepository, view: viewController)
         return viewController
     }
     
     func getMainTabBar() -> UIViewController {
         let viewController = MainTabBarController.get()
+        return viewController
+    }
+    
+    func getMainWebView(url: String) -> UIViewController {
+        let viewController = MainWebViewViewController.get()
+//        viewController.url = url
         return viewController
     }
     
@@ -32,6 +50,7 @@ final class Router: RouterProtocol {
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
+        viewController.splashPresenter = SplashPresenter(view: viewController)
         return viewController
     }
 }

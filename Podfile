@@ -7,6 +7,7 @@ target 'TempoMonitoring' do
 
   # Pods for TempoMonitoring
   pod 'Alamofire'
+  pod 'Keychain'
   pod 'SwiftyJSON'
 
   target 'TempoMonitoringTests' do

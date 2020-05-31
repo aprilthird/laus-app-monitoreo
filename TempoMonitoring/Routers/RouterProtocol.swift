@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 protocol RouterProtocol {
+    func getContactUsPopup() -> UIViewController
     func getFirstScene() -> UIViewController
     func getMainTabBar() -> UIViewController
+    func getMainWebView(url: String) -> UIViewController
     func getSignIn() -> UIViewController
     func getSplash() -> UIViewController
 }

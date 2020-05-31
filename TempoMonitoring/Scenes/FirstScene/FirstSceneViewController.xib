@@ -18,6 +18,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstSceneViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="kpV-E2-mk3" id="cfH-4O-E3H"/>
+                <outlet property="contactUsButton" destination="5wR-4c-xmq" id="olx-bn-2xX"/>
+                <outlet property="contactUsLabel" destination="P1b-Jt-uAJ" id="5f8-HP-AYx"/>
+                <outlet property="contactUsView" destination="dKN-w2-aTQ" id="r3a-VG-5Zw"/>
+                <outlet property="logoImageView" destination="PXE-Bf-dXt" id="pBP-rL-scf"/>
+                <outlet property="mainButton" destination="LUP-Zd-8iE" id="4HO-DN-1mc"/>
+                <outlet property="signUpButton" destination="Yhx-sE-cHt" id="WHb-xb-xD2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +33,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="familyImage" translatesAutoresizingMaskIntoConstraints="NO" id="kpV-E2-mk3">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="familyImage" translatesAutoresizingMaskIntoConstraints="NO" id="kpV-E2-mk3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ANx-jd-rg2">
@@ -92,6 +99,9 @@
                                     <state key="normal" title="REGÍSTRATE">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="didShowSignUp:" destination="-1" eventType="touchUpInside" id="doe-qv-ux2"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-4c-xmq">
                                     <rect key="frame" x="0.0" y="38" width="127" height="33"/>
@@ -101,6 +111,9 @@
                                     <state key="normal" title="CONTÁCTANOS">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="didShowContactUs:" destination="-1" eventType="touchUpInside" id="e0p-vc-MyB"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -126,9 +139,11 @@
                     <state key="normal" title="INGRESAR">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="didShowSignIn:" destination="-1" eventType="touchUpInside" id="oIR-4E-qfr"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ggL-bf-SiK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="44R-6x-eA6"/>
                 <constraint firstAttribute="bottom" secondItem="kpV-E2-mk3" secondAttribute="bottom" id="Auy-BU-93Q"/>
