@@ -15,7 +15,9 @@ final class Constants {
     }
     struct Localizable {
         static let APP_NAME: String = "Tempo Monitoring"
+        static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
+        static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
     }
     struct Service {
         #if DEBUG
@@ -29,5 +31,7 @@ final class Constants {
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
         static let GET_SIGN_UP_URL = "\(BASE_URL)/config.php?action=get_register_link"
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
+        
+        static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
     }
 }

@@ -65,6 +65,14 @@
 		8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */; };
 		8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */; };
 		8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FC9248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift */; };
+		8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FCD24836FDD00DC28F1 /* TextFieldPickerView.swift */; };
+		8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FCF248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift */; };
+		8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FD1248375B400DC28F1 /* ContactUsPopupPresenter.swift */; };
+		8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */; };
+		8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FD724837B1900DC28F1 /* UserRepository.swift */; };
+		8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FD924837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift */; };
+		8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */; };
+		8EEE7FE02483808100DC28F1 /* AlertHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -155,6 +163,14 @@
 		8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
 		8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHelper.swift; sourceTree = "<group>"; };
 		8EEE7FC9248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FCD24836FDD00DC28F1 /* TextFieldPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPickerView.swift; sourceTree = "<group>"; };
+		8EEE7FCF248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPopupPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FD1248375B400DC28F1 /* ContactUsPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPopupPresenter.swift; sourceTree = "<group>"; };
+		8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FD724837B1900DC28F1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		8EEE7FD924837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPopupViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDHandlerProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerProtocol.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,11 +299,14 @@
 		8E319E8C24831C19001111C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE7FCB24836F9C00DC28F1 /* CustomViews */,
+				8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */,
 				8E319E8D24831C28001111C6 /* Contstants.swift */,
-				8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */,
-				8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */,
-				8EEE7FC22483592500DC28F1 /* KeychainHandlerProtocol.swift */,
+				8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */,
 				8EEE7FC42483593B00DC28F1 /* KeychainHandler.swift */,
+				8EEE7FC22483592500DC28F1 /* KeychainHandlerProtocol.swift */,
+				8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */,
+				8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,8 +333,11 @@
 		8E319EA524833347001111C6 /* ContactUsPopup */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE7FD1248375B400DC28F1 /* ContactUsPopupPresenter.swift */,
+				8EEE7FCF248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift */,
 				8E319EA624833379001111C6 /* ContactUsPopupViewController.swift */,
 				8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */,
+				8EEE7FD924837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift */,
 			);
 			path = ContactUsPopup;
 			sourceTree = "<group>";
@@ -464,6 +486,8 @@
 				8EEE7FC6248359B700DC28F1 /* Helper */,
 				8EEE7FBA2483574800DC28F1 /* ConfigRepository.swift */,
 				8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */,
+				8EEE7FD724837B1900DC28F1 /* UserRepository.swift */,
+				8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -474,6 +498,22 @@
 				8EEE7FC7248359DB00DC28F1 /* ResponseHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8EEE7FCB24836F9C00DC28F1 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FCC24836FBC00DC28F1 /* PickerView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		8EEE7FCC24836FBC00DC28F1 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FCD24836FDD00DC28F1 /* TextFieldPickerView.swift */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 		ADD00EB92F25E77EBF275925 /* Pods */ = {
@@ -759,21 +799,26 @@
 				8E319EB924833DA0001111C6 /* TriageViewController.swift in Sources */,
 				8EEE7FB62483560600DC28F1 /* FirstScenePresenter.swift in Sources */,
 				8EEE7FBD2483575C00DC28F1 /* ConfigRepositoryProtocol.swift in Sources */,
+				8EEE7FE02483808100DC28F1 /* AlertHandlerProtocol.swift in Sources */,
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
 				8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
+				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
 				8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */,
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
+				8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
+				8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
+				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
@@ -783,13 +828,16 @@
 				8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */,
 				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
+				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
+				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
+				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

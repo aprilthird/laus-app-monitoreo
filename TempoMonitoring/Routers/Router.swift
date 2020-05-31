@@ -14,15 +14,18 @@ final class Router: RouterProtocol {
     private let keychainHandler: KeychainHandlerProtocol
     private let userDefaultsHandler: UserDefaultsHandler
     private let configRepository: ConfigRepositoryProtocol
+    private let userRepository: UserRepositoryProtocol
     
     init() {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
+        userRepository = UserRepository()
     }
     
     func getContactUsPopup() -> UIViewController {
         let viewController = ContactUsPopupViewController.get()
+        viewController.contactUsPresenter = ContactUsPopupPresenter(userRepository: userRepository, view: viewController)
         return viewController
     }
     

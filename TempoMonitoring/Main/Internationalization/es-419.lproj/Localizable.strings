@@ -6,3 +6,5 @@
   Copyright © 2020 Sportafolio SAC. All rights reserved.
 */
 "Ok" = "Ok";
+"Loading..." = "Cargando...";
+"The data has been sent correctly" = "Los datos han sido enviados correctamente";

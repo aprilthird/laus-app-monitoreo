@@ -7,7 +7,9 @@ target 'TempoMonitoring' do
 
   # Pods for TempoMonitoring
   pod 'Alamofire'
+  pod 'IQKeyboardManagerSwift'
   pod 'Keychain'
+  pod 'SVProgressHUD'
   pod 'SwiftyJSON'
 
   target 'TempoMonitoringTests' do
