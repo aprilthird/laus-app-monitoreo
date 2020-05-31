@@ -26,6 +26,10 @@
 		8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E9E2483282C001111C6 /* RobotoCondensed-Regular.ttf */; };
 		8E319EA32483282C001111C6 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E9F2483282C001111C6 /* RobotoCondensed-Bold.ttf */; };
 		8E319EA42483282C001111C6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EA02483282C001111C6 /* Roboto-Regular.ttf */; };
+		8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EA624833379001111C6 /* ContactUsPopupViewController.swift */; };
+		8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */; };
+		8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EAB24833591001111C6 /* MainTabBarController.swift */; };
+		8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EAC24833591001111C6 /* MainTabBarController.xib */; };
 		8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB092483045300E6DAD7 /* AppDelegate.swift */; };
 		8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */; };
 		8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB152483045600E6DAD7 /* Assets.xcassets */; };
@@ -77,6 +81,10 @@
 		8E319E9E2483282C001111C6 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		8E319E9F2483282C001111C6 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		8E319EA02483282C001111C6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		8E319EA624833379001111C6 /* ContactUsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPopupViewController.swift; sourceTree = "<group>"; };
+		8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsPopupViewController.xib; sourceTree = "<group>"; };
+		8E319EAB24833591001111C6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8E319EAC24833591001111C6 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
 		8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8E319E7724831A64001111C6 /* FirstScene */,
+				8E319EAA24833570001111C6 /* Main */,
 				8E319E75248319FA001111C6 /* Login */,
 				8E319E7624831A13001111C6 /* Splash */,
 			);
@@ -159,6 +168,7 @@
 		8E319E75248319FA001111C6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8E319EA524833347001111C6 /* ContactUsPopup */,
 				8E319E8024831B2F001111C6 /* SignIn */,
 			);
 			path = Login;
@@ -227,6 +237,24 @@
 				8E319E9E2483282C001111C6 /* RobotoCondensed-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8E319EA524833347001111C6 /* ContactUsPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EA624833379001111C6 /* ContactUsPopupViewController.swift */,
+				8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */,
+			);
+			path = ContactUsPopup;
+			sourceTree = "<group>";
+		};
+		8E319EAA24833570001111C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EAB24833591001111C6 /* MainTabBarController.swift */,
+				8E319EAC24833591001111C6 /* MainTabBarController.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		8E41AAFD2483045300E6DAD7 = {
@@ -420,8 +448,10 @@
 				8E319E9224831E0F001111C6 /* Localizable.strings in Resources */,
 				8E319EA32483282C001111C6 /* RobotoCondensed-Bold.ttf in Resources */,
 				8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */,
+				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
+				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
 				8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */,
 			);
@@ -561,8 +591,10 @@
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
 				8E319E9B24832205001111C6 /* StringExtension.swift in Sources */,
 				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
+				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
+				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
