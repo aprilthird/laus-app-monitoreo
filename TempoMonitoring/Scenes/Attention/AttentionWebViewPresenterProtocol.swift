@@ -1,5 +1,5 @@
 //
-//  AttentionPresenterProtocol.swift
+//  AttentionWebViewPresenterProtocol.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/31/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol AttentionPresenterProtocol {
+protocol AttentionWebViewPresenterProtocol {
     func getRightNavigationItems() -> [UIBarButtonItem]
     func showWebView()
 }

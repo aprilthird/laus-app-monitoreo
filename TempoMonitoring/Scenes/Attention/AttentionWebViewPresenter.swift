@@ -1,5 +1,5 @@
 //
-//  AttentionPresenter.swift
+//  AttentionWebViewPresenter.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/31/20.
@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class AttentionPresenter: AttentionPresenterProtocol {
+class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
     let configRepository: ConfigRepositoryProtocol
-    var view: AttentionViewControllerProtocol
+    var view: AttentionWebViewViewControllerProtocol
     
-    init(configRepository: ConfigRepositoryProtocol, view: AttentionViewControllerProtocol) {
+    init(configRepository: ConfigRepositoryProtocol, view: AttentionWebViewViewControllerProtocol) {
         self.configRepository = configRepository
         self.view = view
     }

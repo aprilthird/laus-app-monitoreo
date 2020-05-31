@@ -1,5 +1,5 @@
 //
-//  AttentionViewControllerProtocol.swift
+//  AttentionWebViewViewControllerProtocol.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/31/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AttentionViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
+protocol AttentionWebViewViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
     func openUrl(_ url: String)
     func showMoreSection()
 }

@@ -12,7 +12,7 @@ import WebKit
 class AttentionWebViewViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    var attentionPresenter: AttentionPresenterProtocol!
+    var attentionPresenter: AttentionWebViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class AttentionWebViewViewController: UIViewController {
     */
 
 }
-extension AttentionWebViewViewController: AttentionViewControllerProtocol {
+extension AttentionWebViewViewController: AttentionWebViewViewControllerProtocol {
     func openUrl(_ url: String) {
         guard let url = URL(string: url) else {
             return
