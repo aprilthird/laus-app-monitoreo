@@ -10,10 +10,13 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    var splashPresenter: SplashPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        splashPresenter.startAnimation()
     }
 
 
@@ -27,4 +30,14 @@ class SplashViewController: UIViewController {
     }
     */
 
+}
+extension SplashViewController: SplashViewControllerProtocol {
+    func goToFirstScene() {
+        let firstScene = Router.shared.getFirstScene()
+        show(firstScene, sender: nil)
+    }
+    
+    func goToMain() {
+        let mainTabBar = Router.shared.getMainTabBar()
+    }
 }

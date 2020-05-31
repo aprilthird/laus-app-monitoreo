@@ -11,6 +11,7 @@ import UIKit
 
 protocol RouterProtocol {
     func getFirstScene() -> UIViewController
+    func getMainTabBar() -> UIViewController
     func getSignIn() -> UIViewController
     func getSplash() -> UIViewController
 }

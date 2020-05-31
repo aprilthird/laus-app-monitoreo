@@ -10,8 +10,18 @@ import Foundation
 import UIKit
 
 final class Router: RouterProtocol {
+    static let shared: Router = Router()
+    
+    init() {
+    }
+    
     func getFirstScene() -> UIViewController {
         let viewController = FirstSceneViewController.get()
+        return viewController
+    }
+    
+    func getMainTabBar() -> UIViewController {
+        let viewController = MainTabBarController.get()
         return viewController
     }
     
