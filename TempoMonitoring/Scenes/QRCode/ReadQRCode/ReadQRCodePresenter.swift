@@ -24,10 +24,10 @@ class ReadQRCodePresenter: ReadQRCodePresenterProtocol {
         return UIColor(company.accentColor)
     }
     
-    func validateQRCode(_ string: String?) {
+    func isQRCodeValid(_ string: String?) -> Bool {
         guard let data = string?.data(using: .utf8),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-                return
+                return false
         }
         
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -37,5 +37,7 @@ class ReadQRCodePresenter: ReadQRCodePresenterProtocol {
         let name = jsonObject["name"] as? String
         let date = jsonObject["date"] as? String
         view.showQRCodeStatus(status, name, date)
+        
+        return true
     }
 }

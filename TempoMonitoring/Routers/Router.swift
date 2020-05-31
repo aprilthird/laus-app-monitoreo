@@ -67,6 +67,10 @@ final class Router: RouterProtocol {
     
     func getQRCodeStatus(status: QRCodeStatus?, name: String?, date: String?) -> UIViewController {
         let viewController = QRCodeStatusViewController.get()
+        viewController.qrCodeStatusPresenter = QRCodeStatusPresenter(userRepository: userRepository, view: viewController)
+        viewController.status = status
+        viewController.name = name
+        viewController.date = date
         return viewController
     }
     

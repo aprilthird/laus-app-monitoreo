@@ -21,15 +21,19 @@ final class Constants {
     struct Localizable {
         static let APP_NAME: String = "Tempo Monitoring"
         static let ATTENTION_TITLE: String = NSLocalizedString("Attention", comment: "")
+        static let AUTHORIZED: String = NSLocalizedString("Authorized", comment: "")
+        static let DEFAULT_ERROR_MESSAGE: String = NSLocalizedString("There was a problem, please try alter", comment: "")
+        static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
+        static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
         static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
         static let SIGN_UP_TITLE: String = NSLocalizedString("Sign Up", comment: "")
         static let TIPS_TITLE: String = NSLocalizedString("Learn", comment: "")
-        static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
+        static let UNAUTHORIZED: String = NSLocalizedString("Unauthorized", comment: "")
         static let TRIAGE_TITLE: String = NSLocalizedString("Triage", comment: "")
     }
     struct Service {

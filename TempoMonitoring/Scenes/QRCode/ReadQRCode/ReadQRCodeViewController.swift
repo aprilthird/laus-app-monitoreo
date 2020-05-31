@@ -104,6 +104,8 @@ extension ReadQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
         
-        readQRCodePresenter.validateQRCode(metadataObject.stringValue)
+        if readQRCodePresenter.isQRCodeValid(metadataObject.stringValue) {
+            captureSession.stopRunning()
+        }
     }
 }

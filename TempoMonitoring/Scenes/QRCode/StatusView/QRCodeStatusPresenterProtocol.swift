@@ -1,5 +1,5 @@
 //
-//  ReadQRCodePresenterProtocol.swift
+//  QRCodeStatusPresenterProtocol.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/31/20.
@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-protocol ReadQRCodePresenterProtocol {
+protocol QRCodeStatusPresenterProtocol {
     func getCloseButtonBackgroundColor() -> UIColor?
-    func isQRCodeValid(_ string: String?) -> Bool
+    func getPopupBackgroundColor() -> UIColor?
+    func loadPopup(status: QRCodeStatus?, name: String?)
 }
