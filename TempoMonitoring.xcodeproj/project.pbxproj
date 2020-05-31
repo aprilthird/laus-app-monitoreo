@@ -30,6 +30,16 @@
 		8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */; };
 		8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EAB24833591001111C6 /* MainTabBarController.swift */; };
 		8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EAC24833591001111C6 /* MainTabBarController.xib */; };
+		8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EB024833CD5001111C6 /* MainWebViewViewController.swift */; };
+		8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EB124833CD5001111C6 /* MainWebViewViewController.xib */; };
+		8E319EB924833DA0001111C6 /* SeeTriageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EB724833DA0001111C6 /* SeeTriageViewController.swift */; };
+		8E319EBA24833DA0001111C6 /* SeeTriageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EB824833DA0001111C6 /* SeeTriageViewController.xib */; };
+		8E319EBE24833E3C001111C6 /* SeeAttentionWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EBC24833E3C001111C6 /* SeeAttentionWebViewViewController.swift */; };
+		8E319EBF24833E3C001111C6 /* SeeAttentionWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EBD24833E3C001111C6 /* SeeAttentionWebViewViewController.xib */; };
+		8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EC324833EB2001111C6 /* ReadQRCodeViewController.swift */; };
+		8E319EC624833EB2001111C6 /* ReadQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */; };
+		8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */; };
+		8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */; };
 		8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB092483045300E6DAD7 /* AppDelegate.swift */; };
 		8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */; };
 		8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB152483045600E6DAD7 /* Assets.xcassets */; };
@@ -85,6 +95,16 @@
 		8E319EA724833379001111C6 /* ContactUsPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsPopupViewController.xib; sourceTree = "<group>"; };
 		8E319EAB24833591001111C6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8E319EAC24833591001111C6 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
+		8E319EB024833CD5001111C6 /* MainWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWebViewViewController.swift; sourceTree = "<group>"; };
+		8E319EB124833CD5001111C6 /* MainWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWebViewViewController.xib; sourceTree = "<group>"; };
+		8E319EB724833DA0001111C6 /* SeeTriageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeTriageViewController.swift; sourceTree = "<group>"; };
+		8E319EB824833DA0001111C6 /* SeeTriageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeTriageViewController.xib; sourceTree = "<group>"; };
+		8E319EBC24833E3C001111C6 /* SeeAttentionWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAttentionWebViewViewController.swift; sourceTree = "<group>"; };
+		8E319EBD24833E3C001111C6 /* SeeAttentionWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAttentionWebViewViewController.xib; sourceTree = "<group>"; };
+		8E319EC324833EB2001111C6 /* ReadQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQRCodeViewController.swift; sourceTree = "<group>"; };
+		8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadQRCodeViewController.xib; sourceTree = "<group>"; };
+		8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStatusViewController.swift; sourceTree = "<group>"; };
+		8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeStatusViewController.xib; sourceTree = "<group>"; };
 		8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
@@ -148,10 +168,14 @@
 		8E319E72248319B8001111C6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8E319EB524833D75001111C6 /* Attention */,
+				8E319EA524833347001111C6 /* ContactUsPopup */,
 				8E319E7724831A64001111C6 /* FirstScene */,
-				8E319EAA24833570001111C6 /* Main */,
 				8E319E75248319FA001111C6 /* Login */,
+				8E319EAA24833570001111C6 /* Main */,
+				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
+				8E319EB424833D6D001111C6 /* Triage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -168,7 +192,6 @@
 		8E319E75248319FA001111C6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8E319EA524833347001111C6 /* ContactUsPopup */,
 				8E319E8024831B2F001111C6 /* SignIn */,
 			);
 			path = Login;
@@ -251,10 +274,81 @@
 		8E319EAA24833570001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8E319EAF24833CA3001111C6 /* MainWebView */,
 				8E319EAB24833591001111C6 /* MainTabBarController.swift */,
 				8E319EAC24833591001111C6 /* MainTabBarController.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8E319EAF24833CA3001111C6 /* MainWebView */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EB024833CD5001111C6 /* MainWebViewViewController.swift */,
+				8E319EB124833CD5001111C6 /* MainWebViewViewController.xib */,
+			);
+			path = MainWebView;
+			sourceTree = "<group>";
+		};
+		8E319EB424833D6D001111C6 /* Triage */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EB624833D8E001111C6 /* SeeTriage */,
+			);
+			path = Triage;
+			sourceTree = "<group>";
+		};
+		8E319EB524833D75001111C6 /* Attention */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EBB24833DAD001111C6 /* SeeAttention */,
+			);
+			path = Attention;
+			sourceTree = "<group>";
+		};
+		8E319EB624833D8E001111C6 /* SeeTriage */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EB724833DA0001111C6 /* SeeTriageViewController.swift */,
+				8E319EB824833DA0001111C6 /* SeeTriageViewController.xib */,
+			);
+			path = SeeTriage;
+			sourceTree = "<group>";
+		};
+		8E319EBB24833DAD001111C6 /* SeeAttention */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EBC24833E3C001111C6 /* SeeAttentionWebViewViewController.swift */,
+				8E319EBD24833E3C001111C6 /* SeeAttentionWebViewViewController.xib */,
+			);
+			path = SeeAttention;
+			sourceTree = "<group>";
+		};
+		8E319EC024833E78001111C6 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EC124833E83001111C6 /* ReadQRCode */,
+				8E319EC224833E92001111C6 /* StatusView */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		8E319EC124833E83001111C6 /* ReadQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EC324833EB2001111C6 /* ReadQRCodeViewController.swift */,
+				8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */,
+			);
+			path = ReadQRCode;
+			sourceTree = "<group>";
+		};
+		8E319EC224833E92001111C6 /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */,
+				8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */,
+			);
+			path = StatusView;
 			sourceTree = "<group>";
 		};
 		8E41AAFD2483045300E6DAD7 = {
@@ -448,11 +542,16 @@
 				8E319E9224831E0F001111C6 /* Localizable.strings in Resources */,
 				8E319EA32483282C001111C6 /* RobotoCondensed-Bold.ttf in Resources */,
 				8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */,
+				8E319EC624833EB2001111C6 /* ReadQRCodeViewController.xib in Resources */,
+				8E319EBA24833DA0001111C6 /* SeeTriageViewController.xib in Resources */,
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
+				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
+				8E319EBF24833E3C001111C6 /* SeeAttentionWebViewViewController.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
+				8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */,
 				8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,20 +680,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E319EB924833DA0001111C6 /* SeeTriageViewController.swift in Sources */,
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
+				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
 				8E319E9B24832205001111C6 /* StringExtension.swift in Sources */,
+				8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */,
 				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
+				8E319EBE24833E3C001111C6 /* SeeAttentionWebViewViewController.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
+				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
