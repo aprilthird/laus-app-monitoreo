@@ -40,6 +40,12 @@
 		8E319EC624833EB2001111C6 /* ReadQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */; };
 		8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */; };
 		8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */; };
+		8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319ED524834B4A001111C6 /* MoreTableViewController.swift */; };
+		8E319ED824834B4A001111C6 /* MoreTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319ED624834B4A001111C6 /* MoreTableViewController.xib */; };
+		8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EDA24834B91001111C6 /* MoreTableViewCell.swift */; };
+		8E319EDD24834B91001111C6 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EDB24834B91001111C6 /* MoreTableViewCell.xib */; };
+		8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319EDE24834BC7001111C6 /* MoreHeaderView.swift */; };
+		8E319EE124834BD7001111C6 /* MoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319EE024834BD7001111C6 /* MoreHeaderView.xib */; };
 		8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB092483045300E6DAD7 /* AppDelegate.swift */; };
 		8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */; };
 		8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB152483045600E6DAD7 /* Assets.xcassets */; };
@@ -105,6 +111,12 @@
 		8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadQRCodeViewController.xib; sourceTree = "<group>"; };
 		8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStatusViewController.swift; sourceTree = "<group>"; };
 		8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeStatusViewController.xib; sourceTree = "<group>"; };
+		8E319ED524834B4A001111C6 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		8E319ED624834B4A001111C6 /* MoreTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewController.xib; sourceTree = "<group>"; };
+		8E319EDA24834B91001111C6 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		8E319EDB24834B91001111C6 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
+		8E319EDE24834BC7001111C6 /* MoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderView.swift; sourceTree = "<group>"; };
+		8E319EE024834BD7001111C6 /* MoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreHeaderView.xib; sourceTree = "<group>"; };
 		8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
@@ -173,7 +185,7 @@
 				8E319E7724831A64001111C6 /* FirstScene */,
 				8E319E75248319FA001111C6 /* Login */,
 				8E319EAA24833570001111C6 /* Main */,
-				8E319ECB248348A1001111C6 /* More */,
+				8E319ED424834B2B001111C6 /* More */,
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
 				8E319EB424833D6D001111C6 /* Triage */,
@@ -336,11 +348,25 @@
 			path = StatusView;
 			sourceTree = "<group>";
 		};
-		8E319ECB248348A1001111C6 /* More */ = {
+		8E319ED424834B2B001111C6 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				8E319ED924834B7E001111C6 /* Cells */,
+				8E319ED524834B4A001111C6 /* MoreTableViewController.swift */,
+				8E319ED624834B4A001111C6 /* MoreTableViewController.xib */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		8E319ED924834B7E001111C6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E319EDE24834BC7001111C6 /* MoreHeaderView.swift */,
+				8E319EE024834BD7001111C6 /* MoreHeaderView.xib */,
+				8E319EDA24834B91001111C6 /* MoreTableViewCell.swift */,
+				8E319EDB24834B91001111C6 /* MoreTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8E41AAFD2483045300E6DAD7 = {
@@ -530,6 +556,7 @@
 			files = (
 				8E319EA12483282C001111C6 /* Roboto-Bold.ttf in Resources */,
 				8E319E8824831BAD001111C6 /* SignInViewController.xib in Resources */,
+				8E319EE124834BD7001111C6 /* MoreHeaderView.xib in Resources */,
 				8E319EA42483282C001111C6 /* Roboto-Regular.ttf in Resources */,
 				8E319E9224831E0F001111C6 /* Localizable.strings in Resources */,
 				8E319EA32483282C001111C6 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -544,6 +571,8 @@
 				8E319EBF24833E3C001111C6 /* AttentionWebViewViewController.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
 				8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */,
+				8E319EDD24834B91001111C6 /* MoreTableViewCell.xib in Resources */,
+				8E319ED824834B4A001111C6 /* MoreTableViewController.xib in Resources */,
 				8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +705,8 @@
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
+				8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */,
+				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
@@ -686,6 +717,7 @@
 				8E319EB224833CD5001111C6 /* MainWebViewViewController.swift in Sources */,
 				8E319E9924831FBB001111C6 /* UIColorExtension.swift in Sources */,
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
+				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
