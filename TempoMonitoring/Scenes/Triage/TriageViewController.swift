@@ -1,5 +1,5 @@
 //
-//  SeeTriageViewController.swift
+//  TriageViewController.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/30/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeeTriageViewController: UIViewController {
+class TriageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

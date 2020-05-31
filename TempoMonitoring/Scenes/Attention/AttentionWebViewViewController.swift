@@ -1,5 +1,5 @@
 //
-//  SeeAttentionWebViewViewController.swift
+//  AttentionWebViewViewController.swift
 //  TempoMonitoring
 //
 //  Created by Hugo Andres Rosado on 5/30/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeeAttentionWebViewViewController: UIViewController {
+class AttentionWebViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
