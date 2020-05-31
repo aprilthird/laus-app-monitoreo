@@ -23,14 +23,9 @@ final class Router: RouterProtocol {
         userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler)
     }
     
-    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController {
-        let navigationController = UINavigationController(rootViewController: rootViewController)
-        let company = userRepository.currentCompany
-        navigationController.navigationBar.barTintColor = UIColor(company?.primaryColor ?? "#6B9DF2")
-        navigationController.navigationBar.tintColor = .white
-        navigationController.navigationBar.barStyle = .black
-        navigationController.navigationBar.isTranslucent = true
-        return navigationController
+    func getAttention() -> UIViewController {
+        let viewController = AttentionWebViewViewController.get()
+        return viewController
     }
     
     func getContactUsPopup() -> UIViewController {
@@ -47,6 +42,11 @@ final class Router: RouterProtocol {
     
     func getMainTabBar() -> UIViewController {
         let viewController = MainTabBarController.get()
+        viewController.mainPresenter = MainPresenter(userRepository: userRepository,
+                                                     configRepository: configRepository,
+                                                     userDefaultsHandler: userDefaultsHandler,
+                                                     view: viewController)
+        viewController.loadTabBar()
         return viewController
     }
     
@@ -68,6 +68,26 @@ final class Router: RouterProtocol {
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
         viewController.splashPresenter = SplashPresenter(view: viewController)
+        return viewController
+    }
+    
+    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        let company = userRepository.currentCompany
+        navigationController.navigationBar.barTintColor = UIColor(company?.primaryColor ?? "#6B9DF2")
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.isTranslucent = true
+        return navigationController
+    }
+    
+    func getTips() -> UIViewController {
+        let viewController = UIViewController()
+        return viewController
+    }
+    
+    func getTriage() -> UIViewController {
+        let viewController = TriageViewController.get()
         return viewController
     }
 }

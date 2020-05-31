@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 protocol RouterProtocol {
-    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController
+    func getAttention() -> UIViewController
     func getContactUsPopup() -> UIViewController
     func getFirstScene() -> UIViewController
     func getMainTabBar() -> UIViewController
     func getMainWebView(title: String?, url: String) -> UIViewController
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController
     func getSplash() -> UIViewController
+    func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController
+    func getTips() -> UIViewController
+    func getTriage() -> UIViewController
 }

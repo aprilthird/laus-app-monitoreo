@@ -78,6 +78,9 @@
 		8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */; };
 		8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */; };
 		8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEC248420CC00DC28F1 /* Company.swift */; };
+		8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */; };
+		8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */; };
+		8EEE7FF32484308D00DC28F1 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -181,6 +184,9 @@
 		8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FEC248420CC00DC28F1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -361,6 +367,9 @@
 				8E319EAF24833CA3001111C6 /* MainWebView */,
 				8E319EAB24833591001111C6 /* MainTabBarController.swift */,
 				8E319EAC24833591001111C6 /* MainTabBarController.xib */,
+				8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */,
+				8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */,
+				8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -834,6 +843,7 @@
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
 				8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
+				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
 				8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */,
@@ -841,8 +851,10 @@
 				8EEE7FE22484197D00DC28F1 /* SignInPresenterProtocol.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
+				8EEE7FF32484308D00DC28F1 /* MainTabBarControllerProtocol.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
+				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,

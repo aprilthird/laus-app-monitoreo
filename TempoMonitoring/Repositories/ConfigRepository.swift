@@ -35,6 +35,23 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
+    func getHomeBanner(success: @escaping (Int, String, String) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+        ]
+        
+        ResponseHelper.GET(with: .url,
+                           url: Constants.Service.GET_HOME_BANNER,
+                           parameters: parameters,
+       success: { (response) in
+            success(response["id"].intValue,
+                    response["imageUrl"].stringValue,
+                    response["redirectUrl"].stringValue)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
     func getQRCodeUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "token": Keychain.load(Constants.Keys.TOKEN) ?? ""

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ConfigRepositoryProtocol {
     func getAttentionUrl(success: @escaping(String) -> Void, failure: @escaping(Error) -> Void)
+    func getHomeBanner(success: @escaping(Int, String, String) -> Void, failure: @escaping(Error) -> Void)
     func getQRCodeUrl(success: @escaping(String) -> Void, failure: @escaping(Error) -> Void)
     func getSignUpUrl(success: @escaping(String, Bool) -> Void, failure: @escaping(Error) -> Void)
     func getTriageUrl(success: @escaping(String) -> Void, failure: @escaping(Error) -> Void)
