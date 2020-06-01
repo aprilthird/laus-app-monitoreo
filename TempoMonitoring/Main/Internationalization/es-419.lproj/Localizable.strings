@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  TempoMonitoring
+
+  Created by Hugo Andres Rosado on 5/30/20.
+  Copyright © 2020 Sportafolio SAC. All rights reserved.
+*/
+"Ok" = "Ok";
+"Loading..." = "Cargando...";
+"The data has been sent correctly" = "Los datos han sido enviados correctamente";
+"Invalid document" = "Documento inválido";
+"Invalid document type" = "Tipo de documento inválido";
+"Sign Up" = "Registrarse";
+"Attention" = "Atención";
+"Learn" = "Infórmate";
+"Note" = "Nota";
+"Triage" = "Triaje";
+"QR Code Scanner" = "Escáner de Código QR";
+"Authorized" = "Autorizado";
+"Unauthorized" = "No authorizado";
+"Invalid document" = "Código inválido";
+"There was a problem, please try alter" = "Hubo un problema. Inténtelo más tarde";
+"What is Tempo?" = "¿Qué es Tempo?";
+"Tutorial" = "Tutorial";
+"Sign out" = "Cerrar sesión";
+"Frequently Asked Questions" = "Preguntas frecuentes";
+"Support chat" = "Chat con soporte";
+"More" = "Más";
+"Do you want to sign out?" = "¿Desea cerrar sesión?";
+"Cancel" = "Cancelar";
+"Tempo Monitoring" = "Tempo Monitoreo";

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoCondensed-Regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TriageViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionTextView" destination="cu3-bW-7H9" id="AYg-bR-oWN"/>
+                <outlet property="lastCompletedTriageLabel" destination="ght-3l-0vC" id="Wfg-nt-rx8"/>
+                <outlet property="scrollView" destination="Gir-hx-T0A" id="Soj-eg-OKE"/>
+                <outlet property="seeQRCodeButton" destination="iL0-Ha-z91" id="Mb2-el-zeM"/>
+                <outlet property="startTriageButton" destination="Ydt-8n-i0a" id="WHJ-Ua-wWv"/>
+                <outlet property="triageImageView" destination="BXO-uS-gED" id="DgP-I4-lz4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-hx-T0A">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sm-eT-tb9">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triageImage" translatesAutoresizingMaskIntoConstraints="NO" id="BXO-uS-gED">
+                                    <rect key="frame" x="20" y="30" width="374" height="130"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="130" id="EXS-Ha-2n9"/>
+                                    </constraints>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cu3-bW-7H9">
+                                    <rect key="frame" x="35" y="185" width="344" height="69"/>
+                                    <string key="text">Esta autoevaluación de riesgo de salud nos ayudará a entender mejor las medidas y precauciones a tomar para prevenir el contagio y la transmisión de COVID-19.</string>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acepto que los datos proporcionados tienen carácter de Declaración Jurada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-yj-6Ph">
+                                    <rect key="frame" x="62" y="564" width="290" height="30.5"/>
+                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-NR-GAN">
+                                    <rect key="frame" x="30" y="614.5" width="354" height="168.5"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-wP-lcl">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="138"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydt-8n-i0a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="64"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="20"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" title="INICIAR TRIAJE">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didStartTriage:" destination="-1" eventType="touchUpInside" id="ygH-cs-uTd"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-Ha-z91">
+                                                    <rect key="frame" x="0.0" y="74" width="354" height="64"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="20"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" title="VER CÓDIGO QR">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didReadQRCode:" destination="-1" eventType="touchUpInside" id="5q9-a5-slb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último triaje completado: 00/00/0000 (No apto)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ght-3l-0vC">
+                                            <rect key="frame" x="54.5" y="153" width="245" height="15.5"/>
+                                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
+                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3ha-wP-lcl" firstAttribute="leading" secondItem="cPe-NR-GAN" secondAttribute="leading" id="AEm-Eh-Bx7"/>
+                                        <constraint firstAttribute="trailing" secondItem="3ha-wP-lcl" secondAttribute="trailing" id="Hbd-LM-DPV"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="BXO-uS-gED" secondAttribute="trailing" constant="20" id="2OX-1H-hJe"/>
+                                <constraint firstItem="BXO-uS-gED" firstAttribute="leading" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="20" id="Dgj-RP-uS9"/>
+                                <constraint firstItem="XnH-yj-6Ph" firstAttribute="centerX" secondItem="0sm-eT-tb9" secondAttribute="centerX" id="F9k-6p-o7U"/>
+                                <constraint firstItem="cu3-bW-7H9" firstAttribute="leading" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="35" id="ID8-BO-9jb"/>
+                                <constraint firstItem="XnH-yj-6Ph" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="50" id="Jle-qJ-a45"/>
+                                <constraint firstAttribute="trailing" secondItem="cu3-bW-7H9" secondAttribute="trailing" constant="35" id="XZQ-rV-qie"/>
+                                <constraint firstAttribute="bottom" secondItem="cPe-NR-GAN" secondAttribute="bottom" constant="35" id="Xc0-fD-Xsh"/>
+                                <constraint firstItem="cPe-NR-GAN" firstAttribute="top" secondItem="XnH-yj-6Ph" secondAttribute="bottom" constant="20" id="akv-UY-gns"/>
+                                <constraint firstAttribute="trailing" secondItem="cPe-NR-GAN" secondAttribute="trailing" constant="30" id="bsI-Xk-48l"/>
+                                <constraint firstItem="cPe-NR-GAN" firstAttribute="leading" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="30" id="efy-Eb-Y0I"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XnH-yj-6Ph" secondAttribute="trailing" constant="50" id="hW6-Qg-LDf"/>
+                                <constraint firstItem="cu3-bW-7H9" firstAttribute="top" secondItem="BXO-uS-gED" secondAttribute="bottom" constant="25" id="j4N-93-avM"/>
+                                <constraint firstItem="XnH-yj-6Ph" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cu3-bW-7H9" secondAttribute="bottom" constant="20" id="lD2-JT-sn8"/>
+                                <constraint firstItem="BXO-uS-gED" firstAttribute="top" secondItem="0sm-eT-tb9" secondAttribute="top" constant="30" id="of6-ja-OLg"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0sm-eT-tb9" secondAttribute="bottom" id="SXC-IN-ljB"/>
+                        <constraint firstItem="0sm-eT-tb9" firstAttribute="width" secondItem="Gir-hx-T0A" secondAttribute="width" id="Vng-hC-n02"/>
+                        <constraint firstItem="0sm-eT-tb9" firstAttribute="height" secondItem="Gir-hx-T0A" secondAttribute="height" priority="250" id="aJ0-U5-x1O"/>
+                        <constraint firstItem="0sm-eT-tb9" firstAttribute="leading" secondItem="Gir-hx-T0A" secondAttribute="leading" id="gL0-Qi-LGv"/>
+                        <constraint firstAttribute="trailing" secondItem="0sm-eT-tb9" secondAttribute="trailing" id="iL8-fF-dfV"/>
+                        <constraint firstItem="0sm-eT-tb9" firstAttribute="top" secondItem="Gir-hx-T0A" secondAttribute="top" id="kzq-UT-ves"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Gir-hx-T0A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BxI-nt-VqS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gir-hx-T0A" secondAttribute="bottom" id="LJk-ei-eBU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gir-hx-T0A" secondAttribute="trailing" id="kdB-il-uHk"/>
+                <constraint firstItem="Gir-hx-T0A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t83-BV-D3D"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="145"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="triageImage" width="327" height="116"/>
+    </resources>
+</document>
