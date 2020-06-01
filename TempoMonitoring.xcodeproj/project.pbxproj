@@ -57,6 +57,12 @@
 		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
 		8EBD736724846E7D0032B174 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD736624846E7D0032B174 /* UIViewExtension.swift */; };
 		8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */; };
+		8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD736B248483C10032B174 /* TipsCollectionViewController.swift */; };
+		8EBD736E248483C10032B174 /* TipsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBD736C248483C10032B174 /* TipsCollectionViewController.xib */; };
+		8EBD7372248483F10032B174 /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7370248483F10032B174 /* TipCollectionViewCell.swift */; };
+		8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBD7371248483F10032B174 /* TipCollectionViewCell.xib */; };
+		8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7374248484100032B174 /* TipsHeaderCollectionReusableView.swift */; };
+		8EBD7377248484100032B174 /* TipsHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBD7375248484100032B174 /* TipsHeaderCollectionReusableView.xib */; };
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
 		8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */; };
@@ -183,6 +189,12 @@
 		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8EBD736624846E7D0032B174 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		8EBD736B248483C10032B174 /* TipsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewController.swift; sourceTree = "<group>"; };
+		8EBD736C248483C10032B174 /* TipsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsCollectionViewController.xib; sourceTree = "<group>"; };
+		8EBD7370248483F10032B174 /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EBD7371248483F10032B174 /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipCollectionViewCell.xib; sourceTree = "<group>"; };
+		8EBD7374248484100032B174 /* TipsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		8EBD7375248484100032B174 /* TipsHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -286,6 +298,7 @@
 				8E319ED424834B2B001111C6 /* More */,
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
+				8EBD736A248483710032B174 /* Tips */,
 				8E319EB424833D6D001111C6 /* Triage */,
 			);
 			path = Scenes;
@@ -561,6 +574,27 @@
 			path = TempoMonitoringUITests;
 			sourceTree = "<group>";
 		};
+		8EBD736A248483710032B174 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				8EBD736F248483DD0032B174 /* Cells */,
+				8EBD736B248483C10032B174 /* TipsCollectionViewController.swift */,
+				8EBD736C248483C10032B174 /* TipsCollectionViewController.xib */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		8EBD736F248483DD0032B174 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8EBD7370248483F10032B174 /* TipCollectionViewCell.swift */,
+				8EBD7371248483F10032B174 /* TipCollectionViewCell.xib */,
+				8EBD7374248484100032B174 /* TipsHeaderCollectionReusableView.swift */,
+				8EBD7375248484100032B174 /* TipsHeaderCollectionReusableView.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8EEE7FB82483571100DC28F1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E319EA12483282C001111C6 /* Roboto-Bold.ttf in Resources */,
+				8EBD7377248484100032B174 /* TipsHeaderCollectionReusableView.xib in Resources */,
 				8E319E8824831BAD001111C6 /* SignInViewController.xib in Resources */,
 				8E319EE124834BD7001111C6 /* MoreHeaderView.xib in Resources */,
 				8E319EA42483282C001111C6 /* Roboto-Regular.ttf in Resources */,
@@ -753,11 +788,13 @@
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
+				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
 				8E319EBF24833E3C001111C6 /* AttentionWebViewViewController.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
 				8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */,
+				8EBD736E248483C10032B174 /* TipsCollectionViewController.xib in Resources */,
 				8E319EDD24834B91001111C6 /* MoreTableViewCell.xib in Resources */,
 				8E319ED824834B4A001111C6 /* MoreTableViewController.xib in Resources */,
 				8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */,
@@ -893,6 +930,7 @@
 				8EEE7FBD2483575C00DC28F1 /* ConfigRepositoryProtocol.swift in Sources */,
 				8EEE7FE02483808100DC28F1 /* AlertHandlerProtocol.swift in Sources */,
 				8E319E8724831BAD001111C6 /* SignInViewController.swift in Sources */,
+				8EBD7372248483F10032B174 /* TipCollectionViewCell.swift in Sources */,
 				8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */,
 				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
@@ -928,6 +966,7 @@
 				8EEE80012484504000DC28F1 /* ReadQRCodePresenterProtocol.swift in Sources */,
 				8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
+				8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
 				8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */,
 				8EEE7FF72484400A00DC28F1 /* TriagePresenter.swift in Sources */,
@@ -946,6 +985,7 @@
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
 				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
+				8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
