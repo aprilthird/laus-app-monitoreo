@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoCondensed-Regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewVersionPopupViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-g8-dVS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-7T-JKd">
+                    <rect key="frame" x="30" y="305.5" width="354" height="285"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-AQ-13s">
+                            <rect key="frame" x="127" y="40" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="2bb-O9-eXm"/>
+                                <constraint firstAttribute="height" constant="100" id="NX8-VO-t0G"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenemos una nueva actualización disponible. Descárgala para acceder a las últimas novedades de la aplicación." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy3-rM-41N">
+                            <rect key="frame" x="17.5" y="160" width="319" height="33"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWR-F2-3Tf">
+                            <rect key="frame" x="111" y="223" width="132" height="37"/>
+                            <color key="backgroundColor" red="0.0039215686269999999" green="0.84313725490000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
+                            <state key="normal" title="ACTUALIZAR">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.18823529410000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="H6t-AQ-13s" firstAttribute="centerX" secondItem="VuV-7T-JKd" secondAttribute="centerX" id="84Y-D6-66f"/>
+                        <constraint firstAttribute="bottom" secondItem="tWR-F2-3Tf" secondAttribute="bottom" constant="25" id="EUJ-Ri-asq"/>
+                        <constraint firstItem="tWR-F2-3Tf" firstAttribute="top" secondItem="Oy3-rM-41N" secondAttribute="bottom" constant="30" id="Keu-pa-keg"/>
+                        <constraint firstItem="Oy3-rM-41N" firstAttribute="centerX" secondItem="VuV-7T-JKd" secondAttribute="centerX" id="Ndx-dH-Ee9"/>
+                        <constraint firstItem="Oy3-rM-41N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VuV-7T-JKd" secondAttribute="leading" constant="15" id="bM8-6A-L1t"/>
+                        <constraint firstItem="tWR-F2-3Tf" firstAttribute="centerX" secondItem="VuV-7T-JKd" secondAttribute="centerX" id="gRP-kn-khT"/>
+                        <constraint firstItem="H6t-AQ-13s" firstAttribute="top" secondItem="VuV-7T-JKd" secondAttribute="top" constant="40" id="lok-kr-74v"/>
+                        <constraint firstItem="Oy3-rM-41N" firstAttribute="top" secondItem="H6t-AQ-13s" secondAttribute="bottom" constant="20" id="pY7-Xb-U8O"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oy3-rM-41N" secondAttribute="trailing" constant="15" id="tVq-T7-t7h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Kac-g8-dVS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8m7-bi-N57"/>
+                <constraint firstAttribute="trailing" secondItem="Kac-g8-dVS" secondAttribute="trailing" id="Bgd-ts-paQ"/>
+                <constraint firstItem="VuV-7T-JKd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DAh-XT-8Qa"/>
+                <constraint firstItem="VuV-7T-JKd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="DPW-U9-uQW"/>
+                <constraint firstItem="Kac-g8-dVS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OFc-IQ-Rip"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VuV-7T-JKd" secondAttribute="trailing" constant="30" id="UJN-Lf-5GL"/>
+                <constraint firstAttribute="bottom" secondItem="Kac-g8-dVS" secondAttribute="bottom" id="ruZ-fD-dbX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+</document>

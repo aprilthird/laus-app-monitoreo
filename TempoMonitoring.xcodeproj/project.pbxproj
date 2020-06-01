@@ -52,6 +52,10 @@
 		8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB172483045600E6DAD7 /* LaunchScreen.storyboard */; };
 		8E41AB242483045600E6DAD7 /* TempoMonitoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB232483045600E6DAD7 /* TempoMonitoringTests.swift */; };
 		8E41AB2F2483045600E6DAD7 /* TempoMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */; };
+		8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */; };
+		8EB5D99F2484A03800E8E9DE /* NewVersionPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */; };
+		8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A02484A04700E8E9DE /* HomeBannerViewController.swift */; };
+		8EB5D9A32484A04700E8E9DE /* HomeBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */; };
 		8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD735E248468990032B174 /* MorePresenterProtocol.swift */; };
 		8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7360248468E90032B174 /* MorePresenter.swift */; };
 		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
@@ -189,6 +193,10 @@
 		8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempoMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoMonitoringUITests.swift; sourceTree = "<group>"; };
 		8E41AB302483045600E6DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupViewController.swift; sourceTree = "<group>"; };
+		8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVersionPopupViewController.xib; sourceTree = "<group>"; };
+		8EB5D9A02484A04700E8E9DE /* HomeBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerViewController.swift; sourceTree = "<group>"; };
+		8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerViewController.xib; sourceTree = "<group>"; };
 		8EBD735E248468990032B174 /* MorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenterProtocol.swift; sourceTree = "<group>"; };
 		8EBD7360248468E90032B174 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -430,6 +438,8 @@
 		8E319EAA24833570001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8EB5D99B2484A00700E8E9DE /* NewVersionPopup */,
+				8EB5D99A24849FFA00E8E9DE /* HomeBannerPopup */,
 				8E319EAF24833CA3001111C6 /* MainWebView */,
 				8E319EAB24833591001111C6 /* MainTabBarController.swift */,
 				8E319EAC24833591001111C6 /* MainTabBarController.xib */,
@@ -582,6 +592,24 @@
 				8E41AB302483045600E6DAD7 /* Info.plist */,
 			);
 			path = TempoMonitoringUITests;
+			sourceTree = "<group>";
+		};
+		8EB5D99A24849FFA00E8E9DE /* HomeBannerPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8EB5D9A02484A04700E8E9DE /* HomeBannerViewController.swift */,
+				8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */,
+			);
+			path = HomeBannerPopup;
+			sourceTree = "<group>";
+		};
+		8EB5D99B2484A00700E8E9DE /* NewVersionPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */,
+				8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */,
+			);
+			path = NewVersionPopup;
 			sourceTree = "<group>";
 		};
 		8EBD736A248483710032B174 /* Tips */ = {
@@ -812,7 +840,9 @@
 				8EBD736E248483C10032B174 /* TipsCollectionViewController.xib in Resources */,
 				8E319EDD24834B91001111C6 /* MoreTableViewCell.xib in Resources */,
 				8E319ED824834B4A001111C6 /* MoreTableViewController.xib in Resources */,
+				8EB5D9A32484A04700E8E9DE /* HomeBannerViewController.xib in Resources */,
 				8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */,
+				8EB5D99F2484A03800E8E9DE /* NewVersionPopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1043,8 @@
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
+				8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */,
+				8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */,
 				8EEE80052484525800DC28F1 /* ReadQRCodeViewControllerProtocol.swift in Sources */,
 				8EBD7379248489480032B174 /* TipsPresenterProtocol.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
