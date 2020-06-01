@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 import IQKeyboardManagerSwift
 import OneSignal
 
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Onesignal
         onesignalConfiguration(launchOptions)
+        
+        // Firebase
+        FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = Router.shared.getSplash()

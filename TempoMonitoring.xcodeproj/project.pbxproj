@@ -60,6 +60,7 @@
 		8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */; };
 		8EB5D9AF2484B64000E8E9DE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9AE2484B64000E8E9DE /* NotificationService.swift */; };
 		8EB5D9B32484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8EB5D9BB2484C3E200E8E9DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D9BA2484C3E200E8E9DE /* GoogleService-Info.plist */; };
 		8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD735E248468990032B174 /* MorePresenterProtocol.swift */; };
 		8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7360248468E90032B174 /* MorePresenter.swift */; };
 		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
@@ -212,7 +213,7 @@
 		8E319EDB24834B91001111C6 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
 		8E319EDE24834BC7001111C6 /* MoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderView.swift; sourceTree = "<group>"; };
 		8E319EE024834BD7001111C6 /* MoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreHeaderView.xib; sourceTree = "<group>"; };
-		8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoreo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
 		8E41AB152483045600E6DAD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		8EB5D9AE2484B64000E8E9DE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		8EB5D9B02484B64000E8E9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tempo Monitoring.entitlements"; sourceTree = "<group>"; };
+		8EB5D9BA2484C3E200E8E9DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EBD735E248468990032B174 /* MorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenterProtocol.swift; sourceTree = "<group>"; };
 		8EBD7360248468E90032B174 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -601,7 +603,7 @@
 		8E41AB072483045300E6DAD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */,
+				8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */,
 				8E41AB1F2483045600E6DAD7 /* TempoMonitoringTests.xctest */,
 				8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */,
 				8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */,
@@ -612,7 +614,7 @@
 		8E41AB082483045300E6DAD7 /* TempoMonitoring */ = {
 			isa = PBXGroup;
 			children = (
-				8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */,
+				8EB5D9BA2484C3E200E8E9DE /* GoogleService-Info.plist */,
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
 				8EEE7FE72484206900DC28F1 /* Models */,
@@ -620,6 +622,7 @@
 				8E319E74248319D1001111C6 /* Routers */,
 				8E319E72248319B8001111C6 /* Scenes */,
 				8E319E8C24831C19001111C6 /* Utils */,
+				8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */,
 			);
 			path = TempoMonitoring;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				8E41AB042483045300E6DAD7 /* Resources */,
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
 				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
+				8EB5D9B92484C0DF00E8E9DE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -793,7 +797,7 @@
 			);
 			name = TempoMonitoring;
 			productName = TempoMonitoring;
-			productReference = 8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */;
+			productReference = 8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8E41AB1E2483045600E6DAD7 /* TempoMonitoringTests */ = {
@@ -919,6 +923,7 @@
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
+				8EB5D9BB2484C3E200E8E9DE /* GoogleService-Info.plist in Resources */,
 				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
@@ -1040,6 +1045,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8EB5D9B92484C0DF00E8E9DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1361,6 +1383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1370,7 +1393,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring;
-				PRODUCT_NAME = "Tempo Monitoring";
+				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1393,7 +1416,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring;
-				PRODUCT_NAME = "Tempo Monitoring";
+				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
