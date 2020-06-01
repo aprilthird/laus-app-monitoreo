@@ -10,13 +10,35 @@ import UIKit
 
 class NewVersionPopupViewController: UIViewController {
 
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var popupImageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
+    var newVerionPresenter: NewVersionPopupPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        backgroundView.alpha = 0.5
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        popupView.layer.cornerRadius = 10
+        popupView.backgroundColor = newVerionPresenter.getBackgroundColor()
+        updateButton.layer.cornerRadius = updateButton.bounds.height / 2
+        updateButton.backgroundColor = newVerionPresenter.getButtonBackgroundColor()
     }
 
-
+    @IBAction func didUpdateApp(_ sender: UIButton) {
+        guard let url = URL(string: "") else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -77,6 +77,7 @@ final class Router: RouterProtocol {
     
     func getNewVersionPopup() -> UIViewController {
         let viewController = NewVersionPopupViewController.get()
+        viewController.newVerionPresenter = NewVersionPopupPresenter(userRepository: userRepository)
         return viewController
     }
     

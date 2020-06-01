@@ -15,6 +15,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewVersionPopupViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="Kac-g8-dVS" id="fvP-LH-AQU"/>
+                <outlet property="descriptionLabel" destination="Oy3-rM-41N" id="CGg-d4-el2"/>
+                <outlet property="popupImageView" destination="H6t-AQ-13s" id="QOA-K8-we5"/>
+                <outlet property="popupView" destination="VuV-7T-JKd" id="QFP-Rg-dJd"/>
+                <outlet property="updateButton" destination="tWR-F2-3Tf" id="DWp-2f-Ijp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +35,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-7T-JKd">
                     <rect key="frame" x="30" y="305.5" width="354" height="285"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-AQ-13s">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="updateAppImage" translatesAutoresizingMaskIntoConstraints="NO" id="H6t-AQ-13s">
                             <rect key="frame" x="127" y="40" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="2bb-O9-eXm"/>
@@ -51,6 +56,9 @@
                             <state key="normal" title="ACTUALIZAR">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="didUpdateApp:" destination="-1" eventType="touchUpInside" id="Eao-YK-eaK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.16078431369999999" green="0.18823529410000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -80,4 +88,7 @@
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>
+    <resources>
+        <image name="updateAppImage" width="460" height="460"/>
+    </resources>
 </document>

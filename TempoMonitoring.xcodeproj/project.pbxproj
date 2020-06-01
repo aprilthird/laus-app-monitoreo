@@ -56,6 +56,8 @@
 		8EB5D99F2484A03800E8E9DE /* NewVersionPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */; };
 		8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A02484A04700E8E9DE /* HomeBannerViewController.swift */; };
 		8EB5D9A32484A04700E8E9DE /* HomeBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */; };
+		8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */; };
+		8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */; };
 		8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD735E248468990032B174 /* MorePresenterProtocol.swift */; };
 		8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7360248468E90032B174 /* MorePresenter.swift */; };
 		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
@@ -197,6 +199,8 @@
 		8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVersionPopupViewController.xib; sourceTree = "<group>"; };
 		8EB5D9A02484A04700E8E9DE /* HomeBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerViewController.swift; sourceTree = "<group>"; };
 		8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerViewController.xib; sourceTree = "<group>"; };
+		8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupPresenter.swift; sourceTree = "<group>"; };
 		8EBD735E248468990032B174 /* MorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenterProtocol.swift; sourceTree = "<group>"; };
 		8EBD7360248468E90032B174 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 			children = (
 				8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */,
 				8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */,
+				8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */,
+				8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */,
 			);
 			path = NewVersionPopup;
 			sourceTree = "<group>";
@@ -1043,6 +1049,7 @@
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
+				8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */,
 				8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */,
 				8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */,
 				8EEE80052484525800DC28F1 /* ReadQRCodeViewControllerProtocol.swift in Sources */,
@@ -1051,6 +1058,7 @@
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
+				8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

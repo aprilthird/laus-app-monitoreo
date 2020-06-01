@@ -48,7 +48,9 @@ final class MainPresenter: MainPresenterProtocol {
     
     func validate() {
         guard !isNewVersion() else {
-            view.showNewVersionPopup()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                self.view.showNewVersionPopup()
+            }
             return
         }
         
@@ -67,7 +69,7 @@ final class MainPresenter: MainPresenterProtocol {
         guard let lastAppVersion = userDefaultsHandler.string(from: Constants.Keys.LAST_APP_VERSION),
             let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
             appVersion.isVersion(lessThan: lastAppVersion) else {
-                return false
+                return true
         }
         return true
     }
