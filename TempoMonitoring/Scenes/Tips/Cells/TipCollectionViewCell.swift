@@ -20,6 +20,7 @@ class TipCollectionViewCell: UICollectionViewCell {
             
             if let url = URL(string: tip.imageUrl) {
                 tipImageView.setImage(url: url) {
+                    self.tipImageView.backgroundColor = .black
                     self.tipImageView.layoutSubviews()
                 }
             }
@@ -33,6 +34,7 @@ class TipCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        tipImageView.backgroundColor = nil
     }
     
     override func layoutSubviews() {

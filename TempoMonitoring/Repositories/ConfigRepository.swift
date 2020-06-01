@@ -28,7 +28,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
                            url: Constants.Service.GET_ATTENTION_URL,
                            parameters: parameters,
         success: { (response) in
-            let token = Keychain.load(Constants.Keys.COMPANY_TOKEN) ?? ""
+            let token = Keychain.load(Constants.Keys.TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
         }) { (error) in
             failure(error)
