@@ -10,9 +10,25 @@ import UIKit
 
 class MoreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var optionImageView: UIImageView!
+    @IBOutlet weak var optionLabel: UILabel!
+    var option: (image: UIImage, type: MoreOptionType, title: String)! {
+        didSet {
+            guard option != nil else {
+                return
+            }
+            
+            optionImageView.image = option.image
+            optionLabel.text = option.title.uppercased()
+        }
+    }
+    static var reuseIdentifier: String? {
+        return "optionViewCell"
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -60,6 +60,12 @@ final class Router: RouterProtocol {
         return viewController
     }
     
+    func getMoreSection() -> UIViewController {
+        let viewController = MoreTableViewController.get()
+        viewController.morePresenter = MorePresenter(configRepository: configRepository, userRepository: userRepository, userDefaultsHandler: userDefaultsHandler, view: viewController)
+        return viewController
+    }
+    
     func getQRCodeReader() -> UIViewController {
         let viewController = ReadQRCodeViewController.get()
         viewController.readQRCodePresenter = ReadQRCodePresenter(userRepository: userRepository, view: viewController)

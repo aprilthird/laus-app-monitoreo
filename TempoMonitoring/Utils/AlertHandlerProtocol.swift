@@ -11,11 +11,22 @@ import UIKit
 
 protocol AlertHandlerProtocol {
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void))
+    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, ok okTitle: String, cancel cancelTitle: String, closure: @escaping(() -> Void))
 }
 extension AlertHandlerProtocol {
     func show(_ style: UIAlertController.Style, message: String, closure: (() -> Void)? = nil) {
-        show(style, title: Constants.Localizable.APP_NAME, message: message) {
+        show(style, title: nil, message: message) {
             closure?()
         }
+    }
+    
+    func showQuestion(_ style: UIAlertController.Style, message: String, ok okTitle: String, cancel cancelTitle: String, closure: (() -> Void)? = nil) {
+        showQuestion(style, title: nil, message: message, ok: okTitle, cancel: cancelTitle) {
+            closure?()
+        }
+    }
+    
+    func showQuestion(_ style: UIAlertController.Style, message: String, closure: @escaping(() -> Void)) {
+        showQuestion(style, title: nil, message: message, ok: Constants.Localizable.OK, cancel: Constants.Localizable.CANCEL, closure: closure)
     }
 }

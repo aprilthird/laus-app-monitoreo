@@ -44,6 +44,8 @@ extension AttentionWebViewViewController: AttentionWebViewViewControllerProtocol
     }
     
     func showMoreSection() {
-        
+        let moreSection = Router.shared.getMoreSection()
+        moreSection.hidesBottomBarWhenPushed = true
+        show(moreSection, sender: nil)
     }
 }

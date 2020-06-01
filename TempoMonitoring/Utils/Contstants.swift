@@ -19,22 +19,30 @@ final class Constants {
         static let TOKEN: String = "token"
     }
     struct Localizable {
-        static let APP_NAME: String = "Tempo Monitoring"
+        static let APP_NAME: String = NSLocalizedString("Tempo Monitoring", comment: "")
         static let ATTENTION_TITLE: String = NSLocalizedString("Attention", comment: "")
         static let AUTHORIZED: String = NSLocalizedString("Authorized", comment: "")
+        static let CANCEL: String = NSLocalizedString("Cancel", comment: "")
         static let DEFAULT_ERROR_MESSAGE: String = NSLocalizedString("There was a problem, please try alter", comment: "")
+        static let FAQ: String = NSLocalizedString("Frequently Asked Questions", comment: "")
         static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
+        static let MORE_TITLE: String = NSLocalizedString("More", comment: "")
         static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
         static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
+        static let SIGN_OUT: String = NSLocalizedString("Sign out", comment: "")
+        static let SIGN_OUT_QUESTION: String = NSLocalizedString("Do you want to sign out?", comment: "")
         static let SIGN_UP_TITLE: String = NSLocalizedString("Sign Up", comment: "")
+        static let SUPPORT_CHAT: String = NSLocalizedString("Support chat", comment: "")
         static let TIPS_TITLE: String = NSLocalizedString("Learn", comment: "")
+        static let TUTORIAL: String = NSLocalizedString("Tutorial", comment: "")
         static let UNAUTHORIZED: String = NSLocalizedString("Unauthorized", comment: "")
         static let TRIAGE_TITLE: String = NSLocalizedString("Triage", comment: "")
+        static let WHAT_IS_TEMPO: String = NSLocalizedString("What is Tempo?", comment: "")
     }
     struct Service {
         #if DEBUG
@@ -45,10 +53,12 @@ final class Constants {
         #endif
         
         static let GET_ATTENTION_URL = "\(BASE_URL)/config.php?action=get_atenttion_webview_url"
+        static let GET_FAQS = "\(BASE_URL)/config.php?action=get_faq"
         static let GET_HOME_BANNER = "\(BASE_URL)/config.php?action=get_home_banner"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
         static let GET_SIGN_UP_URL = "\(BASE_URL)/config.php?action=get_register_link"
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
+        static let GET_TUTORIAL = "\(BASE_URL)/config.php?action=get_tutorial"
         
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
         static let SIGN_IN = "\(BASE_URL)/user.php?action=login"

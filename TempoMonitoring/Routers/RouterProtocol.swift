@@ -15,6 +15,7 @@ protocol RouterProtocol {
     func getFirstScene() -> UIViewController
     func getMainTabBar() -> UIViewController
     func getMainWebView(title: String?, url: String) -> UIViewController
+    func getMoreSection() -> UIViewController
     func getQRCodeReader() -> UIViewController
     func getQRCodeStatus(status: QRCodeStatus?, name: String?, date: String?) -> UIViewController
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController

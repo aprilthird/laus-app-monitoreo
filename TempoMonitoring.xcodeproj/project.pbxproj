@@ -52,6 +52,11 @@
 		8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB172483045600E6DAD7 /* LaunchScreen.storyboard */; };
 		8E41AB242483045600E6DAD7 /* TempoMonitoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB232483045600E6DAD7 /* TempoMonitoringTests.swift */; };
 		8E41AB2F2483045600E6DAD7 /* TempoMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */; };
+		8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD735E248468990032B174 /* MorePresenterProtocol.swift */; };
+		8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7360248468E90032B174 /* MorePresenter.swift */; };
+		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
+		8EBD736724846E7D0032B174 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD736624846E7D0032B174 /* UIViewExtension.swift */; };
+		8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */; };
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
 		8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */; };
@@ -173,6 +178,11 @@
 		8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempoMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoMonitoringUITests.swift; sourceTree = "<group>"; };
 		8E41AB302483045600E6DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EBD735E248468990032B174 /* MorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenterProtocol.swift; sourceTree = "<group>"; };
+		8EBD7360248468E90032B174 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
+		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EBD736624846E7D0032B174 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -342,6 +352,8 @@
 				8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */,
 				8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */,
 				8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */,
+				8EBD736624846E7D0032B174 /* UIViewExtension.swift */,
+				8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +489,9 @@
 				8E319ED924834B7E001111C6 /* Cells */,
 				8E319ED524834B4A001111C6 /* MoreTableViewController.swift */,
 				8E319ED624834B4A001111C6 /* MoreTableViewController.xib */,
+				8EBD735E248468990032B174 /* MorePresenterProtocol.swift */,
+				8EBD7360248468E90032B174 /* MorePresenter.swift */,
+				8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -890,6 +905,7 @@
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
 				8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
+				8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */,
 				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8EEE7FFD24844AD300DC28F1 /* GeneralRepositoryProtocol.swift in Sources */,
@@ -898,6 +914,8 @@
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
 				8EEE7FE22484197D00DC28F1 /* SignInPresenterProtocol.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
+				8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */,
+				8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8EEE7FF32484308D00DC28F1 /* MainTabBarControllerProtocol.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
@@ -931,8 +949,10 @@
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
+				8EBD736724846E7D0032B174 /* UIViewExtension.swift in Sources */,
 				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
+				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
 				8EEE80052484525800DC28F1 /* ReadQRCodeViewControllerProtocol.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
