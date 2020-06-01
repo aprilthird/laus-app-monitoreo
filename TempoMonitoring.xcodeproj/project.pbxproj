@@ -58,6 +58,8 @@
 		8EB5D9A32484A04700E8E9DE /* HomeBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */; };
 		8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */; };
 		8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */; };
+		8EB5D9AF2484B64000E8E9DE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D9AE2484B64000E8E9DE /* NotificationService.swift */; };
+		8EB5D9B32484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD735E248468990032B174 /* MorePresenterProtocol.swift */; };
 		8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7360248468E90032B174 /* MorePresenter.swift */; };
 		8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */; };
@@ -118,6 +120,7 @@
 		8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */; };
 		8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */; };
 		8EEE8011248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */; };
+		A38D926D190D3B2558B36182 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -137,14 +140,40 @@
 			remoteGlobalIDString = 8E41AB052483045300E6DAD7;
 			remoteInfo = TempoMonitoring;
 		};
+		8EB5D9B12484B64000E8E9DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E41AAFE2483045300E6DAD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EB5D9AB2484B64000E8E9DE;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8EB5D9B72484B64000E8E9DE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8EB5D9B32484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01B480888780AE0BD863778B /* Pods-TempoMonitoring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.release.xcconfig"; sourceTree = "<group>"; };
 		1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoringTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
+		6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8E319E7824831A77001111C6 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
 		8E319E7924831A77001111C6 /* FirstSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstSceneViewController.xib; sourceTree = "<group>"; };
 		8E319E7C24831AB0001111C6 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
@@ -201,6 +230,10 @@
 		8EB5D9A12484A04700E8E9DE /* HomeBannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerViewController.xib; sourceTree = "<group>"; };
 		8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupPresenter.swift; sourceTree = "<group>"; };
+		8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB5D9AE2484B64000E8E9DE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		8EB5D9B02484B64000E8E9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tempo Monitoring.entitlements"; sourceTree = "<group>"; };
 		8EBD735E248468990032B174 /* MorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenterProtocol.swift; sourceTree = "<group>"; };
 		8EBD7360248468E90032B174 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -289,6 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EB5D9A92484B64000E8E9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A38D926D190D3B2558B36182 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +591,7 @@
 				8E41AB082483045300E6DAD7 /* TempoMonitoring */,
 				8E41AB222483045600E6DAD7 /* TempoMonitoringTests */,
 				8E41AB2D2483045600E6DAD7 /* TempoMonitoringUITests */,
+				8EB5D9AD2484B64000E8E9DE /* OneSignalNotificationServiceExtension */,
 				8E41AB072483045300E6DAD7 /* Products */,
 				ADD00EB92F25E77EBF275925 /* Pods */,
 				FACC13CBA7929E20A8928C09 /* Frameworks */,
@@ -562,6 +604,7 @@
 				8E41AB062483045300E6DAD7 /* Tempo Monitoring.app */,
 				8E41AB1F2483045600E6DAD7 /* TempoMonitoringTests.xctest */,
 				8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */,
+				8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -569,6 +612,7 @@
 		8E41AB082483045300E6DAD7 /* TempoMonitoring */ = {
 			isa = PBXGroup;
 			children = (
+				8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */,
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
 				8EEE7FE72484206900DC28F1 /* Models */,
@@ -616,6 +660,15 @@
 				8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */,
 			);
 			path = NewVersionPopup;
+			sourceTree = "<group>";
+		};
+		8EB5D9AD2484B64000E8E9DE /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8EB5D9AE2484B64000E8E9DE /* NotificationService.swift */,
+				8EB5D9B02484B64000E8E9DE /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		8EBD736A248483710032B174 /* Tips */ = {
@@ -700,6 +753,10 @@
 				D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */,
 				B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */,
 				3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */,
+				346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */,
+				4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -710,6 +767,7 @@
 				21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */,
 				E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */,
 				1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */,
+				6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -726,10 +784,12 @@
 				8E41AB032483045300E6DAD7 /* Frameworks */,
 				8E41AB042483045300E6DAD7 /* Resources */,
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
+				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8EB5D9B22484B64000E8E9DE /* PBXTargetDependency */,
 			);
 			name = TempoMonitoring;
 			productName = TempoMonitoring;
@@ -775,6 +835,24 @@
 			productReference = 8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8EB5D9AB2484B64000E8E9DE /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EB5D9B42484B64000E8E9DE /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				172B812D07747045F45F52C4 /* [CP] Check Pods Manifest.lock */,
+				8EB5D9A82484B64000E8E9DE /* Sources */,
+				8EB5D9A92484B64000E8E9DE /* Frameworks */,
+				8EB5D9AA2484B64000E8E9DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -796,6 +874,9 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = 8E41AB052483045300E6DAD7;
 					};
+					8EB5D9AB2484B64000E8E9DE = {
+						CreatedOnToolsVersion = 11.3;
+					};
 				};
 			};
 			buildConfigurationList = 8E41AB012483045300E6DAD7 /* Build configuration list for PBXProject "TempoMonitoring" */;
@@ -815,6 +896,7 @@
 				8E41AB052483045300E6DAD7 /* TempoMonitoring */,
 				8E41AB1E2483045600E6DAD7 /* TempoMonitoringTests */,
 				8E41AB292483045600E6DAD7 /* TempoMonitoringUITests */,
+				8EB5D9AB2484B64000E8E9DE /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -866,9 +948,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EB5D9AA2484B64000E8E9DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		172B812D07747045F45F52C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2EC97CACC770D15949445DB0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1078,6 +1189,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EB5D9A82484B64000E8E9DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB5D9AF2484B64000E8E9DE /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1090,6 +1209,11 @@
 			isa = PBXTargetDependency;
 			target = 8E41AB052483045300E6DAD7 /* TempoMonitoring */;
 			targetProxy = 8E41AB2B2483045600E6DAD7 /* PBXContainerItemProxy */;
+		};
+		8EB5D9B22484B64000E8E9DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EB5D9AB2484B64000E8E9DE /* OneSignalNotificationServiceExtension */;
+			targetProxy = 8EB5D9B12484B64000E8E9DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1233,7 +1357,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
@@ -1254,7 +1380,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01B480888780AE0BD863778B /* Pods-TempoMonitoring.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
@@ -1359,6 +1487,50 @@
 			};
 			name = Release;
 		};
+		8EB5D9B52484B64000E8E9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SU7989R26F;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8EB5D9B62484B64000E8E9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SU7989R26F;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1394,6 +1566,15 @@
 			buildConfigurations = (
 				8E41AB3A2483045600E6DAD7 /* Debug */,
 				8E41AB3B2483045600E6DAD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EB5D9B42484B64000E8E9DE /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EB5D9B52484B64000E8E9DE /* Debug */,
+				8EB5D9B62484B64000E8E9DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

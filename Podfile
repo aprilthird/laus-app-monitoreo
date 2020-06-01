@@ -10,6 +10,7 @@ target 'TempoMonitoring' do
   pod 'AlamofireImage'
   pod 'IQKeyboardManagerSwift'
   pod 'Keychain'
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
 
@@ -22,4 +23,9 @@ target 'TempoMonitoring' do
     # Pods for testing
   end
 
+end
+
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
 end

@@ -69,7 +69,7 @@ final class MainPresenter: MainPresenterProtocol {
         guard let lastAppVersion = userDefaultsHandler.string(from: Constants.Keys.LAST_APP_VERSION),
             let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
             appVersion.isVersion(lessThan: lastAppVersion) else {
-                return true
+                return false
         }
         return true
     }

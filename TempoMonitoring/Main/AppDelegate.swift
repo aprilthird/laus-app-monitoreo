@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Keyboard
         IQKeyboardManager.shared.enable = true
         
+        // Onesignal
+        onesignalConfiguration(launchOptions)
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = Router.shared.getSplash()
         let navigationController = UINavigationController(rootViewController: rootViewController)
@@ -28,6 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    private func onesignalConfiguration(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
+        
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: Constants.Credentials.ONE_SIGNAL_APP_ID,
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+          print("User accepted notifications: \(accepted)")
+        })
     }
 
     // MARK: - Core Data stack

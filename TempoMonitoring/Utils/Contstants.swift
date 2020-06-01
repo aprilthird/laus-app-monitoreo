@@ -9,6 +9,9 @@
 import Foundation
 
 final class Constants {
+    struct Credentials {
+        static let ONE_SIGNAL_APP_ID: String = "4497e601-6f34-422b-8df4-a945662c2b4e"
+    }
     struct Keys {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"

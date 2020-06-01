@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.9)
   - IQKeyboardManagerSwift (6.5.4)
   - Keychain (0.3.1)
+  - OneSignal (2.12.5)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - AlamofireImage
   - IQKeyboardManagerSwift
   - Keychain
+  - OneSignal (< 3.0, >= 2.11.2)
   - SVProgressHUD
   - SwiftyJSON
 
@@ -21,6 +23,7 @@ SPEC REPOS:
     - AlamofireImage
     - IQKeyboardManagerSwift
     - Keychain
+    - OneSignal
     - SVProgressHUD
     - SwiftyJSON
 
@@ -29,9 +32,10 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
+  OneSignal: 1de998c42bb06ed630bb38dd1bc933a667437dbb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1b8bc2e8f4641d3df33297fe2308da5dbce86746
+PODFILE CHECKSUM: a56aed0cc6558914635e576749057402d19dfeb8
 
 COCOAPODS: 1.8.4
