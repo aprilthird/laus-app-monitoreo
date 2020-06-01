@@ -16,6 +16,7 @@ final class Router: RouterProtocol {
     private let configRepository: ConfigRepositoryProtocol
     private let userRepository: UserRepositoryProtocol
     private let generalRepository: GeneralRepositoryProtocol
+    private let tipRepository: TipRepositoryProtocol
     
     init() {
         keychainHandler = KeychainHandler()
@@ -23,6 +24,7 @@ final class Router: RouterProtocol {
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
         userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler)
         generalRepository = GeneralRepository(userDefaultsHandler: userDefaultsHandler)
+        tipRepository = TipRepository()
     }
     
     func getAttention() -> UIViewController {
@@ -106,7 +108,8 @@ final class Router: RouterProtocol {
     }
     
     func getTips() -> UIViewController {
-        let viewController = UIViewController()
+        let viewController = TipsCollectionViewController.get()
+        viewController.tipsPresenter = TipsPresenter(tipRepository: tipRepository, userRepository: userRepository, view: viewController)
         return viewController
     }
     

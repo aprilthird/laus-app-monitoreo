@@ -64,6 +64,7 @@ extension TriageViewController: TriageViewControllerProtocol {
     
     func showWebView(_ title: String?, _ url: String) {
         let webView = Router.shared.getMainWebView(title: title, url: url)
+        webView.hidesBottomBarWhenPushed = true
         show(webView, sender: nil)
     }
 }

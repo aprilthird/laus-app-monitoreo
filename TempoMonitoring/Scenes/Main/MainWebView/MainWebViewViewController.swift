@@ -25,6 +25,12 @@ class MainWebViewViewController: UIViewController {
         webView.navigationDelegate = self
         if let url = URL(string: url) {
             webView.load(URLRequest(url: url))
+        } else {
+            show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) {
+                self.endProgress()
+                
+                self.closeWebView()
+            }
         }
     }
     

@@ -8,20 +8,30 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class TipsCollectionViewController: UICollectionViewController {
+
+    private var tipReuseIdentifier: String!
+    private var headerReuseIdentifier: String!
+    private var tips: [(imageUrl: String, name: String, url: String)]!
+    var tipsPresenter: TipsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        tipReuseIdentifier = TipCollectionViewCell.reuseIdentifier
+        headerReuseIdentifier = TipsHeaderCollectionReusableView.reuseIdentifier
+        tips = []
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        collectionView.collectionViewLayout = flowLayout
+        
+        collectionView.register(TipCollectionViewCell.getNIB(), forCellWithReuseIdentifier: tipReuseIdentifier)
+        collectionView.register(TipsHeaderCollectionReusableView.getNIB(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
+        
+        tipsPresenter.loadTips()
     }
 
     /*
@@ -37,53 +47,55 @@ class TipsCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return tips.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tipReuseIdentifier, for: indexPath) as! TipCollectionViewCell
+        cell.tip = tips[indexPath.row]
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        tipsPresenter.didSelect(tip: tips[indexPath.row])
     }
-    */
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! TipsHeaderCollectionReusableView
+            headerView.options = tipsPresenter.getHeaderOptions()
+            return headerView
+        default:
+            return UICollectionReusableView()
+        }
+    }
+
+}
+extension TipsCollectionViewController: TipsCollectionViewControllerProtocol {
+    func openWebView(_ url: String) {
+        let mainWebView = Router.shared.getMainWebView(title: Constants.Localizable.NOTE_TITLE, url: url)
+        mainWebView.hidesBottomBarWhenPushed = true
+        show(mainWebView, sender: nil)
+    }
+    
+    func updateTips(_ tips: [(imageUrl: String, name: String, url: String)]) {
+        self.tips = tips
+        collectionView.reloadData()
+    }
+}
+extension TipsCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 20, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 200)
+    }
 }

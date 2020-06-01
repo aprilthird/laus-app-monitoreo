@@ -63,6 +63,11 @@
 		8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBD7371248483F10032B174 /* TipCollectionViewCell.xib */; };
 		8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7374248484100032B174 /* TipsHeaderCollectionReusableView.swift */; };
 		8EBD7377248484100032B174 /* TipsHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBD7375248484100032B174 /* TipsHeaderCollectionReusableView.xib */; };
+		8EBD7379248489480032B174 /* TipsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD7378248489480032B174 /* TipsPresenterProtocol.swift */; };
+		8EBD737B248489560032B174 /* TipsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD737A248489560032B174 /* TipsPresenter.swift */; };
+		8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */; };
+		8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */; };
+		8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738224848EBD0032B174 /* TipRepository.swift */; };
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
 		8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */; };
@@ -195,6 +200,11 @@
 		8EBD7371248483F10032B174 /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipCollectionViewCell.xib; sourceTree = "<group>"; };
 		8EBD7374248484100032B174 /* TipsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		8EBD7375248484100032B174 /* TipsHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		8EBD7378248489480032B174 /* TipsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsPresenterProtocol.swift; sourceTree = "<group>"; };
+		8EBD737A248489560032B174 /* TipsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsPresenter.swift; sourceTree = "<group>"; };
+		8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8EBD738224848EBD0032B174 /* TipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepository.swift; sourceTree = "<group>"; };
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -580,6 +590,9 @@
 				8EBD736F248483DD0032B174 /* Cells */,
 				8EBD736B248483C10032B174 /* TipsCollectionViewController.swift */,
 				8EBD736C248483C10032B174 /* TipsCollectionViewController.xib */,
+				8EBD7378248489480032B174 /* TipsPresenterProtocol.swift */,
+				8EBD737A248489560032B174 /* TipsPresenter.swift */,
+				8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -605,6 +618,8 @@
 				8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */,
 				8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */,
 				8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */,
+				8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */,
+				8EBD738224848EBD0032B174 /* TipRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -934,6 +949,8 @@
 				8EEE7FBB2483574800DC28F1 /* ConfigRepository.swift in Sources */,
 				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
+				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
+				8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */,
@@ -943,6 +960,7 @@
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
 				8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
+				8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */,
 				8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */,
 				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
@@ -967,6 +985,7 @@
 				8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
 				8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */,
+				8EBD737B248489560032B174 /* TipsPresenter.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
 				8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */,
 				8EEE7FF72484400A00DC28F1 /* TriagePresenter.swift in Sources */,
@@ -995,6 +1014,7 @@
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
 				8EEE80052484525800DC28F1 /* ReadQRCodeViewControllerProtocol.swift in Sources */,
+				8EBD7379248489480032B174 /* TipsPresenterProtocol.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,

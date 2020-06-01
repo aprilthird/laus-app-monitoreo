@@ -62,5 +62,7 @@ final class Constants {
         
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
         static let SIGN_IN = "\(BASE_URL)/user.php?action=login"
+        
+        static let GET_TIP_CATEGORIES = "\(BASE_URL)/article.php?action=get_categories"
     }
 }

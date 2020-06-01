@@ -10,13 +10,36 @@ import UIKit
 
 class TipCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var tipImageView: UIImageView!
+    @IBOutlet weak var tipNameLabel: UILabel!
+    var tip: (imageUrl: String, name: String, url: String)! {
+        didSet {
+            guard tip != nil else {
+                return
+            }
+            
+            if let url = URL(string: tip.imageUrl) {
+                tipImageView.setImage(url: url) {
+                    self.tipImageView.layoutSubviews()
+                }
+            }
+            tipNameLabel.text = tip.name.uppercased()
+        }
+    }
     static var reuseIdentifier: String? {
         return "tipViewCell"
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        tipImageView.layer.opacity = 0.8
+        layer.cornerRadius = bounds.height / 20
     }
 
 }
