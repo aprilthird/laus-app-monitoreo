@@ -13,9 +13,11 @@ final class Constants {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
         static let IS_FIRST_OPEN: String = "isFirstOpen"
+        static let IS_NOTIFICATION_ENABLED: String = "isNotificationEnabled"
         static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
         static let LAST_APP_VERSION: String = "lastAppVersion"
         static let LAST_HOME_BANNER_ID: String = "lastHomeBannerId"
+        static let ONE_SIGNAL_ID: String = "oneSignalId"
         static let TOKEN: String = "token"
     }
     struct Localizable {
@@ -60,8 +62,10 @@ final class Constants {
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
         static let GET_TUTORIAL = "\(BASE_URL)/config.php?action=get_tutorial"
         
+        static let REGISTER_DEVICE = "\(BASE_URL)/user.php?action=register_device"
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
         static let SIGN_IN = "\(BASE_URL)/user.php?action=login"
+        static let UNREGISTER_DEVICE = "\(BASE_URL)/user.php?action=unregister_device"
         
         static let GET_TIP_CATEGORIES = "\(BASE_URL)/article.php?action=get_categories"
     }

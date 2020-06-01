@@ -63,12 +63,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gum-dc-inb" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="718"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-HW-CQf">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-HW-CQf">
                                     <rect key="frame" x="314" y="5" width="35" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="JJW-gg-yIm"/>
                                         <constraint firstAttribute="height" constant="35" id="Z1Z-UZ-KqV"/>
                                     </constraints>
+                                    <state key="normal" image="closeButton"/>
                                     <connections>
                                         <action selector="didCloseView:" destination="-1" eventType="touchUpInside" id="0fX-Rf-Z49"/>
                                     </connections>
@@ -319,4 +320,7 @@ Contáctate con nosotros</string>
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="closeButton" width="257" height="257"/>
+    </resources>
 </document>

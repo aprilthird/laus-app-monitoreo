@@ -31,6 +31,36 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
+    func registerDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            // TODO: Send Non fatal
+            return
+        }
+        let device = UIDevice.current
+        let oneSignalId = userDefaultsHandler.string(from: Constants.Keys.ONE_SIGNAL_ID) ?? ""
+        let areNotificationsEnabled = userDefaultsHandler.bool(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
+        let parameters: [String: Any] = [
+            "token": Keychain.load(Constants.Keys.TOKEN) ?? "",
+            "version_name": appVersion,
+            "version_code": appVersion,
+            "device_os": device.systemName,
+            "device_os_version": device.systemVersion,
+            "device_model": device.model,
+            "device_manufacturer": "Apple",
+            "onesignal_id": oneSignalId,
+            "notifications_enabled": areNotificationsEnabled ? 1 : 0
+        ]
+        
+        ResponseHelper.POST(with: .url,
+                            url: Constants.Service.REGISTER_DEVICE,
+                            parameters: parameters,
+        success: { (response) in
+            success(true)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
     func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "user_name": names,
@@ -71,6 +101,21 @@ final class UserRepository: UserRepositoryProtocol {
             self.userDefaultsHandler.save(value: isScannerEnabled, to: Constants.Keys.IS_SCANNER_ENABLED)
             self.currentCompany = company
             
+            success(true)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func unregisterDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+        ]
+        
+        ResponseHelper.POST(with: .url,
+                            url: Constants.Service.UNREGISTER_DEVICE,
+                            parameters: parameters,
+        success: { (response) in
             success(true)
         }) { (error) in
             failure(error)
