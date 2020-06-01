@@ -56,6 +56,7 @@ final class MainPresenter: MainPresenterProtocol {
             guard id != self.userDefaultsHandler.integer(from: Constants.Keys.LAST_HOME_BANNER_ID) else {
                 return
             }
+            self.userDefaultsHandler.save(value: id, to: Constants.Keys.LAST_HOME_BANNER_ID)
             self.view.showHomeBannerPopup(imageUrl, url)
         }) { (error) in
             self.view.show(.alert, message: error.localizedDescription)
@@ -66,8 +67,8 @@ final class MainPresenter: MainPresenterProtocol {
         guard let lastAppVersion = userDefaultsHandler.string(from: Constants.Keys.LAST_APP_VERSION),
             let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
             appVersion.isVersion(lessThan: lastAppVersion) else {
-                return true
+                return false
         }
-        return false
+        return true
     }
 }

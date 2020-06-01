@@ -62,10 +62,16 @@ class MainTabBarController: UITabBarController {
 }
 extension MainTabBarController: MainTabBarControllerProtocol {
     func showHomeBannerPopup(_ imageUrl: String, _ url: String) {
-        
+        let homeBanner = Router.shared.getHomeBannerPopup(imageUrl: imageUrl, url: url)
+        homeBanner.modalPresentationStyle = .overCurrentContext
+        homeBanner.modalTransitionStyle = .crossDissolve
+        present(homeBanner, animated: true, completion: nil)
     }
     
     func showNewVersionPopup() {
-        
+        let newVersion = Router.shared.getNewVersionPopup()
+        newVersion.modalPresentationStyle = .overCurrentContext
+        newVersion.modalTransitionStyle = .crossDissolve
+        present(newVersion, animated: true, completion: nil)
     }
 }

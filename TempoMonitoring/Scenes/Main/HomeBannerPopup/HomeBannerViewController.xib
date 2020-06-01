@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeBannerViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="7EU-Pi-pMy" id="VXg-Dk-0MS"/>
+                <outlet property="closeButton" destination="5G3-0F-o4J" id="vfi-Dd-0oS"/>
+                <outlet property="imageView" destination="ofs-vV-q7j" id="lfa-ne-8MZ"/>
+                <outlet property="imageViewHeightConstraint" destination="GAo-hY-fYH" id="ivh-qN-yIH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,12 +25,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EU-Pi-pMy">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="u54-dm-daS" appends="YES" id="u4m-Fh-Gx9"/>
+                    </connections>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofs-vV-q7j">
+                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofs-vV-q7j">
                     <rect key="frame" x="35" y="298" width="344" height="300"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="GAo-hY-fYH"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="oYz-XM-JOd" appends="YES" id="VwU-sP-u9G"/>
+                    </connections>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-0F-o4J">
                     <rect key="frame" x="354" y="278" width="40" height="40"/>
@@ -36,6 +48,9 @@
                         <constraint firstAttribute="width" constant="40" id="YFg-Kc-YXy"/>
                     </constraints>
                     <state key="normal" image="closeButton"/>
+                    <connections>
+                        <action selector="didClosePopup:" destination="-1" eventType="touchUpInside" id="P5y-2m-AKU"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
@@ -54,6 +69,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
+        <tapGestureRecognizer id="oYz-XM-JOd">
+            <connections>
+                <action selector="didOpenWebView:" destination="-1" id="sjR-XS-PrF"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="u54-dm-daS">
+            <connections>
+                <action selector="didClosePopup:" destination="-1" id="ej1-vg-r24"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="closeButton" width="257" height="257"/>

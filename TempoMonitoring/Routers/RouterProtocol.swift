@@ -13,9 +13,11 @@ protocol RouterProtocol {
     func getAttention() -> UIViewController
     func getContactUsPopup() -> UIViewController
     func getFirstScene() -> UIViewController
+    func getHomeBannerPopup(imageUrl: String, url: String) -> UIViewController
     func getMainTabBar() -> UIViewController
     func getMainWebView(title: String?, url: String) -> UIViewController
     func getMoreSection() -> UIViewController
+    func getNewVersionPopup() -> UIViewController
     func getQRCodeReader() -> UIViewController
     func getQRCodeStatus(status: QRCodeStatus?, name: String?, date: String?) -> UIViewController
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController

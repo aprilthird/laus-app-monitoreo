@@ -45,6 +45,13 @@ final class Router: RouterProtocol {
         return viewController
     }
     
+    func getHomeBannerPopup(imageUrl: String, url: String) -> UIViewController {
+        let viewController = HomeBannerViewController.get()
+        viewController.image = imageUrl
+        viewController.url = url
+        return viewController
+    }
+    
     func getMainTabBar() -> UIViewController {
         let viewController = MainTabBarController.get()
         viewController.mainPresenter = MainPresenter(userRepository: userRepository,
@@ -65,6 +72,11 @@ final class Router: RouterProtocol {
     func getMoreSection() -> UIViewController {
         let viewController = MoreTableViewController.get()
         viewController.morePresenter = MorePresenter(configRepository: configRepository, userRepository: userRepository, userDefaultsHandler: userDefaultsHandler, view: viewController)
+        return viewController
+    }
+    
+    func getNewVersionPopup() -> UIViewController {
+        let viewController = NewVersionPopupViewController.get()
         return viewController
     }
     

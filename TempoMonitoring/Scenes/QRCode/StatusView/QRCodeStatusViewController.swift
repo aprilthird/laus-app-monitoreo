@@ -65,11 +65,10 @@ extension QRCodeStatusViewController: QRCodeStatusViewControllerProtocol {
     }
     
     func closeView() {
-        guard let navigationController = self.presentingViewController as? UINavigationController else {
-            return
-        }
+        let navigationController = self.presentingViewController as? UINavigationController
+        
         dismiss(animated: false) {
-            navigationController.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
         }
     }
     
