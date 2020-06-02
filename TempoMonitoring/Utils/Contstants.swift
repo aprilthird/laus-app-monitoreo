@@ -35,6 +35,7 @@ final class Constants {
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let MORE_TITLE: String = NSLocalizedString("More", comment: "")
+        static let NO: String = NSLocalizedString("No", comment: "")
         static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
         static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
@@ -48,6 +49,7 @@ final class Constants {
         static let UNAUTHORIZED: String = NSLocalizedString("Unauthorized", comment: "")
         static let TRIAGE_TITLE: String = NSLocalizedString("Triage", comment: "")
         static let WHAT_IS_TEMPO: String = NSLocalizedString("What is Tempo?", comment: "")
+        static let YES: String = NSLocalizedString("Yes", comment: "")
     }
     struct Service {
         #if DEBUG

@@ -32,17 +32,16 @@ final class QRCodeStatusPresenter: QRCodeStatusPresenterProtocol {
         return UIColor(company.primaryColor)
     }
     
-    func loadPopup(status: QRCodeStatus?, name: String?) {
-        switch status {
-        case .authorized, .unauthorized:
-            view.updatePopup(name, (status == .authorized) ? #imageLiteral(resourceName: "authorizedImage.png") : #imageLiteral(resourceName: "unauthorizedImage.png"), (status == .authorized) ? Constants.Localizable.AUTHORIZED : Constants.Localizable.UNAUTHORIZED)
-        case .invalidCode:
+    func loadPopup(access: Bool?, name: String?) {
+        guard let access = access else {
             view.updatePopup(Constants.Localizable.INVALID_CODE, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
-        default:
-            view.isPopupHidden = true
-            view.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) {
-                self.view.closeView()
-            }
+            return
+        }
+        
+        if access {
+            view.updatePopup(name, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED)
+        } else {
+            view.updatePopup(name, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
         }
     }
 }

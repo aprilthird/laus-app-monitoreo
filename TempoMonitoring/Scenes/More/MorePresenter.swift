@@ -82,7 +82,7 @@ final class MorePresenter: MorePresenterProtocol {
     func loadOptions() -> [(image: UIImage, type: MoreOptionType, title: String)] {
         return [
             (#imageLiteral(resourceName: "phoneButton.png"), .tempo, Constants.Localizable.WHAT_IS_TEMPO),
-            (#imageLiteral(resourceName: "phoneButton.png"), .support, Constants.Localizable.SUPPORT_CHAT),
+            (#imageLiteral(resourceName: "callButton.png"), .support, Constants.Localizable.SUPPORT_CHAT),
             (#imageLiteral(resourceName: "helpButton.png"), .tutorial, Constants.Localizable.TUTORIAL),
             (#imageLiteral(resourceName: "helpButton.png"), .faq, Constants.Localizable.FAQ),
             (#imageLiteral(resourceName: "settingsButton.png"), .signOut, Constants.Localizable.SIGN_OUT)

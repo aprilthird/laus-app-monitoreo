@@ -24,6 +24,10 @@ class TriageViewController: UIViewController {
         navigationItem.title = Constants.Localizable.TRIAGE_TITLE
         
         lastCompletedTriageLabel.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         navigationItem.setRightBarButtonItems(triagePresenter.getRightNavigationItems(), animated: true)
     }

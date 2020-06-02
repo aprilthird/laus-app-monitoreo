@@ -31,15 +31,16 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         }
     }
     
-    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, ok okTitle: String, cancel cancelTitle: String, closure: @escaping (() -> Void)) {
+    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes yesTitle: String, no noTitle: String, closure: @escaping (() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: okTitle, style: .default) { (_) in
+        let yesAction = UIAlertAction(title: yesTitle, style: .destructive) { (_) in
             closure()
         }
-        let cancelAction = UIAlertAction(title: cancelTitle, style: .default) { (_) in
+        let noAction = UIAlertAction(title: noTitle, style: .default) { (_) in
         }
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        alertController.preferredAction = noAction
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
