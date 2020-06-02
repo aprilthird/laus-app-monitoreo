@@ -17,7 +17,7 @@ class QRCodeStatusViewController: UIViewController {
     @IBOutlet weak var popupImageView: UIImageView!
     @IBOutlet weak var authorizationLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
-    var status: QRCodeStatus!
+    var access: Bool?
     var name: String?
     var date: String?
     var qrCodeStatusPresenter: QRCodeStatusPresenterProtocol!
@@ -27,7 +27,7 @@ class QRCodeStatusViewController: UIViewController {
 
         backgroundView.alpha = 0.5
         
-        qrCodeStatusPresenter.loadPopup(status: status, name: name)
+        qrCodeStatusPresenter.loadPopup(access: access, name: name)
     }
     
     override func viewDidLayoutSubviews() {

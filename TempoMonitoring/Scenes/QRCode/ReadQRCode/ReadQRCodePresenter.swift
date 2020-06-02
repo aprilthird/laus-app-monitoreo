@@ -33,10 +33,10 @@ class ReadQRCodePresenter: ReadQRCodePresenterProtocol {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         print("QRContent: \(string ?? "undefined")")
         
-        let status: QRCodeStatus = (jsonObject["status"] as? Int != nil) ? QRCodeStatus(rawValue: jsonObject["status"] as! Int) ?? .invalidCode : .invalidCode
-        let name = jsonObject["name"] as? String
-        let date = jsonObject["date"] as? String
-        view.showQRCodeStatus(status, name, date)
+        let access = jsonObject["autorizacion_ingreso"] as? Bool
+        let name = jsonObject["nombre_colaborador"] as? String
+        let date = jsonObject["fecha_autorizacion"] as? String
+        view.showQRCodeStatus(access, name, date)
         
         return true
     }

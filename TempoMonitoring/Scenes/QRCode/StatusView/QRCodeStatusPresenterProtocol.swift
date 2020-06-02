@@ -12,5 +12,5 @@ import UIKit
 protocol QRCodeStatusPresenterProtocol {
     func getCloseButtonBackgroundColor() -> UIColor?
     func getPopupBackgroundColor() -> UIColor?
-    func loadPopup(status: QRCodeStatus?, name: String?)
+    func loadPopup(access: Bool?, name: String?)
 }

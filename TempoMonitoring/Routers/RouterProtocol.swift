@@ -19,7 +19,7 @@ protocol RouterProtocol {
     func getMoreSection() -> UIViewController
     func getNewVersionPopup() -> UIViewController
     func getQRCodeReader() -> UIViewController
-    func getQRCodeStatus(status: QRCodeStatus?, name: String?, date: String?) -> UIViewController
+    func getQRCodeStatus(access: Bool?, name: String?, date: String?) -> UIViewController
     func getSignIn(shouldSignUpUser: Bool?, signUpUrl: String?) -> UIViewController
     func getSplash() -> UIViewController
     func getTempoNavigationController(_ rootViewController: UIViewController) -> UINavigationController

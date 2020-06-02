@@ -8,12 +8,6 @@
 
 import Foundation
 
-enum QRCodeStatus: Int {
-    case unauthorized
-    case authorized
-    case invalidCode
-}
-
 protocol ReadQRCodeViewControllerProtocol {
-    func showQRCodeStatus(_ status: QRCodeStatus?, _ name: String?, _ date: String?)
+    func showQRCodeStatus(_ access: Bool?, _ name: String?, _ date: String?)
 }
