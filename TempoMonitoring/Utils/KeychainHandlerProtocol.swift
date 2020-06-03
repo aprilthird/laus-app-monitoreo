@@ -9,5 +9,15 @@
 import Foundation
 
 protocol KeychainHandlerProtocol {
-    // TODO: Add logic
+    func bool(from key: String) -> Bool
+    func custom<T: Codable>(of class: T.Type, from key: String) -> T?
+    func data(from key: String) -> Data?
+    func double(from key: String) -> Double
+    func float(from key: String) -> Float
+    func integer(from key: String) -> Int
+    func string(from key: String) -> String?
+    func save(_ value: Any?, to key: String)
+    func save<T: Codable>(_ value: T, to key: String) -> Bool
+    func remove(from key: String)
+    func remove(from key: String) -> Bool
 }
