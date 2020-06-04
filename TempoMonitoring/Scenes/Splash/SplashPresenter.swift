@@ -11,18 +11,22 @@ import Keychain
 
 final class SplashPresenter: SplashPresenterProtocol {
     let userDefaultsHandler: UserDefaultsHandlerProtocol
+    let configRepository: ConfigRepositoryProtocol
     let generalRepository: GeneralRepositoryProtocol
     let view: SplashViewControllerProtocol
     
-    init(userDefaultsHandler: UserDefaultsHandlerProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, configRepository: ConfigRepositoryProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
         self.userDefaultsHandler = userDefaultsHandler
+        self.configRepository = configRepository
         self.generalRepository = generalRepository
         self.view = view
     }
     
     func startAnimation() {
-        generalRepository.saveLastVersionInAppStore {
-            self.validateLogin()
+        configRepository.getDocumentType { (_) in
+            self.generalRepository.saveLastVersionInAppStore {
+                self.validateLogin()
+            }
         }
     }
     

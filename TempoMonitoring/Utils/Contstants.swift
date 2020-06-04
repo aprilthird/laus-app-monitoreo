@@ -15,6 +15,7 @@ final class Constants {
     struct Keys {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
+        static let DOCUMENT_TYPES: String = "documentTypes"
         static let IS_FIRST_OPEN: String = "isFirstOpen"
         static let IS_NOTIFICATION_ENABLED: String = "isNotificationEnabled"
         static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
@@ -60,6 +61,7 @@ final class Constants {
         #endif
         
         static let GET_ATTENTION_URL = "\(BASE_URL)/config.php?action=get_atenttion_webview_url"
+        static let GET_DOCUMENT_TYPE = "\(BASE_URL)/config.php?action=get_document_type"
         static let GET_FAQS = "\(BASE_URL)/config.php?action=get_faq"
         static let GET_HOME_BANNER = "\(BASE_URL)/config.php?action=get_home_banner"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"

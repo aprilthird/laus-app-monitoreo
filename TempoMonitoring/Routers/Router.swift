@@ -106,7 +106,7 @@ final class Router: RouterProtocol {
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
-        viewController.splashPresenter = SplashPresenter(userDefaultsHandler: userDefaultsHandler, generalRepository: generalRepository, view: viewController)
+        viewController.splashPresenter = SplashPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, generalRepository: generalRepository, view: viewController)
         return viewController
     }
     
