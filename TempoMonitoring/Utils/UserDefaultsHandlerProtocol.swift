@@ -11,6 +11,8 @@ import Foundation
 protocol UserDefaultsHandlerProtocol {
     func save(value: Any?, to key: String)
     func save<T: Codable>(_ value: T, to key: String) -> Bool
+    func array(from key: String) -> [String]?
+    func array<T>(of type: T, from key: String) -> [T]?
     func string(from key: String) -> String?
     func bool(from key: String) -> Bool
     func integer(from key: String) -> Int

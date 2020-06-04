@@ -25,11 +25,13 @@ enum TextFieldSize: String {
 extension UITextField {
     final var documentTypes: [String] {
         get {
-            return [
+            let userDefaultsHandler = UserDefaultsHandler()
+            let array: [String] = userDefaultsHandler.array(from: Constants.Keys.DOCUMENT_TYPES) ?? [
                 DocumentType.dni.rawValue,
                 DocumentType.passport.rawValue,
                 DocumentType.carnet.rawValue
             ]
+            return array
         }
     }
     final var documentTypeId: Int? {
