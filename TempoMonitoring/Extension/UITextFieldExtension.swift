@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum DocumentType: String {
+enum DocumentTypeEnum: String {
     case dni = "DNI"
     case passport = "Pasaporte"
     case carnet = "Carnet de extranjeria"
@@ -26,28 +26,26 @@ extension UITextField {
     final var documentTypes: [String] {
         get {
             let userDefaultsHandler = UserDefaultsHandler()
-            let array: [String] = userDefaultsHandler.array(from: Constants.Keys.DOCUMENT_TYPES) ?? [
-                DocumentType.dni.rawValue,
-                DocumentType.passport.rawValue,
-                DocumentType.carnet.rawValue
-            ]
+            let array = userDefaultsHandler.custom(of: [DocumentType].self, from: Constants.Keys.DOCUMENT_TYPES)?.compactMap({ (documentType) -> String? in
+                return documentType.name
+            }) ?? []
             return array
         }
     }
     final var documentTypeId: Int? {
         get {
-            guard let text = text, !text.isEmpty else {
+            let userDefaultsHandler = UserDefaultsHandler()
+            guard let text = text, !text.isEmpty, let documentTypes = userDefaultsHandler.custom(of: [DocumentType].self, from: Constants.Keys.DOCUMENT_TYPES) else {
                 return nil
             }
-            let documentType = DocumentType(rawValue: text)
-            switch documentType {
-            case .dni: return 1
-            case .passport: return 2
-            case .carnet: return 3
-            case .rut: return 4
-            case .employeeId: return 5
-            default: return nil
+            var id: Int? = nil
+            for documentType in documentTypes {
+                if text.lowercased() == documentType.name.lowercased() {
+                    id = documentType.id
+                    continue
+                }
             }
+            return id
         }
     }
     

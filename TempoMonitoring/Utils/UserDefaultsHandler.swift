@@ -39,7 +39,7 @@ final class UserDefaultsHandler: UserDefaultsHandlerProtocol {
         return array
     }
     
-    func array<T>(of type: T, from key: String) -> [T]? {
+    func array<T>(of type: T.Type, from key: String) -> [T]? {
         guard let array = userDefaults.array(forKey: key) as? [T] else {
             return nil
         }

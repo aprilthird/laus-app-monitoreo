@@ -88,10 +88,9 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func didSignIn(_ sender: UIButton) {
-        guard documentTypeTextField.isTextValid,
-            let documentTypeId = documentTypeTextField.documentTypeId else {
-                show(.alert, message: Constants.Localizable.INVALID_DOCUMENT_TYPE)
-                return
+        guard documentTypeTextField.isTextValid else {
+            show(.alert, message: Constants.Localizable.INVALID_DOCUMENT_TYPE)
+            return
         }
         
         guard documentTextField.isTextValid else {
@@ -99,7 +98,7 @@ class SignInViewController: UIViewController {
             return
         }
         
-        signInPresenter.signIn(documentTypeId: documentTypeId, document: documentTextField.text!)
+        signInPresenter.signIn(documentTypeId: documentTypeTextField.documentTypeId ?? 0, document: documentTextField.text!)
     }
     
     /*

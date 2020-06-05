@@ -35,20 +35,17 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
-    func getDocumentType(closure: @escaping ([String]) -> Void) {
+    func getDocumentType(closure: @escaping ([DocumentType]) -> Void) {
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_DOCUMENT_TYPE,
                            parameters: nil,
         success: { (response) in
-            var documentTypes = [String]()
-            for jsonObject in response["document_type"].arrayValue {
-                documentTypes.append(jsonObject["name"].stringValue)
-            }
-            self.userDefaultsHandler.save(value: documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
+            let documentTypes = DocumentType.buildCollection(fromJSONArray: response["document_type"].arrayValue)
+            _ = self.userDefaultsHandler.save(documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
             closure(documentTypes)
         }) { (error) in
-            let documentTypes = [String]()
-            self.userDefaultsHandler.save(value: documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
+            let documentTypes = [DocumentType]()
+            _ = self.userDefaultsHandler.save(documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
             closure(documentTypes)
         }
     }
