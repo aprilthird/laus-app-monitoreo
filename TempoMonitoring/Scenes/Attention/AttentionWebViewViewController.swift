@@ -20,6 +20,7 @@ class AttentionWebViewViewController: UIViewController {
         navigationItem.title = Constants.Localizable.ATTENTION_TITLE
         
         navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
+        webView.navigationDelegate = self
         attentionPresenter.showWebView()
     }
     
@@ -36,6 +37,10 @@ class AttentionWebViewViewController: UIViewController {
 
 }
 extension AttentionWebViewViewController: AttentionWebViewViewControllerProtocol {
+    func goBack() {
+        webView.goBack()
+    }
+    
     func openUrl(_ url: String) {
         guard let url = URL(string: url) else {
             return
@@ -47,5 +52,10 @@ extension AttentionWebViewViewController: AttentionWebViewViewControllerProtocol
         let moreSection = Router.shared.getMoreSection()
         moreSection.hidesBottomBarWhenPushed = true
         show(moreSection, sender: nil)
+    }
+}
+extension AttentionWebViewViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        navigationItem.setLeftBarButtonItems(attentionPresenter.getLeftNavigationItems(canGoBack: webView.canGoBack), animated: true)
     }
 }

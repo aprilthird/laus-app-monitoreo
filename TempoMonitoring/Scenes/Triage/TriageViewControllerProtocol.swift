@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TriageViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
     func showQRCodeReader()
     func showWebView(_ title: String?, _ url: String)
+    func updateLastTriage(_ isHidden: Bool, _ attributedText: NSAttributedString?)
 }

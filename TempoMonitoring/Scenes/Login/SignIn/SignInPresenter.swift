@@ -35,6 +35,7 @@ final class SignInPresenter: SignInPresenterProtocol {
             self.view.endProgress()
             
             self.userRepository.registerDevice()
+            self.configRepository.saveDeviceIdentifier()
             self.view.goToMain()
         }) { (error) in
             self.view.endProgress()

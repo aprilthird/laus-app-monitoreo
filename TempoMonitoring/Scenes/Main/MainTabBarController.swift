@@ -23,12 +23,14 @@ class MainTabBarController: UITabBarController, OnTracingViewClose {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        selectedViewController?.viewWillAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: false)
+        selectedViewController?.viewWillDisappear(animated)
     }
     
     override func viewDidLayoutSubviews() {

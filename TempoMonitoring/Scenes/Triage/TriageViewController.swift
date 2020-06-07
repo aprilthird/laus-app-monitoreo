@@ -23,7 +23,7 @@ class TriageViewController: UIViewController {
 
         navigationItem.title = Constants.Localizable.TRIAGE_TITLE
         
-        lastCompletedTriageLabel.isHidden = true
+        lastCompletedTriageLabel.text = triagePresenter.loadLastTriage(ofSize: lastCompletedTriageLabel.font.pointSize)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,5 +70,11 @@ extension TriageViewController: TriageViewControllerProtocol {
         let webView = Router.shared.getMainWebView(title: title, url: url)
         webView.hidesBottomBarWhenPushed = true
         show(webView, sender: nil)
+    }
+    
+    func updateLastTriage(_ isHidden: Bool, _ attributedText: NSAttributedString?) {
+        lastCompletedTriageLabel.isHidden = isHidden
+        guard let attributedText = attributedText else { return }
+        lastCompletedTriageLabel.attributedText = attributedText
     }
 }

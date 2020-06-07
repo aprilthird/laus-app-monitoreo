@@ -78,6 +78,21 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
+    func getLastTriage(success: @escaping (String, String?) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+        ]
+        
+        ResponseHelper.GET(with: .url,
+                           url: Constants.Service.GET_LAST_TRIAGE,
+                           parameters: parameters,
+        success: { (response) in
+            success(response["last_test"].stringValue, response["evaluation"].string)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
     func getQRCodeUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
@@ -106,16 +121,16 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     }
     
     func getTriageUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        let companyToken = Keychain.load(Constants.Keys.COMPANY_TOKEN) ?? ""
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": companyToken
         ]
         
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_TRIAGE_URL,
                            parameters: parameters,
         success: { (response) in
-            let token = Keychain.load(Constants.Keys.COMPANY_TOKEN) ?? ""
-            success("\(response["url"].stringValue)\(token)")
+            success("\(response["url"].stringValue)\(companyToken)")
         }) { (error) in
             failure(error)
         }
@@ -127,6 +142,31 @@ final class ConfigRepository: ConfigRepositoryProtocol {
                            parameters: nil,
         success: { (response) in
             success(response["url"].stringValue)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func saveDeviceIdentifier(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+        guard let deviceId = UIDevice.current.identifierForVendor else {
+            failure(NSError(domain: "TPMT", code: 420, userInfo: ["message": "Device ID not found"]))
+            return
+        }
+        guard let companyToken = Keychain.load(Constants.Keys.COMPANY_TOKEN) else {
+            failure(NSError(domain: "TPMT", code: 420, userInfo: ["message": "Company Token not found"]))
+            return
+        }
+        
+        let parameters: [String: Any] = [
+            "id_device": deviceId.uuidString,
+            "token_compania": companyToken
+        ]
+        
+        ResponseHelper.POST(with: .url,
+                            url: Constants.Service.SAVE_DEVICE_ID,
+                            parameters: parameters,
+        success: { (response) in
+            success(true)
         }) { (error) in
             failure(error)
         }

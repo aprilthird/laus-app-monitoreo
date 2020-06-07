@@ -34,12 +34,15 @@ final class Constants {
         static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
+        static let LAST_TRIAGE_COMPLETED: String = NSLocalizedString("Last triage completed", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let MORE_TITLE: String = NSLocalizedString("More", comment: "")
         static let NO: String = NSLocalizedString("No", comment: "")
+        static let NO_LAST_TRIAGE: String = NSLocalizedString("Triage not found", comment: "")
         static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
         static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
+        static let QR_CODE_TITLE: String = NSLocalizedString("QR Code", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
         static let SIGN_OUT: String = NSLocalizedString("Sign out", comment: "")
         static let SIGN_OUT_QUESTION: String = NSLocalizedString("Do you want to sign out?", comment: "")
@@ -65,10 +68,12 @@ final class Constants {
         static let GET_DOCUMENT_TYPE = "\(BASE_URL)/config.php?action=get_document_type"
         static let GET_FAQS = "\(BASE_URL)/config.php?action=get_faq"
         static let GET_HOME_BANNER = "\(BASE_URL)/config.php?action=get_home_banner"
+        static let GET_LAST_TRIAGE = "\(BASE_URL)/user.php?action=get_last_triaje"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
         static let GET_SIGN_UP_URL = "\(BASE_URL)/config.php?action=get_register_link"
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
         static let GET_TUTORIAL = "\(BASE_URL)/config.php?action=get_tutorial"
+        static let SAVE_DEVICE_ID = "\(BASE_URL)/config.php?action=save_device_id"
         
         static let REGISTER_DEVICE = "\(BASE_URL)/user.php?action=register_device"
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"

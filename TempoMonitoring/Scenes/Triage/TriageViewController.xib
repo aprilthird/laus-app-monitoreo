@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TriageViewController" customModule="Tempo_Monitoring" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TriageViewController" customModule="Tempo_Monitoreo" customModuleProvider="target">
             <connections>
                 <outlet property="descriptionTextView" destination="cu3-bW-7H9" id="AYg-bR-oWN"/>
                 <outlet property="lastCompletedTriageLabel" destination="ght-3l-0vC" id="Wfg-nt-rx8"/>
@@ -50,13 +50,13 @@
                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acepto que los datos proporcionados tienen carácter de Declaración Jurada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-yj-6Ph">
-                                    <rect key="frame" x="62" y="564" width="290" height="30.5"/>
+                                    <rect key="frame" x="62" y="584" width="290" height="30.5"/>
                                     <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-NR-GAN">
-                                    <rect key="frame" x="30" y="614.5" width="354" height="168.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-NR-GAN">
+                                    <rect key="frame" x="30" y="634.5" width="354" height="163.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-wP-lcl">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="138"/>
@@ -88,7 +88,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último triaje completado: 00/00/0000 (No apto)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ght-3l-0vC">
-                                            <rect key="frame" x="54.5" y="153" width="245" height="15.5"/>
+                                            <rect key="frame" x="54.5" y="148" width="245" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                                 <constraint firstItem="cu3-bW-7H9" firstAttribute="leading" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="35" id="ID8-BO-9jb"/>
                                 <constraint firstItem="XnH-yj-6Ph" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="50" id="Jle-qJ-a45"/>
                                 <constraint firstAttribute="trailing" secondItem="cu3-bW-7H9" secondAttribute="trailing" constant="35" id="XZQ-rV-qie"/>
-                                <constraint firstAttribute="bottom" secondItem="cPe-NR-GAN" secondAttribute="bottom" constant="35" id="Xc0-fD-Xsh"/>
+                                <constraint firstAttribute="bottom" secondItem="cPe-NR-GAN" secondAttribute="bottom" constant="20" id="Xc0-fD-Xsh"/>
                                 <constraint firstItem="cPe-NR-GAN" firstAttribute="top" secondItem="XnH-yj-6Ph" secondAttribute="bottom" constant="20" id="akv-UY-gns"/>
                                 <constraint firstAttribute="trailing" secondItem="cPe-NR-GAN" secondAttribute="trailing" constant="30" id="bsI-Xk-48l"/>
                                 <constraint firstItem="cPe-NR-GAN" firstAttribute="leading" secondItem="0sm-eT-tb9" secondAttribute="leading" constant="30" id="efy-Eb-Y0I"/>
