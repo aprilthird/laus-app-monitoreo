@@ -49,6 +49,7 @@ final class Constants {
         static let TUTORIAL: String = NSLocalizedString("Tutorial", comment: "")
         static let UNAUTHORIZED: String = NSLocalizedString("Unauthorized", comment: "")
         static let TRIAGE_TITLE: String = NSLocalizedString("Triage", comment: "")
+        static let TRACING_TITLE: String = NSLocalizedString("Tracing", comment: "")
         static let WHAT_IS_TEMPO: String = NSLocalizedString("What is Tempo?", comment: "")
         static let YES: String = NSLocalizedString("Yes", comment: "")
     }

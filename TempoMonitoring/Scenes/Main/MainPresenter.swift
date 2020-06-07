@@ -39,10 +39,15 @@ final class MainPresenter: MainPresenterProtocol {
         triage.tabBarItem.title = Constants.Localizable.TRIAGE_TITLE
         triage.tabBarItem.image = #imageLiteral(resourceName: "tabTriage.png")
         
+        let tracing = Router.shared.getTempoNavigationController(Router.shared.getTracing())
+        tracing.tabBarItem.title = Constants.Localizable.TRACING_TITLE
+        tracing.tabBarItem.image = #imageLiteral(resourceName: "tabTracing")
+        
         return [
             triage,
             tips,
-            attention
+            attention,
+            tracing
         ]
     }
     

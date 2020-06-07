@@ -11,6 +11,9 @@ import CoreData
 import Firebase
 import IQKeyboardManagerSwift
 import OneSignal
+import dp3t_lib_ios
+
+var amigoContactTracing = AmigoContactTracing.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        amigoContactTracing.setLaunchOptions(launchOptions)
         
         return true
     }
@@ -120,6 +124,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        amigoContactTracing.applicationDidEnterBackground()
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        amigoContactTracing.applicationWillEnterForeground()
     }
 
 }

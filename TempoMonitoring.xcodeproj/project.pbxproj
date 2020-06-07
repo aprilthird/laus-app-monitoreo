@@ -3,11 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
+		4261B8F72489635700535268 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 4261B8F62489635700535268 /* SQLite */; };
+		427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CFD892486C1C800EBDCBB /* TracingViewController.swift */; };
+		427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427CFD8B2486C28900EBDCBB /* TracingViewController.xib */; };
+		427CFD8D2486C37700EBDCBB /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
+		427CFD8E2486C37700EBDCBB /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FA73A92486A1CA00EC0F11 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73A82486A1CA00EC0F11 /* TextFieldEffects */; };
+		42FA73AC2486A22300EC0F11 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73AB2486A22300EC0F11 /* SwiftProtobuf */; };
+		42FA73AF2486A24A00EC0F11 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73AE2486A24A00EC0F11 /* SwiftJWT */; };
+		42FA73B22486A28700EC0F11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73B12486A28700EC0F11 /* SnapKit */; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7C24831AB0001111C6 /* RouterProtocol.swift */; };
@@ -121,7 +130,7 @@
 		8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */; };
 		8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */; };
 		8EEE8011248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */; };
-		A38D926D190D3B2558B36182 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		ABCFCB95A91BEE6F152E1F01 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C617CB593BEF22B94CE0C8E /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
@@ -151,6 +160,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		427CFD8F2486C37700EBDCBB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				427CFD8E2486C37700EBDCBB /* dp3t_lib_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8EB5D9B72484B64000E8E9DE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,14 +186,16 @@
 
 /* Begin PBXFileReference section */
 		01B480888780AE0BD863778B /* Pods-TempoMonitoring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.release.xcconfig"; sourceTree = "<group>"; };
+		0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		0C617CB593BEF22B94CE0C8E /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoringTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
-		4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		427CFD892486C1C800EBDCBB /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
+		427CFD8B2486C28900EBDCBB /* TracingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingViewController.xib; sourceTree = "<group>"; };
+		42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dp3t_lib_ios.framework; path = TempoMonitoring/dp3t_lib_ios.framework; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
-		6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8E319E7824831A77001111C6 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
 		8E319E7924831A77001111C6 /* FirstSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstSceneViewController.xib; sourceTree = "<group>"; };
@@ -298,6 +320,7 @@
 		8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionWebViewViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring_TempoMonitoringUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -307,7 +330,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FA73A92486A1CA00EC0F11 /* TextFieldEffects in Frameworks */,
+				42FA73AF2486A24A00EC0F11 /* SwiftJWT in Frameworks */,
+				42FA73B22486A28700EC0F11 /* SnapKit in Frameworks */,
+				427CFD8D2486C37700EBDCBB /* dp3t_lib_ios.framework in Frameworks */,
+				4261B8F72489635700535268 /* SQLite in Frameworks */,
 				1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */,
+				42FA73AC2486A22300EC0F11 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,13 +360,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38D926D190D3B2558B36182 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+				ABCFCB95A91BEE6F152E1F01 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427CFD882486BC6600EBDCBB /* Tracing */ = {
+			isa = PBXGroup;
+			children = (
+				427CFD892486C1C800EBDCBB /* TracingViewController.swift */,
+				427CFD8B2486C28900EBDCBB /* TracingViewController.xib */,
+			);
+			path = Tracing;
+			sourceTree = "<group>";
+		};
 		8E319E71248318E7001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +393,7 @@
 		8E319E72248319B8001111C6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				427CFD882486BC6600EBDCBB /* Tracing */,
 				8E319EB524833D75001111C6 /* Attention */,
 				8E319EA524833347001111C6 /* ContactUsPopup */,
 				8E319E7724831A64001111C6 /* FirstScene */,
@@ -758,8 +797,8 @@
 				3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */,
 				346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */,
 				7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */,
-				4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
-				78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -767,10 +806,11 @@
 		FACC13CBA7929E20A8928C09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */,
 				21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */,
 				E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */,
 				1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */,
-				6BF259C0AB68A12EFE06D240 /* Pods_OneSignalNotificationServiceExtension.framework */,
+				0C617CB593BEF22B94CE0C8E /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -789,6 +829,7 @@
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
 				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
 				8EB5D9B92484C0DF00E8E9DE /* ShellScript */,
+				427CFD8F2486C37700EBDCBB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -796,6 +837,13 @@
 				8EB5D9B22484B64000E8E9DE /* PBXTargetDependency */,
 			);
 			name = TempoMonitoring;
+			packageProductDependencies = (
+				42FA73A82486A1CA00EC0F11 /* TextFieldEffects */,
+				42FA73AB2486A22300EC0F11 /* SwiftProtobuf */,
+				42FA73AE2486A24A00EC0F11 /* SwiftJWT */,
+				42FA73B12486A28700EC0F11 /* SnapKit */,
+				4261B8F62489635700535268 /* SQLite */,
+			);
 			productName = TempoMonitoring;
 			productReference = 8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */;
 			productType = "com.apple.product-type.application";
@@ -843,7 +891,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EB5D9B42484B64000E8E9DE /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
-				172B812D07747045F45F52C4 /* [CP] Check Pods Manifest.lock */,
+				280AECD84E10CECE62B7C033 /* [CP] Check Pods Manifest.lock */,
 				8EB5D9A82484B64000E8E9DE /* Sources */,
 				8EB5D9A92484B64000E8E9DE /* Frameworks */,
 				8EB5D9AA2484B64000E8E9DE /* Resources */,
@@ -893,6 +941,13 @@
 				"es-419",
 			);
 			mainGroup = 8E41AAFD2483045300E6DAD7;
+			packageReferences = (
+				42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+				42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = 8E41AB072483045300E6DAD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -921,6 +976,7 @@
 				8E319EC624833EB2001111C6 /* ReadQRCodeViewController.xib in Resources */,
 				8E319EBA24833DA0001111C6 /* TriageViewController.xib in Resources */,
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
+				427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8EB5D9BB2484C3E200E8E9DE /* GoogleService-Info.plist in Resources */,
@@ -963,7 +1019,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		172B812D07747045F45F52C4 /* [CP] Check Pods Manifest.lock */ = {
+		280AECD84E10CECE62B7C033 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1166,6 +1222,7 @@
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
+				427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
@@ -1386,6 +1443,10 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TempoMonitoring",
+				);
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1393,6 +1454,75 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FIRAnalyticsConnector\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleDataTransportCCTSupport\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Keychain\"",
+					"-framework",
+					"\"OneSignal\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring;
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1417,6 +1547,75 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FIRAnalyticsConnector\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleDataTransportCCTSupport\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Keychain\"",
+					"-framework",
+					"\"OneSignal\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportafolio.TempoMonitoring;
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1514,7 +1713,7 @@
 		};
 		8EB5D9B52484B64000E8E9DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C284BFFB055764EFDC3BD9F /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
@@ -1537,7 +1736,7 @@
 		};
 		8EB5D9B62484B64000E8E9DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78E16445122026161B7DFF37 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
@@ -1607,6 +1806,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
+		42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+		42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+		42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4261B8F62489635700535268 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		42FA73A82486A1CA00EC0F11 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		42FA73AB2486A22300EC0F11 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		42FA73AE2486A24A00EC0F11 /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+		42FA73B12486A28700EC0F11 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */ = {

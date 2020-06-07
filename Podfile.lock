@@ -79,6 +79,9 @@ PODS:
   - nanopb/encode (0.3.9011)
   - OneSignal (2.12.5)
   - PromisesObjC (1.2.8)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
@@ -91,6 +94,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Keychain
   - OneSignal (< 3.0, >= 2.11.2)
+  - SQLite.swift
   - SVProgressHUD
   - SwiftyJSON
 
@@ -116,6 +120,7 @@ SPEC REPOS:
     - nanopb
     - OneSignal
     - PromisesObjC
+    - SQLite.swift
     - SVProgressHUD
     - SwiftyJSON
 
@@ -140,9 +145,10 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   OneSignal: 1de998c42bb06ed630bb38dd1bc933a667437dbb
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 9319efb6ed6046e6a99e15b2a546f148768657fe
+PODFILE CHECKSUM: 1cc8926bc23370b5292944c2ba223b72823b8be2
 
 COCOAPODS: 1.9.3
