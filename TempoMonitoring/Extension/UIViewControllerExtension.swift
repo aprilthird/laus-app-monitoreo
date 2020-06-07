@@ -20,7 +20,7 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
     }
     
     // MARK: AlertHandlerProtocol
-    func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping (() -> Void)) {
+    func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: Constants.Localizable.OK, style: .default) { (_) in
             closure()
@@ -31,7 +31,7 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         }
     }
     
-    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes yesTitle: String, no noTitle: String, closure: @escaping (() -> Void)) {
+    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes yesTitle: String, no noTitle: String, closure: @escaping(() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
         let yesAction = UIAlertAction(title: yesTitle, style: .destructive) { (_) in
             closure()
