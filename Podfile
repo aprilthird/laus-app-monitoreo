@@ -16,6 +16,7 @@ target 'TempoMonitoring' do
   pod 'OneSignal', '>= 2.11.2', '< 3.0'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
+  pod 'SQLite.swift'
 
   target 'TempoMonitoringTests' do
     inherit! :search_paths

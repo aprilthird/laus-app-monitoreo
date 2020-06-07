@@ -131,4 +131,9 @@ final class Router: RouterProtocol {
         viewController.triagePresenter = TriagePresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, view: viewController)
         return viewController
     }
+    
+    func getTracing() -> UIViewController {
+        let viewController = TracingViewController.get()
+        return viewController
+    }
 }
