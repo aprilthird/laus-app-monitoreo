@@ -40,8 +40,8 @@ final class ContactUsPopupPresenter: ContactUsPopupPresenterProtocol {
     }
     
     func validateKeyboard(text: String?) -> UIKeyboardType {
-        switch text {
-        case DocumentType.dni.rawValue: return .numberPad
+        switch text?.lowercased() {
+        case DocumentTypeEnum.dni.rawValue.lowercased(): return .numberPad
         default: return .default
         }
     }
