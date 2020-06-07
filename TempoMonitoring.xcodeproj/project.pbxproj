@@ -87,6 +87,7 @@
 		8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */; };
 		8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */; };
 		8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738224848EBD0032B174 /* TipRepository.swift */; };
+		8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */; };
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
 		8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */; };
@@ -276,6 +277,7 @@
 		8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8EBD738224848EBD0032B174 /* TipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepository.swift; sourceTree = "<group>"; };
+		8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		8EEE7FB12483528500DC28F1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -395,7 +397,6 @@
 		8E319E72248319B8001111C6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				427CFD882486BC6600EBDCBB /* Tracing */,
 				8E319EB524833D75001111C6 /* Attention */,
 				8E319EA524833347001111C6 /* ContactUsPopup */,
 				8E319E7724831A64001111C6 /* FirstScene */,
@@ -405,6 +406,7 @@
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
 				8EBD736A248483710032B174 /* Tips */,
+				427CFD882486BC6600EBDCBB /* Tracing */,
 				8E319EB424833D6D001111C6 /* Triage */,
 			);
 			path = Scenes;
@@ -413,8 +415,8 @@
 		8E319E74248319D1001111C6 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				8E319E7C24831AB0001111C6 /* RouterProtocol.swift */,
 				8E319E7E24831ABC001111C6 /* Router.swift */,
+				8E319E7C24831AB0001111C6 /* RouterProtocol.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -454,10 +456,10 @@
 		8E319E8024831B2F001111C6 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE7FE3248419EB00DC28F1 /* SignInPresenter.swift */,
+				8EEE7FE12484197D00DC28F1 /* SignInPresenterProtocol.swift */,
 				8E319E8524831BAD001111C6 /* SignInViewController.swift */,
 				8E319E8624831BAD001111C6 /* SignInViewController.xib */,
-				8EEE7FE12484197D00DC28F1 /* SignInPresenterProtocol.swift */,
-				8EEE7FE3248419EB00DC28F1 /* SignInPresenter.swift */,
 				8EEE7FE524841AD800DC28F1 /* SignInViewControllerProtocol.swift */,
 			);
 			path = SignIn;
@@ -468,11 +470,12 @@
 			children = (
 				8E319E9A24832205001111C6 /* StringExtension.swift */,
 				8E319E9824831FBB001111C6 /* UIColorExtension.swift */,
+				8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */,
 				8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */,
+				8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */,
 				8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */,
 				8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */,
 				8EBD736624846E7D0032B174 /* UIViewExtension.swift */,
-				8EBD7368248473FF0032B174 /* UIImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -526,13 +529,13 @@
 		8E319EAA24833570001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8EB5D99B2484A00700E8E9DE /* NewVersionPopup */,
 				8EB5D99A24849FFA00E8E9DE /* HomeBannerPopup */,
 				8E319EAF24833CA3001111C6 /* MainWebView */,
+				8EB5D99B2484A00700E8E9DE /* NewVersionPopup */,
+				8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */,
+				8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */,
 				8E319EAB24833591001111C6 /* MainTabBarController.swift */,
 				8E319EAC24833591001111C6 /* MainTabBarController.xib */,
-				8EEE7FEE24842C4500DC28F1 /* MainPresenterProtocol.swift */,
-				8EEE7FF024842D3500DC28F1 /* MainPresenter.swift */,
 				8EEE7FF22484308D00DC28F1 /* MainTabBarControllerProtocol.swift */,
 			);
 			path = Main;
@@ -550,10 +553,10 @@
 		8E319EB424833D6D001111C6 /* Triage */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE7FF62484400A00DC28F1 /* TriagePresenter.swift */,
+				8EEE7FF424843FEB00DC28F1 /* TriagePresenterProtocol.swift */,
 				8E319EB724833DA0001111C6 /* TriageViewController.swift */,
 				8E319EB824833DA0001111C6 /* TriageViewController.xib */,
-				8EEE7FF424843FEB00DC28F1 /* TriagePresenterProtocol.swift */,
-				8EEE7FF62484400A00DC28F1 /* TriagePresenter.swift */,
 				8EEE7FF82484410600DC28F1 /* TriageViewControllerProtocol.swift */,
 			);
 			path = Triage;
@@ -562,10 +565,10 @@
 		8E319EB524833D75001111C6 /* Attention */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */,
+				8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */,
 				8E319EBC24833E3C001111C6 /* AttentionWebViewViewController.swift */,
 				8E319EBD24833E3C001111C6 /* AttentionWebViewViewController.xib */,
-				8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */,
-				8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */,
 				8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */,
 			);
 			path = Attention;
@@ -583,10 +586,10 @@
 		8E319EC124833E83001111C6 /* ReadQRCode */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE80022484512800DC28F1 /* ReadQRCodePresenter.swift */,
+				8EEE80002484504000DC28F1 /* ReadQRCodePresenterProtocol.swift */,
 				8E319EC324833EB2001111C6 /* ReadQRCodeViewController.swift */,
 				8E319EC424833EB2001111C6 /* ReadQRCodeViewController.xib */,
-				8EEE80002484504000DC28F1 /* ReadQRCodePresenterProtocol.swift */,
-				8EEE80022484512800DC28F1 /* ReadQRCodePresenter.swift */,
 				8EEE80042484525800DC28F1 /* ReadQRCodeViewControllerProtocol.swift */,
 			);
 			path = ReadQRCode;
@@ -595,10 +598,10 @@
 		8E319EC224833E92001111C6 /* StatusView */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE80082484576100DC28F1 /* QRCodeStatusPresenter.swift */,
+				8EEE80062484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift */,
 				8E319EC724833EC2001111C6 /* QRCodeStatusViewController.swift */,
 				8E319EC824833EC2001111C6 /* QRCodeStatusViewController.xib */,
-				8EEE80062484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift */,
-				8EEE80082484576100DC28F1 /* QRCodeStatusPresenter.swift */,
 				8EEE800A2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift */,
 			);
 			path = StatusView;
@@ -608,10 +611,10 @@
 			isa = PBXGroup;
 			children = (
 				8E319ED924834B7E001111C6 /* Cells */,
+				8EBD7360248468E90032B174 /* MorePresenter.swift */,
+				8EBD735E248468990032B174 /* MorePresenterProtocol.swift */,
 				8E319ED524834B4A001111C6 /* MoreTableViewController.swift */,
 				8E319ED624834B4A001111C6 /* MoreTableViewController.xib */,
-				8EBD735E248468990032B174 /* MorePresenterProtocol.swift */,
-				8EBD7360248468E90032B174 /* MorePresenter.swift */,
 				8EBD73622484696B0032B174 /* MoreTableViewControllerProtocol.swift */,
 			);
 			path = More;
@@ -655,7 +658,6 @@
 		8E41AB082483045300E6DAD7 /* TempoMonitoring */ = {
 			isa = PBXGroup;
 			children = (
-				8EB5D9BA2484C3E200E8E9DE /* GoogleService-Info.plist */,
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
 				8EEE7FE72484206900DC28F1 /* Models */,
@@ -663,6 +665,7 @@
 				8E319E74248319D1001111C6 /* Routers */,
 				8E319E72248319B8001111C6 /* Scenes */,
 				8E319E8C24831C19001111C6 /* Utils */,
+				8EB5D9BA2484C3E200E8E9DE /* GoogleService-Info.plist */,
 				8EB5D9B82484B77100E8E9DE /* Tempo Monitoring.entitlements */,
 			);
 			path = TempoMonitoring;
@@ -698,10 +701,10 @@
 		8EB5D99B2484A00700E8E9DE /* NewVersionPopup */ = {
 			isa = PBXGroup;
 			children = (
+				8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */,
+				8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */,
 				8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */,
 				8EB5D99D2484A03800E8E9DE /* NewVersionPopupViewController.xib */,
-				8EB5D9A42484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift */,
-				8EB5D9A62484B1DB00E8E9DE /* NewVersionPopupPresenter.swift */,
 			);
 			path = NewVersionPopup;
 			sourceTree = "<group>";
@@ -721,9 +724,9 @@
 				8EBD736F248483DD0032B174 /* Cells */,
 				8EBD736B248483C10032B174 /* TipsCollectionViewController.swift */,
 				8EBD736C248483C10032B174 /* TipsCollectionViewController.xib */,
-				8EBD7378248489480032B174 /* TipsPresenterProtocol.swift */,
-				8EBD737A248489560032B174 /* TipsPresenter.swift */,
 				8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */,
+				8EBD737A248489560032B174 /* TipsPresenter.swift */,
+				8EBD7378248489480032B174 /* TipsPresenterProtocol.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -739,18 +742,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8EE090BA248D9D70007EC00D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		8EEE7FB82483571100DC28F1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				8EEE7FC6248359B700DC28F1 /* Helper */,
 				8EEE7FBA2483574800DC28F1 /* ConfigRepository.swift */,
 				8EEE7FBC2483575C00DC28F1 /* ConfigRepositoryProtocol.swift */,
+				8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */,
+				8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */,
+				8EBD738224848EBD0032B174 /* TipRepository.swift */,
+				8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */,
 				8EEE7FD724837B1900DC28F1 /* UserRepository.swift */,
 				8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */,
-				8EEE7FFC24844AD300DC28F1 /* GeneralRepositoryProtocol.swift */,
-				8EEE7FFE24844B3100DC28F1 /* GeneralRepository.swift */,
-				8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */,
-				8EBD738224848EBD0032B174 /* TipRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -782,7 +793,7 @@
 		8EEE7FE72484206900DC28F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8EEE7FEA248420B800DC28F1 /* ModelProtocol.swift */,
+				8EE090BA248D9D70007EC00D /* Base */,
 				8EEE7FEC248420CC00DC28F1 /* Company.swift */,
 				8E890ACF248AC7BB00BB1921 /* DocumentType.swift */,
 			);
@@ -1252,6 +1263,7 @@
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
+				8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */,
 				8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

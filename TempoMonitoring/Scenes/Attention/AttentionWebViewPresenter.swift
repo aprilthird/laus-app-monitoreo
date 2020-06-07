@@ -18,6 +18,23 @@ class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
         self.view = view
     }
     
+    func getLeftNavigationItems(canGoBack: Bool) -> [UIBarButtonItem] {
+        let size = CGSize(width: 25, height: 25)
+        
+        guard canGoBack else {
+            return []
+        }
+        let backButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "backButton.png").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(goBack))
+        
+        return [
+            backButtonBar
+        ]
+    }
+    
+    @objc private func goBack() {
+        view.goBack()
+    }
+    
     func getRightNavigationItems() -> [UIBarButtonItem] {
         let size = CGSize(width: 25, height: 25)
         

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol AttentionWebViewPresenterProtocol {
+    func getLeftNavigationItems(canGoBack: Bool) -> [UIBarButtonItem]
     func getRightNavigationItems() -> [UIBarButtonItem]
     func showWebView()
 }

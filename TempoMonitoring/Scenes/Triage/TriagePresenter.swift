@@ -20,11 +20,43 @@ final class TriagePresenter: TriagePresenterProtocol {
         self.view = view
     }
     
+    func loadLastTriage(ofSize size: CGFloat) -> String {
+        var attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.robotoCondensed(withType: .regular, andSize: size)
+        ]
+        
+        configRepository.getLastTriage(success: { (lastTriage, evaluation) in
+            let mutableAttributedString = NSMutableAttributedString(string: "\(Constants.Localizable.LAST_TRIAGE_COMPLETED): \(lastTriage)", attributes: attributes)
+            
+            guard let evaluation = evaluation, !evaluation.isEmpty else {
+                self.view.updateLastTriage(false, mutableAttributedString)
+                return
+            }
+            let firstBracket = NSAttributedString(string: " (", attributes: attributes)
+            let secondBracket = NSAttributedString(string: ")", attributes: attributes)
+            if evaluation.lowercased().contains("no apto") {
+                attributes[.foregroundColor] = UIColor.red
+            } else if evaluation.lowercased().contains("apto") {
+                attributes[.foregroundColor] = UIColor.green
+            }
+            let evaluationAttributedString = NSAttributedString(string: evaluation, attributes: attributes)
+            mutableAttributedString.append(firstBracket)
+            mutableAttributedString.append(evaluationAttributedString)
+            mutableAttributedString.append(secondBracket)
+            
+            self.view.updateLastTriage(false, mutableAttributedString)
+        }) { (error) in
+            self.view.updateLastTriage(false, NSAttributedString(string: Constants.Localizable.NO_LAST_TRIAGE, attributes: attributes))
+        }
+        
+        return Constants.Localizable.LOADING
+    }
+    
     func showQRCodeWebView() {
         view.startProgress()
         
         configRepository.getQRCodeUrl(success: { (url) in
-            self.view.showWebView(nil, url)
+            self.view.showWebView(Constants.Localizable.QR_CODE_TITLE, url)
         }) { (error) in
             self.view.endProgress()
             

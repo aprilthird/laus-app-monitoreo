@@ -18,6 +18,8 @@ class TipsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = Constants.Localizable.TIPS_TITLE
+        
         tipReuseIdentifier = TipCollectionViewCell.reuseIdentifier
         headerReuseIdentifier = TipsHeaderCollectionReusableView.reuseIdentifier
         tips = []
