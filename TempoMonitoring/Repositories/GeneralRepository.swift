@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 import SwiftyJSON
 
 final class GeneralRepository: GeneralRepositoryProtocol {
@@ -21,15 +22,23 @@ final class GeneralRepository: GeneralRepositoryProtocol {
             fatalError()
         }
         
-        ResponseHelper.GET(with: .url,
-                           url: "https://itunes.apple.com/lookup?bundleId=\(identifier)",
-                           parameters: nil,
-        success: { (response) in
-            let version = response["results"].arrayValue[0]["version"].stringValue
-            self.userDefaultsHandler.save(value: version, to: Constants.Keys.LAST_APP_VERSION)
-            closure()
-        }) { (error) in
-            closure()
+        Alamofire.request("https://itunes.apple.com/lookup?bundleId=\(identifier)")
+            .responseJSON { (response) in
+                switch response.result {
+                case .failure(let error):
+                    print("AFError: \(error.localizedDescription)")
+                    closure()
+                case .success(let value):
+                    let jsonObject = JSON(value)
+                    print("Response: \(response.response?.statusCode ?? 0) - \(jsonObject)")
+                    guard let results = jsonObject["results"].array, !results.isEmpty,
+                        let version = results[0]["version"].string else {
+                            closure()
+                            return
+                    }
+                    self.userDefaultsHandler.save(value: version, to: Constants.Keys.LAST_APP_VERSION)
+                    closure()
+                }
         }
     }
 }

@@ -16,7 +16,7 @@ enum RequestType: String {
 }
 
 struct ResponseHelper {
-    static func POST(with type: RequestType, url: String, headers: HTTPHeaders? = nil, parameters: [String: Any], success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void) {
+    static func POST(with type: RequestType, url: String, headers: HTTPHeaders? = nil, parameters: [String: Any], success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
         let encoding: ParameterEncoding
         switch type {
         case .url:
@@ -34,7 +34,7 @@ struct ResponseHelper {
         }
     }
     
-    static func GET(with type: RequestType, url: String, headers: HTTPHeaders? = nil, parameters: [String: Any]?, success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void) {
+    static func GET(with type: RequestType, url: String, headers: HTTPHeaders? = nil, parameters: [String: Any]?, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
         let encoding: ParameterEncoding
         switch type {
         case .url:
@@ -52,7 +52,7 @@ struct ResponseHelper {
         }
     }
     
-    private static func validate(response: DataResponse<Any>, success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void) {
+    private static func validate(response: DataResponse<Any>, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
         switch response.result {
         case .failure(let error):
             print("AFError: \(error.localizedDescription)")
