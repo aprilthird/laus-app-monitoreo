@@ -19,6 +19,10 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         return Self(nibName: NIBName, bundle: bundle)
     }
     
+    var className: String {
+        return NSStringFromClass(self.classForCoder)
+    }
+    
     // MARK: AlertHandlerProtocol
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)

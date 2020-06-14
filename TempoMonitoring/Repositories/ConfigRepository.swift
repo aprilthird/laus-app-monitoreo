@@ -87,7 +87,12 @@ final class ConfigRepository: ConfigRepositoryProtocol {
                            url: Constants.Service.GET_LAST_TRIAGE,
                            parameters: parameters,
         success: { (response) in
-            success(response["last_test"].stringValue, response["evaluation"].string)
+            guard let lastTriage = response["last_test"].string, !lastTriage.isEmpty else {
+                // TODO: Send default error
+                failure(NSError())
+                return
+            }
+            success(lastTriage, response["evaluation"].string)
         }) { (error) in
             failure(error)
         }

@@ -78,7 +78,7 @@ extension QRCodeStatusViewController: QRCodeStatusViewControllerProtocol {
         } else {
             titleLabel.isHidden = true
         }
-        if let date = date {
+        if let date = date, access != nil {
             dateLabel.text = date
         } else {
             dateLabel.isHidden = true

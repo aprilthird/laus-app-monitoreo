@@ -72,11 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         current.getNotificationSettings { (settings) in
             switch settings.authorizationStatus {
             case .authorized, .provisional:
-                userDefaultsHandler.save(value: true, to: Constants.Keys.IS_SCANNER_ENABLED)
+                userDefaultsHandler.save(value: true, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
             case .denied, .notDetermined:
-                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_SCANNER_ENABLED)
+                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
             @unknown default:
-                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_SCANNER_ENABLED)
+                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
             }
         }
     }

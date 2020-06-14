@@ -55,7 +55,7 @@ final class MorePresenter: MorePresenterProtocol {
             }
         case .signOut:
             view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) {
-                self.userDefaultsHandler.remove(from: Constants.Keys.IS_SCANNER_ENABLED)
+                self.userDefaultsHandler.remove(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
                 _ = Keychain.delete(Constants.Keys.TOKEN)
                 _ = Keychain.delete(Constants.Keys.COMPANY_TOKEN)
                 self.userRepository.currentCompany = nil

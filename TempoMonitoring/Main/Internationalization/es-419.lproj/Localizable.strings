@@ -18,8 +18,8 @@
 "Tracing" = "Seguimiento";
 "QR Code Scanner" = "Escáner de Código QR";
 "Authorized" = "Autorizado";
-"Unauthorized" = "No authorizado";
-"Invalid document" = "Código inválido";
+"Unauthorized" = "No autorizado";
+"Invalid code" = "Código inválido";
 "There was a problem, please try alter" = "Hubo un problema. Inténtelo más tarde";
 "What is Tempo?" = "¿Qué es Tempo?";
 "Tutorial" = "Tutorial";

@@ -28,7 +28,7 @@ extension UIFont {
         return font
     }
     
-    static func robotoCondensed(withType type: FamilyType, andSize size: CGFloat) -> UIFont {
+    static func robotoCondensed(withType type: FamilyType, ofSize size: CGFloat) -> UIFont {
         let defaultFont = getDefaultFont("RobotoCondensed\(FamilyType.regular.rawValue)", type, size)
         
         guard let font = UIFont(name: "RobotoCondensed\(type.rawValue)", size: size) else {
