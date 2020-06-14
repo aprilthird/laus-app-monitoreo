@@ -20,7 +20,7 @@
 "Authorized" = "Autorizado";
 "Unauthorized" = "No autorizado";
 "Invalid code" = "Código inválido";
-"There was a problem, please try alter" = "Hubo un problema. Inténtelo más tarde";
+"There was a problem, please try later" = "Hubo un problema. Inténtelo más tarde";
 "What is Tempo?" = "¿Qué es Tempo?";
 "Tutorial" = "Tutorial";
 "Sign out" = "Cerrar sesión";
