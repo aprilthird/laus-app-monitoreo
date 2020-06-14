@@ -22,7 +22,7 @@ final class TriagePresenter: TriagePresenterProtocol {
     
     func loadLastTriage(ofSize size: CGFloat) -> String {
         var attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.robotoCondensed(withType: .regular, andSize: size)
+            .font: UIFont.roboto(withType: .regular, ofSize: size)
         ]
         
         configRepository.getLastTriage(success: { (lastTriage, evaluation) in
@@ -35,9 +35,9 @@ final class TriagePresenter: TriagePresenterProtocol {
             let firstBracket = NSAttributedString(string: " (", attributes: attributes)
             let secondBracket = NSAttributedString(string: ")", attributes: attributes)
             if evaluation.lowercased().contains("no apto") {
-                attributes[.foregroundColor] = UIColor.red
+                attributes[.foregroundColor] = UIColor("#FF0000")
             } else if evaluation.lowercased().contains("apto") {
-                attributes[.foregroundColor] = UIColor.green
+                attributes[.foregroundColor] = UIColor("#00AB07")
             }
             let evaluationAttributedString = NSAttributedString(string: evaluation, attributes: attributes)
             mutableAttributedString.append(firstBracket)

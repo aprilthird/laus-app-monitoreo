@@ -23,6 +23,8 @@ class MainWebViewViewController: UIViewController {
         startProgress()
         
         webView.navigationDelegate = self
+        webView.uiDelegate = self
+        webView.allowsBackForwardNavigationGestures = true
         if let url = URL(string: url) {
             webView.load(URLRequest(url: url))
         } else {
@@ -64,6 +66,21 @@ class MainWebViewViewController: UIViewController {
     }
     */
 
+}
+extension MainWebViewViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        guard navigationAction.targetFrame == nil, let url = navigationAction.request.url else {
+            return nil
+        }
+        let urlString = url.absoluteString
+        if urlString.lowercased().contains("http") || urlString.lowercased().contains("https") {
+            webView.load(URLRequest(url: url))
+        } else if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+        return nil
+    }
 }
 extension MainWebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
