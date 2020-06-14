@@ -42,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        amigoContactTracing.applicationDidEnterBackground()
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        amigoContactTracing.applicationWillEnterForeground()
+    }
+    
     private func onesignalConfiguration(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         let userDefaultsHandler = UserDefaultsHandler()
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
@@ -124,14 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        amigoContactTracing.applicationDidEnterBackground()
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        amigoContactTracing.applicationWillEnterForeground()
     }
 
 }

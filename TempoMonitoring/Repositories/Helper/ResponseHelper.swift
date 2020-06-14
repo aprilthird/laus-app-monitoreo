@@ -62,8 +62,10 @@ struct ResponseHelper {
             let isSuccessful = jsonObject["success"].boolValue
             print("Response: \(response.response?.statusCode ?? 0) - \(jsonObject)")
             guard isSuccessful else {
-                let errorMessage = jsonObject["error"]["message"].stringValue
-                failure(NSError(domain: "TPMT", code: 420, userInfo: ["message": errorMessage]))
+                let errorMessage = jsonObject["error"]["message"].string ?? Constants.Localizable.DEFAULT_ERROR_MESSAGE
+                failure(NSError(domain: "TPMT", code: 420, userInfo: [
+                    NSLocalizedDescriptionKey: errorMessage
+                ]))
                 return
             }
             
