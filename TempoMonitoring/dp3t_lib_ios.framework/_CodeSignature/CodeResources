@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		OcwLGVggp9FFwVWFZP8XbWwyLFQ=
+		ooB0hdDOpjCCWITXZ1bkh41F3Jw=
 		</data>
 		<key>Headers/UBKeyboardObserver.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		W+pWg2pR3Henge31IVg1DZK3ysE=
+		FmqPbnA0jM04AAr+nbdZGqGKq2Y=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		W+pWg2pR3Henge31IVg1DZK3ysE=
+		FmqPbnA0jM04AAr+nbdZGqGKq2Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -217,7 +217,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KLoY2O5jur2JrePhXu5p0TTbI18dppm2vKnDESSO6SU=
+			znbHDF6a/TVecxiU0lkDMp9SRygjNzBAOhv/dmp7ZA0=
 			</data>
 		</dict>
 		<key>Headers/UBKeyboardObserver.h</key>
@@ -329,7 +329,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/2pWybUdyjWE6Pk2qBkb4mtel3ZOtgO37dF+TNzzVKY=
+			YWG94Zq8sRBxHY76Hf1V+XiySiM4rMUvJvAAVoB2NQs=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
@@ -350,7 +350,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/2pWybUdyjWE6Pk2qBkb4mtel3ZOtgO37dF+TNzzVKY=
+			YWG94Zq8sRBxHY76Hf1V+XiySiM4rMUvJvAAVoB2NQs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
