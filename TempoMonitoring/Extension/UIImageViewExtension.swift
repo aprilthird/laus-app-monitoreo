@@ -12,7 +12,7 @@ import UIKit
 
 extension UIImageView {
     func setImage(url: URL, placeholder: UIImage? = nil, transition: UIImageView.ImageTransition = .noTransition, completion: (() -> Void)? = nil) {
-        af_setImage(withURL: url, placeholderImage: placeholder, filter: nil, progress: nil, progressQueue: .main, imageTransition: transition, runImageTransitionIfCached: false) { (response) in
+        af.setImage(withURL: url, cacheKey: nil, placeholderImage: placeholder, serializer: nil, filter: nil, progress: nil, progressQueue: .main, imageTransition: transition, runImageTransitionIfCached: true) { (response) in
             completion?()
         }
     }

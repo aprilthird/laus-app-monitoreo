@@ -16,8 +16,7 @@ protocol KeychainHandlerProtocol {
     func float(from key: String) -> Float
     func integer(from key: String) -> Int
     func string(from key: String) -> String?
-    func save(_ value: Any?, to key: String)
+    func save(value: Any?, to key: String)
     func save<T: Codable>(_ value: T, to key: String) -> Bool
-    func remove(from key: String)
     func remove(from key: String) -> Bool
 }

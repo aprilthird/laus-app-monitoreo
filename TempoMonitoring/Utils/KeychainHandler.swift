@@ -72,7 +72,7 @@ final class KeychainHandler: KeychainHandlerProtocol {
         return String(data: data, encoding: .utf8)
     }
     
-    func save(_ value: Any?, to key: String) {
+    func save(value: Any?, to key: String) {
         let data: Data?
         switch value.self {
         case is String:
@@ -106,10 +106,6 @@ final class KeychainHandler: KeychainHandlerProtocol {
             return false
         }
         return saveValue(data: data, toKeychainWith: key)
-    }
-    
-    func remove(from key: String) {
-        _ = deleteValue(fromKeychainWith: key)
     }
     
     func remove(from key: String) -> Bool {

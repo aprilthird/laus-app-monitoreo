@@ -7,19 +7,20 @@
 //
 
 import Foundation
-import Keychain
 import UIKit
 
 final class MorePresenter: MorePresenterProtocol {
     let configRepository: ConfigRepositoryProtocol
     var userRepository: UserRepositoryProtocol
     let userDefaultsHandler: UserDefaultsHandlerProtocol
+    let keychainHandler: KeychainHandlerProtocol
     var view: MoreTableViewControllerProtocol
     
-    init(configRepository: ConfigRepositoryProtocol, userRepository: UserRepositoryProtocol, userDefaultsHandler: UserDefaultsHandlerProtocol, view: MoreTableViewControllerProtocol) {
+    init(configRepository: ConfigRepositoryProtocol, userRepository: UserRepositoryProtocol, userDefaultsHandler: UserDefaultsHandlerProtocol, keychainHandler: KeychainHandlerProtocol, view: MoreTableViewControllerProtocol) {
         self.configRepository = configRepository
         self.userRepository = userRepository
         self.userDefaultsHandler = userDefaultsHandler
+        self.keychainHandler = keychainHandler
         self.view = view
     }
     
@@ -56,8 +57,8 @@ final class MorePresenter: MorePresenterProtocol {
         case .signOut:
             view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) {
                 self.userDefaultsHandler.remove(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
-                _ = Keychain.delete(Constants.Keys.TOKEN)
-                _ = Keychain.delete(Constants.Keys.COMPANY_TOKEN)
+                _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)
+                _ = self.keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
                 self.userRepository.currentCompany = nil
                 self.userRepository.unregisterDevice()
                 self.view.goToFirstScene()

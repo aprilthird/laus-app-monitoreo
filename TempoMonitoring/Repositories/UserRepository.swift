@@ -8,14 +8,15 @@
 
 import Foundation
 import Crashlytics
-import Keychain
 import SwiftyJSON
 
 final class UserRepository: UserRepositoryProtocol {
     let userDefaultsHandler: UserDefaultsHandlerProtocol
+    let keychainHandler: KeychainHandlerProtocol
     
-    init(userDefaultsHandler: UserDefaultsHandlerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, keychainHandler: KeychainHandlerProtocol) {
         self.userDefaultsHandler = userDefaultsHandler
+        self.keychainHandler = keychainHandler
     }
     
     var currentCompany: Company? {
@@ -33,17 +34,20 @@ final class UserRepository: UserRepositoryProtocol {
     }
     
     func registerDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
-        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
-            Crashlytics.sharedInstance().recordError(NSError(domain: "AppVersionException", code: 503, userInfo: nil))
-            return
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
+                Crashlytics.sharedInstance().recordError(NSError(domain: "AppVersionException", code: 503, userInfo: nil))
+                success(false)
+                return
         }
         let device = UIDevice.current
         let oneSignalId = userDefaultsHandler.string(from: Constants.Keys.ONE_SIGNAL_ID) ?? ""
         let areNotificationsEnabled = userDefaultsHandler.bool(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? "",
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? "",
             "version_name": appVersion,
             "version_code": appVersion,
+            "version_build": appBuild,
             "device_os": device.systemName,
             "device_os_version": device.systemVersion,
             "device_model": device.model,
@@ -97,8 +101,8 @@ final class UserRepository: UserRepositoryProtocol {
             let companyToken = response["user"]["company_token"].stringValue
             let isScannerEnabled = response["user"]["scanner_enabled"].boolValue
             
-            _ = Keychain.save(token, forKey: Constants.Keys.TOKEN)
-            _ = Keychain.save(companyToken, forKey: Constants.Keys.COMPANY_TOKEN)
+            _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
+            _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
             self.userDefaultsHandler.save(value: isScannerEnabled, to: Constants.Keys.IS_SCANNER_ENABLED)
             self.currentCompany = company
             
@@ -110,7 +114,7 @@ final class UserRepository: UserRepositoryProtocol {
     
     func unregisterDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.POST(with: .url,
