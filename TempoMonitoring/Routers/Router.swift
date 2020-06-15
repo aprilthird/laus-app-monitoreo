@@ -12,6 +12,7 @@ import UIKit
 final class Router: RouterProtocol {
     static let shared: Router = Router()
     private let keychainHandler: KeychainHandlerProtocol
+    let oneSignalHandler: OneSignalHandlerProtocol
     private let userDefaultsHandler: UserDefaultsHandler
     private let configRepository: ConfigRepositoryProtocol
     private let userRepository: UserRepositoryProtocol
@@ -21,10 +22,11 @@ final class Router: RouterProtocol {
     init() {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
+        oneSignalHandler = OneSignalHandler(userDefaultsHandler: userDefaultsHandler)
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
-        userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler)
+        userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler, keychainHandler: keychainHandler)
         generalRepository = GeneralRepository(userDefaultsHandler: userDefaultsHandler)
-        tipRepository = TipRepository()
+        tipRepository = TipRepository(keychainHandler: keychainHandler)
     }
     
     func getAttention() -> UIViewController {
@@ -71,7 +73,7 @@ final class Router: RouterProtocol {
     
     func getMoreSection() -> UIViewController {
         let viewController = MoreTableViewController.get()
-        viewController.morePresenter = MorePresenter(configRepository: configRepository, userRepository: userRepository, userDefaultsHandler: userDefaultsHandler, view: viewController)
+        viewController.morePresenter = MorePresenter(configRepository: configRepository, userRepository: userRepository, userDefaultsHandler: userDefaultsHandler, keychainHandler: keychainHandler, view: viewController)
         return viewController
     }
     
@@ -106,7 +108,7 @@ final class Router: RouterProtocol {
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
-        viewController.splashPresenter = SplashPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, generalRepository: generalRepository, view: viewController)
+        viewController.splashPresenter = SplashPresenter(userDefaultsHandler: userDefaultsHandler, keychainHandler: keychainHandler, configRepository: configRepository, generalRepository: generalRepository, view: viewController)
         return viewController
     }
     

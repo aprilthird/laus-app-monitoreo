@@ -22,11 +22,11 @@ final class GeneralRepository: GeneralRepositoryProtocol {
             fatalError()
         }
         
-        Alamofire.request("https://itunes.apple.com/lookup?bundleId=\(identifier)")
+        AF.request("https://itunes.apple.com/lookup?bundleId=\(identifier)")
             .responseJSON { (response) in
                 switch response.result {
                 case .failure(let error):
-                    print("AFError: \(error.localizedDescription)")
+                    print("SLV-AFError: \(error.localizedDescription)")
                     closure()
                 case .success(let value):
                     let jsonObject = JSON(value)

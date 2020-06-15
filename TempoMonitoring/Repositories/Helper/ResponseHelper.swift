@@ -24,7 +24,7 @@ struct ResponseHelper {
         case .json:
             encoding = JSONEncoding.default
         }
-        Alamofire.request(url,
+        AF.request(url,
                    method: .post,
                    parameters: parameters,
                    encoding: encoding,
@@ -42,7 +42,7 @@ struct ResponseHelper {
         case .json:
             encoding = JSONEncoding.default
         }
-        Alamofire.request(url,
+        AF.request(url,
                    method: .get,
                    parameters: parameters,
                    encoding: encoding,
@@ -52,7 +52,7 @@ struct ResponseHelper {
         }
     }
     
-    private static func validate(response: DataResponse<Any>, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
+    private static func validate(response: AFDataResponse<Any>, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
         switch response.result {
         case .failure(let error):
             print("AFError: \(error.localizedDescription)")

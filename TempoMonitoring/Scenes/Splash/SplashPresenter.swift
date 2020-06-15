@@ -7,16 +7,17 @@
 //
 
 import Foundation
-import Keychain
 
 final class SplashPresenter: SplashPresenterProtocol {
     let userDefaultsHandler: UserDefaultsHandlerProtocol
+    let keychainHandler: KeychainHandlerProtocol
     let configRepository: ConfigRepositoryProtocol
     let generalRepository: GeneralRepositoryProtocol
     let view: SplashViewControllerProtocol
     
-    init(userDefaultsHandler: UserDefaultsHandlerProtocol, configRepository: ConfigRepositoryProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, keychainHandler: KeychainHandlerProtocol, configRepository: ConfigRepositoryProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
         self.userDefaultsHandler = userDefaultsHandler
+        self.keychainHandler = keychainHandler
         self.configRepository = configRepository
         self.generalRepository = generalRepository
         self.view = view
@@ -35,15 +36,14 @@ final class SplashPresenter: SplashPresenterProtocol {
     
     private func validateLogin() {
         guard userDefaultsHandler.bool(from: Constants.Keys.IS_FIRST_OPEN),
-            let _ = Keychain.load(Constants.Keys.TOKEN),
-            let _ = Keychain.load(Constants.Keys.COMPANY_TOKEN) else {
+            let _ = keychainHandler.string(from: Constants.Keys.TOKEN),
+            let _ = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) else {
                 userDefaultsHandler.save(value: true, to: Constants.Keys.IS_FIRST_OPEN)
-                _ = Keychain.delete(Constants.Keys.TOKEN)
-                _ = Keychain.delete(Constants.Keys.COMPANY_TOKEN)
+                _ = keychainHandler.remove(from: Constants.Keys.TOKEN)
+                _ = keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
                 view.goToFirstScene()
                 return
         }
-        
         view.goToMain()
     }
 }

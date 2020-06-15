@@ -32,11 +32,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Tempo quiere utilizar tu bluetooth para descubrir, conectar y compartir información con dispositivos cercanos</string>
+	<string>Tempo Monitoreo quiere utilizar tu bluetooth para descubrir, conectar y compartir información con dispositivos cercanos</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Tempo quiere utilizar tu bluetooth para descubrir, conectar y compartir información con dispositivos cercanos</string>
+	<string>Tempo Monitoreo quiere utilizar tu bluetooth para descubrir, conectar y compartir información con dispositivos cercanos</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Al aceptar podrás tomar y subir fotos directamente a Tempo en tu perfil de usuario y al compartir fotos de tus ejercicios realizados</string>
+	<string>Al aceptar podrás tomar y subir fotos directamente a Tempo Monitoreo en tu perfil de usuario y al compartir fotos de tus ejercicios realizados</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Bold.ttf</string>

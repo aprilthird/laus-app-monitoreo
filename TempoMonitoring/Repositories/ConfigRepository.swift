@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Keychain
 import SwiftyJSON
 
 final class ConfigRepository: ConfigRepositoryProtocol {
@@ -21,14 +20,14 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     
     func getAttentionUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_ATTENTION_URL,
                            parameters: parameters,
         success: { (response) in
-            let token = Keychain.load(Constants.Keys.TOKEN) ?? ""
+            let token = self.keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
         }) { (error) in
             failure(error)
@@ -63,7 +62,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     
     func getHomeBanner(success: @escaping (Int, String, String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
@@ -80,7 +79,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     
     func getLastTriage(success: @escaping (String, String?) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
@@ -100,14 +99,14 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     
     func getQRCodeUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_QR_CODE_URL,
                            parameters: parameters,
         success: { (response) in
-            let token = Keychain.load(Constants.Keys.COMPANY_TOKEN) ?? ""
+            let token = self.keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
         }) { (error) in
             failure(error)
@@ -126,7 +125,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     }
     
     func getTriageUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        let companyToken = Keychain.load(Constants.Keys.COMPANY_TOKEN) ?? ""
+        let companyToken = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
         let parameters: [String: Any] = [
             "token": companyToken
         ]
@@ -157,7 +156,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
             failure(NSError(domain: "TPMT", code: 420, userInfo: ["message": "Device ID not found"]))
             return
         }
-        guard let companyToken = Keychain.load(Constants.Keys.COMPANY_TOKEN) else {
+        guard let companyToken = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) else {
             failure(NSError(domain: "TPMT", code: 420, userInfo: ["message": "Company Token not found"]))
             return
         }

@@ -7,13 +7,18 @@
 //
 
 import Foundation
-import Keychain
 import SwiftyJSON
 
 final class TipRepository: TipRepositoryProtocol {
+    let keychainHandler: KeychainHandlerProtocol
+    
+    init(keychainHandler: KeychainHandlerProtocol) {
+        self.keychainHandler = keychainHandler
+    }
+    
     func getTipCategories(success: @escaping ([(imageUrl: String, name: String, url: String)]) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": Keychain.load(Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,

@@ -12,7 +12,6 @@ target 'TempoMonitoring' do
   pod 'Fabric', '~> 1.10.2'
   pod 'Firebase/Analytics'
   pod 'IQKeyboardManagerSwift'
-  pod 'Keychain'
   pod 'OneSignal', '>= 2.11.2', '< 3.0'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'

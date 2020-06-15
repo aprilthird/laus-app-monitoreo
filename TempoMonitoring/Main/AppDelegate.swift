@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         
         // Onesignal
-        onesignalConfiguration(launchOptions)
+        Router.shared.oneSignalHandler.initialConfiguration(launchOptions)
         
         // Firebase
         FirebaseApp.configure()
@@ -48,45 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         amigoContactTracing.applicationWillEnterForeground()
-    }
-    
-    private func onesignalConfiguration(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        let userDefaultsHandler = UserDefaultsHandler()
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
-        
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: Constants.Credentials.ONE_SIGNAL_APP_ID,
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-        
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-            guard accepted else {
-                return
-            }
-            let status = OneSignal.getPermissionSubscriptionState()
-            if let id = status?.subscriptionStatus.userId {
-                userDefaultsHandler.save(value: id, to: Constants.Keys.ONE_SIGNAL_ID)
-            }
-        })
-        
-        // To know if notifications are enabled
-        let current = UNUserNotificationCenter.current()
-        current.requestAuthorization(options: [.alert, .badge, .sound]) { (isAuthorized, error) in
-            print("Notification authorization: \(isAuthorized)")
-        }
-        current.getNotificationSettings { (settings) in
-            switch settings.authorizationStatus {
-            case .authorized, .provisional:
-                userDefaultsHandler.save(value: true, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
-            case .denied, .notDetermined:
-                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
-            @unknown default:
-                userDefaultsHandler.save(value: false, to: Constants.Keys.IS_NOTIFICATION_ENABLED)
-            }
-        }
     }
 
     // MARK: - Core Data stack
