@@ -118,7 +118,8 @@ final class Router: RouterProtocol {
         navigationController.navigationBar.barTintColor = UIColor(company?.primaryColor ?? "#6B9DF2")
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.barStyle = .black
-        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = false
         return navigationController
     }
     

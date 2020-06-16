@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>661362229391-14gn0k9meg4n5g2oeh5g27keln9fq5ck.apps.googleusercontent.com</string>
+	<string>661362229391-1rkj9g5kiq06ga3r9bfs5efbfija43sl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.661362229391-14gn0k9meg4n5g2oeh5g27keln9fq5ck</string>
+	<string>com.googleusercontent.apps.661362229391-1rkj9g5kiq06ga3r9bfs5efbfija43sl</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>661362229391-52fjja35982dp2d14t32sflr1dogs2rp.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBwI8WYTWc-q_ttQ580Sz3TJhp8bf2oePg</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.sportafolio.TempoMonitoring</string>
+	<string>com.sportafolio.Tempo-Monitoring</string>
 	<key>PROJECT_ID</key>
 	<string>tempo-monitoreo</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:661362229391:ios:60136d5f2f6b22deaef0fa</string>
+	<string>1:661362229391:ios:b651e2e6fa07384daef0fa</string>
 	<key>DATABASE_URL</key>
 	<string>https://tempo-monitoreo.firebaseio.com</string>
 </dict>
