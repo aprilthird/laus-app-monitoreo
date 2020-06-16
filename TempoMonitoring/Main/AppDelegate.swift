@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import Firebase
 import IQKeyboardManagerSwift
-import OneSignal
 import dp3t_lib_ios
 
 var amigoContactTracing = AmigoContactTracing.shared
@@ -21,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         // Keyboard
         IQKeyboardManager.shared.enable = true
         

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		05PJhikk9zyjeU3Zpny5Xt+jBl4=
+		ooB0hdDOpjCCWITXZ1bkh41F3Jw=
 		</data>
 		<key>Headers/UBKeyboardObserver.h</key>
 		<data>
@@ -64,14 +64,6 @@
 		<data>
 		crh3HRx7BJRYBOlUj9aZEQWHip8=
 		</data>
-		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<data>
-		Uk9X4r8gvaeqfZfN8IP4U9Iw9bc=
-		</data>
-		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<data>
-		Uk9X4r8gvaeqfZfN8IP4U9Iw9bc=
-		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
 		kTQVrPsV8uACe6VpQGzyye0p5kA=
@@ -82,7 +74,7 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		BRXzjgWdNo6oNZGNkr24h5L5r4U=
+		FmqPbnA0jM04AAr+nbdZGqGKq2Y=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -94,7 +86,7 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		BRXzjgWdNo6oNZGNkr24h5L5r4U=
+		FmqPbnA0jM04AAr+nbdZGqGKq2Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -225,7 +217,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RpfoKFxIUKw0A1cMc2SVXasStKKMi0h8nFoArdICpcU=
+			znbHDF6a/TVecxiU0lkDMp9SRygjNzBAOhv/dmp7ZA0=
 			</data>
 		</dict>
 		<key>Headers/UBKeyboardObserver.h</key>
@@ -319,20 +311,6 @@
 			l9IE4GioAc6qwKXaB6CwIZjlhSFwaXuQ1SqKUqoKixQ=
 			</data>
 		</dict>
-		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+n5jR7YcMHGDUY+2S7HDJwACRdWYpnTA6llJ6jlEfzc=
-			</data>
-		</dict>
-		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+n5jR7YcMHGDUY+2S7HDJwACRdWYpnTA6llJ6jlEfzc=
-			</data>
-		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
@@ -351,7 +329,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			43iqdLZ+rCzPBTuFqq0uNXROpzCsreQf8eauglQAvPk=
+			YWG94Zq8sRBxHY76Hf1V+XiySiM4rMUvJvAAVoB2NQs=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
@@ -372,7 +350,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			43iqdLZ+rCzPBTuFqq0uNXROpzCsreQf8eauglQAvPk=
+			YWG94Zq8sRBxHY76Hf1V+XiySiM4rMUvJvAAVoB2NQs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
