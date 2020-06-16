@@ -3,18 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
-		4261B8F72489635700535268 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 4261B8F62489635700535268 /* SQLite */; };
+		42377451249977AC007E7C20 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
+		42377452249977AC007E7C20 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CFD892486C1C800EBDCBB /* TracingViewController.swift */; };
 		427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427CFD8B2486C28900EBDCBB /* TracingViewController.xib */; };
-		42FA73A92486A1CA00EC0F11 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73A82486A1CA00EC0F11 /* TextFieldEffects */; };
-		42FA73AC2486A22300EC0F11 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73AB2486A22300EC0F11 /* SwiftProtobuf */; };
-		42FA73AF2486A24A00EC0F11 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73AE2486A24A00EC0F11 /* SwiftJWT */; };
-		42FA73B22486A28700EC0F11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42FA73B12486A28700EC0F11 /* SnapKit */; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7C24831AB0001111C6 /* RouterProtocol.swift */; };
@@ -59,8 +56,6 @@
 		8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E41AB172483045600E6DAD7 /* LaunchScreen.storyboard */; };
 		8E41AB242483045600E6DAD7 /* TempoMonitoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB232483045600E6DAD7 /* TempoMonitoringTests.swift */; };
 		8E41AB2F2483045600E6DAD7 /* TempoMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */; };
-		8E51A43D2498311700145A64 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
-		8E51A43E2498311700145A64 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */; };
 		8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3132497E2EA0063D9A5 /* OneSignalHandler.swift */; };
 		8E890AD0248AC7BB00BB1921 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E890ACF248AC7BB00BB1921 /* DocumentType.swift */; };
@@ -164,13 +159,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8E51A43F2498311700145A64 /* Embed Frameworks */ = {
+		42377453249977AC007E7C20 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8E51A43E2498311700145A64 /* dp3t_lib_ios.framework in Embed Frameworks */,
+				42377452249977AC007E7C20 /* dp3t_lib_ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,13 +333,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FA73A92486A1CA00EC0F11 /* TextFieldEffects in Frameworks */,
-				42FA73AF2486A24A00EC0F11 /* SwiftJWT in Frameworks */,
-				42FA73B22486A28700EC0F11 /* SnapKit in Frameworks */,
-				4261B8F72489635700535268 /* SQLite in Frameworks */,
-				8E51A43D2498311700145A64 /* dp3t_lib_ios.framework in Frameworks */,
 				1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */,
-				42FA73AC2486A22300EC0F11 /* SwiftProtobuf in Frameworks */,
+				42377451249977AC007E7C20 /* dp3t_lib_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,7 +839,8 @@
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
 				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
 				8EB5D9B92484C0DF00E8E9DE /* ShellScript */,
-				8E51A43F2498311700145A64 /* Embed Frameworks */,
+				42377453249977AC007E7C20 /* Embed Frameworks */,
+				42377450249930C6007E7C20 /* Strip dp3t framework */,
 			);
 			buildRules = (
 			);
@@ -858,11 +849,6 @@
 			);
 			name = TempoMonitoring;
 			packageProductDependencies = (
-				42FA73A82486A1CA00EC0F11 /* TextFieldEffects */,
-				42FA73AB2486A22300EC0F11 /* SwiftProtobuf */,
-				42FA73AE2486A24A00EC0F11 /* SwiftJWT */,
-				42FA73B12486A28700EC0F11 /* SnapKit */,
-				4261B8F62489635700535268 /* SQLite */,
 			);
 			productName = TempoMonitoring;
 			productReference = 8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */;
@@ -962,11 +948,6 @@
 			);
 			mainGroup = 8E41AAFD2483045300E6DAD7;
 			packageReferences = (
-				42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
-				42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
-				42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
-				42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = 8E41AB072483045300E6DAD7 /* Products */;
 			projectDirPath = "";
@@ -1099,6 +1080,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		42377450249930C6007E7C20 /* Strip dp3t framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip dp3t framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\necho \"${APP_PATH}\"\nFRAMEWORK_NAME=\"dp3t_lib_ios.framework\"\n# Check if Framework is present.\nFRAMEWORK_LOCATION=$(find \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" -type d)\nif [ -z $FRAMEWORK_LOCATION ]; then\necho \"Couldn't find dp3t_lib_ios.framework in $APP_PATH. Make sure 'Embed Frameworks' build phase is listed before the 'Strip Unused Architectures' build phase.\"\nexit 1\nfi\n# This script strips unused architectures\nfind \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\ndone\n";
 		};
 		4F53E833BA66A9FEBFCAD282 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1698,77 +1697,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.12.2;
-			};
-		};
-		42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raulriera/TextFieldEffects";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.0;
-			};
-		};
-		42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-protobuf.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.0;
-			};
-		};
-		42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.1;
-			};
-		};
-		42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4261B8F62489635700535268 /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4261B8F52489635700535268 /* XCRemoteSwiftPackageReference "SQLite" */;
-			productName = SQLite;
-		};
-		42FA73A82486A1CA00EC0F11 /* TextFieldEffects */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42FA73A72486A1CA00EC0F11 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
-			productName = TextFieldEffects;
-		};
-		42FA73AB2486A22300EC0F11 /* SwiftProtobuf */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42FA73AA2486A22300EC0F11 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = SwiftProtobuf;
-		};
-		42FA73AE2486A24A00EC0F11 /* SwiftJWT */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42FA73AD2486A24A00EC0F11 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
-			productName = SwiftJWT;
-		};
-		42FA73B12486A28700EC0F11 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42FA73B02486A28700EC0F11 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */ = {
