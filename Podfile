@@ -16,6 +16,10 @@ target 'TempoMonitoring' do
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
   pod 'SQLite.swift'
+  pod 'SnapKit'
+  pod 'TextFieldEffects'
+  pod 'SwiftProtobuf'
+  pod 'SwiftJWT'
 
   target 'TempoMonitoringTests' do
     inherit! :search_paths
