@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +58,7 @@ class SignInViewController: UIViewController {
         
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewDidLayoutSubviews() {
