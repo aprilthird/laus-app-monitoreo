@@ -91,7 +91,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
         guard let viewControllers = tabBarController.viewControllers else { return }
         guard let index = viewControllers.firstIndex(of: viewController) else { return }
         if index == 3 {
-            amigoContactTracing.launch()
+            amigoContactTracing.launch(themeColor: mainPresenter.getTintColor())
         } else {
             lastSelectedIndex = index
         }

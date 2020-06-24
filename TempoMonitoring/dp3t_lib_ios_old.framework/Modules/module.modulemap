@@ -1,0 +1,11 @@
+framework module dp3t_lib_ios {
+  umbrella header "dp3t_lib_ios.h"
+
+  export *
+  module * { export * }
+}
+
+module dp3t_lib_ios.Swift {
+    header "dp3t_lib_ios-Swift.h"
+    requires objc
+}
