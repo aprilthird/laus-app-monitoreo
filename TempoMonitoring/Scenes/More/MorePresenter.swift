@@ -29,7 +29,7 @@ final class MorePresenter: MorePresenterProtocol {
         case .tempo:
             view.open("https://temposalud.com/")
         case.support:
-            view.open("https://api.whatsapp.com/send?phone=+51933440200&text=")
+            view.open("whatsapp://send?phone=51933440200")
         case .tutorial:
             view.startProgress()
             

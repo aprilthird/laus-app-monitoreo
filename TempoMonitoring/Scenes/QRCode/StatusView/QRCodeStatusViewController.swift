@@ -78,8 +78,11 @@ extension QRCodeStatusViewController: QRCodeStatusViewControllerProtocol {
         } else {
             titleLabel.isHidden = true
         }
-        if let date = date, access != nil {
-            dateLabel.text = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        if let date = date, let aux = dateFormatter.date(from: date), access != nil {
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateLabel.text = dateFormatter.string(from: aux)
         } else {
             dateLabel.isHidden = true
         }
