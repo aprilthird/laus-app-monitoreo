@@ -20,36 +20,42 @@ final class TriagePresenter: TriagePresenterProtocol {
         self.view = view
     }
     
-    func loadLastTriage(ofSize size: CGFloat) -> String {
+    func loadTriage(ofSize size: CGFloat) {
+        configRepository.getTriageElements(success: { (title, imageUrl, description, subDescription, qrCodeButtonText, triageButtonText, lastTriage, evaluation) in
+            let attributedString = self.loadLastTriage(lastTriage: lastTriage, evaluation: evaluation, size: size)
+            
+            self.view.updateViews(title, imageUrl, description, subDescription, triageButtonText, qrCodeButtonText, attributedString)
+        }) { (error) in
+            self.view.updateViews("", nil, nil, nil, nil, nil, nil)
+        }
+    }
+    
+    private func loadLastTriage(lastTriage: String?, evaluation: String?, size: CGFloat) -> NSAttributedString? {
         var attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.roboto(withType: .regular, ofSize: size)
         ]
         
-        configRepository.getLastTriage(success: { (lastTriage, evaluation) in
-            let mutableAttributedString = NSMutableAttributedString(string: "\(Constants.Localizable.LAST_TRIAGE_COMPLETED): \(lastTriage)", attributes: attributes)
-            
-            guard let evaluation = evaluation, !evaluation.isEmpty else {
-                self.view.updateLastTriage(false, mutableAttributedString)
-                return
-            }
-            let firstBracket = NSAttributedString(string: " (", attributes: attributes)
-            let secondBracket = NSAttributedString(string: ")", attributes: attributes)
-            if evaluation.lowercased().contains("no apto") {
-                attributes[.foregroundColor] = UIColor("#FF0000")
-            } else if evaluation.lowercased().contains("apto") {
-                attributes[.foregroundColor] = UIColor("#00AB07")
-            }
-            let evaluationAttributedString = NSAttributedString(string: evaluation, attributes: attributes)
-            mutableAttributedString.append(firstBracket)
-            mutableAttributedString.append(evaluationAttributedString)
-            mutableAttributedString.append(secondBracket)
-            
-            self.view.updateLastTriage(false, mutableAttributedString)
-        }) { (error) in
-            self.view.updateLastTriage(false, NSAttributedString(string: Constants.Localizable.NO_LAST_TRIAGE, attributes: attributes))
+        guard let lastTriage = lastTriage else {
+            return nil
         }
         
-        return Constants.Localizable.LOADING
+        let mutableAttributedString = NSMutableAttributedString(string: "\(Constants.Localizable.LAST_TRIAGE_COMPLETED): \(lastTriage)", attributes: attributes)
+        guard let evaluation = evaluation, !evaluation.isEmpty else {
+            return mutableAttributedString
+        }
+        let firstBracket = NSAttributedString(string: " (", attributes: attributes)
+        let secondBracket = NSAttributedString(string: ")", attributes: attributes)
+        if evaluation.lowercased().contains("no apto") {
+            attributes[.foregroundColor] = UIColor("#FF0000")
+        } else if evaluation.lowercased().contains("apto") {
+            attributes[.foregroundColor] = UIColor("#00AB07")
+        }
+        let evaluationAttributedString = NSAttributedString(string: evaluation, attributes: attributes)
+        mutableAttributedString.append(firstBracket)
+        mutableAttributedString.append(evaluationAttributedString)
+        mutableAttributedString.append(secondBracket)
+
+        return mutableAttributedString
     }
     
     func showQRCodeWebView() {

@@ -21,7 +21,7 @@ final class UserRepository: UserRepositoryProtocol {
     
     var currentCompany: Company? {
         get {
-            userDefaultsHandler.custom(of: Company.self, from: Constants.Keys.COMPANY)
+            return userDefaultsHandler.custom(of: Company.self, from: Constants.Keys.COMPANY)
         }
         
         set {
@@ -60,6 +60,8 @@ final class UserRepository: UserRepositoryProtocol {
                             url: Constants.Service.REGISTER_DEVICE,
                             parameters: parameters,
         success: { (response) in
+            self.userDefaultsHandler.save(value: true, to: Constants.Keys.IS_DEVICE_REGISTERED)
+            
             success(true)
         }) { (error) in
             failure(error)
@@ -121,6 +123,8 @@ final class UserRepository: UserRepositoryProtocol {
                             url: Constants.Service.UNREGISTER_DEVICE,
                             parameters: parameters,
         success: { (response) in
+            self.userDefaultsHandler.save(value: false, to: Constants.Keys.IS_DEVICE_REGISTERED)
+            
             success(true)
         }) { (error) in
             failure(error)
