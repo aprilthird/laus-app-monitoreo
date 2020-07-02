@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import dp3t_lib_ios
+//import dp3t_lib_ios
 
-class MainTabBarController: UITabBarController, OnTracingViewClose {
+class MainTabBarController: UITabBarController {
 
     var mainPresenter: MainPresenterProtocol!
     
@@ -51,7 +51,7 @@ class MainTabBarController: UITabBarController, OnTracingViewClose {
         setViewControllers(mainPresenter.getViewControllers(), animated: true)
         
         delegate = self
-        amigoContactTracing.closeDelegate = self
+//        amigoContactTracing.closeDelegate = self
         
         mainPresenter.validate()
     }
@@ -91,9 +91,11 @@ extension MainTabBarController: UITabBarControllerDelegate {
         guard let viewControllers = tabBarController.viewControllers else { return }
         guard let index = viewControllers.firstIndex(of: viewController) else { return }
         if index == 3 {
-            amigoContactTracing.launch(themeColor: mainPresenter.getTintColor())
+//            amigoContactTracing.launch(themeColor: mainPresenter.getTintColor())
         } else {
             lastSelectedIndex = index
         }
     }
 }
+//extension MainTabBarController: OnTracingViewClose {
+//}

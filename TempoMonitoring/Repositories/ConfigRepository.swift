@@ -77,26 +77,6 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
-    func getLastTriage(success: @escaping (String, String?) -> Void, failure: @escaping (Error) -> Void) {
-        let parameters: [String: Any] = [
-            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
-        ]
-        
-        ResponseHelper.GET(with: .url,
-                           url: Constants.Service.GET_LAST_TRIAGE,
-                           parameters: parameters,
-        success: { (response) in
-            guard let lastTriage = response["last_test"].string, !lastTriage.isEmpty else {
-                // TODO: Send default error
-                failure(NSError())
-                return
-            }
-            success(lastTriage, response["evaluation"].string)
-        }) { (error) in
-            failure(error)
-        }
-    }
-    
     func getQRCodeUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
@@ -119,6 +99,36 @@ final class ConfigRepository: ConfigRepositoryProtocol {
                            parameters: nil,
         success: { (response) in
             success(response["url"].stringValue, response["visibility"].bool ?? false)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func getTriageElements(success: @escaping (String, String, String, String, String?, String?, String?, String?) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
+        ]
+        
+        ResponseHelper.GET(with: .url,
+                           url: Constants.Service.GET_TRIAGE_ELEMENTS,
+                           parameters: parameters,
+        success: { (response) in
+            let elements = response["elements"]
+            
+            let title = elements["title"].stringValue
+            let image = elements["image"].stringValue
+            let description = elements["description"].stringValue
+            let subDescription = elements["sub_description"].stringValue
+            let triageButtonText = elements["button_triaje_text"].string
+            let qrCodeButtonText = elements["button_qr_text"].string
+            let shouldShowLastTriage = elements["show_last_triaje"].boolValue
+            let evaluation = elements["evaluation"].string
+            var lastTriage: String? = nil
+            if let last = elements["last_triaje"].string, !last.isEmpty && shouldShowLastTriage {
+                lastTriage = last
+            }
+            
+            success(title, image, description, subDescription, triageButtonText, qrCodeButtonText, lastTriage, evaluation)
         }) { (error) in
             failure(error)
         }

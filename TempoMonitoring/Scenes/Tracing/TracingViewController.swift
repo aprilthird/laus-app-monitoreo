@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import dp3t_lib_ios
+//import dp3t_lib_ios
 
 class TracingViewController: UIViewController {
     

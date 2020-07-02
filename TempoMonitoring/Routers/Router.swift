@@ -22,9 +22,9 @@ final class Router: RouterProtocol {
     init() {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
-        oneSignalHandler = OneSignalHandler(userDefaultsHandler: userDefaultsHandler)
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
         userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler, keychainHandler: keychainHandler)
+        oneSignalHandler = OneSignalHandler(userDefaultsHandler: userDefaultsHandler, userRepository: userRepository)
         generalRepository = GeneralRepository(userDefaultsHandler: userDefaultsHandler)
         tipRepository = TipRepository(keychainHandler: keychainHandler)
     }

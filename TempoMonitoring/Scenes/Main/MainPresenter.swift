@@ -47,7 +47,7 @@ final class MainPresenter: MainPresenterProtocol {
             triage,
             tips,
             attention,
-            tracing
+//            tracing
         ]
     }
     

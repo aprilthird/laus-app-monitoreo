@@ -35,10 +35,10 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     private func validateLogin() {
-        guard userDefaultsHandler.bool(from: Constants.Keys.IS_FIRST_OPEN),
+        guard userDefaultsHandler.bool(from: Constants.Keys.WAS_FIRST_OPEN),
             let _ = keychainHandler.string(from: Constants.Keys.TOKEN),
             let _ = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) else {
-                userDefaultsHandler.save(value: true, to: Constants.Keys.IS_FIRST_OPEN)
+                userDefaultsHandler.save(value: true, to: Constants.Keys.WAS_FIRST_OPEN)
                 _ = keychainHandler.remove(from: Constants.Keys.TOKEN)
                 _ = keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
                 view.goToFirstScene()
