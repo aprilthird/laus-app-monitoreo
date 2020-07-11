@@ -32,6 +32,7 @@ final class Constants {
         static let CANCEL: String = NSLocalizedString("Cancel", comment: "")
         static let DEFAULT_ERROR_MESSAGE: String = NSLocalizedString("There was a problem, please try later", comment: "")
         static let FAQ: String = NSLocalizedString("Frequently Asked Questions", comment: "")
+        static let HOME_TITLE: String = NSLocalizedString("Home", comment: "")
         static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")

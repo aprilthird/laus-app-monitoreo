@@ -22,9 +22,9 @@ class TriageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let loading = Constants.Localizable.LOADING
+        navigationItem.title = Constants.Localizable.HOME_TITLE
         
-        navigationItem.title = loading
+        let loading = Constants.Localizable.LOADING
         
         startTriageButton.isEnabled = false
         seeQRCodeButton.isEnabled = false
