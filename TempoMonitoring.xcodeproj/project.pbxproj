@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
-		427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CFD892486C1C800EBDCBB /* TracingViewController.swift */; };
-		427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427CFD8B2486C28900EBDCBB /* TracingViewController.xib */; };
+		8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
+		8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7C24831AB0001111C6 /* RouterProtocol.swift */; };
@@ -157,6 +157,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8E06B6F024BA253800D336E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8EB5D9B72484B64000E8E9DE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,8 +189,6 @@
 		21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
-		427CFD892486C1C800EBDCBB /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
-		427CFD8B2486C28900EBDCBB /* TracingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingViewController.xib; sourceTree = "<group>"; };
 		42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dp3t_lib_ios.framework; path = TempoMonitoring/dp3t_lib_ios.framework; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -321,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */,
+				8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,15 +361,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		427CFD882486BC6600EBDCBB /* Tracing */ = {
-			isa = PBXGroup;
-			children = (
-				427CFD892486C1C800EBDCBB /* TracingViewController.swift */,
-				427CFD8B2486C28900EBDCBB /* TracingViewController.xib */,
-			);
-			path = Tracing;
-			sourceTree = "<group>";
-		};
 		8E319E71248318E7001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +387,6 @@
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
 				8EBD736A248483710032B174 /* Tips */,
-				427CFD882486BC6600EBDCBB /* Tracing */,
 				8E319EB424833D6D001111C6 /* Triage */,
 			);
 			path = Scenes;
@@ -824,6 +824,7 @@
 				8E41AB042483045300E6DAD7 /* Resources */,
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
 				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
+				8E06B6F024BA253800D336E4 /* Embed Frameworks */,
 				8EB5D9B92484C0DF00E8E9DE /* ShellScript */,
 				42377450249930C6007E7C20 /* Strip dp3t framework */,
 			);
@@ -963,7 +964,6 @@
 				8E319EBA24833DA0001111C6 /* TriageViewController.xib in Resources */,
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E8B51F12498378800F03A33 /* GoogleService-Info.plist in Resources */,
-				427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
@@ -1082,7 +1082,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n#echo \"${APP_PATH}\"\n#FRAMEWORK_NAME=\"dp3t_lib_ios.framework\"\n## Check if Framework is present.\n#FRAMEWORK_LOCATION=$(find \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" #-type d)\n#if [ -z $FRAMEWORK_LOCATION ]; then\n#echo \"Couldn't find dp3t_lib_ios.framework in $APP_PATH. Make #sure 'Embed Frameworks' build phase is listed before the #'Strip Unused Architectures' build phase.\"\n#exit 1\n#fi\n## This script strips unused architectures\n#find \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" -type d | while read #-r FRAMEWORK\n#do\n#FRAMEWORK_EXECUTABLE_NAME=$(defaults read #\"$FRAMEWORK/Info.plist\" CFBundleExecutable)\n#FRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME#\"\n#echo \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n#EXTRACTED_ARCHS=()\n#for ARCH in $ARCHS\n#do\n#echo \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\n#lipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o #\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\n#EXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\n#done\n#echo \"Merging extracted architectures: ${ARCHS}\"\n#lipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create #\"${EXTRACTED_ARCHS[@]}\"\n#rm \"${EXTRACTED_ARCHS[@]}\"\n#echo \"Replacing original executable with thinned version\"\n#rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n#mv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" #\"$FRAMEWORK_EXECUTABLE_PATH\"\n#done\n#\n";
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\necho \"${APP_PATH}\"\nFRAMEWORK_NAME=\"dp3t_lib_ios.framework\"\n# Check if Framework is present.\nFRAMEWORK_LOCATION=$(find \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" -type d)\nif [ -z $FRAMEWORK_LOCATION ]; then\necho \"Couldn't find dp3t_lib_ios.framework in $APP_PATH. Make sure 'Embed Frameworks' build phase is listed before the 'Strip Unused Architectures' build phase.\"\nexit 1\nfi\n# This script strips unused architectures\nfind \"$APP_PATH\" -name \"$FRAMEWORK_NAME\" -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\ndone\n";
 		};
 		4F53E833BA66A9FEBFCAD282 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1114,6 +1114,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -1121,7 +1122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/TempoMonitoring/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
 		AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1229,7 +1230,6 @@
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
-				427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
@@ -1448,7 +1448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
@@ -1462,7 +1462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1478,7 +1478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1491,7 +1491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1592,7 +1592,7 @@
 			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1601,7 +1601,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1615,7 +1615,7 @@
 			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1624,7 +1624,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -11,10 +11,12 @@ import UIKit
 
 class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
     let configRepository: ConfigRepositoryProtocol
+    let userRepository: UserRepositoryProtocol
     var view: AttentionWebViewViewControllerProtocol
     
-    init(configRepository: ConfigRepositoryProtocol, view: AttentionWebViewViewControllerProtocol) {
+    init(configRepository: ConfigRepositoryProtocol, userRepository: UserRepositoryProtocol, view: AttentionWebViewViewControllerProtocol) {
         self.configRepository = configRepository
+        self.userRepository = userRepository
         self.view = view
     }
     
@@ -40,13 +42,24 @@ class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
         
         let moreButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "moreButton.png").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(showMoreSection))
         
+        let contactTracingButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "tabTracing").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(showContactTracing))
+        
         return [
-            moreButtonBar
+            moreButtonBar,
+            contactTracingButtonBar
         ]
     }
     
     @objc private func showMoreSection() {
         view.showMoreSection()
+    }
+    
+    @objc private func showContactTracing() {
+        view.showContactTracing()
+    }
+    
+    func getTintColor() -> UIColor? {
+        return UIColor(userRepository.currentCompany?.primaryColor ?? "#6C99F2")
     }
     
     func showWebView() {

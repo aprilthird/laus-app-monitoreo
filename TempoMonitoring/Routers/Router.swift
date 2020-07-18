@@ -31,7 +31,7 @@ final class Router: RouterProtocol {
     
     func getAttention() -> UIViewController {
         let viewController = AttentionWebViewViewController.get()
-        viewController.attentionPresenter = AttentionWebViewPresenter(configRepository: configRepository, view: viewController)
+        viewController.attentionPresenter = AttentionWebViewPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
         return viewController
     }
     
@@ -132,11 +132,6 @@ final class Router: RouterProtocol {
     func getTriage() -> UIViewController {
         let viewController = TriageViewController.get()
         viewController.triagePresenter = TriagePresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, view: viewController)
-        return viewController
-    }
-    
-    func getTracing() -> UIViewController {
-        let viewController = TracingViewController.get()
         return viewController
     }
 }

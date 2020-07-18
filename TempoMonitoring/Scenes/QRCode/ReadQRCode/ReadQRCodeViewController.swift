@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import Crashlytics
+import FirebaseCrashlytics
 
 class ReadQRCodeViewController: UIViewController {
 
@@ -30,12 +30,12 @@ class ReadQRCodeViewController: UIViewController {
         guard let captureDevice = AVCaptureDevice.default(for: .video),
             let videoInput = try? AVCaptureDeviceInput(device: captureDevice) else {
                 let isNull = "Is Null"
-                Crashlytics.sharedInstance().recordError(NSError(domain: "CaptureDeviceException", code: 503, userInfo: nil), withAdditionalUserInfo: [
+                Crashlytics.crashlytics().record(error: NSError(domain: "CaptureDeviceException", code: 503, userInfo: [
                     "Presenting View Controller": presentingViewController?.className ?? isNull,
                     "Presented View Controller": presentedViewController?.className ?? isNull,
                     "parent View Controller": parent?.className ?? isNull,
                     "Parent's top View Controller": (parent as? UINavigationController)?.topViewController?.className ?? isNull
-                ])
+                ]))
                 return
         }
         captureSession.addInput(videoInput)
