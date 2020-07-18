@@ -10,9 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import IQKeyboardManagerSwift
-//import dp3t_lib_ios
-
-//var amigoContactTracing = AmigoContactTracing.shared
+import dp3t_lib_ios
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,17 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-//        amigoContactTracing.setLaunchOptions(launchOptions)
+        AmigoContactTracing.shared.setLaunchOptions(launchOptions)
         
         return true
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-//        amigoContactTracing.applicationDidEnterBackground()
+        AmigoContactTracing.shared.applicationDidEnterBackground()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-//        amigoContactTracing.applicationWillEnterForeground()
+        AmigoContactTracing.shared.applicationWillEnterForeground()
     }
 
     // MARK: - Core Data stack
