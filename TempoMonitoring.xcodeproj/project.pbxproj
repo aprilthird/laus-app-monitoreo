@@ -56,6 +56,9 @@
 		8E41AB2F2483045600E6DAD7 /* TempoMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */; };
 		8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */; };
 		8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3132497E2EA0063D9A5 /* OneSignalHandler.swift */; };
+		8E81BADB24C60DF7000DB671 /* LinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADA24C60DF7000DB671 /* LinkManager.swift */; };
+		8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADC24C60F32000DB671 /* LinkType.swift */; };
+		8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADE24C61098000DB671 /* LinkNavigator.swift */; };
 		8E890AD0248AC7BB00BB1921 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E890ACF248AC7BB00BB1921 /* DocumentType.swift */; };
 		8E8B51F12498378800F03A33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8B51F02498378800F03A33 /* GoogleService-Info.plist */; };
 		8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */; };
@@ -244,6 +247,9 @@
 		8E41AB302483045600E6DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E66D3132497E2EA0063D9A5 /* OneSignalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalHandler.swift; sourceTree = "<group>"; };
+		8E81BADA24C60DF7000DB671 /* LinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkManager.swift; sourceTree = "<group>"; };
+		8E81BADC24C60F32000DB671 /* LinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkType.swift; sourceTree = "<group>"; };
+		8E81BADE24C61098000DB671 /* LinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkNavigator.swift; sourceTree = "<group>"; };
 		8E890ACF248AC7BB00BB1921 /* DocumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		8E8B51F02498378800F03A33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				8EEE7FCB24836F9C00DC28F1 /* CustomViews */,
+				8E81BAD924C609DE000DB671 /* DynamicLinks */,
 				8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */,
 				8E319E8D24831C28001111C6 /* Contstants.swift */,
 				8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */,
@@ -669,6 +676,16 @@
 				8E41AB302483045600E6DAD7 /* Info.plist */,
 			);
 			path = TempoMonitoringUITests;
+			sourceTree = "<group>";
+		};
+		8E81BAD924C609DE000DB671 /* DynamicLinks */ = {
+			isa = PBXGroup;
+			children = (
+				8E81BADA24C60DF7000DB671 /* LinkManager.swift */,
+				8E81BADE24C61098000DB671 /* LinkNavigator.swift */,
+				8E81BADC24C60F32000DB671 /* LinkType.swift */,
+			);
+			path = DynamicLinks;
 			sourceTree = "<group>";
 		};
 		8EB5D99A24849FFA00E8E9DE /* HomeBannerPopup */ = {
@@ -1183,6 +1200,7 @@
 				8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */,
 				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
 				8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */,
+				8E81BADB24C60DF7000DB671 /* LinkManager.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */,
@@ -1210,6 +1228,7 @@
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
+				8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */,
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8EEE7FF92484410600DC28F1 /* TriageViewControllerProtocol.swift in Sources */,
@@ -1253,6 +1272,7 @@
 				8EBD7379248489480032B174 /* TipsPresenterProtocol.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
+				8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
 				8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */,
@@ -1448,7 +1468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
@@ -1462,7 +1482,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1478,7 +1498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1491,7 +1511,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
@@ -1592,7 +1612,7 @@
 			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1601,7 +1621,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1615,7 +1635,7 @@
 			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1624,7 +1644,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -8,8 +8,9 @@ target 'TempoMonitoring' do
   # Pods for TempoMonitoring
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/DynamicLinks'
   pod 'IQKeyboardManagerSwift'
   pod 'OneSignal', '>= 2.11.2', '< 3.0'
   pod 'SnapKit'

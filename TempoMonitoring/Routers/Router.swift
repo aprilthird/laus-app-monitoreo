@@ -31,7 +31,7 @@ final class Router: RouterProtocol {
     
     func getAttention() -> UIViewController {
         let viewController = AttentionWebViewViewController.get()
-        viewController.attentionPresenter = AttentionWebViewPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
+        viewController.attentionPresenter = AttentionWebViewPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, userRepository: userRepository, view: viewController)
         return viewController
     }
     

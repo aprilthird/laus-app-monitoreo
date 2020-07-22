@@ -45,6 +45,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         AmigoContactTracing.shared.applicationWillEnterForeground()
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url),
+            let dynamicUrl = dynamicLink.url {
+            return LinkManager.shared.handleLink(url: dynamicUrl, isUniversalLink: false)
+        }
+        return false
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard let url = userActivity.webpageURL,
+            userActivity.activityType == NSUserActivityTypeBrowsingWeb else {
+                return false
+        }
+        
+        let handled = DynamicLinks.dynamicLinks().handleUniversalLink(url) { (dynamicLink, error) in
+            guard error == nil, let dynamicUrl = dynamicLink?.url else {
+                return
+            }
+            _ = LinkManager.shared.handleLink(url: dynamicUrl, isUniversalLink: true)
+        }
+        return handled
+    }
 
     // MARK: - Core Data stack
 
