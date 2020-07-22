@@ -20,10 +20,15 @@ class AttentionWebViewViewController: UIViewController {
 
         navigationItem.title = Constants.Localizable.ATTENTION_TITLE
         
-        navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
         webView.navigationDelegate = self
         webView.uiDelegate = self
         attentionPresenter.showWebView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
     }
 
     /*

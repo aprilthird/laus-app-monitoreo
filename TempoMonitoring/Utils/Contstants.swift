@@ -16,6 +16,7 @@ final class Constants {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
         static let DOCUMENT_TYPES: String = "documentTypes"
+        static let IS_CONTACT_TRACING_ENABLED: String = "isContactTracingEnabled"
         static let IS_DEVICE_REGISTERED: String = "isDeviceRegistered"
         static let IS_NOTIFICATION_ENABLED: String = "isNotificationEnabled"
         static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
