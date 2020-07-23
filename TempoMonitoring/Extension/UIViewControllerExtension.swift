@@ -15,12 +15,12 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         return String(describing: self)
     }
     
-    static func get(with bundle: Bundle? = nil) -> Self {
-        return Self(nibName: NIBName, bundle: bundle)
-    }
-    
     var className: String {
         return NSStringFromClass(self.classForCoder)
+    }
+    
+    static func get(with bundle: Bundle? = nil) -> Self {
+        return Self(nibName: NIBName, bundle: bundle)
     }
     
     // MARK: AlertHandlerProtocol
