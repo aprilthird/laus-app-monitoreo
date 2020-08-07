@@ -11,5 +11,6 @@ import Foundation
 protocol AttentionWebViewViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
     func goBack()
     func openUrl(_ url: String)
+    func showContactTracing()
     func showMoreSection()
 }

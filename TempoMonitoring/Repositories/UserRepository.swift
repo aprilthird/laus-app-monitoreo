@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Crashlytics
+import FirebaseCrashlytics
 import SwiftyJSON
 
 final class UserRepository: UserRepositoryProtocol {
@@ -21,7 +21,7 @@ final class UserRepository: UserRepositoryProtocol {
     
     var currentCompany: Company? {
         get {
-            userDefaultsHandler.custom(of: Company.self, from: Constants.Keys.COMPANY)
+            return userDefaultsHandler.custom(of: Company.self, from: Constants.Keys.COMPANY)
         }
         
         set {
@@ -36,7 +36,7 @@ final class UserRepository: UserRepositoryProtocol {
     func registerDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
             let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
-                Crashlytics.sharedInstance().recordError(NSError(domain: "AppVersionException", code: 503, userInfo: nil))
+                Crashlytics.crashlytics().record(error: NSError(domain: "AppVersionException", code: 503, userInfo: nil))
                 success(false)
                 return
         }
@@ -60,6 +60,8 @@ final class UserRepository: UserRepositoryProtocol {
                             url: Constants.Service.REGISTER_DEVICE,
                             parameters: parameters,
         success: { (response) in
+            self.userDefaultsHandler.save(value: true, to: Constants.Keys.IS_DEVICE_REGISTERED)
+            
             success(true)
         }) { (error) in
             failure(error)
@@ -100,10 +102,12 @@ final class UserRepository: UserRepositoryProtocol {
             let token = response["user"]["general_token"].stringValue
             let companyToken = response["user"]["company_token"].stringValue
             let isScannerEnabled = response["user"]["scanner_enabled"].boolValue
+            let isContactTracingEnabled = response["company"]["show_contact_tracing"].boolValue
             
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
             self.userDefaultsHandler.save(value: isScannerEnabled, to: Constants.Keys.IS_SCANNER_ENABLED)
+            self.userDefaultsHandler.save(value: isContactTracingEnabled, to: Constants.Keys.IS_CONTACT_TRACING_ENABLED)
             self.currentCompany = company
             
             success(true)
@@ -121,6 +125,8 @@ final class UserRepository: UserRepositoryProtocol {
                             url: Constants.Service.UNREGISTER_DEVICE,
                             parameters: parameters,
         success: { (response) in
+            self.userDefaultsHandler.save(value: false, to: Constants.Keys.IS_DEVICE_REGISTERED)
+            
             success(true)
         }) { (error) in
             failure(error)

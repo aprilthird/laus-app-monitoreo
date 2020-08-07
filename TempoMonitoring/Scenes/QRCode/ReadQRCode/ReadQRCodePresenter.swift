@@ -25,14 +25,14 @@ class ReadQRCodePresenter: ReadQRCodePresenterProtocol {
     }
     
     func isQRCodeValid(_ string: String?) -> Bool {
-        guard let data = string?.data(using: .utf8),
-            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-                return false
-        }
-        
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         print("QRContent: \(string ?? "undefined")")
         
+        guard let data = string?.data(using: .utf8),
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+                view.showQRCodeStatus(nil, nil, nil)
+                return true
+        }
         let access = jsonObject["autorizacion_ingreso"] as? Bool
         let name = jsonObject["nombre_colaborador"] as? String
         let date = jsonObject["fecha_autorizacion"] as? String

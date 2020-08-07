@@ -22,16 +22,16 @@ final class Router: RouterProtocol {
     init() {
         keychainHandler = KeychainHandler()
         userDefaultsHandler = UserDefaultsHandler()
-        oneSignalHandler = OneSignalHandler(userDefaultsHandler: userDefaultsHandler)
         configRepository = ConfigRepository(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler)
         userRepository = UserRepository(userDefaultsHandler: userDefaultsHandler, keychainHandler: keychainHandler)
+        oneSignalHandler = OneSignalHandler(userDefaultsHandler: userDefaultsHandler, userRepository: userRepository)
         generalRepository = GeneralRepository(userDefaultsHandler: userDefaultsHandler)
         tipRepository = TipRepository(keychainHandler: keychainHandler)
     }
     
     func getAttention() -> UIViewController {
         let viewController = AttentionWebViewViewController.get()
-        viewController.attentionPresenter = AttentionWebViewPresenter(configRepository: configRepository, view: viewController)
+        viewController.attentionPresenter = AttentionWebViewPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, userRepository: userRepository, view: viewController)
         return viewController
     }
     
@@ -132,11 +132,6 @@ final class Router: RouterProtocol {
     func getTriage() -> UIViewController {
         let viewController = TriageViewController.get()
         viewController.triagePresenter = TriagePresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, view: viewController)
-        return viewController
-    }
-    
-    func getTracing() -> UIViewController {
-        let viewController = TracingViewController.get()
         return viewController
     }
 }

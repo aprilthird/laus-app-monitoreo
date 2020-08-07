@@ -16,13 +16,15 @@ final class Constants {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
         static let DOCUMENT_TYPES: String = "documentTypes"
-        static let IS_FIRST_OPEN: String = "isFirstOpen"
+        static let IS_CONTACT_TRACING_ENABLED: String = "isContactTracingEnabled"
+        static let IS_DEVICE_REGISTERED: String = "isDeviceRegistered"
         static let IS_NOTIFICATION_ENABLED: String = "isNotificationEnabled"
         static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
         static let LAST_APP_VERSION: String = "lastAppVersion"
         static let LAST_HOME_BANNER_ID: String = "lastHomeBannerId"
         static let ONE_SIGNAL_ID: String = "oneSignalId"
         static let TOKEN: String = "token"
+        static let WAS_FIRST_OPEN: String = "wasFirstOpen"
     }
     struct Localizable {
         static let APP_NAME: String = NSLocalizedString("Tempo Monitoring", comment: "")
@@ -31,6 +33,7 @@ final class Constants {
         static let CANCEL: String = NSLocalizedString("Cancel", comment: "")
         static let DEFAULT_ERROR_MESSAGE: String = NSLocalizedString("There was a problem, please try later", comment: "")
         static let FAQ: String = NSLocalizedString("Frequently Asked Questions", comment: "")
+        static let HOME_TITLE: String = NSLocalizedString("Home", comment: "")
         static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
@@ -71,6 +74,7 @@ final class Constants {
         static let GET_LAST_TRIAGE = "\(BASE_URL)/user.php?action=get_last_triaje"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
         static let GET_SIGN_UP_URL = "\(BASE_URL)/config.php?action=get_register_link"
+        static let GET_TRIAGE_ELEMENTS = "\(BASE_URL)/config.php?action=get_triaje_elements"
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
         static let GET_TUTORIAL = "\(BASE_URL)/config.php?action=get_tutorial"
         static let SAVE_DEVICE_ID = "\(BASE_URL)/config.php?action=save_device_id"

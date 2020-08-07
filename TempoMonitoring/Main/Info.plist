@@ -25,6 +25,19 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>First Deeplink</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>temposalud</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -37,6 +50,8 @@
 	<string>Tempo Monitoreo quiere utilizar tu bluetooth para descubrir, conectar y compartir información con dispositivos cercanos</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Al aceptar podrás tomar y subir fotos directamente a Tempo Monitoreo en tu perfil de usuario y al compartir fotos de tus ejercicios realizados</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Al aceptar podrás registrar las distancias y las rutas de tus actividades de ejercicio realizados con esta aplicación.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Bold.ttf</string>

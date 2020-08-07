@@ -12,9 +12,11 @@ import UIKit
 
 class OneSignalHandler: OneSignalHandlerProtocol {
     let userDefaultsHandler: UserDefaultsHandler
+    let userRepository: UserRepositoryProtocol
     
-    init(userDefaultsHandler: UserDefaultsHandler) {
+    init(userDefaultsHandler: UserDefaultsHandler, userRepository: UserRepositoryProtocol) {
         self.userDefaultsHandler = userDefaultsHandler
+        self.userRepository = userRepository
     }
     
     func initialConfiguration(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]?) {
@@ -37,6 +39,14 @@ class OneSignalHandler: OneSignalHandlerProtocol {
             let status = OneSignal.getPermissionSubscriptionState()
             if let id = status?.subscriptionStatus.userId {
                 self.userDefaultsHandler.save(value: id, to: Constants.Keys.ONE_SIGNAL_ID)
+                
+                let wasFirstOpen = self.userDefaultsHandler.bool(from: Constants.Keys.WAS_FIRST_OPEN)
+                let isDeviceSaved = self.userDefaultsHandler.bool(from: Constants.Keys.IS_DEVICE_REGISTERED)
+                
+                guard wasFirstOpen, !isDeviceSaved else {
+                    return
+                }
+                self.userRepository.registerDevice()
             }
         })
     }

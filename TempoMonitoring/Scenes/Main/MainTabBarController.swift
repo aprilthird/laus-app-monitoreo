@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import dp3t_lib_ios
 
-class MainTabBarController: UITabBarController, OnTracingViewClose {
+class MainTabBarController: UITabBarController {
 
     var mainPresenter: MainPresenterProtocol!
     
@@ -50,9 +49,6 @@ class MainTabBarController: UITabBarController, OnTracingViewClose {
         
         setViewControllers(mainPresenter.getViewControllers(), animated: true)
         
-        delegate = self
-        amigoContactTracing.closeDelegate = self
-        
         mainPresenter.validate()
     }
 
@@ -65,10 +61,7 @@ class MainTabBarController: UITabBarController, OnTracingViewClose {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func onClose() {
-        selectedIndex = lastSelectedIndex
-    }
+
 }
 extension MainTabBarController: MainTabBarControllerProtocol {
     func showHomeBannerPopup(_ imageUrl: String, _ url: String) {
@@ -83,17 +76,5 @@ extension MainTabBarController: MainTabBarControllerProtocol {
         newVersion.modalPresentationStyle = .overCurrentContext
         newVersion.modalTransitionStyle = .crossDissolve
         present(newVersion, animated: true, completion: nil)
-    }
-}
-
-extension MainTabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        guard let viewControllers = tabBarController.viewControllers else { return }
-        guard let index = viewControllers.firstIndex(of: viewController) else { return }
-        if index == 3 {
-            amigoContactTracing.launch(themeColor: mainPresenter.getTintColor())
-        } else {
-            lastSelectedIndex = index
-        }
     }
 }

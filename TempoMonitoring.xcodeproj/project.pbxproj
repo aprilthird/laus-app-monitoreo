@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
-		42377451249977AC007E7C20 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
-		42377452249977AC007E7C20 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CFD892486C1C800EBDCBB /* TracingViewController.swift */; };
-		427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427CFD8B2486C28900EBDCBB /* TracingViewController.xib */; };
+		8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
+		8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7C24831AB0001111C6 /* RouterProtocol.swift */; };
@@ -58,6 +56,9 @@
 		8E41AB2F2483045600E6DAD7 /* TempoMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41AB2E2483045600E6DAD7 /* TempoMonitoringUITests.swift */; };
 		8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */; };
 		8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66D3132497E2EA0063D9A5 /* OneSignalHandler.swift */; };
+		8E81BADB24C60DF7000DB671 /* LinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADA24C60DF7000DB671 /* LinkManager.swift */; };
+		8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADC24C60F32000DB671 /* LinkType.swift */; };
+		8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81BADE24C61098000DB671 /* LinkNavigator.swift */; };
 		8E890AD0248AC7BB00BB1921 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E890ACF248AC7BB00BB1921 /* DocumentType.swift */; };
 		8E8B51F12498378800F03A33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8B51F02498378800F03A33 /* GoogleService-Info.plist */; };
 		8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */; };
@@ -159,13 +160,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		42377453249977AC007E7C20 /* Embed Frameworks */ = {
+		8E06B6F024BA253800D336E4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				42377452249977AC007E7C20 /* dp3t_lib_ios.framework in Embed Frameworks */,
+				8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,8 +192,6 @@
 		21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
-		427CFD892486C1C800EBDCBB /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
-		427CFD8B2486C28900EBDCBB /* TracingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingViewController.xib; sourceTree = "<group>"; };
 		42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dp3t_lib_ios.framework; path = TempoMonitoring/dp3t_lib_ios.framework; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +247,9 @@
 		8E41AB302483045600E6DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E66D3132497E2EA0063D9A5 /* OneSignalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalHandler.swift; sourceTree = "<group>"; };
+		8E81BADA24C60DF7000DB671 /* LinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkManager.swift; sourceTree = "<group>"; };
+		8E81BADC24C60F32000DB671 /* LinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkType.swift; sourceTree = "<group>"; };
+		8E81BADE24C61098000DB671 /* LinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkNavigator.swift; sourceTree = "<group>"; };
 		8E890ACF248AC7BB00BB1921 /* DocumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		8E8B51F02498378800F03A33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EB5D99C2484A03800E8E9DE /* NewVersionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionPopupViewController.swift; sourceTree = "<group>"; };
@@ -334,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */,
-				42377451249977AC007E7C20 /* dp3t_lib_ios.framework in Frameworks */,
+				8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,15 +367,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		427CFD882486BC6600EBDCBB /* Tracing */ = {
-			isa = PBXGroup;
-			children = (
-				427CFD892486C1C800EBDCBB /* TracingViewController.swift */,
-				427CFD8B2486C28900EBDCBB /* TracingViewController.xib */,
-			);
-			path = Tracing;
-			sourceTree = "<group>";
-		};
 		8E319E71248318E7001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +393,6 @@
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
 				8EBD736A248483710032B174 /* Tips */,
-				427CFD882486BC6600EBDCBB /* Tracing */,
 				8E319EB424833D6D001111C6 /* Triage */,
 			);
 			path = Scenes;
@@ -478,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				8EEE7FCB24836F9C00DC28F1 /* CustomViews */,
+				8E81BAD924C609DE000DB671 /* DynamicLinks */,
 				8EEE7FDF2483808100DC28F1 /* AlertHandlerProtocol.swift */,
 				8E319E8D24831C28001111C6 /* Contstants.swift */,
 				8EEE7FDB24837DCA00DC28F1 /* HUDHandlerProtocol.swift */,
@@ -685,6 +678,16 @@
 			path = TempoMonitoringUITests;
 			sourceTree = "<group>";
 		};
+		8E81BAD924C609DE000DB671 /* DynamicLinks */ = {
+			isa = PBXGroup;
+			children = (
+				8E81BADA24C60DF7000DB671 /* LinkManager.swift */,
+				8E81BADE24C61098000DB671 /* LinkNavigator.swift */,
+				8E81BADC24C60F32000DB671 /* LinkType.swift */,
+			);
+			path = DynamicLinks;
+			sourceTree = "<group>";
+		};
 		8EB5D99A24849FFA00E8E9DE /* HomeBannerPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,8 +841,8 @@
 				8E41AB042483045300E6DAD7 /* Resources */,
 				AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */,
 				8EB5D9B72484B64000E8E9DE /* Embed App Extensions */,
+				8E06B6F024BA253800D336E4 /* Embed Frameworks */,
 				8EB5D9B92484C0DF00E8E9DE /* ShellScript */,
-				42377453249977AC007E7C20 /* Embed Frameworks */,
 				42377450249930C6007E7C20 /* Strip dp3t framework */,
 			);
 			buildRules = (
@@ -978,7 +981,6 @@
 				8E319EBA24833DA0001111C6 /* TriageViewController.xib in Resources */,
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E8B51F12498378800F03A33 /* GoogleService-Info.plist in Resources */,
-				427CFD8C2486C28900EBDCBB /* TracingViewController.xib in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
@@ -1129,6 +1131,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -1136,7 +1139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/TempoMonitoring/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
 		AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1197,6 +1200,7 @@
 				8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */,
 				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
 				8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */,
+				8E81BADB24C60DF7000DB671 /* LinkManager.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
 				8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */,
@@ -1224,6 +1228,7 @@
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
+				8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */,
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
 				8EEE7FF92484410600DC28F1 /* TriageViewControllerProtocol.swift in Sources */,
@@ -1244,7 +1249,6 @@
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
-				427CFD8A2486C1C800EBDCBB /* TracingViewController.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
@@ -1268,6 +1272,7 @@
 				8EBD7379248489480032B174 /* TipsPresenterProtocol.swift in Sources */,
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
+				8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
 				8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */,
@@ -1459,11 +1464,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
@@ -1477,8 +1482,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sportafolio.Tempo-Monitoring";
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1489,11 +1494,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01B480888780AE0BD863778B /* Pods-TempoMonitoring.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1506,8 +1511,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sportafolio.Tempo-Monitoring";
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = "Tempo Monitoreo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1518,7 +1523,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
@@ -1541,7 +1546,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
@@ -1564,7 +1569,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = TempoMonitoringUITests/Info.plist;
@@ -1585,7 +1590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = TempoMonitoringUITests/Info.plist;
@@ -1607,7 +1612,7 @@
 			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1616,8 +1621,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1630,7 +1635,7 @@
 			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1639,8 +1644,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

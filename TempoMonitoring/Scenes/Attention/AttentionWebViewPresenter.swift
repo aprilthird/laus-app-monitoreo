@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 
 class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
+    let userDefaultsHandler: UserDefaultsHandlerProtocol
     let configRepository: ConfigRepositoryProtocol
+    let userRepository: UserRepositoryProtocol
     var view: AttentionWebViewViewControllerProtocol
     
-    init(configRepository: ConfigRepositoryProtocol, view: AttentionWebViewViewControllerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, configRepository: ConfigRepositoryProtocol, userRepository: UserRepositoryProtocol, view: AttentionWebViewViewControllerProtocol) {
+        self.userDefaultsHandler = userDefaultsHandler
         self.configRepository = configRepository
+        self.userRepository = userRepository
         self.view = view
     }
     
@@ -39,14 +43,28 @@ class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
         let size = CGSize(width: 25, height: 25)
         
         let moreButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "moreButton.png").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(showMoreSection))
+        let contactTracingButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "tabTracing").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(showContactTracing))
         
-        return [
+        var barButtons = [
             moreButtonBar
         ]
+        if userDefaultsHandler.bool(from: Constants.Keys.IS_CONTACT_TRACING_ENABLED) {
+            barButtons.append(contactTracingButtonBar)
+        }
+        
+        return barButtons
     }
     
     @objc private func showMoreSection() {
         view.showMoreSection()
+    }
+    
+    @objc private func showContactTracing() {
+        view.showContactTracing()
+    }
+    
+    func getTintColor() -> UIColor? {
+        return UIColor(userRepository.currentCompany?.primaryColor ?? "#6C99F2")
     }
     
     func showWebView() {
