@@ -20,6 +20,7 @@
                 <outlet property="scrollView" destination="Gir-hx-T0A" id="Soj-eg-OKE"/>
                 <outlet property="seeQRCodeButton" destination="iL0-Ha-z91" id="Mb2-el-zeM"/>
                 <outlet property="startTriageButton" destination="Ydt-8n-i0a" id="WHJ-Ua-wWv"/>
+                <outlet property="subDescriptionLabel" destination="XnH-yj-6Ph" id="MKl-XE-3Fc"/>
                 <outlet property="triageImageView" destination="BXO-uS-gED" id="DgP-I4-lz4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

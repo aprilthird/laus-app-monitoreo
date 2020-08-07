@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import dp3t_lib_ios
 import WebKit
 
 class AttentionWebViewViewController: UIViewController {
@@ -19,11 +20,16 @@ class AttentionWebViewViewController: UIViewController {
 
         navigationItem.title = Constants.Localizable.ATTENTION_TITLE
         
-        navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         attentionPresenter.showWebView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.setRightBarButtonItems(attentionPresenter.getRightNavigationItems(), animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -48,10 +54,33 @@ extension AttentionWebViewViewController: AttentionWebViewViewControllerProtocol
         self.webView.load(URLRequest(url: url))
     }
     
+    func showContactTracing() {
+        AmigoContactTracing.shared.launch(themeColor: attentionPresenter.getTintColor())
+    }
+    
     func showMoreSection() {
         let moreSection = Router.shared.getMoreSection()
         moreSection.hidesBottomBarWhenPushed = true
         show(moreSection, sender: nil)
+    }
+}
+extension AttentionWebViewViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        guard navigationAction.targetFrame == nil, let url = navigationAction.request.url else {
+            return nil
+        }
+        let urlString = url.absoluteString
+        if urlString.lowercased().contains("http") || urlString.lowercased().contains("https") {
+            webView.load(URLRequest(url: url))
+        } else if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+        return nil
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        show(.alert, message: message, closure: completionHandler)
     }
 }
 extension AttentionWebViewViewController: WKNavigationDelegate {

@@ -81,6 +81,10 @@ extension MainWebViewViewController: WKUIDelegate {
         
         return nil
     }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        show(.alert, message: message, closure: completionHandler)
+    }
 }
 extension MainWebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -90,8 +94,6 @@ extension MainWebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         endProgress()
         
-        show(.alert, message: error.localizedDescription) {
-            self.closeWebView()
-        }
+        show(.alert, message: error.localizedDescription)
     }
 }
