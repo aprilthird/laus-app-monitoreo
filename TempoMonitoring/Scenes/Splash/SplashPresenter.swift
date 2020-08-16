@@ -25,10 +25,8 @@ final class SplashPresenter: SplashPresenterProtocol {
     
     func startAnimation() {
         configRepository.getDocumentType { (_) in
-            self.generalRepository.saveLastVersionInAppStore {
-                DispatchQueue.main.async {
-                    self.validateLogin()
-                }
+            DispatchQueue.main.async {
+                self.validateLogin()
             }
         }
     }
