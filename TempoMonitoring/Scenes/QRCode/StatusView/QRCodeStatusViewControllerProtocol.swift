@@ -13,5 +13,5 @@ protocol QRCodeStatusViewControllerProtocol: AlertHandlerProtocol {
     var isPopupHidden: Bool { get set }
     
     func closeView()
-    func updatePopup(_ title: String?, _ image: UIImage, _ authorization: String)
+    func updatePopup(_ title: String?, _ subtitle: String?, _ image: UIImage, _ authorization: String)
 }

@@ -27,7 +27,7 @@ class QRCodeStatusViewController: UIViewController {
 
         backgroundView.alpha = 0.5
         
-        qrCodeStatusPresenter.loadPopup(access: access, name: name)
+        qrCodeStatusPresenter.loadPopup(access: access, name: name, date: date)
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,17 +72,16 @@ extension QRCodeStatusViewController: QRCodeStatusViewControllerProtocol {
         }
     }
     
-    func updatePopup(_ title: String?, _ image: UIImage, _ authorization: String) {
+    func updatePopup(_ title: String?, _ subtitle: String?, _ image: UIImage, _ authorization: String) {
         if let title = title {
+            titleLabel.isHidden = false
             titleLabel.text = title
         } else {
             titleLabel.isHidden = true
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        if let date = date, let aux = dateFormatter.date(from: date), access != nil {
-            dateFormatter.dateFormat = "dd/MM/yyyy"
-            dateLabel.text = dateFormatter.string(from: aux)
+        if let subtitle = subtitle {
+            dateLabel.isHidden = false
+            dateLabel.text = subtitle
         } else {
             dateLabel.isHidden = true
         }

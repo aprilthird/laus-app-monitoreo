@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseRemoteConfig
 
 final class MainPresenter: MainPresenterProtocol {
     let userRepository: UserRepositoryProtocol
@@ -47,30 +48,42 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func validate() {
-        guard !isNewVersion() else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                self.view.showNewVersionPopup()
-            }
-            return
-        }
-        
-        configRepository.getHomeBanner(success: { (id, imageUrl, url) in
-            guard id != self.userDefaultsHandler.integer(from: Constants.Keys.LAST_HOME_BANNER_ID) else {
+        shouldShowNewVersion { (isNewVersion) in
+            guard isNewVersion else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                    self.view.showNewVersionPopup()
+                }
                 return
             }
-            self.userDefaultsHandler.save(value: id, to: Constants.Keys.LAST_HOME_BANNER_ID)
-            self.view.showHomeBannerPopup(imageUrl, url)
-        }) { (error) in
-            self.view.show(.alert, message: error.localizedDescription)
+            
+            self.configRepository.getHomeBanner(success: { (id, imageUrl, url) in
+                guard id != self.userDefaultsHandler.integer(from: Constants.Keys.LAST_HOME_BANNER_ID) else {
+                    return
+                }
+                self.userDefaultsHandler.save(value: id, to: Constants.Keys.LAST_HOME_BANNER_ID)
+                self.view.showHomeBannerPopup(imageUrl, url)
+            }) { (error) in
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
     
-    private func isNewVersion() -> Bool {
-        guard let lastAppVersion = userDefaultsHandler.string(from: Constants.Keys.LAST_APP_VERSION),
-            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
-            appVersion.isVersion(lessThan: lastAppVersion) else {
-                return false
+    private func shouldShowNewVersion(closure: ((Bool) -> Void)? = nil) {
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        remoteConfig.fetchAndActivate { (status, error) in
+            guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, error == nil else {
+                return
+            }
+            let lastAppVersionInAppStore = remoteConfig["ios_current_version"].stringValue ?? ""
+            if appVersion.isVersion(lessThan: lastAppVersionInAppStore) {
+                closure?(false)
+            } else {
+                closure?(true)
+            }
         }
-        return true
     }
 }
