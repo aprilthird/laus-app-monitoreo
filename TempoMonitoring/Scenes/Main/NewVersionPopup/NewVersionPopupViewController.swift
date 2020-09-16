@@ -33,7 +33,7 @@ class NewVersionPopupViewController: UIViewController {
     }
 
     @IBAction func didUpdateApp(_ sender: UIButton) {
-        guard let url = URL(string: "") else {
+        guard let url = URL(string: "itms-apps://apps.apple.com/pe/app/id1521181252") else {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

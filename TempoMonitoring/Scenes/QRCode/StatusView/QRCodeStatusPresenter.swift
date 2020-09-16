@@ -32,16 +32,30 @@ final class QRCodeStatusPresenter: QRCodeStatusPresenterProtocol {
         return UIColor(company.primaryColor)
     }
     
-    func loadPopup(access: Bool?, name: String?) {
+    func loadPopup(access: Bool?, name: String?, date: String?) {
         guard let access = access else {
-            view.updatePopup(Constants.Localizable.INVALID_CODE, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
+            view.updatePopup(Constants.Localizable.INVALID_CODE, nil, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
             return
         }
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        
+        var formattedDate: String? = nil
+        var isDateAvailable: Bool = false
+        if let date = date, let aux = dateFormatter.date(from: date) {
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            formattedDate = dateFormatter.string(from: aux)
+            isDateAvailable = (aux.compare(Date()) == .orderedDescending) ? true : false
+        }
         if access {
-            view.updatePopup(name, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED)
+            if isDateAvailable {
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED)
+            } else {
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "warningImage"), Constants.Localizable.PAST_DATE)
+            }
         } else {
-            view.updatePopup(name, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
+            view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
         }
     }
 }

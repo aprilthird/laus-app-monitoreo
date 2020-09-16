@@ -11,6 +11,7 @@ target 'TempoMonitoring' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/DynamicLinks'
+  pod 'Firebase/RemoteConfig'
   pod 'IQKeyboardManagerSwift'
   pod 'OneSignal', '>= 2.11.2', '< 3.0'
   pod 'SnapKit'

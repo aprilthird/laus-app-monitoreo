@@ -44,6 +44,7 @@ final class Constants {
         static let NO_LAST_TRIAGE: String = NSLocalizedString("Triage not found", comment: "")
         static let NOTE_TITLE: String = NSLocalizedString("Note", comment: "")
         static let OK: String = NSLocalizedString("Ok", comment: "")
+        static let PAST_DATE: String = NSLocalizedString("Past date", comment: "")
         static let QR_CODE_READER_TITLE: String = NSLocalizedString("QR Code Scanner", comment: "")
         static let QR_CODE_TITLE: String = NSLocalizedString("QR Code", comment: "")
         static let SEND_INFORMATION_SUCCESFULLY: String = NSLocalizedString("The data has been sent correctly", comment: "")
