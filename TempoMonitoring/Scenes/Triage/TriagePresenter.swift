@@ -20,14 +20,29 @@ final class TriagePresenter: TriagePresenterProtocol {
         self.view = view
     }
     
-    func loadTriage(ofSize size: CGFloat) {
-        configRepository.getTriageElements(success: { (title, imageUrl, description, subDescription, qrCodeButtonText, triageButtonText, lastTriage, evaluation) in
-            let attributedString = self.loadLastTriage(lastTriage: lastTriage, evaluation: evaluation, size: size)
+    func loadElements(ofSize size: CGFloat) {
+        configRepository.getTriageElements(success: { [weak self] (title, imageUrl, description, subDescription, triageButtonText, qrCodeButtonText, lastTriage, evaluation, isScannerEnabled) in
+            guard let self = self else { return }
             
+            let buttonSize = CGSize(width: 25, height: 25)
+            let qrButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "qrCodeIcon.png").resizeImage(targetSize: buttonSize), style: .plain, target: self, action: #selector(self.showQRCodeReader))
+            let items = [
+                qrButtonBar
+            ]
+            self.view.updateRightNavigationItems(isScannerEnabled ? items : [])
+            
+            let attributedString = self.loadLastTriage(lastTriage: lastTriage, evaluation: evaluation, size: size)
             self.view.updateViews(title, imageUrl, description, subDescription, triageButtonText, qrCodeButtonText, attributedString)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
+            self.view.updateRightNavigationItems([])
             self.view.updateViews("", nil, nil, nil, nil, nil, nil)
         }
+    }
+    
+    @objc private func showQRCodeReader() {
+        view.showQRCodeReader()
     }
     
     private func loadLastTriage(lastTriage: String?, evaluation: String?, size: CGFloat) -> NSAttributedString? {
@@ -61,37 +76,29 @@ final class TriagePresenter: TriagePresenterProtocol {
     func showQRCodeWebView() {
         view.startProgress()
         
-        configRepository.getQRCodeUrl(success: { (url) in
+        configRepository.getQRCodeUrl(success: { [weak self] (url) in
+            guard let self = self else { return }
+            
             self.view.showWebView(Constants.Localizable.QR_CODE_TITLE, url)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)
         }
     }
     
-    func getRightNavigationItems() -> [UIBarButtonItem] {
-        let size = CGSize(width: 25, height: 25)
-        
-        guard UserDefaults.standard.bool(forKey: Constants.Keys.IS_SCANNER_ENABLED) else {
-            return []
-        }
-        let qrButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "qrCodeIcon.png").resizeImage(targetSize: size), style: .plain, target: self, action: #selector(showQRCodeReader))
-        return [
-            qrButtonBar
-        ]
-    }
-    
-    @objc private func showQRCodeReader() {
-        view.showQRCodeReader()
-    }
-    
     func showTriageWebView() {
         view.startProgress()
         
-        configRepository.getTriageUrl(success: { (url) in
+        configRepository.getTriageUrl(success: { [weak self] (url) in
+            guard let self = self else { return }
+            
             self.view.showWebView(Constants.Localizable.TRIAGE_TITLE, url)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)

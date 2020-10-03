@@ -30,13 +30,14 @@ class ReadQRCodePresenter: ReadQRCodePresenterProtocol {
         
         guard let data = string?.data(using: .utf8),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-                view.showQRCodeStatus(nil, nil, nil)
+                view.showQRCodeStatus(nil, nil, nil, nil)
                 return true
         }
         let access = jsonObject["autorizacion_ingreso"] as? Bool
         let name = jsonObject["nombre_colaborador"] as? String
         let date = jsonObject["fecha_autorizacion"] as? String
-        view.showQRCodeStatus(access, name, date)
+        let description = jsonObject["texto"] as? String
+        view.showQRCodeStatus(access, name, date, description)
         
         return true
     }

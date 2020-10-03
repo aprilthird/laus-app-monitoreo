@@ -39,8 +39,7 @@ class TriageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.setRightBarButtonItems(triagePresenter.getRightNavigationItems(), animated: true)
-        triagePresenter.loadTriage(ofSize: lastCompletedTriageLabel.font.pointSize)
+        triagePresenter.loadElements(ofSize: lastCompletedTriageLabel.font.pointSize)
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,6 +81,10 @@ extension TriageViewController: TriageViewControllerProtocol {
         let webView = Router.shared.getMainWebView(title: title, url: url)
         webView.hidesBottomBarWhenPushed = true
         show(webView, sender: nil)
+    }
+    
+    func updateRightNavigationItems(_ items: [UIBarButtonItem]) {
+        navigationItem.setRightBarButtonItems(items, animated: true)
     }
     
     func updateViews(_ title: String, _ imageUrl: String?, _ description: String?, _ subDescription: String?, _ triageButtonText: String?, _ qrCodeButtonText: String?, _ lastTriage: NSAttributedString?) {

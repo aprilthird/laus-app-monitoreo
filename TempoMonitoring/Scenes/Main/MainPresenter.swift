@@ -48,21 +48,26 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func validate() {
-        shouldShowNewVersion { (isNewVersion) in
+        shouldShowNewVersion { [weak self] (isNewVersion) in
+            guard let self = self else { return }
+            
             guard isNewVersion else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                     self.view.showNewVersionPopup()
                 }
                 return
             }
-            
-            self.configRepository.getHomeBanner(success: { (id, imageUrl, url) in
+            self.configRepository.getHomeBanner(success: { [weak self] (id, imageUrl, url) in
+                guard let self = self else { return }
+                
                 guard id != self.userDefaultsHandler.integer(from: Constants.Keys.LAST_HOME_BANNER_ID) else {
                     return
                 }
                 self.userDefaultsHandler.save(value: id, to: Constants.Keys.LAST_HOME_BANNER_ID)
                 self.view.showHomeBannerPopup(imageUrl, url)
-            }) { (error) in
+            }) { [weak self] (error) in
+                guard let self = self else { return }
+                
                 self.view.show(.alert, message: error.localizedDescription)
             }
         }

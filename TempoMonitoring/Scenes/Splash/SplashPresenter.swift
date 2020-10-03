@@ -24,7 +24,9 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     func startAnimation() {
-        configRepository.getDocumentType { (_) in
+        configRepository.getDocumentType { [weak self] (_) in
+            guard let self = self else { return }
+            
             DispatchQueue.main.async {
                 self.validateLogin()
             }

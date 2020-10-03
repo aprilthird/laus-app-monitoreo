@@ -70,11 +70,15 @@ class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
     func showWebView() {
         view.startProgress()
         
-        configRepository.getAttentionUrl(success: { (url) in
+        configRepository.getAttentionUrl(success: { [weak self] (url) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.openUrl(url)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)

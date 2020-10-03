@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ReadQRCodeViewControllerProtocol {
-    func showQRCodeStatus(_ access: Bool?, _ name: String?, _ date: String?)
+    func showQRCodeStatus(_ access: Bool?, _ name: String?, _ date: String?, _ description: String?)
 }

@@ -33,11 +33,15 @@ final class TipsPresenter: TipsPresenterProtocol {
     func loadTips() {
         view.startProgress()
         
-        tipRepository.getTipCategories(success: { (tips) in
+        tipRepository.getTipCategories(success: { [weak self] (tips) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.updateTips(tips)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)

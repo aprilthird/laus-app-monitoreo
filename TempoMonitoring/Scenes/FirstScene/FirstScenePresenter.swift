@@ -18,7 +18,9 @@ final class FirstScenePresenter: FirstScenePresenterProtocol {
     }
     
     func didLoadSignUpLogic() {
-        configRepository.getSignUpUrl(success: { (url, visibility) in
+        configRepository.getSignUpUrl(success: { [weak self] (url, visibility) in
+            guard let self = self else { return }
+            
             self.view.updateView(url: url, visibility: visibility)
         }) { (error) in
         }
