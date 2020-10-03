@@ -16,10 +16,12 @@ class QRCodeStatusViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var popupImageView: UIImageView!
     @IBOutlet weak var authorizationLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     var access: Bool?
     var name: String?
     var date: String?
+    var text: String?
     var qrCodeStatusPresenter: QRCodeStatusPresenterProtocol!
     
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class QRCodeStatusViewController: UIViewController {
 
         backgroundView.alpha = 0.5
         
-        qrCodeStatusPresenter.loadPopup(access: access, name: name, date: date)
+        qrCodeStatusPresenter.loadPopup(access: access, name: name, date: date, text: text)
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,20 +74,26 @@ extension QRCodeStatusViewController: QRCodeStatusViewControllerProtocol {
         }
     }
     
-    func updatePopup(_ title: String?, _ subtitle: String?, _ image: UIImage, _ authorization: String) {
+    func updatePopup(_ title: String?, _ subtitle: String?, _ image: UIImage, _ authorization: String, _ description: String?) {
         if let title = title {
-            titleLabel.isHidden = false
             titleLabel.text = title
+            titleLabel.isHidden = false
         } else {
             titleLabel.isHidden = true
         }
         if let subtitle = subtitle {
-            dateLabel.isHidden = false
             dateLabel.text = subtitle
+            dateLabel.isHidden = false
         } else {
             dateLabel.isHidden = true
         }
         popupImageView.image = image
         authorizationLabel.text = authorization
+        if let description = description {
+            descriptionLabel.text = description
+            descriptionLabel.isHidden = false
+        } else {
+            descriptionLabel.isHidden = true
+        }
     }
 }

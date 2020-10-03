@@ -26,7 +26,9 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_ATTENTION_URL,
                            parameters: parameters,
-        success: { (response) in
+        success: { [weak self] (response) in
+            guard let self = self else { return }
+            
             let token = self.keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
         }) { (error) in
@@ -38,11 +40,15 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_DOCUMENT_TYPE,
                            parameters: nil,
-        success: { (response) in
+        success: { [weak self] (response) in
+            guard let self = self else { return }
+            
             let documentTypes = DocumentType.buildCollection(fromJSONArray: response["document_type"].arrayValue)
             _ = self.userDefaultsHandler.save(documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
             closure(documentTypes)
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             let documentTypes = [DocumentType]()
             _ = self.userDefaultsHandler.save(documentTypes, to: Constants.Keys.DOCUMENT_TYPES)
             closure(documentTypes)
@@ -85,7 +91,9 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_QR_CODE_URL,
                            parameters: parameters,
-        success: { (response) in
+        success: { [weak self] (response) in
+            guard let self = self else { return }
+            
             let token = self.keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
         }) { (error) in
@@ -104,9 +112,9 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
-    func getTriageElements(success: @escaping (String, String, String, String, String?, String?, String?, String?) -> Void, failure: @escaping (Error) -> Void) {
+    func getTriageElements(success: @escaping (String, String, String, String, String?, String?, String?, String?, Bool) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
@@ -127,8 +135,9 @@ final class ConfigRepository: ConfigRepositoryProtocol {
             if let last = elements["last_triaje"].string, !last.isEmpty && shouldShowLastTriage {
                 lastTriage = last
             }
+            let isScannerEnabled = elements["scanner_enabled"].boolValue
             
-            success(title, image, description, subDescription, triageButtonText, qrCodeButtonText, lastTriage, evaluation)
+            success(title, image, description, subDescription, triageButtonText, qrCodeButtonText, lastTriage, evaluation, isScannerEnabled)
         }) { (error) in
             failure(error)
         }

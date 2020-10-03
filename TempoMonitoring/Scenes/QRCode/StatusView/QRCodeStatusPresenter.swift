@@ -32,9 +32,9 @@ final class QRCodeStatusPresenter: QRCodeStatusPresenterProtocol {
         return UIColor(company.primaryColor)
     }
     
-    func loadPopup(access: Bool?, name: String?, date: String?) {
+    func loadPopup(access: Bool?, name: String?, date: String?, text: String?) {
         guard let access = access else {
-            view.updatePopup(Constants.Localizable.INVALID_CODE, nil, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
+            view.updatePopup(Constants.Localizable.INVALID_CODE, nil, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED, nil)
             return
         }
         
@@ -46,16 +46,18 @@ final class QRCodeStatusPresenter: QRCodeStatusPresenterProtocol {
         if let date = date, let aux = dateFormatter.date(from: date) {
             dateFormatter.dateFormat = "dd/MM/yyyy"
             formattedDate = dateFormatter.string(from: aux)
-            isDateAvailable = (aux.compare(Date()) == .orderedDescending) ? true : false
+            let nowDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+            let now = Calendar.current.date(byAdding: .hour, value: -5, to: nowDate)!
+            isDateAvailable = aux.compare(now) == .orderedDescending
         }
         if access {
             if isDateAvailable {
-                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED)
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED, text)
             } else {
-                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "warningImage"), Constants.Localizable.PAST_DATE)
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "warningImage"), Constants.Localizable.PAST_DATE, text)
             }
         } else {
-            view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED)
+            view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED, nil)
         }
     }
 }
