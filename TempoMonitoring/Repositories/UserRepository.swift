@@ -59,9 +59,10 @@ final class UserRepository: UserRepositoryProtocol {
         ResponseHelper.POST(with: .url,
                             url: Constants.Service.REGISTER_DEVICE,
                             parameters: parameters,
-        success: { (response) in
-            self.userDefaultsHandler.save(value: true, to: Constants.Keys.IS_DEVICE_REGISTERED)
+        success: { [weak self] (response) in
+            guard let self = self else { return }
             
+            self.userDefaultsHandler.save(value: true, to: Constants.Keys.IS_DEVICE_REGISTERED)
             success(true)
         }) { (error) in
             failure(error)
@@ -97,18 +98,21 @@ final class UserRepository: UserRepositoryProtocol {
         ResponseHelper.POST(with: .url,
                             url: Constants.Service.SIGN_IN,
                             parameters: parameters,
-        success: { (response) in
+        success: { [weak self] (response) in
+            guard let self = self else { return }
+            
             let company = Company(fromJSONObject: response["company"])
             let token = response["user"]["general_token"].stringValue
             let companyToken = response["user"]["company_token"].stringValue
-            let isScannerEnabled = response["user"]["scanner_enabled"].boolValue
             let isContactTracingEnabled = response["company"]["show_contact_tracing"].boolValue
             
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
-            self.userDefaultsHandler.save(value: isScannerEnabled, to: Constants.Keys.IS_SCANNER_ENABLED)
             self.userDefaultsHandler.save(value: isContactTracingEnabled, to: Constants.Keys.IS_CONTACT_TRACING_ENABLED)
             self.currentCompany = company
+            
+            // TODO: Remove next line and Key IS_CANNER_ENABLED in a release: > 1.4.0
+            self.userDefaultsHandler.remove(from: Constants.Keys.IS_SCANNER_ENABLED)
             
             success(true)
         }) { (error) in
@@ -124,9 +128,10 @@ final class UserRepository: UserRepositoryProtocol {
         ResponseHelper.POST(with: .url,
                             url: Constants.Service.UNREGISTER_DEVICE,
                             parameters: parameters,
-        success: { (response) in
-            self.userDefaultsHandler.save(value: false, to: Constants.Keys.IS_DEVICE_REGISTERED)
+        success: { [weak self] (response) in
+            guard let self = self else { return }
             
+            self.userDefaultsHandler.save(value: false, to: Constants.Keys.IS_DEVICE_REGISTERED)
             success(true)
         }) { (error) in
             failure(error)

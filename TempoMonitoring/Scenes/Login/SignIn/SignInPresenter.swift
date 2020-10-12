@@ -21,7 +21,9 @@ final class SignInPresenter: SignInPresenterProtocol {
     }
     
     func didLoadSignUpLogic() {
-        configRepository.getSignUpUrl(success: { (url, visibility) in
+        configRepository.getSignUpUrl(success: { [weak self] (url, visibility) in
+            guard let self = self else { return }
+            
             self.view.updateView(url: url, visibility: visibility)
         }) { (error) in
         }
@@ -31,13 +33,17 @@ final class SignInPresenter: SignInPresenterProtocol {
         view.startProgress()
         userRepository.signIn(documentTypeId: documentTypeId,
                               document: document,
-        success: { (isSuccessful) in
+        success: { [weak self] (isSuccessful) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.userRepository.registerDevice()
             self.configRepository.saveDeviceIdentifier()
             self.view.goToMain()
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)

@@ -23,7 +23,9 @@ final class GeneralRepository: GeneralRepositoryProtocol {
         }
         
         AF.request("https://itunes.apple.com/lookup?bundleId=\(identifier)")
-            .responseJSON { (response) in
+            .responseJSON { [weak self] (response) in
+                guard let self = self else { return }
+                
                 switch response.result {
                 case .failure(let error):
                     print("SLV-AFError: \(error.localizedDescription)")

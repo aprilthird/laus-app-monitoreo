@@ -26,13 +26,17 @@ final class ContactUsPopupPresenter: ContactUsPopupPresenterProtocol {
                                            documentTypeId: documentTypeId,
                                            document: document,
                                            phone: phone,
-        success: { (isSuccessful) in
+        success: { [weak self] (isSuccessful) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: Constants.Localizable.SEND_INFORMATION_SUCCESFULLY) {
                 closure()
             }
-        }) { (error) in
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            
             self.view.endProgress()
             
             self.view.show(.alert, message: error.localizedDescription)

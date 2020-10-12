@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 protocol TriagePresenterProtocol {
-    func loadTriage(ofSize size: CGFloat)
+    func loadElements(ofSize size: CGFloat)
     func showQRCodeWebView()
-    func getRightNavigationItems() -> [UIBarButtonItem]
     func showTriageWebView()
 }
