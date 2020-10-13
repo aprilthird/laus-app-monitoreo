@@ -61,11 +61,12 @@ final class Constants {
         static let YES: String = NSLocalizedString("Yes", comment: "")
     }
     struct Service {
+        private static let BASE_ENDPOINT: String = "tempo_covit/api/2"
         #if DEBUG
         // Hugo's WiFi
-        private static let BASE_URL: String = "https://temposalud.com/tempo_covit/api/1"
+        private static let BASE_URL: String = "https://temposalud.com/\(BASE_ENDPOINT)"
         #else
-        private static let BASE_URL: String = "https://temposalud.com/tempo_covit/api/1"
+        private static let BASE_URL: String = "https://temposalud.com/\(BASE_ENDPOINT)"
         #endif
         
         static let GET_ATTENTION_URL = "\(BASE_URL)/config.php?action=get_atenttion_webview_url"

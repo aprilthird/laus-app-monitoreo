@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,6 +22,7 @@
                 <outlet property="backgroundView" destination="nFs-CL-ORY" id="pa9-IV-w4L"/>
                 <outlet property="closeButton" destination="LjH-Ft-f83" id="oRt-wa-zK2"/>
                 <outlet property="dateLabel" destination="itP-3t-UJX" id="bRa-vb-cMB"/>
+                <outlet property="descriptionLabel" destination="a4V-cO-XBt" id="llE-rx-cq6"/>
                 <outlet property="popupImageView" destination="tEK-IP-CyS" id="yZS-T0-gEc"/>
                 <outlet property="popupView" destination="JSV-Ft-kBL" id="TLP-Ct-8ij"/>
                 <outlet property="titleLabel" destination="7PD-Qf-LlJ" id="nmF-jQ-Lbf"/>
@@ -42,7 +43,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-Ft-kBL">
-                    <rect key="frame" x="30" y="173.5" width="354" height="549"/>
+                    <rect key="frame" x="30" y="147" width="354" height="602"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uHo-vN-u5p">
                             <rect key="frame" x="109" y="30" width="136.5" height="61.5"/>
@@ -73,8 +74,14 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sigamos respetando los protocolos COVID-19 y recomendaciones de salud para salir adelante." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4V-cO-XBt">
+                            <rect key="frame" x="45" y="462" width="264" height="33"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjH-Ft-f83">
-                            <rect key="frame" x="130.5" y="487" width="93" height="37"/>
+                            <rect key="frame" x="130.5" y="540" width="93" height="37"/>
                             <color key="backgroundColor" red="0.0039215686269999999" green="0.84313725490000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
                             <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
@@ -93,14 +100,18 @@
                         <constraint firstItem="tEK-IP-CyS" firstAttribute="leading" secondItem="JSV-Ft-kBL" secondAttribute="leading" constant="50" id="59x-P3-h8h"/>
                         <constraint firstItem="tEK-IP-CyS" firstAttribute="top" secondItem="uHo-vN-u5p" secondAttribute="bottom" constant="30" id="794-T8-naH"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uHo-vN-u5p" secondAttribute="trailing" constant="20" id="AsZ-oV-qxM"/>
+                        <constraint firstItem="a4V-cO-XBt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JSV-Ft-kBL" secondAttribute="leading" constant="40" id="BqW-JL-mBC"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a4V-cO-XBt" secondAttribute="trailing" constant="40" id="JRu-fT-o5q"/>
                         <constraint firstItem="uHo-vN-u5p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JSV-Ft-kBL" secondAttribute="leading" constant="20" id="K1Z-YT-lz3"/>
                         <constraint firstItem="LjH-Ft-f83" firstAttribute="centerX" secondItem="JSV-Ft-kBL" secondAttribute="centerX" id="K3F-0a-PLg"/>
+                        <constraint firstItem="LjH-Ft-f83" firstAttribute="top" secondItem="a4V-cO-XBt" secondAttribute="bottom" constant="45" id="PO4-oN-NvU"/>
                         <constraint firstItem="W8n-b5-RnZ" firstAttribute="centerX" secondItem="JSV-Ft-kBL" secondAttribute="centerX" id="XPj-tb-AHb"/>
                         <constraint firstItem="W8n-b5-RnZ" firstAttribute="top" secondItem="tEK-IP-CyS" secondAttribute="bottom" constant="25" id="YrQ-uQ-sOJ"/>
                         <constraint firstItem="uHo-vN-u5p" firstAttribute="top" secondItem="JSV-Ft-kBL" secondAttribute="top" constant="30" id="anw-C8-Ydd"/>
+                        <constraint firstItem="a4V-cO-XBt" firstAttribute="centerX" secondItem="JSV-Ft-kBL" secondAttribute="centerX" id="gAY-XO-bC7"/>
                         <constraint firstItem="tEK-IP-CyS" firstAttribute="centerX" secondItem="JSV-Ft-kBL" secondAttribute="centerX" id="jlR-AD-xB0"/>
+                        <constraint firstItem="a4V-cO-XBt" firstAttribute="top" secondItem="W8n-b5-RnZ" secondAttribute="bottom" constant="20" id="om0-Mo-C3O"/>
                         <constraint firstAttribute="bottom" secondItem="LjH-Ft-f83" secondAttribute="bottom" constant="25" id="peh-9y-4Tp"/>
-                        <constraint firstItem="LjH-Ft-f83" firstAttribute="top" secondItem="W8n-b5-RnZ" secondAttribute="bottom" constant="45" id="puU-D8-b3J"/>
                         <constraint firstItem="uHo-vN-u5p" firstAttribute="centerX" secondItem="JSV-Ft-kBL" secondAttribute="centerX" id="rkq-d7-nCH"/>
                     </constraints>
                 </view>

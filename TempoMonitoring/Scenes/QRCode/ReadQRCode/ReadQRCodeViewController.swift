@@ -98,8 +98,8 @@ class ReadQRCodeViewController: UIViewController {
 
 }
 extension ReadQRCodeViewController: ReadQRCodeViewControllerProtocol {
-    func showQRCodeStatus(_ access: Bool?, _ name: String?, _ date: String?) {
-        let qrCodeStatus = Router.shared.getQRCodeStatus(access: access, name: name, date: date)
+    func showQRCodeStatus(_ access: Bool?, _ name: String?, _ date: String?, _ description: String?) {
+        let qrCodeStatus = Router.shared.getQRCodeStatus(access: access, name: name, date: date, description: description)
         qrCodeStatus.modalPresentationStyle = .overCurrentContext
         qrCodeStatus.modalTransitionStyle = .crossDissolve
         present(qrCodeStatus, animated: true, completion: nil)

@@ -33,11 +33,15 @@ final class MorePresenter: MorePresenterProtocol {
         case .tutorial:
             view.startProgress()
             
-            configRepository.getTutorial(success: { (url) in
+            configRepository.getTutorial(success: { [weak self] (url) in
+                guard let self = self else { return }
+                
                 self.view.endProgress()
                 
                 self.view.open(url)
-            }) { (error) in
+            }) { [weak self] (error) in
+                guard let self = self else { return }
+                
                 self.view.endProgress()
                 
                 self.view.show(.alert, message: error.localizedDescription)
@@ -45,17 +49,23 @@ final class MorePresenter: MorePresenterProtocol {
         case .faq:
             view.startProgress()
             
-            configRepository.getFAQs(success: { (url) in
+            configRepository.getFAQs(success: { [weak self] (url) in
+                guard let self = self else { return }
+                
                 self.view.endProgress()
                 
                 self.view.open(url)
-            }) { (error) in
+            }) { [weak self] (error) in
+                guard let self = self else { return }
+                
                 self.view.endProgress()
                 
                 self.view.show(.alert, message: error.localizedDescription)
             }
         case .signOut:
-            view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) {
+            view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] in
+                guard let self = self else { return }
+                
                 self.userDefaultsHandler.remove(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
                 _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)
                 _ = self.keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
