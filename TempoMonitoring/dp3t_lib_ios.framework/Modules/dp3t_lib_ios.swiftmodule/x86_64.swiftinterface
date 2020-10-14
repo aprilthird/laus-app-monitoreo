@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name dp3t_lib_ios
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name dp3t_lib_ios
 import BackgroundTasks
 import CommonCrypto
 import CoreBluetooth
@@ -13,6 +13,7 @@ import SwiftJWT
 import SwiftProtobuf
 import TextFieldEffects
 import UIKit.UIApplication
+import UIKit.UIDevice
 import UIKit
 import UserNotifications
 import WebKit
@@ -175,6 +176,8 @@ public enum InfectionStatus {
 }
 public enum TrackingState {
   case active
+  case activeReceiving
+  case activeAdvertising
   case stopped
   case inactive(error: dp3t_lib_ios.DP3TTracingError)
 }
@@ -195,22 +198,29 @@ public struct TracingState {
 public protocol DP3TTracingDelegate : AnyObject {
   func DP3TTracingStateChanged(_ state: dp3t_lib_ios.TracingState)
   func didAddProximity(_ proximity: dp3t_lib_ios.ProximityModel)
+  func didAddLog(_ entry: dp3t_lib_ios.LogEntry)
+  func didAddHandshake(_ handshake: dp3t_lib_ios.HandshakeModel)
+}
+extension DP3TTracingDelegate {
+  public func didAddLog(_: dp3t_lib_ios.LogEntry)
+  public func didAddHandshake(_: dp3t_lib_ios.HandshakeModel)
+  public func didAddProximity(_: dp3t_lib_ios.ProximityModel)
 }
 public enum DP3TApplicationInfo {
   case discovery(_: Swift.String, enviroment: dp3t_lib_ios.Enviroment = .prod)
   case manual(_: dp3t_lib_ios.ApplicationDescriptor)
 }
 public enum DP3TTracing {
-  public static let frameworkVersion: Swift.String
+  public static var frameworkVersion: Swift.String
   public static var parameters: dp3t_lib_ios.DP3TParameters {
     get
-    set
+    set(newValue)
   }
   public static func initialize(with appInfo: dp3t_lib_ios.DP3TApplicationInfo, urlSession: Foundation.URLSession = .shared, mode: dp3t_lib_ios.DP3TMode = .production) throws
   public static func updateUserData(_ user: dp3t_lib_ios.UserData)
   public static var delegate: dp3t_lib_ios.DP3TTracingDelegate? {
     get
-    set
+    set(newValue)
   }
   public static func startTracing() throws
   public static func stopTracing()
@@ -219,6 +229,15 @@ public enum DP3TTracing {
   public static func status(callback: (Swift.Result<dp3t_lib_ios.TracingState, dp3t_lib_ios.DP3TTracingError>) -> Swift.Void)
   public static func iWasConfirmed(onset: Foundation.Date, authentication: dp3t_lib_ios.ExposeeAuthMethod, isFakeRequest: Swift.Bool = false, callback: @escaping (Swift.Result<Swift.Void, dp3t_lib_ios.DP3TTracingError>) -> Swift.Void)
   public static func reset() throws
+  public static func startAdvertising() throws
+  public static func startReceiving() throws
+  public static func getHandshakes(request: dp3t_lib_ios.HandshakeRequest) throws -> dp3t_lib_ios.HandshakeResponse
+  public static func getLogs(request: dp3t_lib_ios.LogRequest) throws -> dp3t_lib_ios.LogResponse
+  public static func numberOfHandshakes() throws -> Swift.Int
+  public static var isInitialized: Swift.Bool {
+    get
+  }
+  public static func getSecretKeyRepresentationForToday() throws -> Swift.String
 }
 public struct UserFormData {
   public init(name: Swift.String? = nil, phone: Swift.String? = nil, country: Swift.String? = nil, idType: Swift.String? = nil, userId: Swift.String? = nil)
@@ -229,7 +248,7 @@ public struct UserFormData {
   public init(key: Swift.String, defaultValue: T, userDefaults: Foundation.UserDefaults = .standard)
   public var wrappedValue: T {
     get
-    set
+    set(newValue)
   }
 }
 @propertyWrapper public struct UBOptionalUserDefault<T> where T : dp3t_lib_ios.UBUserDefaultsRetrievable, T : dp3t_lib_ios.UBUserDefaultsStorable {
@@ -237,16 +256,56 @@ public struct UserFormData {
   public init(key: Swift.String, userDefaults: Foundation.UserDefaults = .standard)
   public var wrappedValue: T? {
     get
-    set
+    set(newValue)
   }
 }
 public enum DP3TMode : Swift.Equatable {
   case production
-  public var hashValue: Swift.Int {
+  case calibration(identifierPrefix: Swift.String, appVersion: Swift.String)
+  public static func == (a: dp3t_lib_ios.DP3TMode, b: dp3t_lib_ios.DP3TMode) -> Swift.Bool
+}
+public struct LogEntry : Swift.Identifiable {
+  public let id: Swift.Int
+  public let timestamp: Foundation.Date
+  public let type: dp3t_lib_ios.LogType
+  public let message: Swift.String
+  public typealias ID = Swift.Int
+}
+public struct LogRequest {
+  public enum Sorting {
+    case asc
+    case desc
+    public static func == (a: dp3t_lib_ios.LogRequest.Sorting, b: dp3t_lib_ios.LogRequest.Sorting) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public let sorting: dp3t_lib_ios.LogRequest.Sorting
+  public var offset: Swift.Int
+  public var limit: Swift.Int
+  public init(sorting: dp3t_lib_ios.LogRequest.Sorting = .asc, offset: Swift.Int = 0, limit: Swift.Int = 1000)
+}
+public struct LogResponse {
+  public let logs: [dp3t_lib_ios.LogEntry]
+  public let nextRequest: dp3t_lib_ios.LogRequest?
+}
+public enum LogType : Swift.Int, Swift.CustomStringConvertible {
+  case none
+  case receiver
+  case sender
+  case crypto
+  case sdk
+  case database
+  case backgroundTask
+  public var description: Swift.String {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: dp3t_lib_ios.DP3TMode, b: dp3t_lib_ios.DP3TMode) -> Swift.Bool
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
 }
 public struct ExposureDay : Swift.Equatable {
   public let identifier: Swift.Int
@@ -305,7 +364,7 @@ extension ProximityModel : Swift.Equatable {
   public static func == (a: dp3t_lib_ios.ProximityModel, b: dp3t_lib_ios.ProximityModel) -> Swift.Bool
 }
 public class AmigoContactTracing {
-  public static let shared: dp3t_lib_ios.AmigoContactTracing
+  public static var shared: dp3t_lib_ios.AmigoContactTracing
   public var closeDelegate: dp3t_lib_ios.OnTracingViewClose?
   public init()
   public func setLaunchOptions(_ launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
@@ -347,7 +406,7 @@ public enum DP3TNetworkingError : Swift.Error {
   public init(key: Swift.String, accessibility: dp3t_lib_ios.UBKeychainAccessibility)
   public var wrappedValue: Swift.String? {
     get
-    set
+    set(newValue)
   }
 }
 public struct ApplicationDescriptor : Swift.Codable {
@@ -374,7 +433,7 @@ public class DP3TJWTVerifier {
 }
 extension URL : SQLite.Value {
   public typealias Datatype = Swift.String
-  public static let declaredDatatype: Swift.String
+  public static var declaredDatatype: Swift.String
   public static func fromDatatypeValue(_ datatypeValue: Swift.String) -> Foundation.URL
   public var datatypeValue: Swift.String {
     get
@@ -382,12 +441,32 @@ extension URL : SQLite.Value {
   public typealias ValueType = Foundation.URL
 }
 extension UIColor {
-  convenience public init?(ub_hexString hex: Swift.String)
+  public convenience init?(ub_hexString hex: Swift.String)
   public var ub_hexString: Swift.String? {
     get
   }
 }
-extension UIColor {
+public struct HandshakeRequest {
+  public enum SortingOption {
+    case ascendingTimestamp
+    case descendingTimestamp
+    public static func == (a: dp3t_lib_ios.HandshakeRequest.SortingOption, b: dp3t_lib_ios.HandshakeRequest.SortingOption) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public let sortingOption: dp3t_lib_ios.HandshakeRequest.SortingOption
+  public let offset: Swift.Int
+  public let limit: Swift.Int?
+  public init(sortingOption: dp3t_lib_ios.HandshakeRequest.SortingOption = .descendingTimestamp, offset: Swift.Int = 0, limit: Swift.Int? = nil)
+}
+public struct HandshakeResponse {
+  public let offset: Swift.Int
+  public let limit: Swift.Int?
+  public let handshakes: [dp3t_lib_ios.HandshakeModel]
+  public let previousRequest: dp3t_lib_ios.HandshakeRequest?
+  public let nextRequest: dp3t_lib_ios.HandshakeRequest?
 }
 public typealias UBUserDefaultValue = dp3t_lib_ios.UBUserDefaultsRetrievable & dp3t_lib_ios.UBUserDefaultsStorable
 public protocol UBUserDefaultsStorable {
@@ -474,10 +553,3 @@ extension UIView {
   public func ub_addShadow(with color: UIKit.UIColor = UIColor.black, radius: CoreGraphics.CGFloat, opacity: CoreGraphics.CGFloat, xOffset: CoreGraphics.CGFloat, yOffset: CoreGraphics.CGFloat)
   @objc dynamic public func ub_setContentPriorityRequired()
 }
-extension dp3t_lib_ios.NSLabelType : Swift.Equatable {}
-extension dp3t_lib_ios.NSLabelType : Swift.Hashable {}
-extension dp3t_lib_ios.DP3TMode : Swift.Hashable {}
-extension dp3t_lib_ios.UBKeychainAccessibility : Swift.Equatable {}
-extension dp3t_lib_ios.UBKeychainAccessibility : Swift.Hashable {}
-extension dp3t_lib_ios.Enviroment : Swift.Equatable {}
-extension dp3t_lib_ios.Enviroment : Swift.Hashable {}
