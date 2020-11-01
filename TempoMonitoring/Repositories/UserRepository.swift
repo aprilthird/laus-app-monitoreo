@@ -33,6 +33,24 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
+    func recoverPassword(documentTypeId: Int, document: String, success: @escaping (String?, String) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "id_type": documentTypeId,
+            "id_number": document
+        ]
+        
+        ResponseHelper.POST(with: .url,
+                            url: Constants.Service.RECOVER_PASSWORD,
+                            parameters: parameters,
+        success: { (response) in
+            let image = response["image"].string
+            let message = response["message"].stringValue
+            success(image, message)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
     func registerDevice(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
             let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
@@ -89,22 +107,33 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func signIn(documentTypeId: Int, document: String, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
-        let parameters: [String: Any] = [
+    func signIn(documentTypeId: Int, document: String, password: String?, success: @escaping (Bool, Bool) -> Void, failure: @escaping (Error) -> Void) {
+        var parameters: [String: Any] = [
             "id_type": documentTypeId,
             "id_number": document
         ]
+        var url = Constants.Service.SIGN_IN
+        if let password = password {
+            parameters["password"] = password
+            url += "&with_password=true"
+        }
         
         ResponseHelper.POST(with: .url,
-                            url: Constants.Service.SIGN_IN,
+                            url: url,
                             parameters: parameters,
         success: { [weak self] (response) in
             guard let self = self else { return }
             
+            let isPasswordRequired = response["require_password"].boolValue
             let company = Company(fromJSONObject: response["company"])
             let token = response["user"]["general_token"].stringValue
             let companyToken = response["user"]["company_token"].stringValue
             let isContactTracingEnabled = response["company"]["show_contact_tracing"].boolValue
+            
+            guard !isPasswordRequired else {
+                success(true, true)
+                return
+            }
             
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
@@ -114,7 +143,7 @@ final class UserRepository: UserRepositoryProtocol {
             // TODO: Remove next line and Key IS_CANNER_ENABLED in a release: > 1.4.0
             self.userDefaultsHandler.remove(from: Constants.Keys.IS_SCANNER_ENABLED)
             
-            success(true)
+            success(true, false)
         }) { (error) in
             failure(error)
         }

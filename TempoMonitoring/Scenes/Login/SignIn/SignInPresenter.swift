@@ -33,10 +33,16 @@ final class SignInPresenter: SignInPresenterProtocol {
         view.startProgress()
         userRepository.signIn(documentTypeId: documentTypeId,
                               document: document,
-        success: { [weak self] (isSuccessful) in
+                              password: nil,
+        success: { [weak self] (isSuccessful, isPasswordRequired) in
             guard let self = self else { return }
             
             self.view.endProgress()
+            
+            guard !isPasswordRequired else {
+                self.view.goToPasswordSignIn(documentTypeId, document)
+                return
+            }
             
             self.userRepository.registerDevice()
             self.configRepository.saveDeviceIdentifier()

@@ -12,7 +12,6 @@
 		8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
-		8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7C24831AB0001111C6 /* RouterProtocol.swift */; };
 		8E319E7F24831ABC001111C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7E24831ABC001111C6 /* Router.swift */; };
 		8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E8124831B9A001111C6 /* SplashViewController.swift */; };
 		8E319E8424831B9A001111C6 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E8224831B9A001111C6 /* SplashViewController.xib */; };
@@ -132,6 +131,13 @@
 		8EEE8011248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */; };
 		ABCFCB95A91BEE6F152E1F01 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C617CB593BEF22B94CE0C8E /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
+		D18388B4254E779300053DA3 /* PasswordSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388B2254E779300053DA3 /* PasswordSignInViewController.swift */; };
+		D18388B5254E779300053DA3 /* PasswordSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18388B3254E779300053DA3 /* PasswordSignInViewController.xib */; };
+		D18388B7254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388B6254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift */; };
+		D18388B9254E7AB400053DA3 /* PasswordSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388B8254E7AB400053DA3 /* PasswordSignInPresenter.swift */; };
+		D18388BB254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388BA254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift */; };
+		D18388BF254E856B00053DA3 /* ForgotPasswordPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388BD254E856B00053DA3 /* ForgotPasswordPopupViewController.swift */; };
+		D18388C0254E856B00053DA3 /* ForgotPasswordPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18388BE254E856B00053DA3 /* ForgotPasswordPopupViewController.xib */; };
 		E2BC4F674FD541EA32CD3633 /* Pods_TempoMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14A8F618C1DCB0B9170542 /* Pods_TempoMonitoringTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,7 +203,6 @@
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8E319E7824831A77001111C6 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
 		8E319E7924831A77001111C6 /* FirstSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstSceneViewController.xib; sourceTree = "<group>"; };
-		8E319E7C24831AB0001111C6 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		8E319E7E24831ABC001111C6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8E319E8124831B9A001111C6 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8E319E8224831B9A001111C6 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
@@ -327,6 +332,13 @@
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D18388B2254E779300053DA3 /* PasswordSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInViewController.swift; sourceTree = "<group>"; };
+		D18388B3254E779300053DA3 /* PasswordSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSignInViewController.xib; sourceTree = "<group>"; };
+		D18388B6254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInPresenterProtocol.swift; sourceTree = "<group>"; };
+		D18388B8254E7AB400053DA3 /* PasswordSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInPresenter.swift; sourceTree = "<group>"; };
+		D18388BA254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInViewControllerProtocol.swift; sourceTree = "<group>"; };
+		D18388BD254E856B00053DA3 /* ForgotPasswordPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopupViewController.swift; sourceTree = "<group>"; };
+		D18388BE254E856B00053DA3 /* ForgotPasswordPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordPopupViewController.xib; sourceTree = "<group>"; };
 		E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TempoMonitoring_TempoMonitoringUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -402,7 +414,6 @@
 			isa = PBXGroup;
 			children = (
 				8E319E7E24831ABC001111C6 /* Router.swift */,
-				8E319E7C24831AB0001111C6 /* RouterProtocol.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -410,6 +421,8 @@
 		8E319E75248319FA001111C6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D18388BC254E854600053DA3 /* ForgotPasswordPopup */,
+				D18388B1254E775C00053DA3 /* PasswordSignIn */,
 				8E319E8024831B2F001111C6 /* SignIn */,
 			);
 			path = Login;
@@ -816,6 +829,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D18388B1254E775C00053DA3 /* PasswordSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D18388B8254E7AB400053DA3 /* PasswordSignInPresenter.swift */,
+				D18388B6254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift */,
+				D18388B2254E779300053DA3 /* PasswordSignInViewController.swift */,
+				D18388B3254E779300053DA3 /* PasswordSignInViewController.xib */,
+				D18388BA254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift */,
+			);
+			path = PasswordSignIn;
+			sourceTree = "<group>";
+		};
+		D18388BC254E854600053DA3 /* ForgotPasswordPopup */ = {
+			isa = PBXGroup;
+			children = (
+				D18388BD254E856B00053DA3 /* ForgotPasswordPopupViewController.swift */,
+				D18388BE254E856B00053DA3 /* ForgotPasswordPopupViewController.xib */,
+			);
+			path = ForgotPasswordPopup;
+			sourceTree = "<group>";
+		};
 		FACC13CBA7929E20A8928C09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +1004,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E319EA12483282C001111C6 /* Roboto-Bold.ttf in Resources */,
+				D18388C0254E856B00053DA3 /* ForgotPasswordPopupViewController.xib in Resources */,
 				8EBD7377248484100032B174 /* TipsHeaderCollectionReusableView.xib in Resources */,
 				8E319E8824831BAD001111C6 /* SignInViewController.xib in Resources */,
 				8E319EE124834BD7001111C6 /* MoreHeaderView.xib in Resources */,
@@ -984,6 +1019,7 @@
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
 				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
+				D18388B5254E779300053DA3 /* PasswordSignInViewController.xib in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
 				8E319EBF24833E3C001111C6 /* AttentionWebViewViewController.xib in Resources */,
@@ -1197,6 +1233,7 @@
 				8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */,
 				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
+				D18388B9254E7AB400053DA3 /* PasswordSignInPresenter.swift in Sources */,
 				8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */,
 				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
 				8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */,
@@ -1225,6 +1262,7 @@
 				8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
 				8EEE7FF32484308D00DC28F1 /* MainTabBarControllerProtocol.swift in Sources */,
+				D18388BB254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
@@ -1236,6 +1274,7 @@
 				8EEE80012484504000DC28F1 /* ReadQRCodePresenterProtocol.swift in Sources */,
 				8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
+				D18388B7254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift in Sources */,
 				8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */,
 				8EBD737B248489560032B174 /* TipsPresenter.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
@@ -1249,6 +1288,7 @@
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
+				D18388B4254E779300053DA3 /* PasswordSignInViewController.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
@@ -1261,7 +1301,6 @@
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
 				8EBD736724846E7D0032B174 /* UIViewExtension.swift in Sources */,
-				8E319E7D24831AB0001111C6 /* RouterProtocol.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
@@ -1275,6 +1314,7 @@
 				8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
+				D18388BF254E856B00053DA3 /* ForgotPasswordPopupViewController.swift in Sources */,
 				8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */,
 				8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */,
 			);

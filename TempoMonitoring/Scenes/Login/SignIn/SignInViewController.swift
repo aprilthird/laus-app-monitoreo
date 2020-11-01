@@ -29,7 +29,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        [self.documentTypeTextField, self.documentTextField].forEach { (textField) in
+        [documentTypeTextField, documentTextField].forEach { (textField) in
             textField?.delegate = self
             textField?.addPadding(15, to: .left)
             textField?.addPadding(15, to: .right)
@@ -118,6 +118,11 @@ extension SignInViewController: SignInViewControllerProtocol {
     func goToMain() {
         let mainTabBar = Router.shared.getMainTabBar()
         crossDisolveTransition(to: mainTabBar)
+    }
+    
+    func goToPasswordSignIn(_ documentTypeId: Int, _ document: String) {
+        let passwordScene = Router.shared.getPasswordSignIn(documentTypeId: documentTypeId, document: document)
+        show(passwordScene, sender: nil)
     }
     
     func updateView(url: String, visibility: Bool) {

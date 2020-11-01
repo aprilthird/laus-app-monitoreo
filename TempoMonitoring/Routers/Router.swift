@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class Router: RouterProtocol {
+final class Router {
     static let shared: Router = Router()
     private let keychainHandler: KeychainHandlerProtocol
     let oneSignalHandler: OneSignalHandlerProtocol
@@ -47,6 +47,13 @@ final class Router: RouterProtocol {
         return viewController
     }
     
+    func getForgotPasswordPopup(imageUrl: String?, message: String) -> UIViewController {
+        let viewController = ForgotPasswordPopupViewController.get()
+        viewController.imageUrl = imageUrl
+        viewController.message = message
+        return viewController
+    }
+    
     func getHomeBannerPopup(imageUrl: String, url: String) -> UIViewController {
         let viewController = HomeBannerViewController.get()
         viewController.image = imageUrl
@@ -80,6 +87,14 @@ final class Router: RouterProtocol {
     func getNewVersionPopup() -> UIViewController {
         let viewController = NewVersionPopupViewController.get()
         viewController.newVerionPresenter = NewVersionPopupPresenter(userRepository: userRepository)
+        return viewController
+    }
+    
+    func getPasswordSignIn(documentTypeId: Int, document: String) -> UIViewController {
+        let viewController = PasswordSignInViewController.get()
+        viewController.passwordSignInPresenter = PasswordSignInPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
+        viewController.documentTypeId = documentTypeId
+        viewController.document = document
         return viewController
     }
     

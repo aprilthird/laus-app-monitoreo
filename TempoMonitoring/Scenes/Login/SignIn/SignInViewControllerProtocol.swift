@@ -10,5 +10,6 @@ import Foundation
 
 protocol SignInViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
     func goToMain()
+    func goToPasswordSignIn(_ documentTypeId: Int, _ document: String)
     func updateView(url: String, visibility: Bool)
 }

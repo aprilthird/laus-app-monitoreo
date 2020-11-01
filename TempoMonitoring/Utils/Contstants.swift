@@ -37,6 +37,7 @@ final class Constants {
         static let INVALID_CODE: String = NSLocalizedString("Invalid code", comment: "")
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
+        static let INVALID_PASSWORD: String = NSLocalizedString("Invalid password", comment: "")
         static let LAST_TRIAGE_COMPLETED: String = NSLocalizedString("Last triage completed", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let MORE_TITLE: String = NSLocalizedString("More", comment: "")
@@ -61,7 +62,7 @@ final class Constants {
         static let YES: String = NSLocalizedString("Yes", comment: "")
     }
     struct Service {
-        private static let BASE_ENDPOINT: String = "tempo_covit/api/2"
+        private static let BASE_ENDPOINT: String = "tempo_covit/api/3"
         #if DEBUG
         // Hugo's WiFi
         private static let BASE_URL: String = "https://temposalud.com/\(BASE_ENDPOINT)"
@@ -82,6 +83,7 @@ final class Constants {
         static let GET_TUTORIAL = "\(BASE_URL)/config.php?action=get_tutorial"
         static let SAVE_DEVICE_ID = "\(BASE_URL)/config.php?action=save_device_id"
         
+        static let RECOVER_PASSWORD = "\(BASE_URL)/user.php?action=employee_recover_password"
         static let REGISTER_DEVICE = "\(BASE_URL)/user.php?action=register_device"
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
         static let SIGN_IN = "\(BASE_URL)/user.php?action=login"
