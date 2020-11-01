@@ -55,17 +55,6 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
-    func getFAQs(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        ResponseHelper.GET(with: .url,
-                           url: Constants.Service.GET_FAQS,
-                           parameters: nil,
-        success: { (response) in
-            success(response["url"].stringValue)
-        }) { (error) in
-            failure(error)
-        }
-    }
-    
     func getHomeBanner(success: @escaping (Int, String, String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
@@ -96,6 +85,17 @@ final class ConfigRepository: ConfigRepositoryProtocol {
             
             let token = self.keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
             success("\(response["url"].stringValue)\(token)")
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func getResourceLinks(success: @escaping (String, String, String, String) -> Void, failure: @escaping (Error) -> Void) {
+        ResponseHelper.GET(with: .url,
+                           url: Constants.Service.GET_RESOURCE_LINKS_URL,
+                           parameters: nil,
+        success: { (response) in
+            success(response["faq"].stringValue, response["tutorial"].stringValue, response["web"].stringValue, response["support"].stringValue)
         }) { (error) in
             failure(error)
         }
@@ -154,17 +154,6 @@ final class ConfigRepository: ConfigRepositoryProtocol {
                            parameters: parameters,
         success: { (response) in
             success("\(response["url"].stringValue)\(companyToken)")
-        }) { (error) in
-            failure(error)
-        }
-    }
-    
-    func getTutorial(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        ResponseHelper.GET(with: .url,
-                           url: Constants.Service.GET_TUTORIAL,
-                           parameters: nil,
-        success: { (response) in
-            success(response["url"].stringValue)
         }) { (error) in
             failure(error)
         }

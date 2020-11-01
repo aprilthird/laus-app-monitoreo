@@ -27,7 +27,7 @@ final class Constants {
         static let WAS_FIRST_OPEN: String = "wasFirstOpen"
     }
     struct Localizable {
-        static let APP_NAME: String = NSLocalizedString("Tempo Monitoring", comment: "")
+        static let APP_NAME: String = NSLocalizedString("Laus", comment: "")
         static let ATTENTION_TITLE: String = NSLocalizedString("Attention", comment: "")
         static let AUTHORIZED: String = NSLocalizedString("Authorized", comment: "")
         static let CANCEL: String = NSLocalizedString("Cancel", comment: "")
@@ -57,7 +57,7 @@ final class Constants {
         static let UNAUTHORIZED: String = NSLocalizedString("Unauthorized", comment: "")
         static let TRIAGE_TITLE: String = NSLocalizedString("Triage", comment: "")
         static let TRACING_TITLE: String = NSLocalizedString("Tracing", comment: "")
-        static let WHAT_IS_TEMPO: String = NSLocalizedString("What is Tempo?", comment: "")
+        static let WHAT_IS_LAUS: String = NSLocalizedString("What is Laus?", comment: "")
         static let YES: String = NSLocalizedString("Yes", comment: "")
     }
     struct Service {
@@ -75,6 +75,7 @@ final class Constants {
         static let GET_HOME_BANNER = "\(BASE_URL)/config.php?action=get_home_banner"
         static let GET_LAST_TRIAGE = "\(BASE_URL)/user.php?action=get_last_triaje"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
+        static let GET_RESOURCE_LINKS_URL = "\(BASE_URL)/config.php?action=get_resource_links"
         static let GET_SIGN_UP_URL = "\(BASE_URL)/config.php?action=get_register_link"
         static let GET_TRIAGE_ELEMENTS = "\(BASE_URL)/config.php?action=get_triaje_elements"
         static let GET_TRIAGE_URL = "\(BASE_URL)/config.php?action=get_triaje_webview_url"
