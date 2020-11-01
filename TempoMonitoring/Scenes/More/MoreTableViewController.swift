@@ -12,6 +12,7 @@ class MoreTableViewController: UITableViewController {
 
     private var optionReuseIdentifier: String!
     private var headerReuseIdentifier: String!
+    private var isLoadedFromFirstTime: Bool!
     private var headerView: MoreHeaderView!
     private var options: [(image: UIImage, type: MoreOptionType, title: String)]!
     var morePresenter: MorePresenterProtocol!
@@ -23,6 +24,7 @@ class MoreTableViewController: UITableViewController {
         
         optionReuseIdentifier = MoreTableViewCell.reuseIdentifier
         headerReuseIdentifier = MoreHeaderView.reuseIdentifier
+        isLoadedFromFirstTime = true
         headerView = MoreHeaderView.get(owner: self)
         headerView.frame = CGRect(origin: .zero, size: CGSize(width: tableView.bounds.width, height: 200))
         headerView.imageOptions = morePresenter.getImageOptions()
@@ -40,6 +42,9 @@ class MoreTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        morePresenter.loadResources(withProgress: isLoadedFromFirstTime)
+        isLoadedFromFirstTime = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,7 +78,7 @@ class MoreTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        morePresenter.didSelect(option: options[indexPath.row])
+        morePresenter.didSelect(type: options[indexPath.row].type)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -98,8 +103,9 @@ extension MoreTableViewController: MoreTableViewControllerProtocol {
         crossDisolveTransition(to: navigationController)
     }
     
-    func open(_ url: String) {
-        guard let url = URL(string: url) else {
+    func open(_ url: String?) {
+        guard let url = URL(string: url ?? "") else {
+            show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

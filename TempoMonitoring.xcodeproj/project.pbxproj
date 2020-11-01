@@ -233,7 +233,7 @@
 		8E319EDB24834B91001111C6 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
 		8E319EDE24834BC7001111C6 /* MoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderView.swift; sourceTree = "<group>"; };
 		8E319EE024834BD7001111C6 /* MoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreHeaderView.xib; sourceTree = "<group>"; };
-		8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempo Monitoreo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E41AB062483045300E6DAD7 /* Laus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E41AB092483045300E6DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E41AB132483045300E6DAD7 /* TempoMonitoring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TempoMonitoring.xcdatamodel; sourceTree = "<group>"; };
 		8E41AB152483045600E6DAD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -636,7 +636,7 @@
 		8E41AB072483045300E6DAD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */,
+				8E41AB062483045300E6DAD7 /* Laus.app */,
 				8E41AB1F2483045600E6DAD7 /* TempoMonitoringTests.xctest */,
 				8E41AB2A2483045600E6DAD7 /* TempoMonitoringUITests.xctest */,
 				8EB5D9AC2484B64000E8E9DE /* OneSignalNotificationServiceExtension.appex */,
@@ -854,7 +854,7 @@
 			packageProductDependencies = (
 			);
 			productName = TempoMonitoring;
-			productReference = 8E41AB062483045300E6DAD7 /* Tempo Monitoreo.app */;
+			productReference = 8E41AB062483045300E6DAD7 /* Laus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8E41AB1E2483045600E6DAD7 /* TempoMonitoringTests */ = {
@@ -1482,9 +1482,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
-				PRODUCT_NAME = "Tempo Monitoreo";
+				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1511,9 +1511,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
-				PRODUCT_NAME = "Tempo Monitoreo";
+				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1621,7 +1621,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1644,7 +1644,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
