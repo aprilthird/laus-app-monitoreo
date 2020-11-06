@@ -236,6 +236,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+
 @interface UIView (SWIFT_EXTENSION(dp3t_lib_ios))
 /// Sets contentHuggingPriority and contentCompressionResistance to highest priority both vertical and horizontal
 - (void)ub_setContentPriorityRequired;

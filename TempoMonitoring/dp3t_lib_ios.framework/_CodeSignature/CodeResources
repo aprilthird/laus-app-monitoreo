@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		OmK90/DLNBt7WCU8C+AXOM10JUI=
+		gzjTiT1keZHwpbOcDatUEc71hqQ=
 		</data>
 		<key>Headers/UBKeyboardObserver.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/dp3t_lib_ios-Swift.h</key>
 		<data>
-		zoXrvozuJmwd+maajOPBQl3z93E=
+		Sk4a6GKQxqp1lXZ8pjL3QPnR8CI=
 		</data>
 		<key>Headers/dp3t_lib_ios.h</key>
 		<data>
@@ -66,35 +66,35 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		mw1+YPJhHwDRQAkEoK8Q7MkDcQ4=
+		mEibe9LdaYKazLpBb4skxTZY98k=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		mw1+YPJhHwDRQAkEoK8Q7MkDcQ4=
+		mEibe9LdaYKazLpBb4skxTZY98k=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		kTQVrPsV8uACe6VpQGzyye0p5kA=
+		x+XNJplbx6iM7vIuZS8UVEbFYtE=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BHPqGxe2AEuOTbUvh86guOFgqak=
+		6Ho6WxxsWlW88QT8vBg+ZwUlJSE=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		UyGK7L2WJT5jWJPUxfEuNJSsu5Y=
+		dQeEb4OqwZydYco741SAda74dLM=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		kTQVrPsV8uACe6VpQGzyye0p5kA=
+		x+XNJplbx6iM7vIuZS8UVEbFYtE=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		BHPqGxe2AEuOTbUvh86guOFgqak=
+		6Ho6WxxsWlW88QT8vBg+ZwUlJSE=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		UyGK7L2WJT5jWJPUxfEuNJSsu5Y=
+		dQeEb4OqwZydYco741SAda74dLM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c6nU47SzsbRLLydTsd5+5leiIXxsM87yeb9zt3+zp6c=
+			QYRfcH/zwK1N3DiWknDelG6k29bJUFP+TKRu3chMQtM=
 			</data>
 		</dict>
 		<key>Headers/UBKeyboardObserver.h</key>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NQwoc26YT1Lb8tn5QB1kUBToY/H/9vYUCZgC4Q+dpkk=
+			HNpT5Xt0LW3pYodYYk6ri0LZb7aLCfwENBOdkWtZhp8=
 			</data>
 		</dict>
 		<key>Headers/dp3t_lib_ios.h</key>
@@ -323,56 +323,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oWRPNL2JJFSJ6PCx7rjRYEcTFHKRaYQsGjEC4680PvA=
+			tE/wzOaeeYvM5u4dwiVr436HYKUsSq83RFNvAKxnWH0=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oWRPNL2JJFSJ6PCx7rjRYEcTFHKRaYQsGjEC4680PvA=
+			tE/wzOaeeYvM5u4dwiVr436HYKUsSq83RFNvAKxnWH0=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jw5YbkRw4+rjiht1taDUQuUyD2KoQNwiLjjPnJBqsZc=
+			NrPnMQ3oBKxImKtlXZ7nIjeQaZEpXrB/8EHUA88Lolk=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ceroJImXd++HInfF/SzRlwq0FxX9wTADGy0NErp3xL0=
+			b4i081qAjGmAvlTJLNqLChyk/k0jais+rP1TU0NdnFw=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ngNBVabbM4hL/EuD2MVK5sT+U65Q/H06nKwJRQJ3FlY=
+			muI+FneQ4LBT4TworrUfeKSWWnmIMtuHU8c9HHRUTC8=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jw5YbkRw4+rjiht1taDUQuUyD2KoQNwiLjjPnJBqsZc=
+			NrPnMQ3oBKxImKtlXZ7nIjeQaZEpXrB/8EHUA88Lolk=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ceroJImXd++HInfF/SzRlwq0FxX9wTADGy0NErp3xL0=
+			b4i081qAjGmAvlTJLNqLChyk/k0jais+rP1TU0NdnFw=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ngNBVabbM4hL/EuD2MVK5sT+U65Q/H06nKwJRQJ3FlY=
+			muI+FneQ4LBT4TworrUfeKSWWnmIMtuHU8c9HHRUTC8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 protocol MorePresenterProtocol {
-    func didSelect(option: (image: UIImage, type: MoreOptionType, title: String))
+    func didSelect(type: MoreOptionType)
     func getBackgroundColor() -> UIColor?
     func getImageOptions() -> (imageUrl: String, color: String?)?
     func loadOptions() -> [(image: UIImage, type: MoreOptionType, title: String)]
+    func loadResources(withProgress progress: Bool)
 }

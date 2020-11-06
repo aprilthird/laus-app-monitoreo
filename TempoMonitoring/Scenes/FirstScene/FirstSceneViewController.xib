@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstSceneViewController" customModule="Tempo_Monitoreo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstSceneViewController" customModule="Laus" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImageView" destination="kpV-E2-mk3" id="cfH-4O-E3H"/>
                 <outlet property="contactUsButton" destination="5wR-4c-xmq" id="olx-bn-2xX"/>
@@ -39,7 +39,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ANx-jd-rg2">
                     <rect key="frame" x="107" y="104" width="200" height="91.5"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLogoTempo" translatesAutoresizingMaskIntoConstraints="NO" id="PXE-Bf-dXt">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteAppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PXE-Bf-dXt">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="4GK-1S-eJm"/>
@@ -169,6 +169,6 @@
     </objects>
     <resources>
         <image name="familyImage" width="360" height="620"/>
-        <image name="whiteLogoTempo" width="878" height="345"/>
+        <image name="whiteAppLogo" width="800" height="300"/>
     </resources>
 </document>
