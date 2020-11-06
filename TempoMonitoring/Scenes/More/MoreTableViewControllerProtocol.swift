@@ -9,7 +9,7 @@
 import Foundation
 
 enum MoreOptionType: String {
-    case tempo
+    case laus
     case support
     case tutorial
     case faq
@@ -18,5 +18,5 @@ enum MoreOptionType: String {
 
 protocol MoreTableViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
     func goToFirstScene()
-    func open(_ url: String)
+    func open(_ url: String?)
 }
