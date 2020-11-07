@@ -135,13 +135,16 @@ final class UserRepository: UserRepositoryProtocol {
                 return
             }
             
+            _ = self.keychainHandler.save(value: documentTypeId, to: Constants.Keys.DOCUMENT_TYPE_ID)
+            _ = self.keychainHandler.save(value: document, to: Constants.Keys.DOCUMENT)
+            _ = self.keychainHandler.save(value: password, to: Constants.Keys.PASSWORD)
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
             self.userDefaultsHandler.save(value: isContactTracingEnabled, to: Constants.Keys.IS_CONTACT_TRACING_ENABLED)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            self.userDefaultsHandler.save(value: dateFormatter.string(from: Date()), to: Constants.Keys.LAST_TOKENS_UPDATE)
             self.currentCompany = company
-            
-            // TODO: Remove next line and Key IS_CANNER_ENABLED in a release: > 1.4.0
-            self.userDefaultsHandler.remove(from: Constants.Keys.IS_SCANNER_ENABLED)
             
             success(true, false)
         }) { (error) in

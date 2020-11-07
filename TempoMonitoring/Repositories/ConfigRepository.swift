@@ -19,18 +19,18 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     }
     
     func getAttentionUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        let password = keychainHandler.string(from: Constants.Keys.PASSWORD)
+        let companyToken = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
         let parameters: [String: Any] = [
-            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
+            "electronic_signature": (password != nil) ? "true" : "false",
+            "token": companyToken
         ]
         
         ResponseHelper.GET(with: .url,
                            url: Constants.Service.GET_ATTENTION_URL,
                            parameters: parameters,
-        success: { [weak self] (response) in
-            guard let self = self else { return }
-            
-            let token = self.keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
-            success("\(response["url"].stringValue)\(token)")
+        success: { (response) in
+            success(response["url"].stringValue)
         }) { (error) in
             failure(error)
         }
@@ -144,8 +144,10 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     }
     
     func getTriageUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        let password = keychainHandler.string(from: Constants.Keys.PASSWORD)
         let companyToken = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
         let parameters: [String: Any] = [
+            "electronic_signature": (password != nil) ? "true" : "false",
             "token": companyToken
         ]
         

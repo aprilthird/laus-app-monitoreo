@@ -13,13 +13,15 @@ final class SplashPresenter: SplashPresenterProtocol {
     let keychainHandler: KeychainHandlerProtocol
     let configRepository: ConfigRepositoryProtocol
     let generalRepository: GeneralRepositoryProtocol
+    let userRepository: UserRepositoryProtocol
     let view: SplashViewControllerProtocol
     
-    init(userDefaultsHandler: UserDefaultsHandlerProtocol, keychainHandler: KeychainHandlerProtocol, configRepository: ConfigRepositoryProtocol, generalRepository: GeneralRepositoryProtocol, view: SplashViewControllerProtocol) {
+    init(userDefaultsHandler: UserDefaultsHandlerProtocol, keychainHandler: KeychainHandlerProtocol, configRepository: ConfigRepositoryProtocol, generalRepository: GeneralRepositoryProtocol, userRepository: UserRepositoryProtocol, view: SplashViewControllerProtocol) {
         self.userDefaultsHandler = userDefaultsHandler
         self.keychainHandler = keychainHandler
         self.configRepository = configRepository
         self.generalRepository = generalRepository
+        self.userRepository = userRepository
         self.view = view
     }
     
@@ -34,15 +36,38 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     private func validateLogin() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
         guard userDefaultsHandler.bool(from: Constants.Keys.WAS_FIRST_OPEN),
             let _ = keychainHandler.string(from: Constants.Keys.TOKEN),
-            let _ = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) else {
+            let _ = keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN),
+            let lastTokenUpdate = userDefaultsHandler.string(from: Constants.Keys.LAST_TOKENS_UPDATE) else {
                 userDefaultsHandler.save(value: true, to: Constants.Keys.WAS_FIRST_OPEN)
                 _ = keychainHandler.remove(from: Constants.Keys.TOKEN)
                 _ = keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
+                _ = keychainHandler.remove(from: Constants.Keys.DOCUMENT_TYPE_ID)
+                _ = keychainHandler.remove(from: Constants.Keys.DOCUMENT)
+                _ = keychainHandler.remove(from: Constants.Keys.PASSWORD)
                 view.goToFirstScene()
                 return
         }
-        view.goToMain()
+        guard lastTokenUpdate != dateFormatter.string(from: Date()) else {
+            view.goToMain()
+            return
+        }
+        let document = keychainHandler.string(from: Constants.Keys.DOCUMENT) ?? ""
+        let documentTypeId = keychainHandler.integer(from: Constants.Keys.DOCUMENT_TYPE_ID)
+        let password = keychainHandler.string(from: Constants.Keys.PASSWORD)
+        userRepository.signIn(documentTypeId: documentTypeId, document: document, password: password, success: { [weak self] (isSuccessful, isPasswordRequired) in
+            guard !isPasswordRequired else {
+                self?.view.goToFirstScene()
+                return
+            }
+            self?.view.goToMain()
+        }) { [weak self] (_) in
+            self?.userDefaultsHandler.remove(from: Constants.Keys.LAST_TOKENS_UPDATE)
+            self?.view.goToFirstScene()
+        }
     }
 }

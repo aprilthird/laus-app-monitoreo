@@ -50,6 +50,9 @@ final class MorePresenter: MorePresenterProtocol {
                 self.userDefaultsHandler.remove(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
                 _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)
                 _ = self.keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
+                _ = self.keychainHandler.remove(from: Constants.Keys.DOCUMENT_TYPE_ID)
+                _ = self.keychainHandler.remove(from: Constants.Keys.DOCUMENT)
+                _ = self.keychainHandler.remove(from: Constants.Keys.PASSWORD)
                 self.userRepository.currentCompany = nil
                 self.userRepository.unregisterDevice()
                 self.view.goToFirstScene()
