@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E41AB052483045300E6DAD7"
-               BuildableName = "Laus.app"
+               BuildableName = "Tempo Monitoreo.app"
                BlueprintName = "TempoMonitoring"
                ReferencedContainer = "container:TempoMonitoring.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E41AB052483045300E6DAD7"
-            BuildableName = "Laus.app"
+            BuildableName = "Tempo Monitoreo.app"
             BlueprintName = "TempoMonitoring"
             ReferencedContainer = "container:TempoMonitoring.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E41AB052483045300E6DAD7"
-            BuildableName = "Laus.app"
+            BuildableName = "Tempo Monitoreo.app"
             BlueprintName = "TempoMonitoring"
             ReferencedContainer = "container:TempoMonitoring.xcodeproj">
          </BuildableReference>
