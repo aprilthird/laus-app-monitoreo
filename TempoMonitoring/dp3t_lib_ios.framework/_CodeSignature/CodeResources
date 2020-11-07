@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		gzjTiT1keZHwpbOcDatUEc71hqQ=
+		/BIbaL1mqFZkG+SmvgKFxtxeHl4=
 		</data>
 		<key>Headers/UBKeyboardObserver.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/dp3t_lib_ios-Swift.h</key>
 		<data>
-		Sk4a6GKQxqp1lXZ8pjL3QPnR8CI=
+		4CAZyk9hvMpwaVEzMJYAy8rFSdw=
 		</data>
 		<key>Headers/dp3t_lib_ios.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DwS77d0I0k/stI8ZeVgUwRyg2Qc=
+		8awL5Wt+BoTBwyTX+gikF7Z97aI=
 		</data>
 		<key>Inter-Black.ttf</key>
 		<data>
@@ -66,35 +66,35 @@
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		mEibe9LdaYKazLpBb4skxTZY98k=
+		uzgJYu+cZo+TUXfGRQ32m2Eq8go=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		mEibe9LdaYKazLpBb4skxTZY98k=
+		uzgJYu+cZo+TUXfGRQ32m2Eq8go=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		x+XNJplbx6iM7vIuZS8UVEbFYtE=
+		Dbh5m11Ix4E4yRnJ3wCZZWascrQ=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		6Ho6WxxsWlW88QT8vBg+ZwUlJSE=
+		RNKDznVYPYkD7fFi03S/RP+rcuA=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		dQeEb4OqwZydYco741SAda74dLM=
+		umcXJNIF5DdCP+ildUmic5Ti+Lw=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		x+XNJplbx6iM7vIuZS8UVEbFYtE=
+		Dbh5m11Ix4E4yRnJ3wCZZWascrQ=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		6Ho6WxxsWlW88QT8vBg+ZwUlJSE=
+		RNKDznVYPYkD7fFi03S/RP+rcuA=
 		</data>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		dQeEb4OqwZydYco741SAda74dLM=
+		umcXJNIF5DdCP+ildUmic5Ti+Lw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QYRfcH/zwK1N3DiWknDelG6k29bJUFP+TKRu3chMQtM=
+			sb7uB7TLNRx0f4xFj/zMFuolJQWzLPufuQ048TpGFyo=
 			</data>
 		</dict>
 		<key>Headers/UBKeyboardObserver.h</key>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HNpT5Xt0LW3pYodYYk6ri0LZb7aLCfwENBOdkWtZhp8=
+			bFDZ5IWCEXIbAlxbEf+aHsv+e/yHJb9rEPN8pTdAn/4=
 			</data>
 		</dict>
 		<key>Headers/dp3t_lib_ios.h</key>
@@ -323,56 +323,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tE/wzOaeeYvM5u4dwiVr436HYKUsSq83RFNvAKxnWH0=
+			yiSzdYXac7mhwQ/MNzwkJMlsxMBOG+3S46ABEpPaXTY=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tE/wzOaeeYvM5u4dwiVr436HYKUsSq83RFNvAKxnWH0=
+			yiSzdYXac7mhwQ/MNzwkJMlsxMBOG+3S46ABEpPaXTY=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NrPnMQ3oBKxImKtlXZ7nIjeQaZEpXrB/8EHUA88Lolk=
+			izbVAkucv3hvsdcUlxfW8ODfngZe6ysSZlbsgZCFcP8=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4i081qAjGmAvlTJLNqLChyk/k0jais+rP1TU0NdnFw=
+			68mff88cYPqyPNEIYkfC9GvH4NVlobX1rBPLRfMEC+A=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			muI+FneQ4LBT4TworrUfeKSWWnmIMtuHU8c9HHRUTC8=
+			oqFbaF5TrRzRsrQwKReZEIu3zczNO0nhkBuVeDemJ4Y=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NrPnMQ3oBKxImKtlXZ7nIjeQaZEpXrB/8EHUA88Lolk=
+			izbVAkucv3hvsdcUlxfW8ODfngZe6ysSZlbsgZCFcP8=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4i081qAjGmAvlTJLNqLChyk/k0jais+rP1TU0NdnFw=
+			68mff88cYPqyPNEIYkfC9GvH4NVlobX1rBPLRfMEC+A=
 			</data>
 		</dict>
 		<key>Modules/dp3t_lib_ios.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			muI+FneQ4LBT4TworrUfeKSWWnmIMtuHU8c9HHRUTC8=
+			oqFbaF5TrRzRsrQwKReZEIu3zczNO0nhkBuVeDemJ4Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
