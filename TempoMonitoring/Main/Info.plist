@@ -4,9 +4,7 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>org.amigocloud.dailydata</string>
-		<string>org.amigocloud.verifytask</string>
-		<string>org.amigocloud.reporttask</string>
+		<string>org.amigocloud.dailytask</string>
 		<string>org.amigocloud.synctask</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
@@ -64,6 +62,7 @@
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
 		<string>fetch</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
