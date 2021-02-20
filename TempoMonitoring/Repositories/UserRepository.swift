@@ -128,6 +128,7 @@ final class UserRepository: UserRepositoryProtocol {
             let company = Company(fromJSONObject: response["company"])
             let token = response["user"]["general_token"].stringValue
             let companyToken = response["user"]["company_token"].stringValue
+            let username = response["user"]["name"].stringValue
             let isContactTracingEnabled = response["company"]["show_contact_tracing"].boolValue
             
             guard !isPasswordRequired else {
@@ -140,6 +141,7 @@ final class UserRepository: UserRepositoryProtocol {
             _ = self.keychainHandler.save(value: password, to: Constants.Keys.PASSWORD)
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
+            self.userDefaultsHandler.save(value: username, to: Constants.Keys.WELCOME_NAME)
             self.userDefaultsHandler.save(value: isContactTracingEnabled, to: Constants.Keys.IS_CONTACT_TRACING_ENABLED)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"

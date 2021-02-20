@@ -25,13 +25,13 @@ class MainWebViewViewController: UIViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.allowsBackForwardNavigationGestures = true
-        if let url = URL(string: url) {
+        let webUrl = url.contains("http") ? url : "https://" + url
+        if let url = URL(string: webUrl ?? "") {
             webView.load(URLRequest(url: url))
         } else {
-            show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) {
-                self.endProgress()
-                
-                self.closeWebView()
+            show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) { [weak self] in
+                self?.endProgress()
+                self?.closeWebView()
             }
         }
     }

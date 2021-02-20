@@ -30,6 +30,37 @@ extension HexColor {
         #endif
     }
     
+    func lighter(by percentage: CGFloat = 30.0) -> UIColor? {
+        return self.adjust(by: abs(percentage))
+    }
+    
+    func darker(by percentage: CGFloat = 30.0) -> UIColor? {
+        return self.adjust(by: -abs(percentage))
+    }
+    
+    private func adjust(by percentage: CGFloat = 30.0) -> UIColor {
+        var alpha, hue, saturation, brightness, red, green, blue, white: CGFloat
+        (alpha, hue, saturation, brightness, red, green, blue, white) = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+        let multiplier = percentage / 100.0
+        if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return UIColor(red: min(max(red + multiplier * red, 0.0), 1.0),
+                           green: min(max(green + multiplier * green, 0.0), 1.0),
+                           blue: min(max(blue + multiplier * blue, 0.0), 1.0),
+                           alpha: alpha)
+        } else if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            if brightness < 1.0 {
+                let newBrightness: CGFloat = max(min(brightness + multiplier * brightness, 1.0), 0.0)
+                return UIColor(hue: hue, saturation: saturation, brightness: newBrightness, alpha: alpha)
+            } else {
+                let newSaturation: CGFloat = min(max(saturation - multiplier * saturation, 0.0), 1.0)
+                return UIColor(hue: hue, saturation: newSaturation, brightness: brightness, alpha: alpha)
+            }
+        } else if self.getWhite(&white, alpha: &alpha) {
+            return UIColor(white: white + multiplier * white, alpha: alpha)
+        }
+        return self
+    }
+    
     private enum `Type` {
       case RGBshort(rgb: String)
       case RGBshortAlpha(rgba: String)

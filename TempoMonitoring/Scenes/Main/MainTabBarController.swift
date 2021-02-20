@@ -12,8 +12,6 @@ class MainTabBarController: UITabBarController {
 
     var mainPresenter: MainPresenterProtocol!
     
-    var lastSelectedIndex: Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

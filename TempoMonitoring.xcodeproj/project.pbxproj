@@ -10,6 +10,10 @@
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
 		8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
 		8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8E22F39925E1674500780528 /* WelcomeOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22F39725E1674500780528 /* WelcomeOptionsViewController.swift */; };
+		8E22F39A25E1674500780528 /* WelcomeOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E22F39825E1674500780528 /* WelcomeOptionsViewController.xib */; };
+		8E22F3A125E1679500780528 /* WelcomeOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22F39F25E1679500780528 /* WelcomeOptionCollectionViewCell.swift */; };
+		8E22F3A225E1679500780528 /* WelcomeOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7F24831ABC001111C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7E24831ABC001111C6 /* Router.swift */; };
@@ -84,6 +88,11 @@
 		8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */; };
 		8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */; };
 		8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD738224848EBD0032B174 /* TipRepository.swift */; };
+		8ECB494925E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB494825E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift */; };
+		8ECB494E25E17DAC005024B9 /* WelcomeOptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB494D25E17DAC005024B9 /* WelcomeOptionsPresenter.swift */; };
+		8ECB495325E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB495225E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift */; };
+		8ECB495C25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB495A25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift */; };
+		8ECB495D25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB495B25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib */; };
 		8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */; };
 		8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */; };
 		8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */; };
@@ -201,6 +210,10 @@
 		42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dp3t_lib_ios.framework; path = TempoMonitoring/dp3t_lib_ios.framework; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		8E22F39725E1674500780528 /* WelcomeOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionsViewController.swift; sourceTree = "<group>"; };
+		8E22F39825E1674500780528 /* WelcomeOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionsViewController.xib; sourceTree = "<group>"; };
+		8E22F39F25E1679500780528 /* WelcomeOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		8E319E7824831A77001111C6 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
 		8E319E7924831A77001111C6 /* FirstSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstSceneViewController.xib; sourceTree = "<group>"; };
 		8E319E7E24831ABC001111C6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -283,6 +296,11 @@
 		8EBD737E2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8EBD738224848EBD0032B174 /* TipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRepository.swift; sourceTree = "<group>"; };
+		8ECB494825E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionsPresenterProtocol.swift; sourceTree = "<group>"; };
+		8ECB494D25E17DAC005024B9 /* WelcomeOptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionsPresenter.swift; sourceTree = "<group>"; };
+		8ECB495225E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8ECB495A25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		8ECB495B25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		8EEE7FAD2483526800DC28F1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE7FAF2483527700DC28F1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
@@ -379,6 +397,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E22F39525E166EA00780528 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				8E22F39625E1672300780528 /* ShowOptions */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		8E22F39625E1672300780528 /* ShowOptions */ = {
+			isa = PBXGroup;
+			children = (
+				8E22F39E25E1677D00780528 /* Cells */,
+				8ECB494D25E17DAC005024B9 /* WelcomeOptionsPresenter.swift */,
+				8ECB494825E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift */,
+				8E22F39725E1674500780528 /* WelcomeOptionsViewController.swift */,
+				8E22F39825E1674500780528 /* WelcomeOptionsViewController.xib */,
+				8ECB495225E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift */,
+			);
+			path = ShowOptions;
+			sourceTree = "<group>";
+		};
+		8E22F39E25E1677D00780528 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E22F39F25E1679500780528 /* WelcomeOptionCollectionViewCell.swift */,
+				8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */,
+				8ECB495A25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift */,
+				8ECB495B25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8E319E71248318E7001111C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +456,7 @@
 				8E319E7624831A13001111C6 /* Splash */,
 				8EBD736A248483710032B174 /* Tips */,
 				8E319EB424833D6D001111C6 /* Triage */,
+				8E22F39525E166EA00780528 /* Welcome */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1022,10 +1073,13 @@
 				D18388B5254E779300053DA3 /* PasswordSignInViewController.xib in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
+				8E22F39A25E1674500780528 /* WelcomeOptionsViewController.xib in Resources */,
 				8E319EBF24833E3C001111C6 /* AttentionWebViewViewController.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
+				8ECB495D25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib in Resources */,
 				8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */,
 				8EBD736E248483C10032B174 /* TipsCollectionViewController.xib in Resources */,
+				8E22F3A225E1679500780528 /* WelcomeOptionCollectionViewCell.xib in Resources */,
 				8E319EDD24834B91001111C6 /* MoreTableViewCell.xib in Resources */,
 				8E319ED824834B4A001111C6 /* MoreTableViewController.xib in Resources */,
 				8EB5D9A32484A04700E8E9DE /* HomeBannerViewController.xib in Resources */,
@@ -1233,6 +1287,7 @@
 				8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */,
 				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
+				8ECB494925E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift in Sources */,
 				D18388B9254E7AB400053DA3 /* PasswordSignInPresenter.swift in Sources */,
 				8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */,
 				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
@@ -1250,6 +1305,7 @@
 				8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */,
 				8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */,
 				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
+				8E22F39925E1674500780528 /* WelcomeOptionsViewController.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8EEE7FFD24844AD300DC28F1 /* GeneralRepositoryProtocol.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
@@ -1266,6 +1322,7 @@
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
+				8E22F3A125E1679500780528 /* WelcomeOptionCollectionViewCell.swift in Sources */,
 				8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */,
 				8EEE7FCE24836FDE00DC28F1 /* TextFieldPickerView.swift in Sources */,
 				8EEE7FC8248359DB00DC28F1 /* ResponseHelper.swift in Sources */,
@@ -1274,6 +1331,7 @@
 				8EEE80012484504000DC28F1 /* ReadQRCodePresenterProtocol.swift in Sources */,
 				8EEE80092484576100DC28F1 /* QRCodeStatusPresenter.swift in Sources */,
 				8E319E8324831B9A001111C6 /* SplashViewController.swift in Sources */,
+				8ECB494E25E17DAC005024B9 /* WelcomeOptionsPresenter.swift in Sources */,
 				D18388B7254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift in Sources */,
 				8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */,
 				8EBD737B248489560032B174 /* TipsPresenter.swift in Sources */,
@@ -1297,6 +1355,7 @@
 				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
 				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
 				8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */,
+				8ECB495325E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
@@ -1304,6 +1363,7 @@
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
+				8ECB495C25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift in Sources */,
 				8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */,
 				8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */,
 				8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */,
@@ -1527,6 +1587,7 @@
 				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -1556,6 +1617,7 @@
 				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};

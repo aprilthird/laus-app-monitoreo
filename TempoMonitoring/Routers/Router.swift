@@ -150,4 +150,10 @@ final class Router {
         viewController.triagePresenter = TriagePresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, view: viewController)
         return viewController
     }
+    
+    func getWelcomeOptions() -> UIViewController {
+        let viewController = WelcomeOptionsViewController.get()
+        viewController.presenter = WelcomeOptionsPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, userRepository: userRepository, view: viewController)
+        return viewController
+    }
 }

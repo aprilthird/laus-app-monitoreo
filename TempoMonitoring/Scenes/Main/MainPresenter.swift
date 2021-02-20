@@ -36,12 +36,12 @@ final class MainPresenter: MainPresenterProtocol {
         tips.tabBarItem.title = Constants.Localizable.TIPS_TITLE
         tips.tabBarItem.image = #imageLiteral(resourceName: "tabTips.png")
         
-        let triage = Router.shared.getTempoNavigationController(Router.shared.getTriage())
-        triage.tabBarItem.title = Constants.Localizable.TRIAGE_TITLE
-        triage.tabBarItem.image = #imageLiteral(resourceName: "tabTriage.png")
+        let welcome = Router.shared.getTempoNavigationController(Router.shared.getWelcomeOptions())
+        welcome.tabBarItem.title = Constants.Localizable.HOME_TITLE
+        welcome.tabBarItem.image = #imageLiteral(resourceName: "tabTriage.png")
         
         return [
-            triage,
+            welcome,
             tips,
             attention
         ]

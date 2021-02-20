@@ -28,6 +28,7 @@ final class Constants {
         static let LAST_TOKENS_UPDATE: String = "lastTokensUpdate"
         static let TOKEN: String = "token"
         static let WAS_FIRST_OPEN: String = "wasFirstOpen"
+        static let WELCOME_NAME: String = "welcomeName"
     }
     struct Localizable {
         static let APP_NAME: String = NSLocalizedString("Laus", comment: "")
@@ -77,6 +78,7 @@ final class Constants {
         static let GET_DOCUMENT_TYPE = "\(BASE_URL)/config.php?action=get_document_type"
         static let GET_FAQS = "\(BASE_URL)/config.php?action=get_faq"
         static let GET_HOME_BANNER = "\(BASE_URL)/config.php?action=get_home_banner"
+        static let GET_HOME_BUTTONS = "\(BASE_URL)/config.php?action=get_home_buttons"
         static let GET_LAST_TRIAGE = "\(BASE_URL)/user.php?action=get_last_triaje"
         static let GET_QR_CODE_URL = "\(BASE_URL)/config.php?action=get_qr_webview_url"
         static let GET_RESOURCE_LINKS_URL = "\(BASE_URL)/config.php?action=get_resource_links"

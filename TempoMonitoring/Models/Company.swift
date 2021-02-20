@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class Company: ModelProtocol {
     var id: String
+    var name: String
     var logoUrl: String
     var primaryColor: String
     var primaryDarkColor: String
@@ -19,6 +20,7 @@ class Company: ModelProtocol {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case name
         case logoUrl
         case primaryColor
         case primaryDarkColor
@@ -28,6 +30,7 @@ class Company: ModelProtocol {
     
     init() {
         id = ""
+        name = ""
         logoUrl = ""
         primaryColor = ""
         primaryDarkColor = ""
@@ -35,8 +38,9 @@ class Company: ModelProtocol {
         logoBackgroundColor = ""
     }
     
-    init(id: String, logoUrl: String, primaryColor: String, primaryDarkColor: String, accentColor: String, logoBackgroundColor: String) {
+    init(id: String, name: String, logoUrl: String, primaryColor: String, primaryDarkColor: String, accentColor: String, logoBackgroundColor: String) {
         self.id = id
+        self.name = name
         self.logoUrl = logoUrl
         self.primaryColor = primaryColor
         self.primaryDarkColor = primaryDarkColor
@@ -46,6 +50,7 @@ class Company: ModelProtocol {
     
     required convenience init(fromJSONObject jsonObject: JSON) {
         self.init(id: jsonObject["id"].stringValue,
+                  name: jsonObject["company_name"].stringValue,
                   logoUrl: jsonObject["logoUrl"].stringValue,
                   primaryColor: jsonObject["colorPrimary"].stringValue,
                   primaryDarkColor: jsonObject["colorPrimaryDark"].stringValue,

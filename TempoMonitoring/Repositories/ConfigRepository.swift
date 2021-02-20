@@ -72,6 +72,27 @@ final class ConfigRepository: ConfigRepositoryProtocol {
         }
     }
     
+    func getHomeButtons(success: @escaping ([(String, String, String)]) -> Void, failure: @escaping (Error) -> Void) {
+        let parameters: [String: Any] = [
+            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
+        ]
+        
+        ResponseHelper.GET(with: .url,
+                           url: Constants.Service.GET_HOME_BUTTONS,
+        parameters: parameters) { (response) in
+            let options = response.arrayValue.compactMap { (jsonObject) -> (String, String, String)? in
+                let name = jsonObject["name"].stringValue
+                let imageUrl = jsonObject["icon_url"].stringValue
+                let openUrl = jsonObject["url"].stringValue
+                let isDisable = jsonObject["disabled"].boolValue
+                return !isDisable ? (name, imageUrl, openUrl) : nil
+            }
+            success(options)
+        } failure: { (error) in
+            failure(error)
+        }
+    }
+    
     func getQRCodeUrl(success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
