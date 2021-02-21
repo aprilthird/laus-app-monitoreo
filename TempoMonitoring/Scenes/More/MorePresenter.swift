@@ -44,8 +44,8 @@ final class MorePresenter: MorePresenterProtocol {
         case .faq:
             view.open(faqUrl)
         case .signOut:
-            view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] in
-                guard let self = self else { return }
+            view.showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] (isSuccessful) in
+                guard let self = self, isSuccessful else { return }
 
                 self.userDefaultsHandler.remove(from: Constants.Keys.IS_NOTIFICATION_ENABLED)
                 _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)

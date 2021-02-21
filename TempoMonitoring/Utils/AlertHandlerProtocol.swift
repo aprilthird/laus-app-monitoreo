@@ -11,7 +11,7 @@ import UIKit
 
 protocol AlertHandlerProtocol {
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void))
-    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes okTitle: String, no cancelTitle: String, closure: @escaping(() -> Void))
+    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes okTitle: String, no cancelTitle: String, closure: @escaping((Bool) -> Void))
 }
 extension AlertHandlerProtocol {
     func show(_ style: UIAlertController.Style, message: String, closure: (() -> Void)? = nil) {
@@ -20,13 +20,13 @@ extension AlertHandlerProtocol {
         }
     }
     
-    func showQuestion(_ style: UIAlertController.Style, message: String, yes yesTitle: String, no noTitle: String, closure: (() -> Void)? = nil) {
-        showQuestion(style, title: nil, message: message, yes: yesTitle, no: noTitle) {
-            closure?()
+    func showQuestion(_ style: UIAlertController.Style, message: String, yes yesTitle: String, no noTitle: String, closure: ((Bool) -> Void)? = nil) {
+        showQuestion(style, title: nil, message: message, yes: yesTitle, no: noTitle) { (isSuccessful) in
+            closure?(isSuccessful)
         }
     }
     
-    func showQuestion(_ style: UIAlertController.Style, message: String, closure: @escaping(() -> Void)) {
+    func showQuestion(_ style: UIAlertController.Style, message: String, closure: @escaping((Bool) -> Void)) {
         showQuestion(style, title: nil, message: message, yes: Constants.Localizable.YES, no: Constants.Localizable.NO, closure: closure)
     }
 }
