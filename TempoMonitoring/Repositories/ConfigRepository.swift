@@ -74,7 +74,7 @@ final class ConfigRepository: ConfigRepositoryProtocol {
     
     func getHomeButtons(success: @escaping ([(String, String, String)]) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
-            "token": keychainHandler.string(from: Constants.Keys.TOKEN) ?? ""
+            "token": keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
         ]
         
         ResponseHelper.GET(with: .url,
