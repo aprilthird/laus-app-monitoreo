@@ -21,6 +21,7 @@ final class Constants {
         static let IS_CONTACT_TRACING_ENABLED: String = "isContactTracingEnabled"
         static let IS_DEVICE_REGISTERED: String = "isDeviceRegistered"
         static let IS_NOTIFICATION_ENABLED: String = "isNotificationEnabled"
+        static let IS_SCANNER_ENABLED: String = "isScannerEnabled"
         static let LAST_APP_VERSION: String = "lastAppVersion"
         static let LAST_HOME_BANNER_ID: String = "lastHomeBannerId"
         static let ONE_SIGNAL_ID: String = "oneSignalId"

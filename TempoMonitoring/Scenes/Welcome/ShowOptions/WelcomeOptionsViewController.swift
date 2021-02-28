@@ -41,6 +41,7 @@ class WelcomeOptionsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         presenter.loadOptions()
+        navigationItem.setRightBarButtonItems(presenter.getRightNavigationItems(), animated: true)
     }
 
 
@@ -104,6 +105,12 @@ class WelcomeOptionsViewController: UIViewController {
 }
 extension WelcomeOptionsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {}
 extension WelcomeOptionsViewController: WelcomeOptionsViewControllerProtocol {
+    func showQRCodeReader() {
+        let qrCodeReader = Router.shared.getQRCodeReader()
+        qrCodeReader.hidesBottomBarWhenPushed = true
+        show(qrCodeReader, sender: nil)
+    }
+    
     func updateOptions(_ options: [(String, String, String)]) {
         self.options = options
         collectionView.reloadData()

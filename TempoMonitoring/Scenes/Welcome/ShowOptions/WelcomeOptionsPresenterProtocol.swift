@@ -11,5 +11,6 @@ import UIKit
 protocol WelcomeOptionsPresenterProtocol {
     func getHeaderOptions() -> (String, String)
     func getPrimaryColor() -> String?
+    func getRightNavigationItems() -> [UIBarButtonItem]
     func loadOptions()
 }

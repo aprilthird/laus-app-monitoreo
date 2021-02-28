@@ -9,5 +9,6 @@
 import Foundation
 
 protocol WelcomeOptionsViewControllerProtocol: AlertHandlerProtocol, HUDHandlerProtocol {
+    func showQRCodeReader()
     func updateOptions(_ options: [(String, String, String)])
 }

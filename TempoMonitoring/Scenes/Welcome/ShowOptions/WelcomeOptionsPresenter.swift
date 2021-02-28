@@ -33,6 +33,19 @@ final class WelcomeOptionsPresenter: WelcomeOptionsPresenterProtocol {
         return userRepository.currentCompany?.primaryColor
     }
     
+    func getRightNavigationItems() -> [UIBarButtonItem] {
+        let buttonSize = CGSize(width: 25, height: 25)
+        let qrButtonBar = UIBarButtonItem(image: #imageLiteral(resourceName: "qrCodeIcon.png").resizeImage(targetSize: buttonSize), style: .plain, target: self, action: #selector(showQRCodeReader))
+        let isScannerEnabled = userDefaultsHandler.bool(from: Constants.Keys.IS_SCANNER_ENABLED)
+        return (isScannerEnabled) ? [
+            qrButtonBar
+        ] : []
+    }
+    
+    @objc private func showQRCodeReader() {
+        view.showQRCodeReader()
+    }
+    
     func loadOptions() {
         view.startProgress()
         
