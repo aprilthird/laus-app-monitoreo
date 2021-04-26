@@ -13,7 +13,7 @@ protocol UserRepositoryProtocol {
     
     func recoverPassword(documentTypeId: Int, document: String, success: @escaping(String?, String) -> Void, failure: @escaping(Error) -> Void)
     func registerDevice(success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
-    func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
+    func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, description: String, success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
     func signIn(documentTypeId: Int, document: String, password: String?, success: @escaping(Bool, Bool) -> Void, failure: @escaping(Error) -> Void)
     func unregisterDevice(success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
 }

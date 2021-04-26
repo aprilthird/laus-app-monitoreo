@@ -30,7 +30,7 @@ class WelcomeOptionCollectionViewCell: UICollectionViewCell {
             let color = UIColor(self.color ?? "#293080")
             gradientLayer = CAGradientLayer()
             gradientLayer.colors = [
-                color?.lighter(by: 70)?.cgColor ?? UIColor.lightGray.cgColor,
+                color?.lighter(by: 30)?.cgColor ?? UIColor.lightGray.cgColor,
                 color?.cgColor ?? UIColor.clear.cgColor
             ]
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)

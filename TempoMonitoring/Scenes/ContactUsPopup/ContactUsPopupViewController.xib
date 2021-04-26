@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +16,16 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactUsPopupViewController" customModule="Tempo_Monitoreo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactUsPopupViewController" customModule="Laus" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="dON-Pu-Mjx" id="1Fs-J3-XJZ"/>
                 <outlet property="closeButton" destination="Nar-HW-CQf" id="K2d-L9-FGS"/>
                 <outlet property="companyLabel" destination="zlv-UK-WrM" id="vMb-S1-VaK"/>
                 <outlet property="companyTextField" destination="pq6-dW-Xwq" id="DeZ-rI-xV7"/>
                 <outlet property="companyView" destination="cff-L7-GZt" id="Vzo-fX-MXm"/>
+                <outlet property="descriptionLabel" destination="V0Y-ta-URD" id="GDt-8u-crY"/>
+                <outlet property="descriptionTextView" destination="WRf-CP-ZMq" id="9aL-ri-tu3"/>
+                <outlet property="descriptionView" destination="ppE-9R-hUo" id="xt1-q3-ZdB"/>
                 <outlet property="documentLabel" destination="KZ9-B4-ey7" id="dOT-Nd-ryB"/>
                 <outlet property="documentTextField" destination="Xfh-Vy-15Y" id="z1G-Sw-SPA"/>
                 <outlet property="documentTypeLabel" destination="Jnq-uI-EfJ" id="6VR-Yx-AZr"/>
@@ -83,7 +86,7 @@ Contáctate con nosotros</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="nhc-rg-mAj">
-                                    <rect key="frame" x="25" y="107.5" width="304" height="365"/>
+                                    <rect key="frame" x="25" y="107.5" width="304" height="428"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3y-Lp-KiN">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
@@ -259,9 +262,38 @@ Contáctate con nosotros</string>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eA9-cD-iuW" secondAttribute="trailing" constant="20" id="uHQ-uf-AwJ"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppE-9R-hUo">
+                                            <rect key="frame" x="0.0" y="378" width="304" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0Y-ta-URD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
+                                                    <color key="textColor" red="0.50588235290000005" green="0.5568627451" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WRf-CP-ZMq">
+                                                    <rect key="frame" x="0.0" y="15.5" width="304" height="34.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Tdh-yg-Vtv"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V0Y-ta-URD" firstAttribute="leading" secondItem="ppE-9R-hUo" secondAttribute="leading" id="6wf-C5-G9u"/>
+                                                <constraint firstAttribute="bottom" secondItem="WRf-CP-ZMq" secondAttribute="bottom" id="Bi7-5C-db7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V0Y-ta-URD" secondAttribute="trailing" constant="20" id="Jbi-dL-Yuk"/>
+                                                <constraint firstItem="V0Y-ta-URD" firstAttribute="top" secondItem="ppE-9R-hUo" secondAttribute="top" id="PEU-8G-hJi"/>
+                                                <constraint firstItem="WRf-CP-ZMq" firstAttribute="top" secondItem="V0Y-ta-URD" secondAttribute="bottom" id="dCB-JS-Re1"/>
+                                                <constraint firstItem="WRf-CP-ZMq" firstAttribute="leading" secondItem="ppE-9R-hUo" secondAttribute="leading" id="ghX-ft-WbM"/>
+                                                <constraint firstAttribute="trailing" secondItem="WRf-CP-ZMq" secondAttribute="trailing" id="i1c-wG-Ujm"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-cv-rXH">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-cv-rXH">
                                     <rect key="frame" x="125.5" y="656" width="103" height="37"/>
                                     <color key="backgroundColor" red="0.0039215686269999999" green="0.84313725490000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
@@ -301,6 +333,7 @@ Contáctate con nosotros</string>
                     </constraints>
                 </scrollView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="dON-Pu-Mjx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Cx-wH-Nc7"/>
                 <constraint firstItem="kaC-cz-PRY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="BUi-C0-oj1"/>
@@ -311,7 +344,6 @@ Contáctate con nosotros</string>
                 <constraint firstAttribute="trailing" secondItem="dON-Pu-Mjx" secondAttribute="trailing" id="oCX-7T-NrT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kaC-cz-PRY" secondAttribute="bottom" constant="50" id="qAR-gw-EW7"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
         </view>
         <tapGestureRecognizer id="JnW-Pm-D8w">

@@ -18,7 +18,7 @@ final class ContactUsPopupPresenter: ContactUsPopupPresenterProtocol {
         self.view = view
     }
     
-    func sendInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, closure: @escaping(() -> Void)) {
+    func sendInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, description: String, closure: @escaping(() -> Void)) {
         view.startProgress()
         userRepository.saveUserInformation(names: names,
                                            lastNames: lastNames,
@@ -26,6 +26,7 @@ final class ContactUsPopupPresenter: ContactUsPopupPresenterProtocol {
                                            documentTypeId: documentTypeId,
                                            document: document,
                                            phone: phone,
+                                           description: description,
         success: { [weak self] (isSuccessful) in
             guard let self = self else { return }
             

@@ -32,26 +32,34 @@ class ContactUsPopupViewController: UIViewController {
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    private var bottomViewColor: UIColor?
+    private var bottomViewTag: Int!
     var contactUsPresenter: ContactUsPopupPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bottomViewColor = UIColor("#D3D8DD")
+        bottomViewTag = 10
         backgroundView.alpha = 0.5
         
-        [namesTextField, lastNamesTextField, companyTextField, documentTypeTextField, documentTextField, phoneTextField].forEach { (textField) in
+        [namesTextField, lastNamesTextField, companyTextField, documentTypeTextField, documentTextField, phoneTextField, descriptionTextView.textInputView].forEach { (view) in
             let padding: CGFloat = 0
             let heightBottomView = UIView(frame: .zero)
-            heightBottomView.backgroundColor = UIColor("#D3D8DD")
+            heightBottomView.backgroundColor = bottomViewColor
             heightBottomView.translatesAutoresizingMaskIntoConstraints = false
-            textField?.delegate = self
-            textField?.addSubview(heightBottomView)
+            heightBottomView.tag = 10
+            (view as? UITextField)?.delegate = self
+            view?.addSubview(heightBottomView)
             
             NSLayoutConstraint.activate([
-                heightBottomView.leadingAnchor.constraint(equalTo: textField!.leadingAnchor, constant: -padding),
-                heightBottomView.trailingAnchor.constraint(equalTo: textField!.trailingAnchor, constant: padding),
-                heightBottomView.bottomAnchor.constraint(equalTo: textField!.bottomAnchor, constant: -3),
+                heightBottomView.leadingAnchor.constraint(equalTo: view!.leadingAnchor, constant: -padding),
+                heightBottomView.trailingAnchor.constraint(equalTo: view!.trailingAnchor, constant: padding),
+                heightBottomView.bottomAnchor.constraint(equalTo: view!.bottomAnchor, constant: -3),
                 heightBottomView.heightAnchor.constraint(equalToConstant: 1)
             ])
         }
@@ -73,18 +81,29 @@ class ContactUsPopupViewController: UIViewController {
     @IBAction func didSendInformation(_ sender: UIButton) {
         var isValid: Bool = true
         [namesTextField, lastNamesTextField, companyTextField, documentTypeTextField, documentTextField, phoneTextField].forEach { (textField) in
+            let color = (!textField!.isTextValid) ? .red : bottomViewColor
+            textField?.subviews.first(where: { (view) -> Bool in
+                view.tag == bottomViewTag
+            })?.backgroundColor = color
             guard textField!.isTextValid else {
-                textField?.subviews.first?.backgroundColor = .red
                 isValid = false
                 return
             }
-            isValid = true
+        }
+        [descriptionTextView].forEach { (textView) in
+            let color = (textView!.text.isEmpty) ? .red : bottomViewColor
+            textView?.textInputView.subviews.first(where: { (view) -> Bool in
+                view.tag == bottomViewTag
+            })?.backgroundColor = color
+            guard !textView!.text.isEmpty else {
+                isValid = false
+                return
+            }
         }
         guard isValid, let documentTypeId = documentTypeTextField.documentTypeId else {
             return
         }
-        
-        contactUsPresenter.sendInformation(names: namesTextField.text!, lastNames: lastNamesTextField.text!, company: companyTextField.text!, documentTypeId: documentTypeId, document: documentTextField.text!, phone: phoneTextField.text!) {
+        contactUsPresenter.sendInformation(names: namesTextField.text!, lastNames: lastNamesTextField.text!, company: companyTextField.text!, documentTypeId: documentTypeId, document: documentTextField.text!, phone: phoneTextField.text!, description: descriptionTextView.text) {
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -111,9 +130,10 @@ extension ContactUsPopupViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let color: UIColor? = (textField.isTextValid) ? UIColor("#D3D8DD") : .red
-        
-        textField.subviews.first?.backgroundColor = color
+        let color: UIColor? = (textField.isTextValid) ? bottomViewColor : .red
+        textField.subviews.first(where: { (view) -> Bool in
+            view.tag == bottomViewTag
+        })?.backgroundColor = color
     }
 }
 extension ContactUsPopupViewController: ContactUsPopupViewControllerProtocol {

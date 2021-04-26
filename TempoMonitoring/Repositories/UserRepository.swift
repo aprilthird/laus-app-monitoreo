@@ -87,14 +87,15 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+    func saveUserInformation(names: String, lastNames: String, company: String, documentTypeId: Int, document: String, phone: String, description: String, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "user_name": names,
             "user_last_name": lastNames,
             "user_company": company,
             "user_document_type": documentTypeId,
             "user_document_number": document,
-            "user_phone": phone
+            "user_phone": phone,
+            "user_description": description
         ]
         
         ResponseHelper.POST(with: .url,
