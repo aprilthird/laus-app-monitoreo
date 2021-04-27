@@ -38,7 +38,9 @@
 "QR Code" = "Código QR";
 "Home" = "Inicio";
 "Past date" = "Fecha pasada";
+"The triage has exceeded 24 hours. You must complete the triage again" = "El triaje ha excedido las 24 horas de vigencia. Debe completar el triaje nuevamente";
 "Do you want to download this pdf?" = "¿Deseas descargar este pdf?";
 "Go to files app" = "Ir a Archivos";
 "Successful download" = "Descarga exitosa";
 "PDF was successfully downloaded" = "PDF fue descargado exitosamente";
+"Suitable" = "Apto";

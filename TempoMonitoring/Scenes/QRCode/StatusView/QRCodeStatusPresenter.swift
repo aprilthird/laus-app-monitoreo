@@ -39,22 +39,25 @@ final class QRCodeStatusPresenter: QRCodeStatusPresenterProtocol {
         }
         
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.utc
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
         
         var formattedDate: String? = nil
         var isDateAvailable: Bool = false
         if let date = date, let aux = dateFormatter.date(from: date) {
             dateFormatter.dateFormat = "dd/MM/yyyy"
-            formattedDate = dateFormatter.string(from: aux)
-            let nowDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
-            let now = Calendar.current.date(byAdding: .hour, value: -5, to: nowDate)!
-            isDateAvailable = aux.compare(now) == .orderedDescending
+            let stringDate = dateFormatter.string(from: aux)
+            dateFormatter.dateFormat = "HH:mm"
+            let stringTime = dateFormatter.string(from: aux)
+            formattedDate = "\(stringDate) a las \(stringTime)"
+            let newDate = Calendar.current.date(byAdding: .day, value: 1, to: aux)
+            isDateAvailable = newDate?.compare(Date()) == .orderedDescending
         }
         if access {
             if isDateAvailable {
-                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.AUTHORIZED, text)
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "authorizedImage.png"), Constants.Localizable.SUITABLE, text)
             } else {
-                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "warningImage"), Constants.Localizable.PAST_DATE, text)
+                view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "warningImage"), Constants.Localizable.PAST_DATE, Constants.Localizable.PAST_DATE_24_HOURS)
             }
         } else {
             view.updatePopup(name, formattedDate, #imageLiteral(resourceName: "unauthorizedImage.png"), Constants.Localizable.UNAUTHORIZED, nil)

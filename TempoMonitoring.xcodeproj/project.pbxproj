@@ -14,6 +14,7 @@
 		8E22F39A25E1674500780528 /* WelcomeOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E22F39825E1674500780528 /* WelcomeOptionsViewController.xib */; };
 		8E22F3A125E1679500780528 /* WelcomeOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22F39F25E1679500780528 /* WelcomeOptionCollectionViewCell.swift */; };
 		8E22F3A225E1679500780528 /* WelcomeOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */; };
+		8E2471152638D56C002A2CB7 /* TimeZoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2471142638D56B002A2CB7 /* TimeZoneExtension.swift */; };
 		8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7824831A77001111C6 /* FirstSceneViewController.swift */; };
 		8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E319E7924831A77001111C6 /* FirstSceneViewController.xib */; };
 		8E319E7F24831ABC001111C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E319E7E24831ABC001111C6 /* Router.swift */; };
@@ -214,6 +215,7 @@
 		8E22F39825E1674500780528 /* WelcomeOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionsViewController.xib; sourceTree = "<group>"; };
 		8E22F39F25E1679500780528 /* WelcomeOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		8E2471142638D56B002A2CB7 /* TimeZoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneExtension.swift; sourceTree = "<group>"; };
 		8E319E7824831A77001111C6 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
 		8E319E7924831A77001111C6 /* FirstSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstSceneViewController.xib; sourceTree = "<group>"; };
 		8E319E7E24831ABC001111C6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				8E319E9A24832205001111C6 /* StringExtension.swift */,
+				8E2471142638D56B002A2CB7 /* TimeZoneExtension.swift */,
 				8E319E9824831FBB001111C6 /* UIColorExtension.swift */,
 				8EDC6797248D723300D4B6B8 /* UIFontExtension.swift */,
 				8EEE7FFA2484416100DC28F1 /* UIImageExtension.swift */,
@@ -1356,6 +1359,7 @@
 				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
 				8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */,
 				8ECB495325E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift in Sources */,
+				8E2471152638D56C002A2CB7 /* TimeZoneExtension.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
@@ -1568,7 +1572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
@@ -1599,7 +1603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1714,7 +1718,7 @@
 			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1737,7 +1741,7 @@
 			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
