@@ -11,7 +11,7 @@ import WebKit
 import Alamofire
 
 class MainWebViewViewController: UIViewController {
-
+    
     @IBOutlet weak var webView: WKWebView!
     var url: String!
     var navigationTitle: String?
@@ -26,6 +26,10 @@ class MainWebViewViewController: UIViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.allowsBackForwardNavigationGestures = true
+        
+        //webView.configuration.userContentController.add(self, name: "readBlob")
+        webView.configuration.userContentController.add(self, name: "downloadAction")
+        
         let webUrl = url.contains("http") ? url : "https://" + url
         if let url = URL(string: webUrl ?? "") {
             webView.load(URLRequest(url: url))
@@ -86,17 +90,52 @@ class MainWebViewViewController: UIViewController {
         }
         task.resume()
     }
+    
+    func saveBase64StringToPDF(_ base64String: String, _ filename: String? = nil) {
+        
+        guard var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
+              let convertedData = Data(base64Encoded: base64String)
+        else {
+            self.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
+            return
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let name = filename {
+            documentsURL.appendPathComponent(name)
+        } else {
+            documentsURL.appendPathComponent("PDFFile.pdf")
+        }
+        
+        do {
+            try convertedData.write(to: documentsURL)
+            
+            guard let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                self.closeWebView()
+                return
+            }
+            
+            self.showQuestion(.alert, title: Constants.Localizable.SUCCESSFUL_DOWNLOAD, message: Constants.Localizable.SUCCESSFUL_PDF_DOWNLOAD_MESSAGE, yes: Constants.Localizable.GO_TO_FILES_APP, no: Constants.Localizable.CANCEL) { (isSuccessful) in
+                let path = documentsPath.absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
+                if isSuccessful, let filesAppUrl = URL(string: path) {
+                    UIApplication.shared.open(filesAppUrl, options: [:], completionHandler: nil)
+                }
+                self.closeWebView()
+            }
+        } catch {
+            self.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
+        }
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension MainWebViewViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -118,19 +157,18 @@ extension MainWebViewViewController: WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        guard let url = navigationResponse.response.url, url.absoluteString.suffix(5).contains(".pdf") else {
+        guard let url = navigationResponse.response.url, url.absoluteString.prefix(5).contains("blob:") else {
             decisionHandler(.allow)
             return
         }
-        showQuestion(.alert, message: Constants.Localizable.DOWNLOAD_PDF_QUESTION) { [weak self] (isSuccesful) in
-            if isSuccesful {
-                self?.downloadPDF(url: url)
-                decisionHandler(.cancel)
-            } else {
-                decisionHandler(.allow)
-            }
-        }
+        
+        decisionHandler(.cancel)
     }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    
 }
 extension MainWebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -142,4 +180,23 @@ extension MainWebViewViewController: WKNavigationDelegate {
         
         show(.alert, message: error.localizedDescription)
     }
+}
+extension MainWebViewViewController: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        print(message.body)
+        
+        if let messageBody = message.body as? [String: Any] {
+            if let body = messageBody["url"] as? String, let filename = messageBody["pdf_name"] as? String {
+                showQuestion(.alert, message: Constants.Localizable.DOWNLOAD_PDF_QUESTION) { [weak self] (isSuccesful) in
+                    if isSuccesful {
+                        let base64 = body.components(separatedBy: "base64,")
+                        self?.saveBase64StringToPDF(base64[1], filename)
+                    }
+                }
+            }
+        }
+    }
+    
 }
