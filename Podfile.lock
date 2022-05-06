@@ -1,98 +1,102 @@
 PODS:
-  - Alamofire (5.5.0)
+  - Alamofire (5.6.1)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
   - BlueCryptor (1.0.32)
   - BlueECC (1.2.5)
   - BlueRSA (1.0.200)
-  - Firebase/Analytics (8.14.0):
+  - Firebase/Analytics (9.0.0):
     - Firebase/Core
-  - Firebase/Core (8.14.0):
+  - Firebase/Core (9.0.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 8.14.0)
-  - Firebase/CoreOnly (8.14.0):
-    - FirebaseCore (= 8.14.0)
-  - Firebase/Crashlytics (8.14.0):
+    - FirebaseAnalytics (~> 9.0.0)
+  - Firebase/CoreOnly (9.0.0):
+    - FirebaseCore (= 9.0.0)
+  - Firebase/Crashlytics (9.0.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 8.14.0)
-  - Firebase/DynamicLinks (8.14.0):
+    - FirebaseCrashlytics (~> 9.0.0)
+  - Firebase/DynamicLinks (9.0.0):
     - Firebase/CoreOnly
-    - FirebaseDynamicLinks (~> 8.14.0)
-  - Firebase/RemoteConfig (8.14.0):
+    - FirebaseDynamicLinks (~> 9.0.0)
+  - Firebase/RemoteConfig (9.0.0):
     - Firebase/CoreOnly
-    - FirebaseRemoteConfig (~> 8.14.0)
-  - FirebaseABTesting (8.14.0):
-    - FirebaseCore (~> 8.0)
-  - FirebaseAnalytics (8.14.0):
-    - FirebaseAnalytics/AdIdSupport (= 8.14.0)
-    - FirebaseCore (~> 8.0)
-    - FirebaseInstallations (~> 8.0)
+    - FirebaseRemoteConfig (~> 9.0.0)
+  - FirebaseABTesting (9.0.0):
+    - FirebaseCore (~> 9.0)
+  - FirebaseAnalytics (9.0.0):
+    - FirebaseAnalytics/AdIdSupport (= 9.0.0)
+    - FirebaseCore (~> 9.0)
+    - FirebaseInstallations (~> 9.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (8.14.0):
-    - FirebaseCore (~> 8.0)
-    - FirebaseInstallations (~> 8.0)
-    - GoogleAppMeasurement (= 8.14.0)
+  - FirebaseAnalytics/AdIdSupport (9.0.0):
+    - FirebaseCore (~> 9.0)
+    - FirebaseInstallations (~> 9.0)
+    - GoogleAppMeasurement (= 9.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - FirebaseCore (8.14.0):
-    - FirebaseCoreDiagnostics (~> 8.0)
+  - FirebaseCore (9.0.0):
+    - FirebaseCoreDiagnostics (~> 9.0)
+    - FirebaseCoreInternal (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
-  - FirebaseCoreDiagnostics (8.14.0):
+  - FirebaseCoreDiagnostics (9.0.0):
     - GoogleDataTransport (~> 9.1)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - FirebaseCrashlytics (8.14.0):
-    - FirebaseCore (~> 8.0)
-    - FirebaseInstallations (~> 8.0)
+  - FirebaseCoreInternal (9.0.0):
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
+  - FirebaseCrashlytics (9.0.0):
+    - FirebaseCore (~> 9.0)
+    - FirebaseInstallations (~> 9.0)
     - GoogleDataTransport (~> 9.1)
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (~> 2.30908.0)
-    - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseDynamicLinks (8.14.0):
-    - FirebaseCore (~> 8.0)
-  - FirebaseInstallations (8.14.0):
-    - FirebaseCore (~> 8.0)
+    - PromisesObjC (~> 2.1)
+  - FirebaseDynamicLinks (9.0.0):
+    - FirebaseCore (~> 9.0)
+  - FirebaseInstallations (9.0.0):
+    - FirebaseCore (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/UserDefaults (~> 7.7)
-    - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseRemoteConfig (8.14.0):
-    - FirebaseABTesting (~> 8.0)
-    - FirebaseCore (~> 8.0)
-    - FirebaseInstallations (~> 8.0)
+    - PromisesObjC (~> 2.1)
+  - FirebaseRemoteConfig (9.0.0):
+    - FirebaseABTesting (~> 9.0)
+    - FirebaseCore (~> 9.0)
+    - FirebaseInstallations (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - GoogleAppMeasurement (8.14.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.14.0)
+  - GoogleAppMeasurement (9.0.0):
+    - GoogleAppMeasurement/AdIdSupport (= 9.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.14.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.14.0)
+  - GoogleAppMeasurement/AdIdSupport (9.0.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 9.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (8.14.0):
+  - GoogleAppMeasurement/WithoutAdIdSupport (9.0.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleDataTransport (9.1.2):
-    - GoogleUtilities/Environment (~> 7.2)
-    - nanopb (~> 2.30908.0)
+  - GoogleDataTransport (9.1.3):
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
@@ -113,19 +117,29 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.7.0):
     - GoogleUtilities/Logger
-  - IQKeyboardManagerSwift (6.5.9)
+  - IQKeyboardManagerSwift (6.5.10)
   - KituraContracts (1.2.1):
     - LoggerAPI (~> 1.7)
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
+  - MarqueeLabel (4.0.5)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - OneSignal (2.16.7)
   - PromisesObjC (2.1.0)
+  - Realm (10.25.2):
+    - Realm/Headers (= 10.25.2)
+  - Realm/Headers (10.25.2)
+  - RealmSwift (10.25.2):
+    - Realm (= 10.25.2)
+  - SkyFloatingLabelTextField (4.0.0)
   - SnapKit (5.0.1)
   - SQLite.swift (0.13.3):
     - SQLite.swift/standard (= 0.13.3)
@@ -149,7 +163,10 @@ DEPENDENCIES:
   - Firebase/DynamicLinks
   - Firebase/RemoteConfig
   - IQKeyboardManagerSwift
+  - NotificationBannerSwift (~> 3.0.0)
   - OneSignal (< 3.0, >= 2.11.2)
+  - RealmSwift
+  - SkyFloatingLabelTextField
   - SnapKit
   - SQLite.swift
   - SVProgressHUD
@@ -170,6 +187,7 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseCoreInternal
     - FirebaseCrashlytics
     - FirebaseDynamicLinks
     - FirebaseInstallations
@@ -181,9 +199,14 @@ SPEC REPOS:
     - KituraContracts
     - LoggerAPI
     - Logging
+    - MarqueeLabel
     - nanopb
+    - NotificationBannerSwift
     - OneSignal
     - PromisesObjC
+    - Realm
+    - RealmSwift
+    - SkyFloatingLabelTextField
     - SnapKit
     - SQLite.swift
     - SVProgressHUD
@@ -193,30 +216,36 @@ SPEC REPOS:
     - TextFieldEffects
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
   BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
   BlueRSA: dfeef51db96bcc4edec654956c1581adbda4e6a3
-  Firebase: 7e8fe528c161b9271d365217a74c16aaf834578e
-  FirebaseABTesting: aaa0e096c9fc9972ce6806d596e8fcc077d4371f
-  FirebaseAnalytics: 2fc3876e2eb347673ad2f35e249ae7b15d6c88f5
-  FirebaseCore: b84a44ee7ba999e0f9f76d198a9c7f60a797b848
-  FirebaseCoreDiagnostics: fd0c8490f34287229c1d6c103d3a55f81ec85712
-  FirebaseCrashlytics: 079ef36f5c4b7161188928faec40fa276ebefd84
-  FirebaseDynamicLinks: 5fe9d2405cc93a58fead4af4ef4c81a466516ba0
-  FirebaseInstallations: 7d1d967a307c12f1aadd76844fc321cef699b1ce
-  FirebaseRemoteConfig: a5d9188d8f57f602636f111eca6460ebe32b9b71
-  GoogleAppMeasurement: 71156240babd3cc6ced03e0d54816f01a880c730
-  GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  Firebase: a876fadc5ea653a377693376fd4f885c62704512
+  FirebaseABTesting: 3ca58e0ff49cda880e5c46e1b19a4f34fab45d10
+  FirebaseAnalytics: ea4f6f4b604a20b4de4d3c7f7a2cb51d9a989040
+  FirebaseCore: e4c0b5d9727eaee0b43f9ed00baff7500c188d7b
+  FirebaseCoreDiagnostics: 54410e5d156bf406a764c2722d9f77d682723b4c
+  FirebaseCoreInternal: 5b8f4f2e2970a4cb9bd1cf7ada16c8ba69a29530
+  FirebaseCrashlytics: 08561398868790fc9694b85efb4c080940926fcc
+  FirebaseDynamicLinks: e0ae0f96af27ef81dc128dc178ba19fbc68e9e05
+  FirebaseInstallations: e693c0dfe404af44afbd553de42498b2ca1ca189
+  FirebaseRemoteConfig: f0d8478cbf4817ebc463b3d9173a6bdf297f8031
+  GoogleAppMeasurement: 2c2792d43ebdea0524adbc90cba9139721f3039b
+  GoogleDataTransport: f6eab2486453329104995371bc08d4cafbe3da1f
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
-  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   OneSignal: 67a3cf1d1edf2a9c22ba846e8d2eee2bf8cdb525
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  Realm: 978303663d0509166498f423d112e5ee97d4c91b
+  RealmSwift: a0c30c1efc49e928a0a6f8fb141bb2629616d79b
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLite.swift: 903bfa3bc9ab06345fdfbb578e34f47cfcf417da
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -225,6 +254,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: b6f6d86b1d0f66f84e47a2905a414f2df0bd4637
+PODFILE CHECKSUM: b775da4430617762e58e8796e774ec5b00d823b3
 
 COCOAPODS: 1.11.3

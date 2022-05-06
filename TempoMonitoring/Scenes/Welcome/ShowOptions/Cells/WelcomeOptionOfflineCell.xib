@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoCondensed-Bold.ttf">
+            <string>RobotoCondensed-Bold</string>
+        </array>
+        <array key="RobotoCondensed-Regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WelcomeOptionOfflineCell" customModule="Laus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="144"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-Kr-NZG">
+                    <rect key="frame" x="52" y="24" width="242" height="96"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offline" translatesAutoresizingMaskIntoConstraints="NO" id="Mng-hw-FFX">
+                            <rect key="frame" x="8" y="8" width="26" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="26" id="PPQ-fi-5Qr"/>
+                                <constraint firstAttribute="height" constant="26" id="XCz-Mo-Lsj"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODO SIN CONEXIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5x-sA-f24">
+                            <rect key="frame" x="42" y="15" width="170" height="12"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No detectamos una conexión a Internet. El uso de la aplicación estará restringido al modo sin conexión." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dx-Od-Pec">
+                            <rect key="frame" x="42" y="35" width="176" height="53"/>
+                            <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="2dx-Od-Pec" secondAttribute="bottom" constant="8" id="5ZR-Mv-YTP"/>
+                        <constraint firstItem="2dx-Od-Pec" firstAttribute="top" secondItem="K5x-sA-f24" secondAttribute="bottom" constant="8" id="LY6-7o-Ylg"/>
+                        <constraint firstAttribute="trailing" secondItem="2dx-Od-Pec" secondAttribute="trailing" constant="24" id="NkQ-dC-p9u"/>
+                        <constraint firstItem="K5x-sA-f24" firstAttribute="centerY" secondItem="Mng-hw-FFX" secondAttribute="centerY" id="PD8-t9-H4G"/>
+                        <constraint firstItem="K5x-sA-f24" firstAttribute="leading" secondItem="Mng-hw-FFX" secondAttribute="trailing" constant="8" id="e2i-Hs-0JI"/>
+                        <constraint firstItem="Mng-hw-FFX" firstAttribute="top" secondItem="k5m-Kr-NZG" secondAttribute="top" constant="8" id="gb5-co-byg"/>
+                        <constraint firstAttribute="trailing" secondItem="K5x-sA-f24" secondAttribute="trailing" constant="30" id="lG4-zJ-kSW"/>
+                        <constraint firstItem="Mng-hw-FFX" firstAttribute="leading" secondItem="k5m-Kr-NZG" secondAttribute="leading" constant="8" id="xoC-FS-0sf"/>
+                        <constraint firstItem="2dx-Od-Pec" firstAttribute="leading" secondItem="k5m-Kr-NZG" secondAttribute="leading" constant="42" id="y23-U7-9b5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="k5m-Kr-NZG" secondAttribute="trailing" constant="52" id="5K7-bo-J1o"/>
+                <constraint firstItem="k5m-Kr-NZG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="52" id="ShW-QB-uC9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k5m-Kr-NZG" secondAttribute="bottom" constant="24" id="mDe-M0-bbV"/>
+                <constraint firstItem="k5m-Kr-NZG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="uLn-nR-P5k"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainView" destination="k5m-Kr-NZG" id="0OW-NX-KfA"/>
+            </connections>
+            <point key="canvasLocation" x="-1.4492753623188408" y="-166.07142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="offline" width="26" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

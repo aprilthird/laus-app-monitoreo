@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1EA0D6F954C42BB0C43DE50B /* Pods_TempoMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21833C635A4BF78C805446BA /* Pods_TempoMonitoring.framework */; };
-		5E5391C22824D4F300268425 /* CompanySelection in Resources */ = {isa = PBXBuildFile; fileRef = 5E5391C12824D4F300268425 /* CompanySelection */; };
+		5E8481232815CB9A00275837 /* CompanySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8481222815CB9A00275837 /* CompanySelectionViewController.xib */; };
+		5E8481252815CD6000275837 /* CompanySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8481242815CD6000275837 /* CompanySelectionViewController.swift */; };
+		5E8481272815CD9800275837 /* CompanySelectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8481262815CD9800275837 /* CompanySelectionViewControllerProtocol.swift */; };
+		5E8481292815D3CE00275837 /* CompanySelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8481282815D3CE00275837 /* CompanySelectionPresenter.swift */; };
+		5E84812B2815D3E500275837 /* CompanySelectionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84812A2815D3E400275837 /* CompanySelectionPresenterProtocol.swift */; };
 		8E06B6EE24BA253800D336E4 /* dp3t_lib_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; };
 		8E06B6EF24BA253800D336E4 /* dp3t_lib_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E22F39925E1674500780528 /* WelcomeOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22F39725E1674500780528 /* WelcomeOptionsViewController.swift */; };
@@ -140,8 +144,52 @@
 		8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */; };
 		8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */; };
 		8EEE8011248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */; };
+		9A1AB77926D77F7F00A404DD /* WelcomeOptionOfflineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB77826D77F7F00A404DD /* WelcomeOptionOfflineCell.swift */; };
+		9A1AB77B26D77F9B00A404DD /* WelcomeOptionOfflineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1AB77A26D77F9B00A404DD /* WelcomeOptionOfflineCell.xib */; };
+		9A1AB77E26D7B70700A404DD /* TriajeOfflinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB77D26D7B70700A404DD /* TriajeOfflinePresenter.swift */; };
+		9A1AB78026D7B71C00A404DD /* TriajeOfflinePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB77F26D7B71C00A404DD /* TriajeOfflinePresenterProtocol.swift */; };
+		9A1AB78526D7B7A500A404DD /* TriajeOfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB78326D7B7A500A404DD /* TriajeOfflineViewController.swift */; };
+		9A1AB78826D7B7BE00A404DD /* TriajeOfflineViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB78726D7B7BE00A404DD /* TriajeOfflineViewControllerProtocol.swift */; };
+		9A1AB78B26D7BC8100A404DD /* TriajeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AB78A26D7BC8100A404DD /* TriajeDTO.swift */; };
+		9A1AB78D26D7BFD300A404DD /* TriajeOfflineSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1AB78C26D7BFD300A404DD /* TriajeOfflineSB.storyboard */; };
+		9A1AB78F26D7C61F00A404DD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1AB78E26D7C61F00A404DD /* Colors.xcassets */; };
+		9A7869A526F236D700380813 /* ResponseTriajeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7869A426F236D700380813 /* ResponseTriajeDTO.swift */; };
+		9AB9BF142708D8D60021E984 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9BF132708D8D60021E984 /* DispatchQueueExtension.swift */; };
+		9AB9BF1B270A7F360021E984 /* OfflinePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9BF19270A7F360021E984 /* OfflinePopupViewController.swift */; };
+		9AB9BF1C270A7F360021E984 /* OfflinePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB9BF1A270A7F360021E984 /* OfflinePopupViewController.xib */; };
+		9ACC908A26DE5B95002CBB81 /* Ubigeo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ACC908926DE5B95002CBB81 /* Ubigeo.json */; };
+		9ACC908C26DF52FE002CBB81 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC908B26DF52FE002CBB81 /* Utils.swift */; };
+		9ACC908E26E0ACC4002CBB81 /* TriajeDatosPersonales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC908D26E0ACC4002CBB81 /* TriajeDatosPersonales.swift */; };
+		9ACC909126E0BB10002CBB81 /* mTriajeInformacionPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909026E0BB10002CBB81 /* mTriajeInformacionPersonal.swift */; };
+		9ACC909426E0ED2F002CBB81 /* TriajeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909326E0ED2F002CBB81 /* TriajeDao.swift */; };
+		9ACC909826E65BBD002CBB81 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909726E65BBD002CBB81 /* RestAPI.swift */; };
+		9ACC909A26E65D6F002CBB81 /* TriajeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909926E65D6F002CBB81 /* TriajeRepository.swift */; };
+		9ACC909C26E66DA1002CBB81 /* EncuestasTriajeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909B26E66DA1002CBB81 /* EncuestasTriajeDao.swift */; };
+		9ACC909E26E66E18002CBB81 /* mEncuestasTriaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC909D26E66E18002CBB81 /* mEncuestasTriaje.swift */; };
+		9ACC90A526EB1B89002CBB81 /* CellOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90A326EB1B89002CBB81 /* CellOS.swift */; };
+		9ACC90A626EB1B89002CBB81 /* CellOS.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACC90A426EB1B89002CBB81 /* CellOS.xib */; };
+		9ACC90A826EB2027002CBB81 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90A726EB2027002CBB81 /* KeyboardObserver.swift */; };
+		9ACC90AB26EB2AC9002CBB81 /* CellSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90A926EB2AC9002CBB81 /* CellSN.swift */; };
+		9ACC90AC26EB2AC9002CBB81 /* CellSN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACC90AA26EB2AC9002CBB81 /* CellSN.xib */; };
+		9ACC90AE26EFC39E002CBB81 /* mRespuestas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90AD26EFC39D002CBB81 /* mRespuestas.swift */; };
+		9ACC90B026EFC7C5002CBB81 /* respuestasDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90AF26EFC7C5002CBB81 /* respuestasDTO.swift */; };
+		9ACC90B326EFF834002CBB81 /* TriajeUnicoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90B226EFF834002CBB81 /* TriajeUnicoPresenter.swift */; };
+		9ACC90B526EFF84E002CBB81 /* TriajeDinamicoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90B426EFF84E002CBB81 /* TriajeDinamicoProtocol.swift */; };
+		9ACC90B726EFF862002CBB81 /* TriajeDinamicoViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90B626EFF862002CBB81 /* TriajeDinamicoViewControllerProtocol.swift */; };
+		9ACC90B926EFFE00002CBB81 /* TriajeDiarioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90B826EFFE00002CBB81 /* TriajeDiarioPresenter.swift */; };
+		9ACC90BB26F01288002CBB81 /* RespuestasDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACC90BA26F01288002CBB81 /* RespuestasDao.swift */; };
 		ABCFCB95A91BEE6F152E1F01 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C617CB593BEF22B94CE0C8E /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		B38488B92DBC3D08E65DA298 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E861400D0BB1D7DEC53A6792 /* Pods_TempoMonitoring_TempoMonitoringUITests.framework */; };
+		D02572BA26EA909F00E8DE9E /* TriajeDinamicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572B926EA909E00E8DE9E /* TriajeDinamicoViewController.swift */; };
+		D02572C126EAC3AB00E8DE9E /* TriajePreguntasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572BF26EAC3A700E8DE9E /* TriajePreguntasCell.swift */; };
+		D02572C226EAC3AC00E8DE9E /* TriajePreguntasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02572C026EAC3A700E8DE9E /* TriajePreguntasCell.xib */; };
+		D02572D126EAED4A00E8DE9E /* CCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572D026EAED4A00E8DE9E /* CCheckbox.swift */; };
+		D02572E026EAF16500E8DE9E /* CellOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572DE26EAF16400E8DE9E /* CellOM.swift */; };
+		D02572E126EAF16500E8DE9E /* CellOM.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02572DF26EAF16400E8DE9E /* CellOM.xib */; };
+		D02572E726EB13F100E8DE9E /* CellTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572E526EB13F000E8DE9E /* CellTF.swift */; };
+		D02572E826EB13F100E8DE9E /* CellTF.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02572E626EB13F000E8DE9E /* CellTF.xib */; };
+		D02572F726EB30C000E8DE9E /* CellDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02572F526EB30BF00E8DE9E /* CellDP.swift */; };
+		D02572F826EB30C000E8DE9E /* CellDP.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02572F626EB30BF00E8DE9E /* CellDP.xib */; };
 		D18388B4254E779300053DA3 /* PasswordSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388B2254E779300053DA3 /* PasswordSignInViewController.swift */; };
 		D18388B5254E779300053DA3 /* PasswordSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18388B3254E779300053DA3 /* PasswordSignInViewController.xib */; };
 		D18388B7254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18388B6254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift */; };
@@ -210,7 +258,11 @@
 		346452A5C734A790D7F7A6ED /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		3FDEE882AA61ED1ECE97BA19 /* Pods-TempoMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
 		42FA73A02486081900EC0F11 /* dp3t_lib_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dp3t_lib_ios.framework; path = TempoMonitoring/dp3t_lib_ios.framework; sourceTree = "<group>"; };
-		5E5391C12824D4F300268425 /* CompanySelection */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CompanySelection; sourceTree = "<group>"; };
+		5E8481222815CB9A00275837 /* CompanySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanySelectionViewController.xib; sourceTree = "<group>"; };
+		5E8481242815CD6000275837 /* CompanySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectionViewController.swift; sourceTree = "<group>"; };
+		5E8481262815CD9800275837 /* CompanySelectionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectionViewControllerProtocol.swift; sourceTree = "<group>"; };
+		5E8481282815D3CE00275837 /* CompanySelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectionPresenter.swift; sourceTree = "<group>"; };
+		5E84812A2815D3E400275837 /* CompanySelectionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectionPresenterProtocol.swift; sourceTree = "<group>"; };
 		65125D54E7D6A07D33033370 /* Pods-TempoMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring/Pods-TempoMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAB8CAF0647DFA28DB5355A /* Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-OneSignalNotificationServiceExtension/Pods-TempoMonitoring-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8E22F39725E1674500780528 /* WelcomeOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionsViewController.swift; sourceTree = "<group>"; };
@@ -350,9 +402,53 @@
 		8EEE800C2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionWebViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		8EEE800E2484615400DC28F1 /* AttentionWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionWebViewPresenter.swift; sourceTree = "<group>"; };
 		8EEE8010248461D300DC28F1 /* AttentionWebViewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionWebViewViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9A1AB77826D77F7F00A404DD /* WelcomeOptionOfflineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOptionOfflineCell.swift; sourceTree = "<group>"; };
+		9A1AB77A26D77F9B00A404DD /* WelcomeOptionOfflineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeOptionOfflineCell.xib; sourceTree = "<group>"; };
+		9A1AB77D26D7B70700A404DD /* TriajeOfflinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeOfflinePresenter.swift; sourceTree = "<group>"; };
+		9A1AB77F26D7B71C00A404DD /* TriajeOfflinePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeOfflinePresenterProtocol.swift; sourceTree = "<group>"; };
+		9A1AB78326D7B7A500A404DD /* TriajeOfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeOfflineViewController.swift; sourceTree = "<group>"; };
+		9A1AB78726D7B7BE00A404DD /* TriajeOfflineViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeOfflineViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9A1AB78A26D7BC8100A404DD /* TriajeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDTO.swift; sourceTree = "<group>"; };
+		9A1AB78C26D7BFD300A404DD /* TriajeOfflineSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TriajeOfflineSB.storyboard; sourceTree = "<group>"; };
+		9A1AB78E26D7C61F00A404DD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9A7869A426F236D700380813 /* ResponseTriajeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTriajeDTO.swift; sourceTree = "<group>"; };
+		9AB9BF132708D8D60021E984 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
+		9AB9BF19270A7F360021E984 /* OfflinePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePopupViewController.swift; sourceTree = "<group>"; };
+		9AB9BF1A270A7F360021E984 /* OfflinePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfflinePopupViewController.xib; sourceTree = "<group>"; };
+		9ACC908926DE5B95002CBB81 /* Ubigeo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Ubigeo.json; sourceTree = "<group>"; };
+		9ACC908B26DF52FE002CBB81 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9ACC908D26E0ACC4002CBB81 /* TriajeDatosPersonales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDatosPersonales.swift; sourceTree = "<group>"; };
+		9ACC909026E0BB10002CBB81 /* mTriajeInformacionPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTriajeInformacionPersonal.swift; sourceTree = "<group>"; };
+		9ACC909326E0ED2F002CBB81 /* TriajeDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDao.swift; sourceTree = "<group>"; };
+		9ACC909726E65BBD002CBB81 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		9ACC909926E65D6F002CBB81 /* TriajeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeRepository.swift; sourceTree = "<group>"; };
+		9ACC909B26E66DA1002CBB81 /* EncuestasTriajeDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncuestasTriajeDao.swift; sourceTree = "<group>"; };
+		9ACC909D26E66E18002CBB81 /* mEncuestasTriaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mEncuestasTriaje.swift; sourceTree = "<group>"; };
+		9ACC90A326EB1B89002CBB81 /* CellOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOS.swift; sourceTree = "<group>"; };
+		9ACC90A426EB1B89002CBB81 /* CellOS.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellOS.xib; sourceTree = "<group>"; };
+		9ACC90A726EB2027002CBB81 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		9ACC90A926EB2AC9002CBB81 /* CellSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSN.swift; sourceTree = "<group>"; };
+		9ACC90AA26EB2AC9002CBB81 /* CellSN.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellSN.xib; sourceTree = "<group>"; };
+		9ACC90AD26EFC39D002CBB81 /* mRespuestas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mRespuestas.swift; sourceTree = "<group>"; };
+		9ACC90AF26EFC7C5002CBB81 /* respuestasDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respuestasDTO.swift; sourceTree = "<group>"; };
+		9ACC90B226EFF834002CBB81 /* TriajeUnicoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeUnicoPresenter.swift; sourceTree = "<group>"; };
+		9ACC90B426EFF84E002CBB81 /* TriajeDinamicoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDinamicoProtocol.swift; sourceTree = "<group>"; };
+		9ACC90B626EFF862002CBB81 /* TriajeDinamicoViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDinamicoViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9ACC90B826EFFE00002CBB81 /* TriajeDiarioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDiarioPresenter.swift; sourceTree = "<group>"; };
+		9ACC90BA26F01288002CBB81 /* RespuestasDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespuestasDao.swift; sourceTree = "<group>"; };
 		9E7B1F6301E2DCF2A7B33A21 /* Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B166475524820A8D7C4797BE /* Pods-TempoMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-TempoMonitoringTests/Pods-TempoMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		D02572B926EA909E00E8DE9E /* TriajeDinamicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajeDinamicoViewController.swift; sourceTree = "<group>"; };
+		D02572BF26EAC3A700E8DE9E /* TriajePreguntasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriajePreguntasCell.swift; sourceTree = "<group>"; };
+		D02572C026EAC3A700E8DE9E /* TriajePreguntasCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriajePreguntasCell.xib; sourceTree = "<group>"; };
+		D02572D026EAED4A00E8DE9E /* CCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCheckbox.swift; sourceTree = "<group>"; };
+		D02572DE26EAF16400E8DE9E /* CellOM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellOM.swift; sourceTree = "<group>"; };
+		D02572DF26EAF16400E8DE9E /* CellOM.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellOM.xib; sourceTree = "<group>"; };
+		D02572E526EB13F000E8DE9E /* CellTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTF.swift; sourceTree = "<group>"; };
+		D02572E626EB13F000E8DE9E /* CellTF.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellTF.xib; sourceTree = "<group>"; };
+		D02572F526EB30BF00E8DE9E /* CellDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDP.swift; sourceTree = "<group>"; };
+		D02572F626EB30BF00E8DE9E /* CellDP.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellDP.xib; sourceTree = "<group>"; };
 		D06CE714E2F301A2E6CC8D68 /* Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-TempoMonitoring-TempoMonitoringUITests/Pods-TempoMonitoring-TempoMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D18388B2254E779300053DA3 /* PasswordSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInViewController.swift; sourceTree = "<group>"; };
 		D18388B3254E779300053DA3 /* PasswordSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSignInViewController.xib; sourceTree = "<group>"; };
@@ -401,6 +497,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E84811D2815CABA00275837 /* CompanySelection */ = {
+			isa = PBXGroup;
+			children = (
+				5E8481282815D3CE00275837 /* CompanySelectionPresenter.swift */,
+				5E84812A2815D3E400275837 /* CompanySelectionPresenterProtocol.swift */,
+				5E8481242815CD6000275837 /* CompanySelectionViewController.swift */,
+				5E8481222815CB9A00275837 /* CompanySelectionViewController.xib */,
+				5E8481262815CD9800275837 /* CompanySelectionViewControllerProtocol.swift */,
+			);
+			path = CompanySelection;
+			sourceTree = "<group>";
+		};
 		8E22F39525E166EA00780528 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +537,8 @@
 				8E22F3A025E1679500780528 /* WelcomeOptionCollectionViewCell.xib */,
 				8ECB495A25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift */,
 				8ECB495B25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib */,
+				9A1AB77826D77F7F00A404DD /* WelcomeOptionOfflineCell.swift */,
+				9A1AB77A26D77F9B00A404DD /* WelcomeOptionOfflineCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -443,6 +553,7 @@
 				8E41AB1A2483045600E6DAD7 /* Info.plist */,
 				8E41AB172483045600E6DAD7 /* LaunchScreen.storyboard */,
 				8E41AB122483045300E6DAD7 /* TempoMonitoring.xcdatamodeld */,
+				9A1AB78E26D7C61F00A404DD /* Colors.xcassets */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -459,6 +570,7 @@
 				8E319EC024833E78001111C6 /* QRCode */,
 				8E319E7624831A13001111C6 /* Splash */,
 				8EBD736A248483710032B174 /* Tips */,
+				9A1AB77C26D7B6D600A404DD /* TriajeOffline */,
 				8E319EB424833D6D001111C6 /* Triage */,
 				8E22F39525E166EA00780528 /* Welcome */,
 			);
@@ -476,7 +588,7 @@
 		8E319E75248319FA001111C6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5E5391C12824D4F300268425 /* CompanySelection */,
+				5E84811D2815CABA00275837 /* CompanySelection */,
 				D18388BC254E854600053DA3 /* ForgotPasswordPopup */,
 				D18388B1254E775C00053DA3 /* PasswordSignIn */,
 				8E319E8024831B2F001111C6 /* SignIn */,
@@ -532,6 +644,7 @@
 				8E319E9624831F9B001111C6 /* UITextFieldExtension.swift */,
 				8E319E8A24831BD6001111C6 /* UIViewControllerExtension.swift */,
 				8EBD736624846E7D0032B174 /* UIViewExtension.swift */,
+				9AB9BF132708D8D60021E984 /* DispatchQueueExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -550,6 +663,9 @@
 				8E66D3112497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift */,
 				8EEE7FC02483589100DC28F1 /* UserDefaultsHandler.swift */,
 				8EEE7FBE2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift */,
+				9ACC908926DE5B95002CBB81 /* Ubigeo.json */,
+				9ACC908B26DF52FE002CBB81 /* Utils.swift */,
+				9ACC90A726EB2027002CBB81 /* KeyboardObserver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -717,8 +833,10 @@
 		8E41AB082483045300E6DAD7 /* TempoMonitoring */ = {
 			isa = PBXGroup;
 			children = (
+				9ACC909626E65B94002CBB81 /* Networking */,
 				8E319E8924831BBA001111C6 /* Extension */,
 				8E319E71248318E7001111C6 /* Main */,
+				9ACC909226E0ED0E002CBB81 /* Dao */,
 				8EEE7FE72484206900DC28F1 /* Models */,
 				8EEE7FB82483571100DC28F1 /* Repositories */,
 				8E319E74248319D1001111C6 /* Routers */,
@@ -831,6 +949,7 @@
 				8EBD738024848E040032B174 /* TipRepositoryProtocol.swift */,
 				8EEE7FD724837B1900DC28F1 /* UserRepository.swift */,
 				8EEE7FD524837AFF00DC28F1 /* UserRepositoryProtocol.swift */,
+				9ACC909926E65D6F002CBB81 /* TriajeRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -862,11 +981,80 @@
 		8EEE7FE72484206900DC28F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9ACC908F26E0BAEA002CBB81 /* Tables */,
+				9A1AB78926D7BC7100A404DD /* DTO */,
 				8EE090BA248D9D70007EC00D /* Base */,
 				8EEE7FEC248420CC00DC28F1 /* Company.swift */,
 				8E890ACF248AC7BB00BB1921 /* DocumentType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9A1AB77C26D7B6D600A404DD /* TriajeOffline */ = {
+			isa = PBXGroup;
+			children = (
+				9ACC90B126EFF7FF002CBB81 /* TriajeDinamico */,
+				D02572BE26EAC36300E8DE9E /* Cells */,
+				9A1AB77D26D7B70700A404DD /* TriajeOfflinePresenter.swift */,
+				9A1AB77F26D7B71C00A404DD /* TriajeOfflinePresenterProtocol.swift */,
+				9A1AB78326D7B7A500A404DD /* TriajeOfflineViewController.swift */,
+				9A1AB78726D7B7BE00A404DD /* TriajeOfflineViewControllerProtocol.swift */,
+				9A1AB78C26D7BFD300A404DD /* TriajeOfflineSB.storyboard */,
+				9AB9BF19270A7F360021E984 /* OfflinePopupViewController.swift */,
+				9AB9BF1A270A7F360021E984 /* OfflinePopupViewController.xib */,
+			);
+			path = TriajeOffline;
+			sourceTree = "<group>";
+		};
+		9A1AB78926D7BC7100A404DD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				9A1AB78A26D7BC8100A404DD /* TriajeDTO.swift */,
+				9ACC908D26E0ACC4002CBB81 /* TriajeDatosPersonales.swift */,
+				9ACC90AF26EFC7C5002CBB81 /* respuestasDTO.swift */,
+				9A7869A426F236D700380813 /* ResponseTriajeDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		9ACC908F26E0BAEA002CBB81 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				9ACC909026E0BB10002CBB81 /* mTriajeInformacionPersonal.swift */,
+				9ACC909D26E66E18002CBB81 /* mEncuestasTriaje.swift */,
+				9ACC90AD26EFC39D002CBB81 /* mRespuestas.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		9ACC909226E0ED0E002CBB81 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				9ACC909326E0ED2F002CBB81 /* TriajeDao.swift */,
+				9ACC909B26E66DA1002CBB81 /* EncuestasTriajeDao.swift */,
+				9ACC90BA26F01288002CBB81 /* RespuestasDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		9ACC909626E65B94002CBB81 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9ACC909726E65BBD002CBB81 /* RestAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9ACC90B126EFF7FF002CBB81 /* TriajeDinamico */ = {
+			isa = PBXGroup;
+			children = (
+				9ACC90B226EFF834002CBB81 /* TriajeUnicoPresenter.swift */,
+				9ACC90B826EFFE00002CBB81 /* TriajeDiarioPresenter.swift */,
+				9ACC90B426EFF84E002CBB81 /* TriajeDinamicoProtocol.swift */,
+				9ACC90B626EFF862002CBB81 /* TriajeDinamicoViewControllerProtocol.swift */,
+				D02572B926EA909E00E8DE9E /* TriajeDinamicoViewController.swift */,
+			);
+			path = TriajeDinamico;
 			sourceTree = "<group>";
 		};
 		ADD00EB92F25E77EBF275925 /* Pods */ = {
@@ -884,6 +1072,26 @@
 				0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D02572BE26EAC36300E8DE9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D02572DE26EAF16400E8DE9E /* CellOM.swift */,
+				D02572DF26EAF16400E8DE9E /* CellOM.xib */,
+				D02572BF26EAC3A700E8DE9E /* TriajePreguntasCell.swift */,
+				D02572C026EAC3A700E8DE9E /* TriajePreguntasCell.xib */,
+				D02572D026EAED4A00E8DE9E /* CCheckbox.swift */,
+				D02572E526EB13F000E8DE9E /* CellTF.swift */,
+				D02572E626EB13F000E8DE9E /* CellTF.xib */,
+				9ACC90A326EB1B89002CBB81 /* CellOS.swift */,
+				9ACC90A426EB1B89002CBB81 /* CellOS.xib */,
+				9ACC90A926EB2AC9002CBB81 /* CellSN.swift */,
+				9ACC90AA26EB2AC9002CBB81 /* CellSN.xib */,
+				D02572F526EB30BF00E8DE9E /* CellDP.swift */,
+				D02572F626EB30BF00E8DE9E /* CellDP.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D18388B1254E775C00053DA3 /* PasswordSignIn */ = {
@@ -1060,28 +1268,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB9BF1C270A7F360021E984 /* OfflinePopupViewController.xib in Resources */,
+				9ACC90A626EB1B89002CBB81 /* CellOS.xib in Resources */,
 				8E319EA12483282C001111C6 /* Roboto-Bold.ttf in Resources */,
 				D18388C0254E856B00053DA3 /* ForgotPasswordPopupViewController.xib in Resources */,
 				8EBD7377248484100032B174 /* TipsHeaderCollectionReusableView.xib in Resources */,
 				8E319E8824831BAD001111C6 /* SignInViewController.xib in Resources */,
 				8E319EE124834BD7001111C6 /* MoreHeaderView.xib in Resources */,
 				8E319EA42483282C001111C6 /* Roboto-Regular.ttf in Resources */,
+				D02572F826EB30C000E8DE9E /* CellDP.xib in Resources */,
 				8E319E9224831E0F001111C6 /* Localizable.strings in Resources */,
 				8E319EA32483282C001111C6 /* RobotoCondensed-Bold.ttf in Resources */,
+				D02572E126EAF16500E8DE9E /* CellOM.xib in Resources */,
 				8E319E7B24831A77001111C6 /* FirstSceneViewController.xib in Resources */,
+				9ACC908A26DE5B95002CBB81 /* Ubigeo.json in Resources */,
+				9ACC90AC26EB2AC9002CBB81 /* CellSN.xib in Resources */,
 				8E319EC624833EB2001111C6 /* ReadQRCodeViewController.xib in Resources */,
 				8E319EBA24833DA0001111C6 /* TriageViewController.xib in Resources */,
 				8E319EAE24833591001111C6 /* MainTabBarController.xib in Resources */,
 				8E8B51F12498378800F03A33 /* GoogleService-Info.plist in Resources */,
-				5E5391C22824D4F300268425 /* CompanySelection in Resources */,
 				8E319EB324833CD5001111C6 /* MainWebViewViewController.xib in Resources */,
 				8E41AB192483045600E6DAD7 /* LaunchScreen.storyboard in Resources */,
+				D02572C226EAC3AC00E8DE9E /* TriajePreguntasCell.xib in Resources */,
+				D02572E826EB13F100E8DE9E /* CellTF.xib in Resources */,
 				8EBD7373248483F10032B174 /* TipCollectionViewCell.xib in Resources */,
+				9A1AB78D26D7BFD300A404DD /* TriajeOfflineSB.storyboard in Resources */,
 				D18388B5254E779300053DA3 /* PasswordSignInViewController.xib in Resources */,
 				8E41AB162483045600E6DAD7 /* Assets.xcassets in Resources */,
 				8E319EA924833379001111C6 /* ContactUsPopupViewController.xib in Resources */,
+				9A1AB78F26D7C61F00A404DD /* Colors.xcassets in Resources */,
 				8E22F39A25E1674500780528 /* WelcomeOptionsViewController.xib in Resources */,
+				5E8481232815CB9A00275837 /* CompanySelectionViewController.xib in Resources */,
 				8E319EBF24833E3C001111C6 /* AttentionWebViewViewController.xib in Resources */,
+				9A1AB77B26D77F9B00A404DD /* WelcomeOptionOfflineCell.xib in Resources */,
 				8E319EA22483282C001111C6 /* RobotoCondensed-Regular.ttf in Resources */,
 				8ECB495D25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.xib in Resources */,
 				8E319ECA24833EC2001111C6 /* QRCodeStatusViewController.xib in Resources */,
@@ -1236,7 +1455,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/TempoMonitoring/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
+			shellScript = "
+";
 		};
 		AED6FEDE6F003BDDCED06B15 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1284,6 +1504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACC90A826EB2027002CBB81 /* KeyboardObserver.swift in Sources */,
 				8E319EB924833DA0001111C6 /* TriageViewController.swift in Sources */,
 				8EEE7FB62483560600DC28F1 /* FirstScenePresenter.swift in Sources */,
 				8EEE7FBD2483575C00DC28F1 /* ConfigRepositoryProtocol.swift in Sources */,
@@ -1294,33 +1515,52 @@
 				8E66D3142497E2EA0063D9A5 /* OneSignalHandler.swift in Sources */,
 				8EEE7FF524843FEB00DC28F1 /* TriagePresenterProtocol.swift in Sources */,
 				8EEE7FB22483528500DC28F1 /* SplashViewControllerProtocol.swift in Sources */,
+				9A1AB78026D7B71C00A404DD /* TriajeOfflinePresenterProtocol.swift in Sources */,
+				9A1AB77E26D7B70700A404DD /* TriajeOfflinePresenter.swift in Sources */,
 				8ECB494925E17D9F005024B9 /* WelcomeOptionsPresenterProtocol.swift in Sources */,
 				D18388B9254E7AB400053DA3 /* PasswordSignInPresenter.swift in Sources */,
 				8E66D3122497E2DD0063D9A5 /* OneSignalHandlerProtocol.swift in Sources */,
+				9ACC90AE26EFC39E002CBB81 /* mRespuestas.swift in Sources */,
 				8EBD738324848EBD0032B174 /* TipRepository.swift in Sources */,
+				9ACC909E26E66E18002CBB81 /* mEncuestasTriaje.swift in Sources */,
+				9ACC909826E65BBD002CBB81 /* RestAPI.swift in Sources */,
 				8EBD737F2484898F0032B174 /* TipsCollectionViewControllerProtocol.swift in Sources */,
 				8E81BADB24C60DF7000DB671 /* LinkManager.swift in Sources */,
 				8EEE7FD2248375B400DC28F1 /* ContactUsPopupPresenter.swift in Sources */,
+				9A7869A526F236D700380813 /* ResponseTriajeDTO.swift in Sources */,
+				D02572F726EB30C000E8DE9E /* CellDP.swift in Sources */,
+				9ACC909A26E65D6F002CBB81 /* TriajeRepository.swift in Sources */,
 				8E319E8E24831C28001111C6 /* Contstants.swift in Sources */,
+				5E8481292815D3CE00275837 /* CompanySelectionPresenter.swift in Sources */,
 				8EEE7FEB248420B800DC28F1 /* ModelProtocol.swift in Sources */,
 				8E319E7A24831A77001111C6 /* FirstSceneViewController.swift in Sources */,
+				9A1AB78B26D7BC8100A404DD /* TriajeDTO.swift in Sources */,
 				8E319EDF24834BC7001111C6 /* MoreHeaderView.swift in Sources */,
 				8EEE80032484512800DC28F1 /* ReadQRCodePresenter.swift in Sources */,
 				8EEE7FC12483589100DC28F1 /* UserDefaultsHandler.swift in Sources */,
 				8EEE7FD624837AFF00DC28F1 /* UserRepositoryProtocol.swift in Sources */,
 				8E319EDC24834B91001111C6 /* MoreTableViewCell.swift in Sources */,
 				8EBD738124848E040032B174 /* TipRepositoryProtocol.swift in Sources */,
+				9ACC90AB26EB2AC9002CBB81 /* CellSN.swift in Sources */,
 				8EBD7369248473FF0032B174 /* UIImageViewExtension.swift in Sources */,
 				8EEE7FF124842D3500DC28F1 /* MainPresenter.swift in Sources */,
 				8E22F39925E1674500780528 /* WelcomeOptionsViewController.swift in Sources */,
 				8E41AB0A2483045300E6DAD7 /* AppDelegate.swift in Sources */,
 				8EEE7FFD24844AD300DC28F1 /* GeneralRepositoryProtocol.swift in Sources */,
+				9A1AB78826D7B7BE00A404DD /* TriajeOfflineViewControllerProtocol.swift in Sources */,
+				9ACC909426E0ED2F002CBB81 /* TriajeDao.swift in Sources */,
 				8E319E7F24831ABC001111C6 /* Router.swift in Sources */,
+				9ACC90B026EFC7C5002CBB81 /* respuestasDTO.swift in Sources */,
+				9ACC90B526EFF84E002CBB81 /* TriajeDinamicoProtocol.swift in Sources */,
 				8EEE7FDC24837DCA00DC28F1 /* HUDHandlerProtocol.swift in Sources */,
+				9A1AB78526D7B7A500A404DD /* TriajeOfflineViewController.swift in Sources */,
+				5E8481252815CD6000275837 /* CompanySelectionViewController.swift in Sources */,
 				8E319EC524833EB2001111C6 /* ReadQRCodeViewController.swift in Sources */,
 				8EEE7FE22484197D00DC28F1 /* SignInPresenterProtocol.swift in Sources */,
 				8E319E9724831F9B001111C6 /* UITextFieldExtension.swift in Sources */,
 				8E890AD0248AC7BB00BB1921 /* DocumentType.swift in Sources */,
+				9ACC90B726EFF862002CBB81 /* TriajeDinamicoViewControllerProtocol.swift in Sources */,
+				9ACC909126E0BB10002CBB81 /* mTriajeInformacionPersonal.swift in Sources */,
 				8EBD735F248468990032B174 /* MorePresenterProtocol.swift in Sources */,
 				8EBD73632484696B0032B174 /* MoreTableViewControllerProtocol.swift in Sources */,
 				8E319E8B24831BD6001111C6 /* UIViewControllerExtension.swift in Sources */,
@@ -1328,6 +1568,7 @@
 				D18388BB254E7ACC00053DA3 /* PasswordSignInViewControllerProtocol.swift in Sources */,
 				8EEE7FBF2483585200DC28F1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8EEE7FB02483527700DC28F1 /* SplashPresenter.swift in Sources */,
+				9ACC90A526EB1B89002CBB81 /* CellOS.swift in Sources */,
 				8EEE7FEF24842C4500DC28F1 /* MainPresenterProtocol.swift in Sources */,
 				8E22F3A125E1679500780528 /* WelcomeOptionCollectionViewCell.swift in Sources */,
 				8E81BADD24C60F32000DB671 /* LinkType.swift in Sources */,
@@ -1342,7 +1583,9 @@
 				D18388B7254E7AA300053DA3 /* PasswordSignInPresenterProtocol.swift in Sources */,
 				8EBD736D248483C10032B174 /* TipsCollectionViewController.swift in Sources */,
 				8EBD737B248489560032B174 /* TipsPresenter.swift in Sources */,
+				D02572E726EB13F100E8DE9E /* CellTF.swift in Sources */,
 				8EEE7FB4248355C600DC28F1 /* FirstScenePresenterProtocol.swift in Sources */,
+				9A1AB77926D77F7F00A404DD /* WelcomeOptionOfflineCell.swift in Sources */,
 				8EEE7FC52483593B00DC28F1 /* KeychainHandler.swift in Sources */,
 				8EEE7FF72484400A00DC28F1 /* TriagePresenter.swift in Sources */,
 				8EEE7FC32483592500DC28F1 /* KeychainHandlerProtocol.swift in Sources */,
@@ -1352,26 +1595,37 @@
 				8EEE80072484574800DC28F1 /* QRCodeStatusPresenterProtocol.swift in Sources */,
 				8E319EBE24833E3C001111C6 /* AttentionWebViewViewController.swift in Sources */,
 				8EEE7FDA24837CF400DC28F1 /* ContactUsPopupViewControllerProtocol.swift in Sources */,
+				D02572E026EAF16500E8DE9E /* CellOM.swift in Sources */,
 				8EEE7FCA248360F900DC28F1 /* FirstSceneViewControllerProtocol.swift in Sources */,
 				D18388B4254E779300053DA3 /* PasswordSignInViewController.swift in Sources */,
 				8EEE7FD0248375A000DC28F1 /* ContactUsPopupPresenterProtocol.swift in Sources */,
 				8EEE800F2484615400DC28F1 /* AttentionWebViewPresenter.swift in Sources */,
+				9ACC90B926EFFE00002CBB81 /* TriajeDiarioPresenter.swift in Sources */,
 				8E319ED724834B4A001111C6 /* MoreTableViewController.swift in Sources */,
 				8EEE7FAE2483526800DC28F1 /* SplashPresenterProtocol.swift in Sources */,
 				8E319EAD24833591001111C6 /* MainTabBarController.swift in Sources */,
 				8EEE7FE4248419EB00DC28F1 /* SignInPresenter.swift in Sources */,
+				9ACC90BB26F01288002CBB81 /* RespuestasDao.swift in Sources */,
 				8EEE7FFF24844B3100DC28F1 /* GeneralRepository.swift in Sources */,
+				D02572D126EAED4A00E8DE9E /* CCheckbox.swift in Sources */,
+				9ACC908C26DF52FE002CBB81 /* Utils.swift in Sources */,
 				8EBD7376248484100032B174 /* TipsHeaderCollectionReusableView.swift in Sources */,
 				8ECB495325E17DCF005024B9 /* WelcomeOptionsViewControllerProtocol.swift in Sources */,
 				8E2471152638D56C002A2CB7 /* TimeZoneExtension.swift in Sources */,
 				8EEE7FE624841AD800DC28F1 /* SignInViewControllerProtocol.swift in Sources */,
 				8EEE800D2484610600DC28F1 /* AttentionWebViewPresenterProtocol.swift in Sources */,
 				8EEE7FFB2484416200DC28F1 /* UIImageExtension.swift in Sources */,
+				D02572BA26EA909F00E8DE9E /* TriajeDinamicoViewController.swift in Sources */,
+				D02572C126EAC3AB00E8DE9E /* TriajePreguntasCell.swift in Sources */,
 				8EBD736724846E7D0032B174 /* UIViewExtension.swift in Sources */,
 				8E41AB142483045300E6DAD7 /* TempoMonitoring.xcdatamodeld in Sources */,
 				8EBD7361248468E90032B174 /* MorePresenter.swift in Sources */,
+				9AB9BF1B270A7F360021E984 /* OfflinePopupViewController.swift in Sources */,
 				8E319EA824833379001111C6 /* ContactUsPopupViewController.swift in Sources */,
 				8ECB495C25E18105005024B9 /* WelcomeOptionHeaderCollectionReusableView.swift in Sources */,
+				9ACC909C26E66DA1002CBB81 /* EncuestasTriajeDao.swift in Sources */,
+				9AB9BF142708D8D60021E984 /* DispatchQueueExtension.swift in Sources */,
+				9ACC90B326EFF834002CBB81 /* TriajeUnicoPresenter.swift in Sources */,
 				8EB5D9A72484B1DB00E8E9DE /* NewVersionPopupPresenter.swift in Sources */,
 				8EB5D99E2484A03800E8E9DE /* NewVersionPopupViewController.swift in Sources */,
 				8EB5D9A22484A04700E8E9DE /* HomeBannerViewController.swift in Sources */,
@@ -1380,9 +1634,12 @@
 				8EEE7FD824837B1900DC28F1 /* UserRepository.swift in Sources */,
 				8EEE800B2484576E00DC28F1 /* QRCodeStatusViewControllerProtocol.swift in Sources */,
 				8E81BADF24C61098000DB671 /* LinkNavigator.swift in Sources */,
+				9ACC908E26E0ACC4002CBB81 /* TriajeDatosPersonales.swift in Sources */,
 				8E319EC924833EC2001111C6 /* QRCodeStatusViewController.swift in Sources */,
 				8EEE7FED248420CC00DC28F1 /* Company.swift in Sources */,
 				D18388BF254E856B00053DA3 /* ForgotPasswordPopupViewController.swift in Sources */,
+				5E8481272815CD9800275837 /* CompanySelectionViewControllerProtocol.swift in Sources */,
+				5E84812B2815D3E500275837 /* CompanySelectionPresenterProtocol.swift in Sources */,
 				8EDC6798248D723300D4B6B8 /* UIFontExtension.swift in Sources */,
 				8EB5D9A52484B19500E8E9DE /* NewVersionPopupPresenterProtocol.swift in Sources */,
 			);
@@ -1576,7 +1833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
@@ -1585,12 +1842,12 @@
 					"$(PROJECT_DIR)/TempoMonitoring",
 				);
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
@@ -1607,7 +1864,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TempoMonitoring/Tempo Monitoring.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1615,12 +1872,12 @@
 					"$(PROJECT_DIR)/TempoMonitoring",
 				);
 				INFOPLIST_FILE = TempoMonitoring/Main/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring";
 				PRODUCT_NAME = Laus;
 				SWIFT_VERSION = 5.0;
@@ -1722,7 +1979,7 @@
 			baseConfigurationReference = C3AAA0DA405A13018C28744D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1731,7 +1988,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1745,7 +2002,7 @@
 			baseConfigurationReference = 0374B362DD95207A596AA6DE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = SU7989R26F;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1754,7 +2011,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.com.sportafolio.Tempo-Monitoring.OneSignalNotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -21,6 +21,9 @@ target 'TempoMonitoring' do
   pod 'SwiftProtobuf'
   pod 'SwiftyJSON'
   pod 'TextFieldEffects'
+  pod 'SkyFloatingLabelTextField'
+  pod 'RealmSwift'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
   
   target 'TempoMonitoringTests' do
     inherit! :search_paths
