@@ -52,6 +52,24 @@ struct ResponseHelper {
         }
     }
     
+    static func RAW_GET(with type: RequestType, url: String, headers: HTTPHeaders? = nil, parameters: [String: Any]?, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
+        let encoding: ParameterEncoding
+        switch type {
+        case .url:
+            encoding = URLEncoding.default
+        case .json:
+            encoding = JSONEncoding.default
+        }
+        AF.request(url,
+                   method: .get,
+                   parameters: parameters,
+                   encoding: encoding,
+                   headers: headers)
+        .responseJSON { (response) in
+            rawValidate(response: response, success: success, failure: failure)
+        }
+    }
+    
     private static func validate(response: AFDataResponse<Any>, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
         switch response.result {
         case .failure(let error):
@@ -72,4 +90,16 @@ struct ResponseHelper {
             success(jsonObject["payload"])
         }
     }
+    
+    private static func rawValidate(response: AFDataResponse<Any>, success: @escaping(JSON) -> Void, failure: @escaping(Error) -> Void) {
+        switch response.result {
+        case .failure(let error):
+            print("AFError: \(error.localizedDescription)")
+            failure(error)
+        case .success(let value):
+            let jsonObject = JSON(value)
+            success(jsonObject)
+        }
+    }
+    
 }

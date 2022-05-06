@@ -21,6 +21,7 @@ class PasswordSignInViewController: UIViewController {
     var passwordSignInPresenter: PasswordSignInPresenterProtocol!
     var documentTypeId: Int!
     var document: String!
+    var companyId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,7 @@ class PasswordSignInViewController: UIViewController {
             return
         }
         
-        passwordSignInPresenter.signIn(documentTypeId: documentTypeId, document: document, password: passwordTextField.text ?? "")
+        passwordSignInPresenter.signIn(documentTypeId: documentTypeId, document: document, companyId: companyId, password: passwordTextField.text ?? "")
     }
 
 }

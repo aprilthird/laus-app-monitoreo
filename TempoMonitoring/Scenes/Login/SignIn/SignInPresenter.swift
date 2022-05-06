@@ -29,30 +29,27 @@ final class SignInPresenter: SignInPresenterProtocol {
         }
     }
     
-    func signIn(documentTypeId: Int, document: String) {
-        view.startProgress()
-        userRepository.signIn(documentTypeId: documentTypeId,
-                              document: document,
-                              password: nil,
-        success: { [weak self] (isSuccessful, isPasswordRequired) in
+    func goToCompanySelection(documentTypeId: Int, documentType: String, document: String) {
+        self.view.startProgress()
+        userRepository.getUserCompanies(documentType: documentType,
+                                        document: document,
+                                        success: { [weak self] (userCompanies) in
             guard let self = self else { return }
             
             self.view.endProgress()
             
-            guard !isPasswordRequired else {
-                self.view.goToPasswordSignIn(documentTypeId, document)
-                return
-            }
-            
             self.userRepository.registerDevice()
             self.configRepository.saveDeviceIdentifier()
-            self.view.goToMain()
+            self.view.endProgress()
+            
+            self.view.goToCompanySelection(documentTypeId, document, userCompanies)
         }) { [weak self] (error) in
             guard let self = self else { return }
             
             self.view.endProgress()
-            
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
     

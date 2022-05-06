@@ -206,4 +206,10 @@ final class ConfigRepository: ConfigRepositoryProtocol {
             failure(error)
         }
     }
+    
+    func getToken()->String{
+        return keychainHandler.string(from: Constants.Keys.COMPANY_TOKEN) ?? ""
+    }
+    
 }
+

@@ -31,15 +31,17 @@ final class PasswordSignInPresenter: PasswordSignInPresenterProtocol {
             guard let self = self else { return }
             
             self.view.endProgress()
-            
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
     
-    func signIn(documentTypeId: Int, document: String, password: String) {
+    func signIn(documentTypeId: Int, document: String, companyId: String, password: String) {
         view.startProgress()
         userRepository.signIn(documentTypeId: documentTypeId,
                               document: document,
+                              companyId: companyId,
                               password: password,
         success: { [weak self] (isSuccessful, _) in
             guard let self = self else { return }
@@ -53,8 +55,9 @@ final class PasswordSignInPresenter: PasswordSignInPresenterProtocol {
             guard let self = self else { return }
             
             self.view.endProgress()
-            
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
 }

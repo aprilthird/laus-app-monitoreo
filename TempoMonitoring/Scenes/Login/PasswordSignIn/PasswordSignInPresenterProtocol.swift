@@ -10,5 +10,5 @@ import Foundation
 
 protocol PasswordSignInPresenterProtocol {
     func forgotPassword(documentTypeId: Int, document: String)
-    func signIn(documentTypeId: Int, document: String, password: String)
+    func signIn(documentTypeId: Int, document: String, companyId: String, password: String)
 }

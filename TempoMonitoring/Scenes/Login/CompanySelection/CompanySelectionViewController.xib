@@ -17,15 +17,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PasswordSignInViewController" customModule="Laus" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanySelectionViewController">
             <connections>
-                <outlet property="forgotPasswordButton" destination="b7M-7K-KTI" id="sPc-Fz-11k"/>
+                <outlet property="companyTextField" destination="uZZ-dN-vmC" id="F9b-gl-3Sm"/>
                 <outlet property="instructionsLabel" destination="bIN-Za-Yvt" id="9bg-Uf-ke2"/>
                 <outlet property="logoImageView" destination="ozi-GD-wLu" id="jQx-dT-7ln"/>
                 <outlet property="logoLabel" destination="pyD-lC-t8l" id="jof-qU-vg3"/>
                 <outlet property="logoView" destination="66O-1F-vo6" id="5uP-WN-64e"/>
                 <outlet property="mainButton" destination="Ej9-RR-U1C" id="XBl-ai-nKW"/>
-                <outlet property="passwordTextField" destination="cuq-sM-ypU" id="jRb-sO-1ib"/>
                 <outlet property="scrollView" destination="cCd-K6-B4b" id="kZk-7V-HIq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -70,8 +69,8 @@
                                         <constraint firstItem="ar0-zk-FPx" firstAttribute="top" secondItem="66O-1F-vo6" secondAttribute="top" constant="60" id="wpb-XJ-WuQ"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu contraseña para acceder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-Za-Yvt">
-                                    <rect key="frame" x="94.5" y="221.5" width="225.5" height="19"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una empresa para acceder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-Za-Yvt">
+                                    <rect key="frame" x="86" y="221.5" width="242.5" height="19"/>
                                     <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="16"/>
                                     <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -79,38 +78,24 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-uh-oSF">
                                     <rect key="frame" x="30" y="295.5" width="354" height="35"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-sM-ypU">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Empresa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZZ-dN-vmC">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
                                             <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="4TJ-OP-gU7"/>
+                                                <constraint firstAttribute="height" constant="35" id="GOL-eC-Rd2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7M-7K-KTI">
-                                    <rect key="frame" x="181" y="340.5" width="203" height="37"/>
-                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
-                                    <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                    <state key="normal" title="¿Deseas reestablecer tu contraseña?">
-                                        <color key="titleColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="didForgotPassword:" destination="-1" eventType="touchUpInside" id="kVw-qW-7gJ"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="b7M-7K-KTI" firstAttribute="top" secondItem="cEy-uh-oSF" secondAttribute="bottom" constant="10" id="4B7-LU-IkE"/>
                                 <constraint firstItem="bIN-Za-Yvt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jtz-FI-Ly9" secondAttribute="leading" constant="50" id="8HA-6j-IhI"/>
                                 <constraint firstItem="cEy-uh-oSF" firstAttribute="top" secondItem="bIN-Za-Yvt" secondAttribute="bottom" constant="55" id="BDX-Oa-TSC"/>
                                 <constraint firstItem="cEy-uh-oSF" firstAttribute="leading" secondItem="jtz-FI-Ly9" secondAttribute="leading" constant="30" id="HE7-iY-Ub4"/>
                                 <constraint firstAttribute="trailing" secondItem="cEy-uh-oSF" secondAttribute="trailing" constant="30" id="K7b-hO-qyo"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bIN-Za-Yvt" secondAttribute="trailing" constant="50" id="UyR-Lo-QBa"/>
-                                <constraint firstItem="b7M-7K-KTI" firstAttribute="trailing" secondItem="cEy-uh-oSF" secondAttribute="trailing" id="XpD-qi-STi"/>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b7M-7K-KTI" secondAttribute="bottom" constant="20" id="YLi-3P-l90"/>
                                 <constraint firstItem="bIN-Za-Yvt" firstAttribute="centerX" secondItem="jtz-FI-Ly9" secondAttribute="centerX" id="e8H-aw-tz1"/>
                                 <constraint firstItem="66O-1F-vo6" firstAttribute="top" secondItem="jtz-FI-Ly9" secondAttribute="top" id="iaw-jL-1jI"/>
                                 <constraint firstItem="66O-1F-vo6" firstAttribute="leading" secondItem="jtz-FI-Ly9" secondAttribute="leading" id="m9a-ZQ-6Ck"/>

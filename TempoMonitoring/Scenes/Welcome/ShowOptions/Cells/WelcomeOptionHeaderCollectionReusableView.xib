@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +19,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="welcomeOptionHeaderViewCell" id="U6b-Vx-4bR" customClass="WelcomeOptionHeaderCollectionReusableView" customModule="Laus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="333" height="196"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p1m-99-nay">
-                    <rect key="frame" x="20" y="15" width="237.5" height="79"/>
+                    <rect key="frame" x="20" y="15" width="293" height="171"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Hola!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAf-eS-Jua">
                             <rect key="frame" x="0.0" y="0.0" width="38" height="21.5"/>
@@ -32,28 +32,71 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-TN-uWC">
-                            <rect key="frame" x="0.0" y="29.5" width="237.5" height="49.5"/>
+                            <rect key="frame" x="0.0" y="29.5" width="292" height="33"/>
                             <string key="text">Bienvenid@ a tu app digital de Seguridad y Salud en .
 ¿Qué acción te gustaría realizar hoy?</string>
                             <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvy-qF-IuG">
+                            <rect key="frame" x="0.0" y="70.5" width="285" height="100.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offline" translatesAutoresizingMaskIntoConstraints="NO" id="lAR-nn-DI0">
+                                    <rect key="frame" x="8" y="8" width="26" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="26" id="gnh-d6-2Nd"/>
+                                        <constraint firstAttribute="height" constant="26" id="kTm-rG-HWe"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="MODO SIN CONEXIÓN" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Y-oa-Nfc">
+                                    <rect key="frame" x="42" y="12" width="227" height="18"/>
+                                    <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="15"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No detectamos una conexión a Internet. El uso de la aplicación estará restringido al modo sin conexión." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IT-i3-Oof">
+                                    <rect key="frame" x="42" y="38" width="227" height="49.5"/>
+                                    <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="k8Y-oa-Nfc" firstAttribute="leading" secondItem="lAR-nn-DI0" secondAttribute="trailing" constant="8" id="7CL-du-gPF"/>
+                                <constraint firstItem="lAR-nn-DI0" firstAttribute="top" secondItem="Mvy-qF-IuG" secondAttribute="top" constant="8" id="7gw-jm-Fcm"/>
+                                <constraint firstItem="k8Y-oa-Nfc" firstAttribute="centerY" secondItem="lAR-nn-DI0" secondAttribute="centerY" id="8P7-ch-Y7R"/>
+                                <constraint firstItem="lAR-nn-DI0" firstAttribute="leading" secondItem="Mvy-qF-IuG" secondAttribute="leading" constant="8" id="CQn-Cw-g6n"/>
+                                <constraint firstItem="8IT-i3-Oof" firstAttribute="leading" secondItem="k8Y-oa-Nfc" secondAttribute="leading" id="XiJ-lj-Y4l"/>
+                                <constraint firstAttribute="trailing" secondItem="8IT-i3-Oof" secondAttribute="trailing" constant="16" id="e1p-R1-Jzm"/>
+                                <constraint firstItem="8IT-i3-Oof" firstAttribute="top" secondItem="k8Y-oa-Nfc" secondAttribute="bottom" constant="8" id="v3c-7T-SvI"/>
+                                <constraint firstAttribute="trailing" secondItem="k8Y-oa-Nfc" secondAttribute="trailing" constant="16" id="vRs-Dc-b9H"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8IT-i3-Oof" secondAttribute="bottom" constant="8" id="yUF-Rn-0Ph"/>
+                            </constraints>
+                        </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Mvy-qF-IuG" secondAttribute="trailing" constant="8" id="O2x-25-7o1"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
                 <constraint firstItem="p1m-99-nay" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="15" id="KBl-BX-PYv"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p1m-99-nay" secondAttribute="trailing" constant="20" id="Y3h-R1-wRJ"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p1m-99-nay" secondAttribute="bottom" constant="10" id="b7B-Ds-9Up"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="p1m-99-nay" secondAttribute="trailing" constant="20" id="Y3h-R1-wRJ"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="p1m-99-nay" secondAttribute="bottom" constant="10" id="b7B-Ds-9Up"/>
                 <constraint firstItem="p1m-99-nay" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="20" id="cog-1Q-uMy"/>
             </constraints>
             <connections>
+                <outlet property="offlineView" destination="Mvy-qF-IuG" id="vkZ-qn-cL4"/>
                 <outlet property="subtitleLabel" destination="a8f-TN-uWC" id="fGc-WI-7Tj"/>
                 <outlet property="titleLabel" destination="EAf-eS-Jua" id="S1d-lc-urc"/>
             </connections>
-            <point key="canvasLocation" x="34.782608695652179" y="105.13392857142857"/>
+            <point key="canvasLocation" x="23.913043478260871" y="60.267857142857139"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="offline" width="26" height="26"/>
+    </resources>
 </document>

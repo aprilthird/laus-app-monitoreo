@@ -15,6 +15,7 @@ final class Constants {
     struct Keys {
         static let COMPANY: String = "company"
         static let COMPANY_TOKEN: String = "companyToken"
+        static let COMPANY_ID: String = "companyId"
         static let DOCUMENT_TYPES: String = "documentTypes"
         static let DOCUMENT_TYPE_ID: String = "documentTypeId"
         static let DOCUMENT: String = "document"
@@ -30,6 +31,7 @@ final class Constants {
         static let TOKEN: String = "token"
         static let WAS_FIRST_OPEN: String = "wasFirstOpen"
         static let WELCOME_NAME: String = "welcomeName"
+        static let UNIQUE_TRIAJE: String = "uniqueTriaje"
     }
     struct Localizable {
         static let APP_NAME: String = NSLocalizedString("Laus", comment: "")
@@ -45,6 +47,7 @@ final class Constants {
         static let INVALID_DOCUMENT: String = NSLocalizedString("Invalid document", comment: "")
         static let INVALID_DOCUMENT_TYPE: String = NSLocalizedString("Invalid document type", comment: "")
         static let INVALID_PASSWORD: String = NSLocalizedString("Invalid password", comment: "")
+        static let INVALID_COMPANY: String = NSLocalizedString("Invalid company", comment: "")
         static let LAST_TRIAGE_COMPLETED: String = NSLocalizedString("Last triage completed", comment: "")
         static let LOADING: String = NSLocalizedString("Loading...", comment: "")
         static let MORE_TITLE: String = NSLocalizedString("More", comment: "")
@@ -71,6 +74,11 @@ final class Constants {
         static let TRACING_TITLE: String = NSLocalizedString("Tracing", comment: "")
         static let WHAT_IS_LAUS: String = NSLocalizedString("What is Laus?", comment: "")
         static let YES: String = NSLocalizedString("Yes", comment: "")
+        static let TERMINOS: String = NSLocalizedString("Términos y Condiciones de Uso", comment: "")
+        static let TERMINOS_LINK: String = NSLocalizedString("https://sp-res.s3.us-east-1.amazonaws.com/production/pdf/Woala%20-%20T%C3%A9rminos%20y%20condiciones.pdf", comment: "")
+        static let POLITICAS: String = NSLocalizedString("Políticas de Privacidad", comment: "")
+        static let POLITICAS_LINK: String = NSLocalizedString("https://sp-res.s3.us-east-1.amazonaws.com/production/pdf/Woala%20-%20Pol%C3%ADtica%20de%20Privacidad.pdf", comment: "")
+        static let ACCEPT_POLITICAS_TERMINOS: String = NSLocalizedString("Debe aceptar los Términos y Condiciones y las Políticas de Privacidad", comment: "")
     }
     struct Service {
         private static let BASE_ENDPOINT: String = "tempo_covit/api/3"
@@ -80,6 +88,9 @@ final class Constants {
         #else
         private static let BASE_URL: String = "https://temposalud.com/\(BASE_ENDPOINT)"
         #endif
+        
+        private static let BASE_ENDPOINT_WEB: String = "api"
+        private static let BASE_URL_WEB: String = "https://tempo-global-prd-fauth.azurewebsites.net/\(BASE_ENDPOINT_WEB)"
         
         static let GET_ATTENTION_URL = "\(BASE_URL)/config.php?action=get_atenttion_webview_url"
         static let GET_DOCUMENT_TYPE = "\(BASE_URL)/config.php?action=get_document_type"
@@ -99,8 +110,16 @@ final class Constants {
         static let REGISTER_DEVICE = "\(BASE_URL)/user.php?action=register_device"
         static let SAVE_USER_INFORMATION = "\(BASE_URL)/user.php?action=save_user_problems"
         static let SIGN_IN = "\(BASE_URL)/user.php?action=login"
+        static let NEW_SIGN_IN = "\(BASE_URL)/user.php?action=new_login"
         static let UNREGISTER_DEVICE = "\(BASE_URL)/user.php?action=unregister_device"
         
         static let GET_TIP_CATEGORIES = "\(BASE_URL)/article.php?action=get_categories"
+        
+        static let GET_TRIAJE_MODEL = "\(BASE_URL)/config.php?action=get_triaje_model"
+        static let SAVE_DAILY_TRIAJE = "\(BASE_URL)/user.php?action=save_daily_triaje"
+        static let SAVE_UNIQUE_TRIAJE = "\(BASE_URL)/user.php?action=save_unique_triaje"
+        static let UPDATE_USER_DATA_TRIAJE = "\(BASE_URL)/user.php?action=update_user_data_triaje"
+        
+        static let GET_USER_COMPANIES = "\(BASE_URL_WEB)/ColaboradorObtenerEmpresa"
     }
 }

@@ -19,6 +19,7 @@ protocol ConfigRepositoryProtocol {
     func getTriageElements(success: @escaping (String, String, String, String, String?, String?, String?, String?, Bool) -> Void, failure: @escaping (Error) -> Void)
     func getTriageUrl(success: @escaping(String) -> Void, failure: @escaping(Error) -> Void)
     func saveDeviceIdentifier(success: @escaping(Bool) -> Void, failure: @escaping(Error) -> Void)
+    func getToken()->String
 }
 extension ConfigRepositoryProtocol {
     func saveDeviceIdentifier() {

@@ -11,6 +11,6 @@ import UIKit
 
 protocol SignInPresenterProtocol {
     func didLoadSignUpLogic()
-    func signIn(documentTypeId: Int, document: String)
+    func goToCompanySelection(documentTypeId: Int, documentType: String, document: String)
     func validateKeyboard(text: String?) -> UIKeyboardType
 }

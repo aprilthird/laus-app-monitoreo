@@ -81,7 +81,9 @@ class AttentionWebViewPresenter: AttentionWebViewPresenterProtocol {
             
             self.view.endProgress()
             
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
 }

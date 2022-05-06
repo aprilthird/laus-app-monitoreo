@@ -22,6 +22,7 @@
 "Unauthorized" = "No autorizado";
 "Invalid code" = "Código inválido";
 "There was a problem, please try later" = "Hubo un problema. Inténtelo más tarde";
+"There was an error while trying to find colaborator" = "Ocurrió un error al buscar colaborador";
 "What is Laus?" = "¿Qué es Laus?";
 "Tutorial" = "Tutorial";
 "Sign out" = "Cerrar sesión";

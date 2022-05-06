@@ -48,6 +48,7 @@ final class SplashPresenter: SplashPresenterProtocol {
                 _ = keychainHandler.remove(from: Constants.Keys.COMPANY_TOKEN)
                 _ = keychainHandler.remove(from: Constants.Keys.DOCUMENT_TYPE_ID)
                 _ = keychainHandler.remove(from: Constants.Keys.DOCUMENT)
+                _ = keychainHandler.remove(from: Constants.Keys.COMPANY_ID)
                 _ = keychainHandler.remove(from: Constants.Keys.PASSWORD)
                 view.goToFirstScene()
                 return
@@ -58,8 +59,9 @@ final class SplashPresenter: SplashPresenterProtocol {
         }
         let document = keychainHandler.string(from: Constants.Keys.DOCUMENT) ?? ""
         let documentTypeId = keychainHandler.integer(from: Constants.Keys.DOCUMENT_TYPE_ID)
+        let companyId = keychainHandler.string(from: Constants.Keys.COMPANY_ID) ?? ""
         let password = keychainHandler.string(from: Constants.Keys.PASSWORD)
-        userRepository.signIn(documentTypeId: documentTypeId, document: document, password: password, success: { [weak self] (isSuccessful, isPasswordRequired) in
+        userRepository.signIn(documentTypeId: documentTypeId, document: document, companyId: companyId, password: password, success: { [weak self] (isSuccessful, isPasswordRequired) in
             guard !isPasswordRequired else {
                 self?.view.goToFirstScene()
                 return

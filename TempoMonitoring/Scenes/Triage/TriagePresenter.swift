@@ -84,8 +84,9 @@ final class TriagePresenter: TriagePresenterProtocol {
             guard let self = self else { return }
             
             self.view.endProgress()
-            
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
     
@@ -100,8 +101,9 @@ final class TriagePresenter: TriagePresenterProtocol {
             guard let self = self else { return }
             
             self.view.endProgress()
-            
-            self.view.show(.alert, message: error.localizedDescription)
+            if NetworkStatus.shared.isOn {
+                self.view.show(.alert, message: error.localizedDescription)
+            }
         }
     }
 }

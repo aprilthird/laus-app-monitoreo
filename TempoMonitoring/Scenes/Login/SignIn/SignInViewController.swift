@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct ItemHyperLink {
+    var urlString: String
+    var text: String
+    var hiperLinkColor: UIColor?
+    var textColor: UIColor?
+}
+
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -22,6 +29,9 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var contactUsButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var txtTermsConditions: UITextView!
+    @IBOutlet weak var chTerms: CCheckbox!
+    
     var shouldSignUpUser: Bool?
     var signUpUrl: String?
     var signInPresenter: SignInPresenterProtocol!
@@ -43,6 +53,34 @@ class SignInViewController: UIViewController {
         
         signUpButton.isHidden = true
         signInPresenter.didLoadSignUpLogic()
+
+    }
+    
+    func hyperLink() {
+        
+        var items = [ItemHyperLink]()
+        items.append(ItemHyperLink(urlString: Constants.Localizable.TERMINOS_LINK, text: Constants.Localizable.TERMINOS, hiperLinkColor: UIColor.black, textColor: UIColor.black))
+        items.append(ItemHyperLink(urlString: Constants.Localizable.POLITICAS_LINK, text: Constants.Localizable.POLITICAS, hiperLinkColor: UIColor.black, textColor: UIColor.black))
+        
+        
+        let attributedString = NSMutableAttributedString(attributedString: txtTermsConditions.attributedText!)
+        
+
+        for link in items {
+            let linkTerminosRange = attributedString.mutableString.range(of: link.text)
+            attributedString.addAttribute(NSAttributedString.Key.link, value: link.urlString, range: linkTerminosRange)
+            attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "AvenirNext-Demibold", size: 14), range: linkTerminosRange)
+            self.txtTermsConditions.attributedText = attributedString
+            self.txtTermsConditions.isUserInteractionEnabled = true
+            self.txtTermsConditions.isEditable = false
+
+            self.txtTermsConditions.linkTextAttributes = [
+                .foregroundColor: UIColor.black,
+                .underlineStyle: NSUnderlineStyle.single.rawValue
+            ]
+        }
+        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +89,7 @@ class SignInViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
+        hyperLink()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,7 +139,12 @@ class SignInViewController: UIViewController {
             return
         }
         
-        signInPresenter.signIn(documentTypeId: documentTypeTextField.documentTypeId ?? 0, document: documentTextField.text!)
+        guard chTerms.isCheckboxSelected else {
+            show(.alert, message: Constants.Localizable.ACCEPT_POLITICAS_TERMINOS)
+            return
+        }
+        
+        signInPresenter.goToCompanySelection(documentTypeId: documentTypeTextField.documentTypeId ?? 0, documentType: documentTypeTextField.text!, document: documentTextField.text!)
     }
     
     /*
@@ -120,9 +164,9 @@ extension SignInViewController: SignInViewControllerProtocol {
         crossDisolveTransition(to: mainTabBar)
     }
     
-    func goToPasswordSignIn(_ documentTypeId: Int, _ document: String) {
-        let passwordScene = Router.shared.getPasswordSignIn(documentTypeId: documentTypeId, document: document)
-        show(passwordScene, sender: nil)
+    func goToCompanySelection(_ documentTypeId: Int, _ document: String, _ userCompanies: [(String, String)]) {
+        let companySelectionScene = Router.shared.getCompanySelection(documentTypeId: documentTypeId, document: document, userCompanies: userCompanies)
+        show(companySelectionScene, sender: nil)
     }
     
     func updateView(url: String, visibility: Bool) {
@@ -131,7 +175,7 @@ extension SignInViewController: SignInViewControllerProtocol {
         signUpButton.isHidden = !visibility
         signUpButton.layoutIfNeeded()
     }
-}
+}	
 extension SignInViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {

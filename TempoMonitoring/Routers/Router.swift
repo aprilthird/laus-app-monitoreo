@@ -90,11 +90,21 @@ final class Router {
         return viewController
     }
     
-    func getPasswordSignIn(documentTypeId: Int, document: String) -> UIViewController {
+    func getPasswordSignIn(documentTypeId: Int, document: String, companyId: String) -> UIViewController {
         let viewController = PasswordSignInViewController.get()
         viewController.passwordSignInPresenter = PasswordSignInPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
         viewController.documentTypeId = documentTypeId
         viewController.document = document
+        viewController.companyId = companyId
+        return viewController
+    }
+    
+    func getCompanySelection(documentTypeId: Int, document: String, userCompanies: [(String, String)]) -> UIViewController {
+        let viewController = CompanySelectionViewController.get()
+        viewController.companySelectionPresenter = CompanySelectionPresenter(configRepository: configRepository, userRepository: userRepository, view: viewController)
+        viewController.documentTypeId = documentTypeId
+        viewController.document = document
+        viewController.userCompanies = userCompanies
         return viewController
     }
     
@@ -155,5 +165,36 @@ final class Router {
         let viewController = WelcomeOptionsViewController.get()
         viewController.presenter = WelcomeOptionsPresenter(userDefaultsHandler: userDefaultsHandler, configRepository: configRepository, userRepository: userRepository, view: viewController)
         return viewController
+    }
+    
+    func getTriajeOffline() -> UIViewController {
+        var viewController: UIViewController!
+        
+        let vcTriaje = UIStoryboard(name: "TriajeOfflineSB", bundle: nil).instantiateViewController(withIdentifier: "TriajeVC") as! TriajeOfflineViewController
+        let vcDinamico = UIStoryboard(name: "TriajeOfflineSB", bundle: nil).instantiateViewController(withIdentifier: "TriajeDinamicoVC") as! TriajeDinamicoViewController
+        
+        let respuestaDao = RespuestasDao()
+        let isCompleted = respuestaDao.triajeUnicoCompleto()
+        if isCompleted {
+            vcDinamico.presenter = TriajeDiarioPresenter()
+            viewController = vcDinamico
+        } else {
+            vcTriaje.presenter = TriajeOfflinePresenter(view: vcTriaje)
+            viewController = vcTriaje
+        }
+        
+        return viewController
+    }
+    
+    func showTriajeDiario() -> UIViewController {
+        let vcDinamico = UIStoryboard(name: "TriajeOfflineSB", bundle: nil).instantiateViewController(withIdentifier: "TriajeDinamicoVC") as! TriajeDinamicoViewController
+        vcDinamico.presenter = TriajeDiarioPresenter()
+        return vcDinamico
+    }
+    
+    func showOffline() -> UIViewController {
+        let vcAlertOffline = OfflinePopupViewController.get()
+//        vcAlertOffline.modalPresentationStyle = .fullScreen
+        return vcAlertOffline
     }
 }

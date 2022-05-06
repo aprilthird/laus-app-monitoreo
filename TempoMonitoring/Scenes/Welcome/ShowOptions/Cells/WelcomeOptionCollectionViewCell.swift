@@ -17,11 +17,16 @@ class WelcomeOptionCollectionViewCell: UICollectionViewCell {
     var option: (text: String, imageUrl: String)! {
         didSet {
             guard option != nil else { return }
-            if let url = URL(string: option.imageUrl) {
-                optionImageView.setImage(url: url) { [weak self] in
-                    self?.layoutSubviews()
+            if NetworkStatus.shared.isOn {
+                if let url = URL(string: option.imageUrl) {
+                    optionImageView.setImage(url: url) { [weak self] in
+                        self?.layoutSubviews()
+                    }
                 }
+            } else {
+                optionImageView.image = UIImage(named: "Triaje")
             }
+            
             optionNameLabel.text = option.text
         }
     }
@@ -45,11 +50,12 @@ class WelcomeOptionCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        gradientLayer.frame = bounds
-        [layer, gradientLayer].forEach { (layer) in
-            layer?.cornerRadius = bounds.width / 10
-        }
+//        if bounds != nil {
+            gradientLayer.frame = bounds
+            [layer, gradientLayer].forEach { (layer) in
+                layer?.cornerRadius = bounds.width / 10
+            }
+//        }
     }
 
 }

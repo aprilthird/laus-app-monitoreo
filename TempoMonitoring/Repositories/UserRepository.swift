@@ -108,12 +108,13 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func signIn(documentTypeId: Int, document: String, password: String?, success: @escaping (Bool, Bool) -> Void, failure: @escaping (Error) -> Void) {
+    func signIn(documentTypeId: Int, document: String, companyId: String, password: String?, success: @escaping (Bool, Bool) -> Void, failure: @escaping (Error) -> Void) {
         var parameters: [String: Any] = [
             "id_type": documentTypeId,
-            "id_number": document
+            "id_number": document,
+            "compania_id": companyId
         ]
-        var url = Constants.Service.SIGN_IN
+        var url = Constants.Service.NEW_SIGN_IN
         if let password = password {
             parameters["password"] = password
             url += "&with_password=true"
@@ -132,6 +133,7 @@ final class UserRepository: UserRepositoryProtocol {
             let username = response["user"]["name"].stringValue
             let isScannerEnabled = response["user"]["scanner_enabled"].boolValue
             let isContactTracingEnabled = response["company"]["show_contact_tracing"].boolValue
+            let unique_triaje = response["user"]["unique_triaje"].boolValue
             
             guard !isPasswordRequired else {
                 success(true, true)
@@ -143,9 +145,11 @@ final class UserRepository: UserRepositoryProtocol {
             _ = self.keychainHandler.save(value: password, to: Constants.Keys.PASSWORD)
             _ = self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             _ = self.keychainHandler.save(value: companyToken, to: Constants.Keys.COMPANY_TOKEN)
+            _ = self.keychainHandler.save(value: companyId, to: Constants.Keys.COMPANY_ID)
             self.userDefaultsHandler.save(value: username, to: Constants.Keys.WELCOME_NAME)
             self.userDefaultsHandler.save(value: isScannerEnabled, to: Constants.Keys.IS_SCANNER_ENABLED)
             self.userDefaultsHandler.save(value: isContactTracingEnabled, to: Constants.Keys.IS_CONTACT_TRACING_ENABLED)
+            self.userDefaultsHandler.save(value: unique_triaje, to: Constants.Keys.UNIQUE_TRIAJE)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             self.userDefaultsHandler.save(value: dateFormatter.string(from: Date()), to: Constants.Keys.LAST_TOKENS_UPDATE)
@@ -170,6 +174,36 @@ final class UserRepository: UserRepositoryProtocol {
             
             self.userDefaultsHandler.save(value: false, to: Constants.Keys.IS_DEVICE_REGISTERED)
             success(true)
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func getUserCompanies(documentType: String, document: String, success: @escaping([(String, String)]) -> Void, failure: @escaping(Error) -> Void) {
+        let parameters: [String: Any] = [
+            "tipo_documento": documentType,
+            "numero_documento": document
+        ]
+        
+        ResponseHelper.RAW_GET(with: .url,
+                           url: Constants.Service.GET_USER_COMPANIES,
+                           parameters: parameters,
+                           success: { (response) in
+            let responseCode = response["status"].intValue
+            print("Response: \(responseCode) - \(response)")
+            if(responseCode != 200) {
+                let errorMessage = response["body"]["error_mensaje"].string ?? Constants.Localizable.DEFAULT_ERROR_MESSAGE
+                failure(NSError(domain: "TPMT", code: 420, userInfo: [
+                    NSLocalizedDescriptionKey: errorMessage
+                ]))
+                return
+            }
+            let options = response["body"]["data"].arrayValue.compactMap { (jsonObject) -> (String, String)? in
+                let companyId = jsonObject["compania_id"]["_id"].stringValue
+                let companyName = jsonObject["compania_id"]["nombre"].stringValue
+                return (companyId, companyName)
+            }
+            success(options)
         }) { (error) in
             failure(error)
         }

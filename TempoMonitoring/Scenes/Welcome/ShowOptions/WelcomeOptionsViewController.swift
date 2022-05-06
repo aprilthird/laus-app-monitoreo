@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class WelcomeOptionsViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class WelcomeOptionsViewController: UIViewController {
     private var options: [(text: String, imageUrl: String, openUrl: String)]?
     private var numberOfColumns: CGFloat!
     var presenter: WelcomeOptionsPresenterProtocol!
+    
+    let center = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,11 @@ class WelcomeOptionsViewController: UIViewController {
         
         collectionView.register(WelcomeOptionCollectionViewCell.getNIB(), forCellWithReuseIdentifier: WelcomeOptionCollectionViewCell.reuseIdentifier)
         collectionView.register(WelcomeOptionHeaderCollectionReusableView.getNIB(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: WelcomeOptionHeaderCollectionReusableView.reuseIdentifier)
+        
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            print(">>>> center.requestAuthorization")
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,18 +50,13 @@ class WelcomeOptionsViewController: UIViewController {
         
         presenter.loadOptions()
         navigationItem.setRightBarButtonItems(presenter.getRightNavigationItems(), animated: true)
+
+        if NetworkStatus.shared.isOn {
+            self.presenter.downloadTriaje()
+            self.presenter.sendTriajeInfo()
+            self.presenter.sendEncuestaInicial()
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: UICollectionViewDelegate && UICollectionViewDataSource
     
@@ -67,7 +70,7 @@ class WelcomeOptionsViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WelcomeOptionCollectionViewCell.reuseIdentifier, for: indexPath) as! WelcomeOptionCollectionViewCell
-        cell.color = presenter.getPrimaryColor()
+        cell.color = presenter.getBackgroundColor()
         guard let option = options?[indexPath.row] else {
             return cell
         }
@@ -78,9 +81,36 @@ class WelcomeOptionsViewController: UIViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         guard let option = options?[indexPath.row] else { return }
-        let webView = Router.shared.getMainWebView(title: option.text.capitalized, url: option.openUrl)
-        webView.hidesBottomBarWhenPushed = true
-        show(webView, sender: nil)
+        if NetworkStatus.shared.isOn {
+            let webView = Router.shared.getMainWebView(title: option.text.capitalized, url: option.openUrl)
+            webView.hidesBottomBarWhenPushed = true
+            show(webView, sender: nil)
+        } else {
+            // Si encuesta no descargada
+            if EncuestasTriajeDao().getDataFromDB().count == 0 {
+                print("Encuesta no descargada")
+                let alert = UIAlertController(title: "Atención", message: "No se descargó información de triaje. Por favor verifique su conexión a internet.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                if self.presenter.getUniqueTriaje() {
+                    let exists = RespuestasDao().getExisteDiario()
+                    if exists {
+                        let alert = UIAlertController(title: "Atención", message: "Ya se encuentra registrado su triaje diario. Por favor intente mañana.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    } else {
+                        let triajeDiario = Router.shared.showTriajeDiario()
+                        show(triajeDiario, sender: nil)
+                    }
+                    
+                } else {
+                    let triajeOffline = Router.shared.getTriajeOffline()
+                    show(triajeOffline, sender: nil)
+                }
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -88,6 +118,9 @@ class WelcomeOptionsViewController: UIViewController {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: WelcomeOptionHeaderCollectionReusableView.reuseIdentifier, for: indexPath) as! WelcomeOptionHeaderCollectionReusableView
             header.option = presenter.getHeaderOptions()
+            if !NetworkStatus.shared.isOn { 
+                header.showBanneroffline()
+            }
             return header
         default:
             return UICollectionReusableView()
@@ -99,7 +132,8 @@ class WelcomeOptionsViewController: UIViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: WelcomeOptionHeaderCollectionReusableView.reuseIdentifier, for: IndexPath(row: 0, section: section)) as! WelcomeOptionHeaderCollectionReusableView
         let size = header.systemLayoutSizeFitting(CGSize(width: UIScreen.main.bounds.width, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
-        return CGSize(width: UIScreen.main.bounds.width, height: size.height)
+        let _size = CGFloat( NetworkStatus.shared.isOn ? 90.0 : 200.0) 
+        return CGSize(width: UIScreen.main.bounds.width, height: _size )
     }
 
 }
