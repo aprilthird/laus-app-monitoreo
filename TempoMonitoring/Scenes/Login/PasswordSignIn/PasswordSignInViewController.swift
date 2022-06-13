@@ -59,7 +59,7 @@ class PasswordSignInViewController: UIViewController {
     }
     
     @IBAction func didForgotPassword(_ sender: UIButton) {
-        passwordSignInPresenter.forgotPassword(documentTypeId: documentTypeId, document: document)
+        passwordSignInPresenter.forgotPassword(documentTypeId: documentTypeId, document: document, companyId: companyId)
     }
     
     @IBAction func didSignIn(_ sender: UIButton) {

@@ -19,9 +19,9 @@ final class PasswordSignInPresenter: PasswordSignInPresenterProtocol {
         self.view = view
     }
     
-    func forgotPassword(documentTypeId: Int, document: String) {
+    func forgotPassword(documentTypeId: Int, document: String, companyId: String) {
         view.startProgress()
-        userRepository.recoverPassword(documentTypeId: documentTypeId, document: document, success: { [weak self] (imageUrl, message) in
+        userRepository.recoverPassword(documentTypeId: documentTypeId, document: document, companyId: companyId, success: { [weak self] (imageUrl, message) in
             guard let self = self else { return }
             
             self.view.endProgress()

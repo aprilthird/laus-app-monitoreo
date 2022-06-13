@@ -33,10 +33,11 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func recoverPassword(documentTypeId: Int, document: String, success: @escaping (String?, String) -> Void, failure: @escaping (Error) -> Void) {
+    func recoverPassword(documentTypeId: Int, document: String, companyId: String, success: @escaping (String?, String) -> Void, failure: @escaping (Error) -> Void) {
         let parameters: [String: Any] = [
             "id_type": documentTypeId,
-            "id_number": document
+            "id_number": document,
+            "company_id": companyId
         ]
         
         ResponseHelper.POST(with: .url,
